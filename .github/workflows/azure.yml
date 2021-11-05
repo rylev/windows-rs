@@ -1,5 +1,11 @@
+strategy:
+  matrix:
+    windows-stable:
+      imageName: 'windows-2019'
+      rustup_toolchain: stable
+
 pool:
-  vmImage: 'windows-2019'
+  vmImage: $(imageName)
 
 steps:
   - script: |
