@@ -266,9 +266,9 @@ pub fn gen_winrt_params(params: &[MethodParam], gen: &Gen) -> TokenStream {
             if param.signature.by_ref {
                 result.combine(&quote! { #name: &mut ::windows::core::Array<#kind>, });
             } else {
-                let kind = if let ElementType::GenericParam(_) = param.signature.kind {
+                let kind = if param.signature.is_generic() {
                     quote! { <#kind as ::windows::core::RuntimeType>::DefaultType }
-                } else if param.signature.kind.is_nullable() {
+                } else if param.signature.kind().is_nullable() {
                     quote! { ::core::option::Option<#kind> }
                 } else {
                     kind
@@ -287,9 +287,9 @@ pub fn gen_winrt_params(params: &[MethodParam], gen: &Gen) -> TokenStream {
             } else {
                 result.combine(&quote! { #name: #kind, });
             }
-        } else if param.signature.kind.is_nullable() {
+        } else if param.signature.kind().is_nullable() {
             result.combine(&quote! { #name: &mut ::core::option::Option<#kind>, });
-        } else if let ElementType::GenericParam(_) = param.signature.kind {
+        } else if param.signature.is_generic() {
             result.combine(&quote! { &mut <#kind as ::windows::core::RuntimeType>::DefaultType, });
         } else {
             result.combine(&quote! { #name: &mut #kind, });
@@ -327,14 +327,15 @@ pub fn gen_winrt_abi_arg(param: &MethodParam) -> TokenStream {
             } else {
                 quote! { #name.into_param().abi() }
             }
-        } else if param.signature.kind.is_blittable() {
+        } else if param.signature.kind().is_blittable() {
             quote! { #name }
         } else if param.signature.pointers == 0 {
             quote! { ::core::mem::transmute_copy(#name) }
         } else {
             quote! { ::core::mem::transmute(#name) }
         }
-    } else if param.signature.kind.is_blittable() || (param.signature.pointers > 0 && !param.signature.kind.is_nullable()) {
+                                                        // TODO: WinRT signatures never have pointers right?
+    } else if param.signature.kind().is_blittable() || (param.signature.pointers > 0 && !param.signature.kind().is_nullable()) {
         quote! { #name }
     } else {
         quote! { #name as *mut _ as _ }

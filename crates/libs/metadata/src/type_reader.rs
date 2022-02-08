@@ -138,7 +138,7 @@ impl TypeReader {
 
         let kind = self.type_from_blob(blob, enclosing, generics);
 
-        Some(Signature { kind, pointers, by_ref, is_const, is_array })
+        Some(Signature::new(kind, pointers, by_ref, is_const, is_array))
     }
 
     pub fn type_from_code(&'static self, code: &TypeDefOrRef, enclosing: Option<&TypeDef>, generics: &[ElementType]) -> ElementType {
@@ -210,4 +210,4 @@ fn is_well_known(type_name: TypeName) -> bool {
 
 const REMAP_TYPES: [(TypeName, TypeName); 1] = [(TypeName::D2D_MATRIX_3X2_F, TypeName::Matrix3x2)];
 
-const WELL_KNOWN_TYPES: [(TypeName, ElementType); 9] = [(TypeName::GUID, ElementType::GUID), (TypeName::IUnknown, ElementType::IUnknown), (TypeName::HResult, ElementType::HRESULT), (TypeName::HRESULT, ElementType::HRESULT), (TypeName::HSTRING, ElementType::String), (TypeName::IInspectable, ElementType::IInspectable), (TypeName::LARGE_INTEGER, ElementType::I64), (TypeName::ULARGE_INTEGER, ElementType::U64), (TypeName::Type, ElementType::TypeName)];
+const WELL_KNOWN_TYPES: [(TypeName, ElementType); 11] = [(TypeName::GUID, ElementType::GUID), (TypeName::IUnknown, ElementType::IUnknown), (TypeName::HResult, ElementType::HRESULT), (TypeName::HRESULT, ElementType::HRESULT), (TypeName::HSTRING, ElementType::String), (TypeName::IInspectable, ElementType::IInspectable), (TypeName::LARGE_INTEGER, ElementType::I64), (TypeName::ULARGE_INTEGER, ElementType::U64), (TypeName::Type, ElementType::TypeName), (TypeName::PSTR, ElementType::PSTR), (TypeName::PWSTR, ElementType::PWSTR)];

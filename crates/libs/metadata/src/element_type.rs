@@ -23,6 +23,10 @@ pub enum ElementType {
     IInspectable,
     HRESULT,
     TypeName,
+    PSTR,
+    PCSTR,
+    PWSTR,
+    PCWSTR,
     GenericParam(String),
     Array((Box<Signature>, u32)),
     MethodDef(MethodDef),
@@ -134,7 +138,7 @@ impl ElementType {
     pub fn is_convertible(&self) -> bool {
         match self {
             Self::TypeDef(t) => t.is_convertible(),
-            Self::String | Self::IInspectable | Self::GUID | Self::IUnknown | Self::GenericParam(_) => true,
+            Self::String | Self::IInspectable | Self::GUID | Self::IUnknown | Self::PCSTR | Self::PCWSTR | Self::GenericParam(_) => true,
             _ => false,
         }
     }
@@ -148,7 +152,7 @@ impl ElementType {
 
     pub fn is_callback_array(&self) -> bool {
         match self {
-            Self::Array((kind, _)) => kind.kind.is_callback(),
+            Self::Array((kind, _)) => kind.kind().is_callback(),
             _ => false,
         }
     }

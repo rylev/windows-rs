@@ -160,6 +160,22 @@ pub fn gen_element_name(def: &ElementType, gen: &Gen) -> TokenStream {
             let crate_name = gen_crate_name(gen);
             quote! { ::#crate_name::core::HRESULT }
         }
+        ElementType::PSTR => {
+            let crate_name = gen_crate_name(gen);
+            quote! { ::#crate_name::core::PSTR }
+        }
+        ElementType::PCSTR => {
+            let crate_name = gen_crate_name(gen);
+            quote! { ::#crate_name::core::PCSTR }
+        }
+        ElementType::PWSTR => {
+            let crate_name = gen_crate_name(gen);
+            quote! { ::#crate_name::core::PWSTR }
+        }
+        ElementType::PCWSTR => {
+            let crate_name = gen_crate_name(gen);
+            quote! { ::#crate_name::core::PCWSTR }
+        }
         ElementType::Array((kind, len)) => {
             let name = gen_sig(kind, gen);
             let len = Literal::u32_unsuffixed(*len);
@@ -174,7 +190,7 @@ pub fn gen_element_name(def: &ElementType, gen: &Gen) -> TokenStream {
 }
 
 pub fn gen_abi_element_name(sig: &Signature, gen: &Gen) -> TokenStream {
-    match &sig.kind {
+    match sig.kind() {
         ElementType::String => {
             quote! { ::core::mem::ManuallyDrop<::windows::core::HSTRING> }
         }
