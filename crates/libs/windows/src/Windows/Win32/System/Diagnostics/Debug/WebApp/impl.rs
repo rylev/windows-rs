@@ -3,13 +3,13 @@ pub trait IWebApplicationActivation_Impl: Sized {
 }
 impl ::windows::core::RuntimeName for IWebApplicationActivation {}
 impl IWebApplicationActivation_Vtbl {
-    pub const fn new<Identity: ::windows::core::IUnknownImpl, Impl: IWebApplicationActivation_Impl, const OFFSET: isize>() -> IWebApplicationActivation_Vtbl {
-        unsafe extern "system" fn CancelPendingActivation<Identity: ::windows::core::IUnknownImpl, Impl: IWebApplicationActivation_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT {
+    pub const fn new<Identity: ::windows::core::IUnknown_Impl, Impl: IWebApplicationActivation_Impl, const OFFSET: isize>() -> IWebApplicationActivation_Vtbl {
+        unsafe extern "system" fn CancelPendingActivation<Identity: ::windows::core::IUnknown_Impl, Impl: IWebApplicationActivation_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).CancelPendingActivation().into()
         }
-        Self { base__: ::windows::core::IUnknownVtbl::new::<Identity, OFFSET>(), CancelPendingActivation: CancelPendingActivation::<Identity, Impl, OFFSET> }
+        Self { base__: ::windows::core::IUnknownVtbl::new::<Identity, (), OFFSET>(), CancelPendingActivation: CancelPendingActivation::<Identity, Impl, OFFSET> }
     }
     pub fn matches(iid: &windows::core::GUID) -> bool {
         iid == &<IWebApplicationActivation as ::windows::core::Interface>::IID
@@ -23,8 +23,8 @@ pub trait IWebApplicationAuthoringMode_Impl: Sized + super::super::super::Com::I
 impl ::windows::core::RuntimeName for IWebApplicationAuthoringMode {}
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
 impl IWebApplicationAuthoringMode_Vtbl {
-    pub const fn new<Identity: ::windows::core::IUnknownImpl, Impl: IWebApplicationAuthoringMode_Impl, const OFFSET: isize>() -> IWebApplicationAuthoringMode_Vtbl {
-        unsafe extern "system" fn AuthoringClientBinary<Identity: ::windows::core::IUnknownImpl, Impl: IWebApplicationAuthoringMode_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, designmodedllpath: *mut super::super::super::super::Foundation::BSTR) -> ::windows::core::HRESULT {
+    pub const fn new<Identity: ::windows::core::IUnknown_Impl, Impl: IWebApplicationAuthoringMode_Impl, const OFFSET: isize>() -> IWebApplicationAuthoringMode_Vtbl {
+        unsafe extern "system" fn AuthoringClientBinary<Identity: ::windows::core::IUnknown_Impl, Impl: IWebApplicationAuthoringMode_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, designmodedllpath: *mut super::super::super::super::Foundation::BSTR) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             match (*this).AuthoringClientBinary() {
@@ -56,13 +56,13 @@ pub trait IWebApplicationHost_Impl: Sized {
 impl ::windows::core::RuntimeName for IWebApplicationHost {}
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_Web_MsHtml"))]
 impl IWebApplicationHost_Vtbl {
-    pub const fn new<Identity: ::windows::core::IUnknownImpl, Impl: IWebApplicationHost_Impl, const OFFSET: isize>() -> IWebApplicationHost_Vtbl {
-        unsafe extern "system" fn HWND<Identity: ::windows::core::IUnknownImpl, Impl: IWebApplicationHost_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, hwnd: *mut super::super::super::super::Foundation::HWND) -> ::windows::core::HRESULT {
+    pub const fn new<Identity: ::windows::core::IUnknown_Impl, Impl: IWebApplicationHost_Impl, const OFFSET: isize>() -> IWebApplicationHost_Vtbl {
+        unsafe extern "system" fn HWND<Identity: ::windows::core::IUnknown_Impl, Impl: IWebApplicationHost_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, hwnd: *mut super::super::super::super::Foundation::HWND) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).HWND(::core::mem::transmute_copy(&hwnd)).into()
         }
-        unsafe extern "system" fn Document<Identity: ::windows::core::IUnknownImpl, Impl: IWebApplicationHost_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, htmldocument: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn Document<Identity: ::windows::core::IUnknown_Impl, Impl: IWebApplicationHost_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, htmldocument: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             match (*this).Document() {
@@ -73,23 +73,23 @@ impl IWebApplicationHost_Vtbl {
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
-        unsafe extern "system" fn Refresh<Identity: ::windows::core::IUnknownImpl, Impl: IWebApplicationHost_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn Refresh<Identity: ::windows::core::IUnknown_Impl, Impl: IWebApplicationHost_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).Refresh().into()
         }
-        unsafe extern "system" fn Advise<Identity: ::windows::core::IUnknownImpl, Impl: IWebApplicationHost_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, interfaceid: *const ::windows::core::GUID, callback: *mut ::core::ffi::c_void, cookie: *mut u32) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn Advise<Identity: ::windows::core::IUnknown_Impl, Impl: IWebApplicationHost_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, interfaceid: *const ::windows::core::GUID, callback: *mut ::core::ffi::c_void, cookie: *mut u32) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).Advise(::core::mem::transmute_copy(&interfaceid), ::core::mem::transmute(&callback), ::core::mem::transmute_copy(&cookie)).into()
         }
-        unsafe extern "system" fn Unadvise<Identity: ::windows::core::IUnknownImpl, Impl: IWebApplicationHost_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, cookie: u32) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn Unadvise<Identity: ::windows::core::IUnknown_Impl, Impl: IWebApplicationHost_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, cookie: u32) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).Unadvise(::core::mem::transmute_copy(&cookie)).into()
         }
         Self {
-            base__: ::windows::core::IUnknownVtbl::new::<Identity, OFFSET>(),
+            base__: ::windows::core::IUnknownVtbl::new::<Identity, (), OFFSET>(),
             HWND: HWND::<Identity, Impl, OFFSET>,
             Document: Document::<Identity, Impl, OFFSET>,
             Refresh: Refresh::<Identity, Impl, OFFSET>,
@@ -114,39 +114,39 @@ pub trait IWebApplicationNavigationEvents_Impl: Sized {
 impl ::windows::core::RuntimeName for IWebApplicationNavigationEvents {}
 #[cfg(all(feature = "Win32_System_Com", feature = "Win32_Web_MsHtml"))]
 impl IWebApplicationNavigationEvents_Vtbl {
-    pub const fn new<Identity: ::windows::core::IUnknownImpl, Impl: IWebApplicationNavigationEvents_Impl, const OFFSET: isize>() -> IWebApplicationNavigationEvents_Vtbl {
-        unsafe extern "system" fn BeforeNavigate<Identity: ::windows::core::IUnknownImpl, Impl: IWebApplicationNavigationEvents_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, htmlwindow: ::windows::core::RawPtr, url: ::windows::core::PCWSTR, navigationflags: u32, targetframename: ::windows::core::PCWSTR) -> ::windows::core::HRESULT {
+    pub const fn new<Identity: ::windows::core::IUnknown_Impl, Impl: IWebApplicationNavigationEvents_Impl, const OFFSET: isize>() -> IWebApplicationNavigationEvents_Vtbl {
+        unsafe extern "system" fn BeforeNavigate<Identity: ::windows::core::IUnknown_Impl, Impl: IWebApplicationNavigationEvents_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, htmlwindow: ::windows::core::RawPtr, url: ::windows::core::PCWSTR, navigationflags: u32, targetframename: ::windows::core::PCWSTR) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).BeforeNavigate(::core::mem::transmute(&htmlwindow), ::core::mem::transmute(&url), ::core::mem::transmute_copy(&navigationflags), ::core::mem::transmute(&targetframename)).into()
         }
-        unsafe extern "system" fn NavigateComplete<Identity: ::windows::core::IUnknownImpl, Impl: IWebApplicationNavigationEvents_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, htmlwindow: ::windows::core::RawPtr, url: ::windows::core::PCWSTR) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn NavigateComplete<Identity: ::windows::core::IUnknown_Impl, Impl: IWebApplicationNavigationEvents_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, htmlwindow: ::windows::core::RawPtr, url: ::windows::core::PCWSTR) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).NavigateComplete(::core::mem::transmute(&htmlwindow), ::core::mem::transmute(&url)).into()
         }
-        unsafe extern "system" fn NavigateError<Identity: ::windows::core::IUnknownImpl, Impl: IWebApplicationNavigationEvents_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, htmlwindow: ::windows::core::RawPtr, url: ::windows::core::PCWSTR, targetframename: ::windows::core::PCWSTR, statuscode: u32) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn NavigateError<Identity: ::windows::core::IUnknown_Impl, Impl: IWebApplicationNavigationEvents_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, htmlwindow: ::windows::core::RawPtr, url: ::windows::core::PCWSTR, targetframename: ::windows::core::PCWSTR, statuscode: u32) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).NavigateError(::core::mem::transmute(&htmlwindow), ::core::mem::transmute(&url), ::core::mem::transmute(&targetframename), ::core::mem::transmute_copy(&statuscode)).into()
         }
-        unsafe extern "system" fn DocumentComplete<Identity: ::windows::core::IUnknownImpl, Impl: IWebApplicationNavigationEvents_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, htmlwindow: ::windows::core::RawPtr, url: ::windows::core::PCWSTR) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn DocumentComplete<Identity: ::windows::core::IUnknown_Impl, Impl: IWebApplicationNavigationEvents_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, htmlwindow: ::windows::core::RawPtr, url: ::windows::core::PCWSTR) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).DocumentComplete(::core::mem::transmute(&htmlwindow), ::core::mem::transmute(&url)).into()
         }
-        unsafe extern "system" fn DownloadBegin<Identity: ::windows::core::IUnknownImpl, Impl: IWebApplicationNavigationEvents_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn DownloadBegin<Identity: ::windows::core::IUnknown_Impl, Impl: IWebApplicationNavigationEvents_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).DownloadBegin().into()
         }
-        unsafe extern "system" fn DownloadComplete<Identity: ::windows::core::IUnknownImpl, Impl: IWebApplicationNavigationEvents_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn DownloadComplete<Identity: ::windows::core::IUnknown_Impl, Impl: IWebApplicationNavigationEvents_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).DownloadComplete().into()
         }
         Self {
-            base__: ::windows::core::IUnknownVtbl::new::<Identity, OFFSET>(),
+            base__: ::windows::core::IUnknownVtbl::new::<Identity, (), OFFSET>(),
             BeforeNavigate: BeforeNavigate::<Identity, Impl, OFFSET>,
             NavigateComplete: NavigateComplete::<Identity, Impl, OFFSET>,
             NavigateError: NavigateError::<Identity, Impl, OFFSET>,
@@ -168,19 +168,19 @@ pub trait IWebApplicationScriptEvents_Impl: Sized {
 impl ::windows::core::RuntimeName for IWebApplicationScriptEvents {}
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_Web_MsHtml"))]
 impl IWebApplicationScriptEvents_Vtbl {
-    pub const fn new<Identity: ::windows::core::IUnknownImpl, Impl: IWebApplicationScriptEvents_Impl, const OFFSET: isize>() -> IWebApplicationScriptEvents_Vtbl {
-        unsafe extern "system" fn BeforeScriptExecute<Identity: ::windows::core::IUnknownImpl, Impl: IWebApplicationScriptEvents_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, htmlwindow: ::windows::core::RawPtr) -> ::windows::core::HRESULT {
+    pub const fn new<Identity: ::windows::core::IUnknown_Impl, Impl: IWebApplicationScriptEvents_Impl, const OFFSET: isize>() -> IWebApplicationScriptEvents_Vtbl {
+        unsafe extern "system" fn BeforeScriptExecute<Identity: ::windows::core::IUnknown_Impl, Impl: IWebApplicationScriptEvents_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, htmlwindow: ::windows::core::RawPtr) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).BeforeScriptExecute(::core::mem::transmute(&htmlwindow)).into()
         }
-        unsafe extern "system" fn ScriptError<Identity: ::windows::core::IUnknownImpl, Impl: IWebApplicationScriptEvents_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, htmlwindow: ::windows::core::RawPtr, scripterror: ::windows::core::RawPtr, url: ::windows::core::PCWSTR, errorhandled: super::super::super::super::Foundation::BOOL) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn ScriptError<Identity: ::windows::core::IUnknown_Impl, Impl: IWebApplicationScriptEvents_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, htmlwindow: ::windows::core::RawPtr, scripterror: ::windows::core::RawPtr, url: ::windows::core::PCWSTR, errorhandled: super::super::super::super::Foundation::BOOL) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).ScriptError(::core::mem::transmute(&htmlwindow), ::core::mem::transmute(&scripterror), ::core::mem::transmute(&url), ::core::mem::transmute_copy(&errorhandled)).into()
         }
         Self {
-            base__: ::windows::core::IUnknownVtbl::new::<Identity, OFFSET>(),
+            base__: ::windows::core::IUnknownVtbl::new::<Identity, (), OFFSET>(),
             BeforeScriptExecute: BeforeScriptExecute::<Identity, Impl, OFFSET>,
             ScriptError: ScriptError::<Identity, Impl, OFFSET>,
         }
@@ -194,13 +194,13 @@ pub trait IWebApplicationUIEvents_Impl: Sized {
 }
 impl ::windows::core::RuntimeName for IWebApplicationUIEvents {}
 impl IWebApplicationUIEvents_Vtbl {
-    pub const fn new<Identity: ::windows::core::IUnknownImpl, Impl: IWebApplicationUIEvents_Impl, const OFFSET: isize>() -> IWebApplicationUIEvents_Vtbl {
-        unsafe extern "system" fn SecurityProblem<Identity: ::windows::core::IUnknownImpl, Impl: IWebApplicationUIEvents_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, securityproblem: u32, result: *mut ::windows::core::HRESULT) -> ::windows::core::HRESULT {
+    pub const fn new<Identity: ::windows::core::IUnknown_Impl, Impl: IWebApplicationUIEvents_Impl, const OFFSET: isize>() -> IWebApplicationUIEvents_Vtbl {
+        unsafe extern "system" fn SecurityProblem<Identity: ::windows::core::IUnknown_Impl, Impl: IWebApplicationUIEvents_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, securityproblem: u32, result: *mut ::windows::core::HRESULT) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).SecurityProblem(::core::mem::transmute_copy(&securityproblem), ::core::mem::transmute_copy(&result)).into()
         }
-        Self { base__: ::windows::core::IUnknownVtbl::new::<Identity, OFFSET>(), SecurityProblem: SecurityProblem::<Identity, Impl, OFFSET> }
+        Self { base__: ::windows::core::IUnknownVtbl::new::<Identity, (), OFFSET>(), SecurityProblem: SecurityProblem::<Identity, Impl, OFFSET> }
     }
     pub fn matches(iid: &windows::core::GUID) -> bool {
         iid == &<IWebApplicationUIEvents as ::windows::core::Interface>::IID
@@ -212,19 +212,19 @@ pub trait IWebApplicationUpdateEvents_Impl: Sized {
 }
 impl ::windows::core::RuntimeName for IWebApplicationUpdateEvents {}
 impl IWebApplicationUpdateEvents_Vtbl {
-    pub const fn new<Identity: ::windows::core::IUnknownImpl, Impl: IWebApplicationUpdateEvents_Impl, const OFFSET: isize>() -> IWebApplicationUpdateEvents_Vtbl {
-        unsafe extern "system" fn OnPaint<Identity: ::windows::core::IUnknownImpl, Impl: IWebApplicationUpdateEvents_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT {
+    pub const fn new<Identity: ::windows::core::IUnknown_Impl, Impl: IWebApplicationUpdateEvents_Impl, const OFFSET: isize>() -> IWebApplicationUpdateEvents_Vtbl {
+        unsafe extern "system" fn OnPaint<Identity: ::windows::core::IUnknown_Impl, Impl: IWebApplicationUpdateEvents_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).OnPaint().into()
         }
-        unsafe extern "system" fn OnCssChanged<Identity: ::windows::core::IUnknownImpl, Impl: IWebApplicationUpdateEvents_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn OnCssChanged<Identity: ::windows::core::IUnknown_Impl, Impl: IWebApplicationUpdateEvents_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).OnCssChanged().into()
         }
         Self {
-            base__: ::windows::core::IUnknownVtbl::new::<Identity, OFFSET>(),
+            base__: ::windows::core::IUnknownVtbl::new::<Identity, (), OFFSET>(),
             OnPaint: OnPaint::<Identity, Impl, OFFSET>,
             OnCssChanged: OnCssChanged::<Identity, Impl, OFFSET>,
         }

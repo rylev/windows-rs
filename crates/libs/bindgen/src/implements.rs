@@ -80,7 +80,7 @@ pub fn gen(def: &TypeDef, gen: &Gen) -> TokenStream {
         let invoke_upcall = if def.is_winrt() { gen_winrt_upcall(&signature, quote! { (*this).#name }) } else { gen_win32_upcall(&signature, quote! { (*this).#name }) };
 
         quote! {
-            unsafe extern "system" fn #name<#(#constraints)* Identity: ::windows::core::IUnknownImpl, Impl: #impl_ident<#(#generics)*>, const OFFSET: isize> #vtbl_signature {
+            unsafe extern "system" fn #name<#(#constraints)* Identity: ::windows::core::IUnknown_Impl, Impl: #impl_ident<#(#generics)*>, const OFFSET: isize> #vtbl_signature {
                 let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
                 let this = (*this).get_impl() as *mut Impl;
                 #invoke_upcall
@@ -91,7 +91,7 @@ pub fn gen(def: &TypeDef, gen: &Gen) -> TokenStream {
     let mut methods = quote! {};
 
     match def.vtable_types().last() {
-        Some(Type::IUnknown) => methods.combine(&quote! { base__: ::windows::core::IUnknownVtbl::new::<Identity, OFFSET>(), }),
+        Some(Type::IUnknown) => methods.combine(&quote! { base__: ::windows::core::IUnknownVtbl::new::<Identity, (), OFFSET>(), }),
         Some(Type::IInspectable) => methods.combine(&quote! { base__: ::windows::core::IInspectableVtbl::new::<Identity, #type_ident<#(#generics)*>, OFFSET>(), }),
         Some(Type::TypeDef(def)) => {
             let vtbl = gen_vtbl_ident(def, gen);
@@ -117,7 +117,7 @@ pub fn gen(def: &TypeDef, gen: &Gen) -> TokenStream {
         #runtime_name
         #cfg
         impl<#(#constraints)*> #vtbl_ident<#(#generics)*> {
-            pub const fn new<Identity: ::windows::core::IUnknownImpl, Impl: #impl_ident<#(#generics)*>, const OFFSET: isize>() -> #vtbl_ident<#(#generics)*> {
+            pub const fn new<Identity: ::windows::core::IUnknown_Impl, Impl: #impl_ident<#(#generics)*>, const OFFSET: isize>() -> #vtbl_ident<#(#generics)*> {
                 #(#method_impls)*
                 Self{
                     #methods

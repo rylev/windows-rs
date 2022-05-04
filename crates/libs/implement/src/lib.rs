@@ -92,7 +92,7 @@ pub fn implement(attributes: proc_macro::TokenStream, original_type: proc_macro:
                 }
             }
         }
-        impl <#constraints> ::windows::core::IUnknownImpl for #impl_ident::<#(#generics,)*> {
+        impl <#constraints> ::windows::core::IUnknown_Impl for #impl_ident::<#(#generics,)*> {
             fn get_impl(&mut self) -> ::windows::core::RawPtr {
                 &mut self.this as *mut _ as _
             }
@@ -142,7 +142,7 @@ pub fn implement(attributes: proc_macro::TokenStream, original_type: proc_macro:
                 unsafe {
                     let boxed = (self as *const #original_ident::<#(#generics,)*> as *mut #original_ident::<#(#generics,)*> as *mut ::windows::core::RawPtr).sub(2 + #interfaces_len) as *mut #impl_ident::<#(#generics,)*>;
                     let mut result = None;
-                    <#impl_ident::<#(#generics,)*> as ::windows::core::IUnknownImpl>::QueryInterface(&mut *boxed, &ResultType::IID, &mut result as *mut _ as _).and_some(result)
+                    <#impl_ident::<#(#generics,)*> as ::windows::core::IUnknown_Impl>::QueryInterface(&mut *boxed, &ResultType::IID, &mut result as *mut _ as _).and_some(result)
                 }
             }
         }

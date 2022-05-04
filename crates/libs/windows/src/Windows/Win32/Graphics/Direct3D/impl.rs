@@ -4,19 +4,19 @@ pub trait ID3DBlob_Impl: Sized {
 }
 impl ::windows::core::RuntimeName for ID3DBlob {}
 impl ID3DBlob_Vtbl {
-    pub const fn new<Identity: ::windows::core::IUnknownImpl, Impl: ID3DBlob_Impl, const OFFSET: isize>() -> ID3DBlob_Vtbl {
-        unsafe extern "system" fn GetBufferPointer<Identity: ::windows::core::IUnknownImpl, Impl: ID3DBlob_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> *mut ::core::ffi::c_void {
+    pub const fn new<Identity: ::windows::core::IUnknown_Impl, Impl: ID3DBlob_Impl, const OFFSET: isize>() -> ID3DBlob_Vtbl {
+        unsafe extern "system" fn GetBufferPointer<Identity: ::windows::core::IUnknown_Impl, Impl: ID3DBlob_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> *mut ::core::ffi::c_void {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).GetBufferPointer()
         }
-        unsafe extern "system" fn GetBufferSize<Identity: ::windows::core::IUnknownImpl, Impl: ID3DBlob_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> usize {
+        unsafe extern "system" fn GetBufferSize<Identity: ::windows::core::IUnknown_Impl, Impl: ID3DBlob_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> usize {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).GetBufferSize()
         }
         Self {
-            base__: ::windows::core::IUnknownVtbl::new::<Identity, OFFSET>(),
+            base__: ::windows::core::IUnknownVtbl::new::<Identity, (), OFFSET>(),
             GetBufferPointer: GetBufferPointer::<Identity, Impl, OFFSET>,
             GetBufferSize: GetBufferSize::<Identity, Impl, OFFSET>,
         }
@@ -31,8 +31,8 @@ pub trait ID3DDestructionNotifier_Impl: Sized {
 }
 impl ::windows::core::RuntimeName for ID3DDestructionNotifier {}
 impl ID3DDestructionNotifier_Vtbl {
-    pub const fn new<Identity: ::windows::core::IUnknownImpl, Impl: ID3DDestructionNotifier_Impl, const OFFSET: isize>() -> ID3DDestructionNotifier_Vtbl {
-        unsafe extern "system" fn RegisterDestructionCallback<Identity: ::windows::core::IUnknownImpl, Impl: ID3DDestructionNotifier_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, callbackfn: ::windows::core::RawPtr, pdata: *const ::core::ffi::c_void, pcallbackid: *mut u32) -> ::windows::core::HRESULT {
+    pub const fn new<Identity: ::windows::core::IUnknown_Impl, Impl: ID3DDestructionNotifier_Impl, const OFFSET: isize>() -> ID3DDestructionNotifier_Vtbl {
+        unsafe extern "system" fn RegisterDestructionCallback<Identity: ::windows::core::IUnknown_Impl, Impl: ID3DDestructionNotifier_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, callbackfn: ::windows::core::RawPtr, pdata: *const ::core::ffi::c_void, pcallbackid: *mut u32) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             match (*this).RegisterDestructionCallback(::core::mem::transmute(&callbackfn), ::core::mem::transmute_copy(&pdata)) {
@@ -43,13 +43,13 @@ impl ID3DDestructionNotifier_Vtbl {
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
-        unsafe extern "system" fn UnregisterDestructionCallback<Identity: ::windows::core::IUnknownImpl, Impl: ID3DDestructionNotifier_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, callbackid: u32) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn UnregisterDestructionCallback<Identity: ::windows::core::IUnknown_Impl, Impl: ID3DDestructionNotifier_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, callbackid: u32) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).UnregisterDestructionCallback(::core::mem::transmute_copy(&callbackid)).into()
         }
         Self {
-            base__: ::windows::core::IUnknownVtbl::new::<Identity, OFFSET>(),
+            base__: ::windows::core::IUnknownVtbl::new::<Identity, (), OFFSET>(),
             RegisterDestructionCallback: RegisterDestructionCallback::<Identity, Impl, OFFSET>,
             UnregisterDestructionCallback: UnregisterDestructionCallback::<Identity, Impl, OFFSET>,
         }
@@ -64,13 +64,13 @@ pub trait ID3DInclude_Impl: Sized {
 }
 impl ::windows::core::RuntimeName for ID3DInclude {}
 impl ID3DInclude_Vtbl {
-    pub const fn new<Identity: ::windows::core::IUnknownImpl, Impl: ID3DInclude_Impl, const OFFSET: isize>() -> ID3DInclude_Vtbl {
-        unsafe extern "system" fn Open<Identity: ::windows::core::IUnknownImpl, Impl: ID3DInclude_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, includetype: D3D_INCLUDE_TYPE, pfilename: ::windows::core::PCSTR, pparentdata: *const ::core::ffi::c_void, ppdata: *mut *mut ::core::ffi::c_void, pbytes: *mut u32) -> ::windows::core::HRESULT {
+    pub const fn new<Identity: ::windows::core::IUnknown_Impl, Impl: ID3DInclude_Impl, const OFFSET: isize>() -> ID3DInclude_Vtbl {
+        unsafe extern "system" fn Open<Identity: ::windows::core::IUnknown_Impl, Impl: ID3DInclude_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, includetype: D3D_INCLUDE_TYPE, pfilename: ::windows::core::PCSTR, pparentdata: *const ::core::ffi::c_void, ppdata: *mut *mut ::core::ffi::c_void, pbytes: *mut u32) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).Open(::core::mem::transmute_copy(&includetype), ::core::mem::transmute(&pfilename), ::core::mem::transmute_copy(&pparentdata), ::core::mem::transmute_copy(&ppdata), ::core::mem::transmute_copy(&pbytes)).into()
         }
-        unsafe extern "system" fn Close<Identity: ::windows::core::IUnknownImpl, Impl: ID3DInclude_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, pdata: *const ::core::ffi::c_void) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn Close<Identity: ::windows::core::IUnknown_Impl, Impl: ID3DInclude_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, pdata: *const ::core::ffi::c_void) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).Close(::core::mem::transmute_copy(&pdata)).into()

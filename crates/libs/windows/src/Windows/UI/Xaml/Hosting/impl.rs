@@ -5,8 +5,8 @@ impl ::windows::core::RuntimeName for IXamlUIPresenterHost {
     const NAME: &'static str = "Windows.UI.Xaml.Hosting.IXamlUIPresenterHost";
 }
 impl IXamlUIPresenterHost_Vtbl {
-    pub const fn new<Identity: ::windows::core::IUnknownImpl, Impl: IXamlUIPresenterHost_Impl, const OFFSET: isize>() -> IXamlUIPresenterHost_Vtbl {
-        unsafe extern "system" fn ResolveFileResource<Identity: ::windows::core::IUnknownImpl, Impl: IXamlUIPresenterHost_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, path: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT {
+    pub const fn new<Identity: ::windows::core::IUnknown_Impl, Impl: IXamlUIPresenterHost_Impl, const OFFSET: isize>() -> IXamlUIPresenterHost_Vtbl {
+        unsafe extern "system" fn ResolveFileResource<Identity: ::windows::core::IUnknown_Impl, Impl: IXamlUIPresenterHost_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, path: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             match (*this).ResolveFileResource(::core::mem::transmute(&path)) {
@@ -34,8 +34,8 @@ impl ::windows::core::RuntimeName for IXamlUIPresenterHost2 {
     const NAME: &'static str = "Windows.UI.Xaml.Hosting.IXamlUIPresenterHost2";
 }
 impl IXamlUIPresenterHost2_Vtbl {
-    pub const fn new<Identity: ::windows::core::IUnknownImpl, Impl: IXamlUIPresenterHost2_Impl, const OFFSET: isize>() -> IXamlUIPresenterHost2_Vtbl {
-        unsafe extern "system" fn GetGenericXamlFilePath<Identity: ::windows::core::IUnknownImpl, Impl: IXamlUIPresenterHost2_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT {
+    pub const fn new<Identity: ::windows::core::IUnknown_Impl, Impl: IXamlUIPresenterHost2_Impl, const OFFSET: isize>() -> IXamlUIPresenterHost2_Vtbl {
+        unsafe extern "system" fn GetGenericXamlFilePath<Identity: ::windows::core::IUnknown_Impl, Impl: IXamlUIPresenterHost2_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             match (*this).GetGenericXamlFilePath() {
@@ -63,8 +63,8 @@ impl ::windows::core::RuntimeName for IXamlUIPresenterHost3 {
     const NAME: &'static str = "Windows.UI.Xaml.Hosting.IXamlUIPresenterHost3";
 }
 impl IXamlUIPresenterHost3_Vtbl {
-    pub const fn new<Identity: ::windows::core::IUnknownImpl, Impl: IXamlUIPresenterHost3_Impl, const OFFSET: isize>() -> IXamlUIPresenterHost3_Vtbl {
-        unsafe extern "system" fn ResolveDictionaryResource<Identity: ::windows::core::IUnknownImpl, Impl: IXamlUIPresenterHost3_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, dictionary: ::windows::core::RawPtr, dictionarykey: *mut ::core::ffi::c_void, suggestedvalue: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT {
+    pub const fn new<Identity: ::windows::core::IUnknown_Impl, Impl: IXamlUIPresenterHost3_Impl, const OFFSET: isize>() -> IXamlUIPresenterHost3_Vtbl {
+        unsafe extern "system" fn ResolveDictionaryResource<Identity: ::windows::core::IUnknown_Impl, Impl: IXamlUIPresenterHost3_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, dictionary: ::windows::core::RawPtr, dictionarykey: *mut ::core::ffi::c_void, suggestedvalue: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             match (*this).ResolveDictionaryResource(::core::mem::transmute(&dictionary), ::core::mem::transmute(&dictionarykey), ::core::mem::transmute(&suggestedvalue)) {

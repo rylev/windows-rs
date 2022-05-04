@@ -34,48 +34,48 @@ impl ::windows::core::RuntimeName for IApplicationOverrides {
 }
 #[cfg(feature = "ApplicationModel_Activation")]
 impl IApplicationOverrides_Vtbl {
-    pub const fn new<Identity: ::windows::core::IUnknownImpl, Impl: IApplicationOverrides_Impl, const OFFSET: isize>() -> IApplicationOverrides_Vtbl {
-        unsafe extern "system" fn OnActivated<Identity: ::windows::core::IUnknownImpl, Impl: IApplicationOverrides_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, args: ::windows::core::RawPtr) -> ::windows::core::HRESULT {
+    pub const fn new<Identity: ::windows::core::IUnknown_Impl, Impl: IApplicationOverrides_Impl, const OFFSET: isize>() -> IApplicationOverrides_Vtbl {
+        unsafe extern "system" fn OnActivated<Identity: ::windows::core::IUnknown_Impl, Impl: IApplicationOverrides_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, args: ::windows::core::RawPtr) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).OnActivated(::core::mem::transmute(&args)).into()
         }
-        unsafe extern "system" fn OnLaunched<Identity: ::windows::core::IUnknownImpl, Impl: IApplicationOverrides_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, args: ::windows::core::RawPtr) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn OnLaunched<Identity: ::windows::core::IUnknown_Impl, Impl: IApplicationOverrides_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, args: ::windows::core::RawPtr) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).OnLaunched(::core::mem::transmute(&args)).into()
         }
-        unsafe extern "system" fn OnFileActivated<Identity: ::windows::core::IUnknownImpl, Impl: IApplicationOverrides_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, args: ::windows::core::RawPtr) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn OnFileActivated<Identity: ::windows::core::IUnknown_Impl, Impl: IApplicationOverrides_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, args: ::windows::core::RawPtr) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).OnFileActivated(::core::mem::transmute(&args)).into()
         }
-        unsafe extern "system" fn OnSearchActivated<Identity: ::windows::core::IUnknownImpl, Impl: IApplicationOverrides_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, args: ::windows::core::RawPtr) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn OnSearchActivated<Identity: ::windows::core::IUnknown_Impl, Impl: IApplicationOverrides_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, args: ::windows::core::RawPtr) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).OnSearchActivated(::core::mem::transmute(&args)).into()
         }
-        unsafe extern "system" fn OnShareTargetActivated<Identity: ::windows::core::IUnknownImpl, Impl: IApplicationOverrides_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, args: ::windows::core::RawPtr) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn OnShareTargetActivated<Identity: ::windows::core::IUnknown_Impl, Impl: IApplicationOverrides_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, args: ::windows::core::RawPtr) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).OnShareTargetActivated(::core::mem::transmute(&args)).into()
         }
-        unsafe extern "system" fn OnFileOpenPickerActivated<Identity: ::windows::core::IUnknownImpl, Impl: IApplicationOverrides_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, args: ::windows::core::RawPtr) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn OnFileOpenPickerActivated<Identity: ::windows::core::IUnknown_Impl, Impl: IApplicationOverrides_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, args: ::windows::core::RawPtr) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).OnFileOpenPickerActivated(::core::mem::transmute(&args)).into()
         }
-        unsafe extern "system" fn OnFileSavePickerActivated<Identity: ::windows::core::IUnknownImpl, Impl: IApplicationOverrides_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, args: ::windows::core::RawPtr) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn OnFileSavePickerActivated<Identity: ::windows::core::IUnknown_Impl, Impl: IApplicationOverrides_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, args: ::windows::core::RawPtr) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).OnFileSavePickerActivated(::core::mem::transmute(&args)).into()
         }
-        unsafe extern "system" fn OnCachedFileUpdaterActivated<Identity: ::windows::core::IUnknownImpl, Impl: IApplicationOverrides_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, args: ::windows::core::RawPtr) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn OnCachedFileUpdaterActivated<Identity: ::windows::core::IUnknown_Impl, Impl: IApplicationOverrides_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, args: ::windows::core::RawPtr) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).OnCachedFileUpdaterActivated(::core::mem::transmute(&args)).into()
         }
-        unsafe extern "system" fn OnWindowCreated<Identity: ::windows::core::IUnknownImpl, Impl: IApplicationOverrides_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, args: ::windows::core::RawPtr) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn OnWindowCreated<Identity: ::windows::core::IUnknown_Impl, Impl: IApplicationOverrides_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, args: ::windows::core::RawPtr) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).OnWindowCreated(::core::mem::transmute(&args)).into()
@@ -109,8 +109,8 @@ impl ::windows::core::RuntimeName for IApplicationOverrides2 {
 }
 #[cfg(feature = "ApplicationModel_Activation")]
 impl IApplicationOverrides2_Vtbl {
-    pub const fn new<Identity: ::windows::core::IUnknownImpl, Impl: IApplicationOverrides2_Impl, const OFFSET: isize>() -> IApplicationOverrides2_Vtbl {
-        unsafe extern "system" fn OnBackgroundActivated<Identity: ::windows::core::IUnknownImpl, Impl: IApplicationOverrides2_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, args: ::windows::core::RawPtr) -> ::windows::core::HRESULT {
+    pub const fn new<Identity: ::windows::core::IUnknown_Impl, Impl: IApplicationOverrides2_Impl, const OFFSET: isize>() -> IApplicationOverrides2_Vtbl {
+        unsafe extern "system" fn OnBackgroundActivated<Identity: ::windows::core::IUnknown_Impl, Impl: IApplicationOverrides2_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, args: ::windows::core::RawPtr) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).OnBackgroundActivated(::core::mem::transmute(&args)).into()
@@ -136,13 +136,13 @@ impl ::windows::core::RuntimeName for IDataTemplateExtension {
 }
 #[cfg(feature = "UI_Xaml_Controls")]
 impl IDataTemplateExtension_Vtbl {
-    pub const fn new<Identity: ::windows::core::IUnknownImpl, Impl: IDataTemplateExtension_Impl, const OFFSET: isize>() -> IDataTemplateExtension_Vtbl {
-        unsafe extern "system" fn ResetTemplate<Identity: ::windows::core::IUnknownImpl, Impl: IDataTemplateExtension_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT {
+    pub const fn new<Identity: ::windows::core::IUnknown_Impl, Impl: IDataTemplateExtension_Impl, const OFFSET: isize>() -> IDataTemplateExtension_Vtbl {
+        unsafe extern "system" fn ResetTemplate<Identity: ::windows::core::IUnknown_Impl, Impl: IDataTemplateExtension_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).ResetTemplate().into()
         }
-        unsafe extern "system" fn ProcessBinding<Identity: ::windows::core::IUnknownImpl, Impl: IDataTemplateExtension_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, phase: u32, result__: *mut bool) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn ProcessBinding<Identity: ::windows::core::IUnknown_Impl, Impl: IDataTemplateExtension_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, phase: u32, result__: *mut bool) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             match (*this).ProcessBinding(phase) {
@@ -154,7 +154,7 @@ impl IDataTemplateExtension_Vtbl {
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
-        unsafe extern "system" fn ProcessBindings<Identity: ::windows::core::IUnknownImpl, Impl: IDataTemplateExtension_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, arg: ::windows::core::RawPtr, result__: *mut i32) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn ProcessBindings<Identity: ::windows::core::IUnknown_Impl, Impl: IDataTemplateExtension_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, arg: ::windows::core::RawPtr, result__: *mut i32) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             match (*this).ProcessBindings(::core::mem::transmute(&arg)) {
@@ -185,8 +185,8 @@ impl ::windows::core::RuntimeName for IElementFactory {
     const NAME: &'static str = "Windows.UI.Xaml.IElementFactory";
 }
 impl IElementFactory_Vtbl {
-    pub const fn new<Identity: ::windows::core::IUnknownImpl, Impl: IElementFactory_Impl, const OFFSET: isize>() -> IElementFactory_Vtbl {
-        unsafe extern "system" fn GetElement<Identity: ::windows::core::IUnknownImpl, Impl: IElementFactory_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, args: ::windows::core::RawPtr, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT {
+    pub const fn new<Identity: ::windows::core::IUnknown_Impl, Impl: IElementFactory_Impl, const OFFSET: isize>() -> IElementFactory_Vtbl {
+        unsafe extern "system" fn GetElement<Identity: ::windows::core::IUnknown_Impl, Impl: IElementFactory_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, args: ::windows::core::RawPtr, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             match (*this).GetElement(::core::mem::transmute(&args)) {
@@ -198,7 +198,7 @@ impl IElementFactory_Vtbl {
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
-        unsafe extern "system" fn RecycleElement<Identity: ::windows::core::IUnknownImpl, Impl: IElementFactory_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, args: ::windows::core::RawPtr) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn RecycleElement<Identity: ::windows::core::IUnknown_Impl, Impl: IElementFactory_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, args: ::windows::core::RawPtr) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).RecycleElement(::core::mem::transmute(&args)).into()
@@ -227,8 +227,8 @@ impl ::windows::core::RuntimeName for IFrameworkElementOverrides {
 }
 #[cfg(feature = "Foundation")]
 impl IFrameworkElementOverrides_Vtbl {
-    pub const fn new<Identity: ::windows::core::IUnknownImpl, Impl: IFrameworkElementOverrides_Impl, const OFFSET: isize>() -> IFrameworkElementOverrides_Vtbl {
-        unsafe extern "system" fn MeasureOverride<Identity: ::windows::core::IUnknownImpl, Impl: IFrameworkElementOverrides_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, availablesize: super::super::Foundation::Size, result__: *mut super::super::Foundation::Size) -> ::windows::core::HRESULT {
+    pub const fn new<Identity: ::windows::core::IUnknown_Impl, Impl: IFrameworkElementOverrides_Impl, const OFFSET: isize>() -> IFrameworkElementOverrides_Vtbl {
+        unsafe extern "system" fn MeasureOverride<Identity: ::windows::core::IUnknown_Impl, Impl: IFrameworkElementOverrides_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, availablesize: super::super::Foundation::Size, result__: *mut super::super::Foundation::Size) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             match (*this).MeasureOverride(::core::mem::transmute(&availablesize)) {
@@ -240,7 +240,7 @@ impl IFrameworkElementOverrides_Vtbl {
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
-        unsafe extern "system" fn ArrangeOverride<Identity: ::windows::core::IUnknownImpl, Impl: IFrameworkElementOverrides_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, finalsize: super::super::Foundation::Size, result__: *mut super::super::Foundation::Size) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn ArrangeOverride<Identity: ::windows::core::IUnknown_Impl, Impl: IFrameworkElementOverrides_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, finalsize: super::super::Foundation::Size, result__: *mut super::super::Foundation::Size) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             match (*this).ArrangeOverride(::core::mem::transmute(&finalsize)) {
@@ -252,7 +252,7 @@ impl IFrameworkElementOverrides_Vtbl {
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
-        unsafe extern "system" fn OnApplyTemplate<Identity: ::windows::core::IUnknownImpl, Impl: IFrameworkElementOverrides_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn OnApplyTemplate<Identity: ::windows::core::IUnknown_Impl, Impl: IFrameworkElementOverrides_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).OnApplyTemplate().into()
@@ -275,8 +275,8 @@ impl ::windows::core::RuntimeName for IFrameworkElementOverrides2 {
     const NAME: &'static str = "Windows.UI.Xaml.IFrameworkElementOverrides2";
 }
 impl IFrameworkElementOverrides2_Vtbl {
-    pub const fn new<Identity: ::windows::core::IUnknownImpl, Impl: IFrameworkElementOverrides2_Impl, const OFFSET: isize>() -> IFrameworkElementOverrides2_Vtbl {
-        unsafe extern "system" fn GoToElementStateCore<Identity: ::windows::core::IUnknownImpl, Impl: IFrameworkElementOverrides2_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, statename: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, usetransitions: bool, result__: *mut bool) -> ::windows::core::HRESULT {
+    pub const fn new<Identity: ::windows::core::IUnknown_Impl, Impl: IFrameworkElementOverrides2_Impl, const OFFSET: isize>() -> IFrameworkElementOverrides2_Vtbl {
+        unsafe extern "system" fn GoToElementStateCore<Identity: ::windows::core::IUnknown_Impl, Impl: IFrameworkElementOverrides2_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, statename: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, usetransitions: bool, result__: *mut bool) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             match (*this).GoToElementStateCore(::core::mem::transmute(&statename), usetransitions) {
@@ -311,8 +311,8 @@ impl ::windows::core::RuntimeName for IUIElementOverrides {
 }
 #[cfg(all(feature = "Foundation_Collections", feature = "UI_Xaml_Automation_Peers"))]
 impl IUIElementOverrides_Vtbl {
-    pub const fn new<Identity: ::windows::core::IUnknownImpl, Impl: IUIElementOverrides_Impl, const OFFSET: isize>() -> IUIElementOverrides_Vtbl {
-        unsafe extern "system" fn OnCreateAutomationPeer<Identity: ::windows::core::IUnknownImpl, Impl: IUIElementOverrides_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT {
+    pub const fn new<Identity: ::windows::core::IUnknown_Impl, Impl: IUIElementOverrides_Impl, const OFFSET: isize>() -> IUIElementOverrides_Vtbl {
+        unsafe extern "system" fn OnCreateAutomationPeer<Identity: ::windows::core::IUnknown_Impl, Impl: IUIElementOverrides_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             match (*this).OnCreateAutomationPeer() {
@@ -324,12 +324,12 @@ impl IUIElementOverrides_Vtbl {
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
-        unsafe extern "system" fn OnDisconnectVisualChildren<Identity: ::windows::core::IUnknownImpl, Impl: IUIElementOverrides_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn OnDisconnectVisualChildren<Identity: ::windows::core::IUnknown_Impl, Impl: IUIElementOverrides_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).OnDisconnectVisualChildren().into()
         }
-        unsafe extern "system" fn FindSubElementsForTouchTargeting<Identity: ::windows::core::IUnknownImpl, Impl: IUIElementOverrides_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, point: super::super::Foundation::Point, boundingrect: super::super::Foundation::Rect, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn FindSubElementsForTouchTargeting<Identity: ::windows::core::IUnknown_Impl, Impl: IUIElementOverrides_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, point: super::super::Foundation::Point, boundingrect: super::super::Foundation::Rect, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             match (*this).FindSubElementsForTouchTargeting(::core::mem::transmute(&point), ::core::mem::transmute(&boundingrect)) {
@@ -365,8 +365,8 @@ impl ::windows::core::RuntimeName for IUIElementOverrides7 {
 }
 #[cfg(all(feature = "Foundation_Collections", feature = "UI_Xaml_Input"))]
 impl IUIElementOverrides7_Vtbl {
-    pub const fn new<Identity: ::windows::core::IUnknownImpl, Impl: IUIElementOverrides7_Impl, const OFFSET: isize>() -> IUIElementOverrides7_Vtbl {
-        unsafe extern "system" fn GetChildrenInTabFocusOrder<Identity: ::windows::core::IUnknownImpl, Impl: IUIElementOverrides7_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT {
+    pub const fn new<Identity: ::windows::core::IUnknown_Impl, Impl: IUIElementOverrides7_Impl, const OFFSET: isize>() -> IUIElementOverrides7_Vtbl {
+        unsafe extern "system" fn GetChildrenInTabFocusOrder<Identity: ::windows::core::IUnknown_Impl, Impl: IUIElementOverrides7_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             match (*this).GetChildrenInTabFocusOrder() {
@@ -378,7 +378,7 @@ impl IUIElementOverrides7_Vtbl {
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
-        unsafe extern "system" fn OnProcessKeyboardAccelerators<Identity: ::windows::core::IUnknownImpl, Impl: IUIElementOverrides7_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, args: ::windows::core::RawPtr) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn OnProcessKeyboardAccelerators<Identity: ::windows::core::IUnknown_Impl, Impl: IUIElementOverrides7_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, args: ::windows::core::RawPtr) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).OnProcessKeyboardAccelerators(::core::mem::transmute(&args)).into()
@@ -408,13 +408,13 @@ impl ::windows::core::RuntimeName for IUIElementOverrides8 {
 }
 #[cfg(feature = "UI_Xaml_Input")]
 impl IUIElementOverrides8_Vtbl {
-    pub const fn new<Identity: ::windows::core::IUnknownImpl, Impl: IUIElementOverrides8_Impl, const OFFSET: isize>() -> IUIElementOverrides8_Vtbl {
-        unsafe extern "system" fn OnKeyboardAcceleratorInvoked<Identity: ::windows::core::IUnknownImpl, Impl: IUIElementOverrides8_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, args: ::windows::core::RawPtr) -> ::windows::core::HRESULT {
+    pub const fn new<Identity: ::windows::core::IUnknown_Impl, Impl: IUIElementOverrides8_Impl, const OFFSET: isize>() -> IUIElementOverrides8_Vtbl {
+        unsafe extern "system" fn OnKeyboardAcceleratorInvoked<Identity: ::windows::core::IUnknown_Impl, Impl: IUIElementOverrides8_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, args: ::windows::core::RawPtr) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).OnKeyboardAcceleratorInvoked(::core::mem::transmute(&args)).into()
         }
-        unsafe extern "system" fn OnBringIntoViewRequested<Identity: ::windows::core::IUnknownImpl, Impl: IUIElementOverrides8_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, e: ::windows::core::RawPtr) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn OnBringIntoViewRequested<Identity: ::windows::core::IUnknown_Impl, Impl: IUIElementOverrides8_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, e: ::windows::core::RawPtr) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).OnBringIntoViewRequested(::core::mem::transmute(&e)).into()
@@ -441,8 +441,8 @@ impl ::windows::core::RuntimeName for IUIElementOverrides9 {
 }
 #[cfg(feature = "UI_Composition")]
 impl IUIElementOverrides9_Vtbl {
-    pub const fn new<Identity: ::windows::core::IUnknownImpl, Impl: IUIElementOverrides9_Impl, const OFFSET: isize>() -> IUIElementOverrides9_Vtbl {
-        unsafe extern "system" fn PopulatePropertyInfoOverride<Identity: ::windows::core::IUnknownImpl, Impl: IUIElementOverrides9_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, propertyname: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, animationpropertyinfo: ::windows::core::RawPtr) -> ::windows::core::HRESULT {
+    pub const fn new<Identity: ::windows::core::IUnknown_Impl, Impl: IUIElementOverrides9_Impl, const OFFSET: isize>() -> IUIElementOverrides9_Vtbl {
+        unsafe extern "system" fn PopulatePropertyInfoOverride<Identity: ::windows::core::IUnknown_Impl, Impl: IUIElementOverrides9_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, propertyname: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, animationpropertyinfo: ::windows::core::RawPtr) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).PopulatePropertyInfoOverride(::core::mem::transmute(&propertyname), ::core::mem::transmute(&animationpropertyinfo)).into()
@@ -466,8 +466,8 @@ impl ::windows::core::RuntimeName for IVisualStateManagerOverrides {
 }
 #[cfg(feature = "UI_Xaml_Controls")]
 impl IVisualStateManagerOverrides_Vtbl {
-    pub const fn new<Identity: ::windows::core::IUnknownImpl, Impl: IVisualStateManagerOverrides_Impl, const OFFSET: isize>() -> IVisualStateManagerOverrides_Vtbl {
-        unsafe extern "system" fn GoToStateCore<Identity: ::windows::core::IUnknownImpl, Impl: IVisualStateManagerOverrides_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, control: ::windows::core::RawPtr, templateroot: ::windows::core::RawPtr, statename: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, group: ::windows::core::RawPtr, state: ::windows::core::RawPtr, usetransitions: bool, result__: *mut bool) -> ::windows::core::HRESULT {
+    pub const fn new<Identity: ::windows::core::IUnknown_Impl, Impl: IVisualStateManagerOverrides_Impl, const OFFSET: isize>() -> IVisualStateManagerOverrides_Vtbl {
+        unsafe extern "system" fn GoToStateCore<Identity: ::windows::core::IUnknown_Impl, Impl: IVisualStateManagerOverrides_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, control: ::windows::core::RawPtr, templateroot: ::windows::core::RawPtr, statename: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, group: ::windows::core::RawPtr, state: ::windows::core::RawPtr, usetransitions: bool, result__: *mut bool) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             match (*this).GoToStateCore(::core::mem::transmute(&control), ::core::mem::transmute(&templateroot), ::core::mem::transmute(&statename), ::core::mem::transmute(&group), ::core::mem::transmute(&state), usetransitions) {

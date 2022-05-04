@@ -58,7 +58,7 @@ impl core::fmt::Debug for IUnknown {
 }
 
 #[doc(hidden)]
-pub trait IUnknownImpl {
+pub trait IUnknown_Impl {
     fn get_impl(&mut self) -> RawPtr;
 
     fn QueryInterface(&mut self, iid: &GUID, interface: *mut RawPtr) -> HRESULT;
@@ -68,16 +68,16 @@ pub trait IUnknownImpl {
 
 #[cfg(any(feature = "interface", feature = "implement"))]
 impl IUnknownVtbl {
-    pub const fn new<T: IUnknownImpl, const OFFSET: isize>() -> Self {
-        unsafe extern "system" fn QueryInterface<T: IUnknownImpl, const OFFSET: isize>(this: RawPtr, iid: &GUID, interface: *mut RawPtr) -> HRESULT {
+    pub const fn new<T: IUnknown_Impl, O, const OFFSET: isize>() -> Self {
+        unsafe extern "system" fn QueryInterface<T: IUnknown_Impl, const OFFSET: isize>(this: RawPtr, iid: &GUID, interface: *mut RawPtr) -> HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut T;
             (*this).QueryInterface(iid, interface)
         }
-        unsafe extern "system" fn AddRef<T: IUnknownImpl, const OFFSET: isize>(this: RawPtr) -> u32 {
+        unsafe extern "system" fn AddRef<T: IUnknown_Impl, const OFFSET: isize>(this: RawPtr) -> u32 {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut T;
             (*this).AddRef()
         }
-        unsafe extern "system" fn Release<T: IUnknownImpl, const OFFSET: isize>(this: RawPtr) -> u32 {
+        unsafe extern "system" fn Release<T: IUnknown_Impl, const OFFSET: isize>(this: RawPtr) -> u32 {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut T;
             (*this).Release()
         }

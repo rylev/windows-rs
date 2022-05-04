@@ -129,7 +129,7 @@ impl core::convert::TryFrom<&IInspectable> for HSTRING {
 
 #[cfg(feature = "implement")]
 impl IInspectableVtbl {
-    pub const fn new<Identity: IUnknownImpl, Name: RuntimeName, const OFFSET: isize>() -> Self {
+    pub const fn new<Identity: IUnknown_Impl, Name: RuntimeName, const OFFSET: isize>() -> Self {
         unsafe extern "system" fn GetIids(_: RawPtr, count: *mut u32, values: *mut *mut GUID) -> ::windows::core::HRESULT {
             // Note: even if we end up implementing this in future, it still doesn't need a this pointer
             // since the data to be returned is type- not instance-specific so can be shared for all
@@ -150,6 +150,6 @@ impl IInspectableVtbl {
             *value = 0;
             HRESULT(0)
         }
-        Self { base: IUnknownVtbl::new::<Identity, OFFSET>(), GetIids, GetRuntimeClassName: GetRuntimeClassName::<Name>, GetTrustLevel }
+        Self { base: IUnknownVtbl::new::<Identity, (), OFFSET>(), GetIids, GetRuntimeClassName: GetRuntimeClassName::<Name>, GetTrustLevel }
     }
 }

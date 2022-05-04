@@ -9,8 +9,8 @@ impl ::windows::core::RuntimeName for ILauncherViewOptions {
 }
 #[cfg(feature = "UI_ViewManagement")]
 impl ILauncherViewOptions_Vtbl {
-    pub const fn new<Identity: ::windows::core::IUnknownImpl, Impl: ILauncherViewOptions_Impl, const OFFSET: isize>() -> ILauncherViewOptions_Vtbl {
-        unsafe extern "system" fn DesiredRemainingView<Identity: ::windows::core::IUnknownImpl, Impl: ILauncherViewOptions_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, result__: *mut super::UI::ViewManagement::ViewSizePreference) -> ::windows::core::HRESULT {
+    pub const fn new<Identity: ::windows::core::IUnknown_Impl, Impl: ILauncherViewOptions_Impl, const OFFSET: isize>() -> ILauncherViewOptions_Vtbl {
+        unsafe extern "system" fn DesiredRemainingView<Identity: ::windows::core::IUnknown_Impl, Impl: ILauncherViewOptions_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, result__: *mut super::UI::ViewManagement::ViewSizePreference) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             match (*this).DesiredRemainingView() {
@@ -22,7 +22,7 @@ impl ILauncherViewOptions_Vtbl {
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
-        unsafe extern "system" fn SetDesiredRemainingView<Identity: ::windows::core::IUnknownImpl, Impl: ILauncherViewOptions_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, value: super::UI::ViewManagement::ViewSizePreference) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn SetDesiredRemainingView<Identity: ::windows::core::IUnknown_Impl, Impl: ILauncherViewOptions_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, value: super::UI::ViewManagement::ViewSizePreference) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).SetDesiredRemainingView(value).into()

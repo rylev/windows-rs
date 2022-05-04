@@ -8,18 +8,18 @@ pub trait ICompositionFramePresentStatistics_Impl: Sized + IPresentStatistics_Im
 impl ::windows::core::RuntimeName for ICompositionFramePresentStatistics {}
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
 impl ICompositionFramePresentStatistics_Vtbl {
-    pub const fn new<Identity: ::windows::core::IUnknownImpl, Impl: ICompositionFramePresentStatistics_Impl, const OFFSET: isize>() -> ICompositionFramePresentStatistics_Vtbl {
-        unsafe extern "system" fn GetContentTag<Identity: ::windows::core::IUnknownImpl, Impl: ICompositionFramePresentStatistics_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> usize {
+    pub const fn new<Identity: ::windows::core::IUnknown_Impl, Impl: ICompositionFramePresentStatistics_Impl, const OFFSET: isize>() -> ICompositionFramePresentStatistics_Vtbl {
+        unsafe extern "system" fn GetContentTag<Identity: ::windows::core::IUnknown_Impl, Impl: ICompositionFramePresentStatistics_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> usize {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).GetContentTag()
         }
-        unsafe extern "system" fn GetCompositionFrameId<Identity: ::windows::core::IUnknownImpl, Impl: ICompositionFramePresentStatistics_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> u64 {
+        unsafe extern "system" fn GetCompositionFrameId<Identity: ::windows::core::IUnknown_Impl, Impl: ICompositionFramePresentStatistics_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> u64 {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).GetCompositionFrameId()
         }
-        unsafe extern "system" fn GetDisplayInstanceArray<Identity: ::windows::core::IUnknownImpl, Impl: ICompositionFramePresentStatistics_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, displayinstancearraycount: *mut u32, displayinstancearray: *mut *mut CompositionFrameDisplayInstance) {
+        unsafe extern "system" fn GetDisplayInstanceArray<Identity: ::windows::core::IUnknown_Impl, Impl: ICompositionFramePresentStatistics_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, displayinstancearraycount: *mut u32, displayinstancearray: *mut *mut CompositionFrameDisplayInstance) {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).GetDisplayInstanceArray(::core::mem::transmute_copy(&displayinstancearraycount), ::core::mem::transmute_copy(&displayinstancearray))
@@ -47,28 +47,28 @@ pub trait IIndependentFlipFramePresentStatistics_Impl: Sized + IPresentStatistic
 impl ::windows::core::RuntimeName for IIndependentFlipFramePresentStatistics {}
 #[cfg(feature = "Win32_Foundation")]
 impl IIndependentFlipFramePresentStatistics_Vtbl {
-    pub const fn new<Identity: ::windows::core::IUnknownImpl, Impl: IIndependentFlipFramePresentStatistics_Impl, const OFFSET: isize>() -> IIndependentFlipFramePresentStatistics_Vtbl {
-        unsafe extern "system" fn GetOutputAdapterLUID<Identity: ::windows::core::IUnknownImpl, Impl: IIndependentFlipFramePresentStatistics_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::LUID) {
+    pub const fn new<Identity: ::windows::core::IUnknown_Impl, Impl: IIndependentFlipFramePresentStatistics_Impl, const OFFSET: isize>() -> IIndependentFlipFramePresentStatistics_Vtbl {
+        unsafe extern "system" fn GetOutputAdapterLUID<Identity: ::windows::core::IUnknown_Impl, Impl: IIndependentFlipFramePresentStatistics_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::LUID) {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             *result__ = (*this).GetOutputAdapterLUID()
         }
-        unsafe extern "system" fn GetOutputVidPnSourceId<Identity: ::windows::core::IUnknownImpl, Impl: IIndependentFlipFramePresentStatistics_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> u32 {
+        unsafe extern "system" fn GetOutputVidPnSourceId<Identity: ::windows::core::IUnknown_Impl, Impl: IIndependentFlipFramePresentStatistics_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> u32 {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).GetOutputVidPnSourceId()
         }
-        unsafe extern "system" fn GetContentTag<Identity: ::windows::core::IUnknownImpl, Impl: IIndependentFlipFramePresentStatistics_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> usize {
+        unsafe extern "system" fn GetContentTag<Identity: ::windows::core::IUnknown_Impl, Impl: IIndependentFlipFramePresentStatistics_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> usize {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).GetContentTag()
         }
-        unsafe extern "system" fn GetDisplayedTime<Identity: ::windows::core::IUnknownImpl, Impl: IIndependentFlipFramePresentStatistics_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, result__: *mut SystemInterruptTime) {
+        unsafe extern "system" fn GetDisplayedTime<Identity: ::windows::core::IUnknown_Impl, Impl: IIndependentFlipFramePresentStatistics_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, result__: *mut SystemInterruptTime) {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             *result__ = (*this).GetDisplayedTime()
         }
-        unsafe extern "system" fn GetPresentDuration<Identity: ::windows::core::IUnknownImpl, Impl: IIndependentFlipFramePresentStatistics_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, result__: *mut SystemInterruptTime) {
+        unsafe extern "system" fn GetPresentDuration<Identity: ::windows::core::IUnknown_Impl, Impl: IIndependentFlipFramePresentStatistics_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, result__: *mut SystemInterruptTime) {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             *result__ = (*this).GetPresentDuration()
@@ -92,19 +92,19 @@ pub trait IPresentStatistics_Impl: Sized {
 }
 impl ::windows::core::RuntimeName for IPresentStatistics {}
 impl IPresentStatistics_Vtbl {
-    pub const fn new<Identity: ::windows::core::IUnknownImpl, Impl: IPresentStatistics_Impl, const OFFSET: isize>() -> IPresentStatistics_Vtbl {
-        unsafe extern "system" fn GetPresentId<Identity: ::windows::core::IUnknownImpl, Impl: IPresentStatistics_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> u64 {
+    pub const fn new<Identity: ::windows::core::IUnknown_Impl, Impl: IPresentStatistics_Impl, const OFFSET: isize>() -> IPresentStatistics_Vtbl {
+        unsafe extern "system" fn GetPresentId<Identity: ::windows::core::IUnknown_Impl, Impl: IPresentStatistics_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> u64 {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).GetPresentId()
         }
-        unsafe extern "system" fn GetKind<Identity: ::windows::core::IUnknownImpl, Impl: IPresentStatistics_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> PresentStatisticsKind {
+        unsafe extern "system" fn GetKind<Identity: ::windows::core::IUnknown_Impl, Impl: IPresentStatistics_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> PresentStatisticsKind {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).GetKind()
         }
         Self {
-            base__: ::windows::core::IUnknownVtbl::new::<Identity, OFFSET>(),
+            base__: ::windows::core::IUnknownVtbl::new::<Identity, (), OFFSET>(),
             GetPresentId: GetPresentId::<Identity, Impl, OFFSET>,
             GetKind: GetKind::<Identity, Impl, OFFSET>,
         }
@@ -119,13 +119,13 @@ pub trait IPresentStatusPresentStatistics_Impl: Sized + IPresentStatistics_Impl 
 }
 impl ::windows::core::RuntimeName for IPresentStatusPresentStatistics {}
 impl IPresentStatusPresentStatistics_Vtbl {
-    pub const fn new<Identity: ::windows::core::IUnknownImpl, Impl: IPresentStatusPresentStatistics_Impl, const OFFSET: isize>() -> IPresentStatusPresentStatistics_Vtbl {
-        unsafe extern "system" fn GetCompositionFrameId<Identity: ::windows::core::IUnknownImpl, Impl: IPresentStatusPresentStatistics_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> u64 {
+    pub const fn new<Identity: ::windows::core::IUnknown_Impl, Impl: IPresentStatusPresentStatistics_Impl, const OFFSET: isize>() -> IPresentStatusPresentStatistics_Vtbl {
+        unsafe extern "system" fn GetCompositionFrameId<Identity: ::windows::core::IUnknown_Impl, Impl: IPresentStatusPresentStatistics_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> u64 {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).GetCompositionFrameId()
         }
-        unsafe extern "system" fn GetPresentStatus<Identity: ::windows::core::IUnknownImpl, Impl: IPresentStatusPresentStatistics_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> PresentStatus {
+        unsafe extern "system" fn GetPresentStatus<Identity: ::windows::core::IUnknown_Impl, Impl: IPresentStatusPresentStatistics_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> PresentStatus {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).GetPresentStatus()
@@ -149,8 +149,8 @@ pub trait IPresentationBuffer_Impl: Sized {
 impl ::windows::core::RuntimeName for IPresentationBuffer {}
 #[cfg(feature = "Win32_Foundation")]
 impl IPresentationBuffer_Vtbl {
-    pub const fn new<Identity: ::windows::core::IUnknownImpl, Impl: IPresentationBuffer_Impl, const OFFSET: isize>() -> IPresentationBuffer_Vtbl {
-        unsafe extern "system" fn GetAvailableEvent<Identity: ::windows::core::IUnknownImpl, Impl: IPresentationBuffer_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, availableeventhandle: *mut super::super::Foundation::HANDLE) -> ::windows::core::HRESULT {
+    pub const fn new<Identity: ::windows::core::IUnknown_Impl, Impl: IPresentationBuffer_Impl, const OFFSET: isize>() -> IPresentationBuffer_Vtbl {
+        unsafe extern "system" fn GetAvailableEvent<Identity: ::windows::core::IUnknown_Impl, Impl: IPresentationBuffer_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, availableeventhandle: *mut super::super::Foundation::HANDLE) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             match (*this).GetAvailableEvent() {
@@ -161,7 +161,7 @@ impl IPresentationBuffer_Vtbl {
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
-        unsafe extern "system" fn IsAvailable<Identity: ::windows::core::IUnknownImpl, Impl: IPresentationBuffer_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, isavailable: *mut u8) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn IsAvailable<Identity: ::windows::core::IUnknown_Impl, Impl: IPresentationBuffer_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, isavailable: *mut u8) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             match (*this).IsAvailable() {
@@ -173,7 +173,7 @@ impl IPresentationBuffer_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IUnknownVtbl::new::<Identity, OFFSET>(),
+            base__: ::windows::core::IUnknownVtbl::new::<Identity, (), OFFSET>(),
             GetAvailableEvent: GetAvailableEvent::<Identity, Impl, OFFSET>,
             IsAvailable: IsAvailable::<Identity, Impl, OFFSET>,
         }
@@ -187,13 +187,13 @@ pub trait IPresentationContent_Impl: Sized {
 }
 impl ::windows::core::RuntimeName for IPresentationContent {}
 impl IPresentationContent_Vtbl {
-    pub const fn new<Identity: ::windows::core::IUnknownImpl, Impl: IPresentationContent_Impl, const OFFSET: isize>() -> IPresentationContent_Vtbl {
-        unsafe extern "system" fn SetTag<Identity: ::windows::core::IUnknownImpl, Impl: IPresentationContent_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, tag: usize) {
+    pub const fn new<Identity: ::windows::core::IUnknown_Impl, Impl: IPresentationContent_Impl, const OFFSET: isize>() -> IPresentationContent_Vtbl {
+        unsafe extern "system" fn SetTag<Identity: ::windows::core::IUnknown_Impl, Impl: IPresentationContent_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, tag: usize) {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).SetTag(::core::mem::transmute_copy(&tag))
         }
-        Self { base__: ::windows::core::IUnknownVtbl::new::<Identity, OFFSET>(), SetTag: SetTag::<Identity, Impl, OFFSET> }
+        Self { base__: ::windows::core::IUnknownVtbl::new::<Identity, (), OFFSET>(), SetTag: SetTag::<Identity, Impl, OFFSET> }
     }
     pub fn matches(iid: &windows::core::GUID) -> bool {
         iid == &<IPresentationContent as ::windows::core::Interface>::IID
@@ -206,18 +206,18 @@ pub trait IPresentationFactory_Impl: Sized {
 }
 impl ::windows::core::RuntimeName for IPresentationFactory {}
 impl IPresentationFactory_Vtbl {
-    pub const fn new<Identity: ::windows::core::IUnknownImpl, Impl: IPresentationFactory_Impl, const OFFSET: isize>() -> IPresentationFactory_Vtbl {
-        unsafe extern "system" fn IsPresentationSupported<Identity: ::windows::core::IUnknownImpl, Impl: IPresentationFactory_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> u8 {
+    pub const fn new<Identity: ::windows::core::IUnknown_Impl, Impl: IPresentationFactory_Impl, const OFFSET: isize>() -> IPresentationFactory_Vtbl {
+        unsafe extern "system" fn IsPresentationSupported<Identity: ::windows::core::IUnknown_Impl, Impl: IPresentationFactory_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> u8 {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).IsPresentationSupported()
         }
-        unsafe extern "system" fn IsPresentationSupportedWithIndependentFlip<Identity: ::windows::core::IUnknownImpl, Impl: IPresentationFactory_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> u8 {
+        unsafe extern "system" fn IsPresentationSupportedWithIndependentFlip<Identity: ::windows::core::IUnknown_Impl, Impl: IPresentationFactory_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> u8 {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).IsPresentationSupportedWithIndependentFlip()
         }
-        unsafe extern "system" fn CreatePresentationManager<Identity: ::windows::core::IUnknownImpl, Impl: IPresentationFactory_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, pppresentationmanager: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn CreatePresentationManager<Identity: ::windows::core::IUnknown_Impl, Impl: IPresentationFactory_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, pppresentationmanager: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             match (*this).CreatePresentationManager() {
@@ -229,7 +229,7 @@ impl IPresentationFactory_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IUnknownVtbl::new::<Identity, OFFSET>(),
+            base__: ::windows::core::IUnknownVtbl::new::<Identity, (), OFFSET>(),
             IsPresentationSupported: IsPresentationSupported::<Identity, Impl, OFFSET>,
             IsPresentationSupportedWithIndependentFlip: IsPresentationSupportedWithIndependentFlip::<Identity, Impl, OFFSET>,
             CreatePresentationManager: CreatePresentationManager::<Identity, Impl, OFFSET>,
@@ -259,8 +259,8 @@ pub trait IPresentationManager_Impl: Sized {
 impl ::windows::core::RuntimeName for IPresentationManager {}
 #[cfg(feature = "Win32_Foundation")]
 impl IPresentationManager_Vtbl {
-    pub const fn new<Identity: ::windows::core::IUnknownImpl, Impl: IPresentationManager_Impl, const OFFSET: isize>() -> IPresentationManager_Vtbl {
-        unsafe extern "system" fn AddBufferFromResource<Identity: ::windows::core::IUnknownImpl, Impl: IPresentationManager_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, resource: *mut ::core::ffi::c_void, presentationbuffer: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT {
+    pub const fn new<Identity: ::windows::core::IUnknown_Impl, Impl: IPresentationManager_Impl, const OFFSET: isize>() -> IPresentationManager_Vtbl {
+        unsafe extern "system" fn AddBufferFromResource<Identity: ::windows::core::IUnknown_Impl, Impl: IPresentationManager_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, resource: *mut ::core::ffi::c_void, presentationbuffer: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             match (*this).AddBufferFromResource(::core::mem::transmute(&resource)) {
@@ -271,7 +271,7 @@ impl IPresentationManager_Vtbl {
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
-        unsafe extern "system" fn CreatePresentationSurface<Identity: ::windows::core::IUnknownImpl, Impl: IPresentationManager_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, compositionsurfacehandle: super::super::Foundation::HANDLE, presentationsurface: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn CreatePresentationSurface<Identity: ::windows::core::IUnknown_Impl, Impl: IPresentationManager_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, compositionsurfacehandle: super::super::Foundation::HANDLE, presentationsurface: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             match (*this).CreatePresentationSurface(::core::mem::transmute_copy(&compositionsurfacehandle)) {
@@ -282,32 +282,32 @@ impl IPresentationManager_Vtbl {
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
-        unsafe extern "system" fn GetNextPresentId<Identity: ::windows::core::IUnknownImpl, Impl: IPresentationManager_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> u64 {
+        unsafe extern "system" fn GetNextPresentId<Identity: ::windows::core::IUnknown_Impl, Impl: IPresentationManager_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> u64 {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).GetNextPresentId()
         }
-        unsafe extern "system" fn SetTargetTime<Identity: ::windows::core::IUnknownImpl, Impl: IPresentationManager_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, targettime: SystemInterruptTime) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn SetTargetTime<Identity: ::windows::core::IUnknown_Impl, Impl: IPresentationManager_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, targettime: SystemInterruptTime) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).SetTargetTime(::core::mem::transmute(&targettime)).into()
         }
-        unsafe extern "system" fn SetPreferredPresentDuration<Identity: ::windows::core::IUnknownImpl, Impl: IPresentationManager_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, preferredduration: SystemInterruptTime, deviationtolerance: SystemInterruptTime) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn SetPreferredPresentDuration<Identity: ::windows::core::IUnknown_Impl, Impl: IPresentationManager_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, preferredduration: SystemInterruptTime, deviationtolerance: SystemInterruptTime) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).SetPreferredPresentDuration(::core::mem::transmute(&preferredduration), ::core::mem::transmute(&deviationtolerance)).into()
         }
-        unsafe extern "system" fn ForceVSyncInterrupt<Identity: ::windows::core::IUnknownImpl, Impl: IPresentationManager_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, forcevsyncinterrupt: u8) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn ForceVSyncInterrupt<Identity: ::windows::core::IUnknown_Impl, Impl: IPresentationManager_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, forcevsyncinterrupt: u8) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).ForceVSyncInterrupt(::core::mem::transmute_copy(&forcevsyncinterrupt)).into()
         }
-        unsafe extern "system" fn Present<Identity: ::windows::core::IUnknownImpl, Impl: IPresentationManager_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn Present<Identity: ::windows::core::IUnknown_Impl, Impl: IPresentationManager_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).Present().into()
         }
-        unsafe extern "system" fn GetPresentRetiringFence<Identity: ::windows::core::IUnknownImpl, Impl: IPresentationManager_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, riid: *const ::windows::core::GUID, fence: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn GetPresentRetiringFence<Identity: ::windows::core::IUnknown_Impl, Impl: IPresentationManager_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, riid: *const ::windows::core::GUID, fence: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             match (*this).GetPresentRetiringFence(::core::mem::transmute_copy(&riid)) {
@@ -318,12 +318,12 @@ impl IPresentationManager_Vtbl {
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
-        unsafe extern "system" fn CancelPresentsFrom<Identity: ::windows::core::IUnknownImpl, Impl: IPresentationManager_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, presentidtocancelfrom: u64) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn CancelPresentsFrom<Identity: ::windows::core::IUnknown_Impl, Impl: IPresentationManager_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, presentidtocancelfrom: u64) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).CancelPresentsFrom(::core::mem::transmute_copy(&presentidtocancelfrom)).into()
         }
-        unsafe extern "system" fn GetLostEvent<Identity: ::windows::core::IUnknownImpl, Impl: IPresentationManager_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, losteventhandle: *mut super::super::Foundation::HANDLE) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn GetLostEvent<Identity: ::windows::core::IUnknown_Impl, Impl: IPresentationManager_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, losteventhandle: *mut super::super::Foundation::HANDLE) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             match (*this).GetLostEvent() {
@@ -334,7 +334,7 @@ impl IPresentationManager_Vtbl {
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
-        unsafe extern "system" fn GetPresentStatisticsAvailableEvent<Identity: ::windows::core::IUnknownImpl, Impl: IPresentationManager_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, presentstatisticsavailableeventhandle: *mut super::super::Foundation::HANDLE) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn GetPresentStatisticsAvailableEvent<Identity: ::windows::core::IUnknown_Impl, Impl: IPresentationManager_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, presentstatisticsavailableeventhandle: *mut super::super::Foundation::HANDLE) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             match (*this).GetPresentStatisticsAvailableEvent() {
@@ -345,12 +345,12 @@ impl IPresentationManager_Vtbl {
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
-        unsafe extern "system" fn EnablePresentStatisticsKind<Identity: ::windows::core::IUnknownImpl, Impl: IPresentationManager_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, presentstatisticskind: PresentStatisticsKind, enabled: u8) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn EnablePresentStatisticsKind<Identity: ::windows::core::IUnknown_Impl, Impl: IPresentationManager_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, presentstatisticskind: PresentStatisticsKind, enabled: u8) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).EnablePresentStatisticsKind(::core::mem::transmute_copy(&presentstatisticskind), ::core::mem::transmute_copy(&enabled)).into()
         }
-        unsafe extern "system" fn GetNextPresentStatistics<Identity: ::windows::core::IUnknownImpl, Impl: IPresentationManager_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, nextpresentstatistics: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn GetNextPresentStatistics<Identity: ::windows::core::IUnknown_Impl, Impl: IPresentationManager_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, nextpresentstatistics: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             match (*this).GetNextPresentStatistics() {
@@ -362,7 +362,7 @@ impl IPresentationManager_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IUnknownVtbl::new::<Identity, OFFSET>(),
+            base__: ::windows::core::IUnknownVtbl::new::<Identity, (), OFFSET>(),
             AddBufferFromResource: AddBufferFromResource::<Identity, Impl, OFFSET>,
             CreatePresentationSurface: CreatePresentationSurface::<Identity, Impl, OFFSET>,
             GetNextPresentId: GetNextPresentId::<Identity, Impl, OFFSET>,
@@ -397,43 +397,43 @@ pub trait IPresentationSurface_Impl: Sized + IPresentationContent_Impl {
 impl ::windows::core::RuntimeName for IPresentationSurface {}
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
 impl IPresentationSurface_Vtbl {
-    pub const fn new<Identity: ::windows::core::IUnknownImpl, Impl: IPresentationSurface_Impl, const OFFSET: isize>() -> IPresentationSurface_Vtbl {
-        unsafe extern "system" fn SetBuffer<Identity: ::windows::core::IUnknownImpl, Impl: IPresentationSurface_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, presentationbuffer: ::windows::core::RawPtr) -> ::windows::core::HRESULT {
+    pub const fn new<Identity: ::windows::core::IUnknown_Impl, Impl: IPresentationSurface_Impl, const OFFSET: isize>() -> IPresentationSurface_Vtbl {
+        unsafe extern "system" fn SetBuffer<Identity: ::windows::core::IUnknown_Impl, Impl: IPresentationSurface_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, presentationbuffer: ::windows::core::RawPtr) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).SetBuffer(::core::mem::transmute(&presentationbuffer)).into()
         }
-        unsafe extern "system" fn SetColorSpace<Identity: ::windows::core::IUnknownImpl, Impl: IPresentationSurface_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, colorspace: super::Dxgi::Common::DXGI_COLOR_SPACE_TYPE) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn SetColorSpace<Identity: ::windows::core::IUnknown_Impl, Impl: IPresentationSurface_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, colorspace: super::Dxgi::Common::DXGI_COLOR_SPACE_TYPE) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).SetColorSpace(::core::mem::transmute_copy(&colorspace)).into()
         }
-        unsafe extern "system" fn SetAlphaMode<Identity: ::windows::core::IUnknownImpl, Impl: IPresentationSurface_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, alphamode: super::Dxgi::Common::DXGI_ALPHA_MODE) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn SetAlphaMode<Identity: ::windows::core::IUnknown_Impl, Impl: IPresentationSurface_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, alphamode: super::Dxgi::Common::DXGI_ALPHA_MODE) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).SetAlphaMode(::core::mem::transmute_copy(&alphamode)).into()
         }
-        unsafe extern "system" fn SetSourceRect<Identity: ::windows::core::IUnknownImpl, Impl: IPresentationSurface_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, sourcerect: *const super::super::Foundation::RECT) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn SetSourceRect<Identity: ::windows::core::IUnknown_Impl, Impl: IPresentationSurface_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, sourcerect: *const super::super::Foundation::RECT) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).SetSourceRect(::core::mem::transmute_copy(&sourcerect)).into()
         }
-        unsafe extern "system" fn SetTransform<Identity: ::windows::core::IUnknownImpl, Impl: IPresentationSurface_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, transform: *const PresentationTransform) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn SetTransform<Identity: ::windows::core::IUnknown_Impl, Impl: IPresentationSurface_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, transform: *const PresentationTransform) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).SetTransform(::core::mem::transmute_copy(&transform)).into()
         }
-        unsafe extern "system" fn RestrictToOutput<Identity: ::windows::core::IUnknownImpl, Impl: IPresentationSurface_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, output: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn RestrictToOutput<Identity: ::windows::core::IUnknown_Impl, Impl: IPresentationSurface_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, output: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).RestrictToOutput(::core::mem::transmute(&output)).into()
         }
-        unsafe extern "system" fn SetDisableReadback<Identity: ::windows::core::IUnknownImpl, Impl: IPresentationSurface_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, value: u8) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn SetDisableReadback<Identity: ::windows::core::IUnknown_Impl, Impl: IPresentationSurface_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, value: u8) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).SetDisableReadback(::core::mem::transmute_copy(&value)).into()
         }
-        unsafe extern "system" fn SetLetterboxingMargins<Identity: ::windows::core::IUnknownImpl, Impl: IPresentationSurface_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, leftletterboxsize: f32, topletterboxsize: f32, rightletterboxsize: f32, bottomletterboxsize: f32) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn SetLetterboxingMargins<Identity: ::windows::core::IUnknown_Impl, Impl: IPresentationSurface_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, leftletterboxsize: f32, topletterboxsize: f32, rightletterboxsize: f32, bottomletterboxsize: f32) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).SetLetterboxingMargins(::core::mem::transmute_copy(&leftletterboxsize), ::core::mem::transmute_copy(&topletterboxsize), ::core::mem::transmute_copy(&rightletterboxsize), ::core::mem::transmute_copy(&bottomletterboxsize)).into()

@@ -5,8 +5,8 @@ impl ::windows::core::RuntimeName for IUserDataAccountProviderOperation {
     const NAME: &'static str = "Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderOperation";
 }
 impl IUserDataAccountProviderOperation_Vtbl {
-    pub const fn new<Identity: ::windows::core::IUnknownImpl, Impl: IUserDataAccountProviderOperation_Impl, const OFFSET: isize>() -> IUserDataAccountProviderOperation_Vtbl {
-        unsafe extern "system" fn Kind<Identity: ::windows::core::IUnknownImpl, Impl: IUserDataAccountProviderOperation_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, result__: *mut UserDataAccountProviderOperationKind) -> ::windows::core::HRESULT {
+    pub const fn new<Identity: ::windows::core::IUnknown_Impl, Impl: IUserDataAccountProviderOperation_Impl, const OFFSET: isize>() -> IUserDataAccountProviderOperation_Vtbl {
+        unsafe extern "system" fn Kind<Identity: ::windows::core::IUnknown_Impl, Impl: IUserDataAccountProviderOperation_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, result__: *mut UserDataAccountProviderOperationKind) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             match (*this).Kind() {

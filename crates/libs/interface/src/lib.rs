@@ -159,7 +159,7 @@ impl Interface {
         let vis = &self.visibility;
         let name = &self.name;
         let parent_vtable = self.parent_vtable();
-        let parent_vtable_generics = if self.parent_is_iunknown() { quote!(Identity, OFFSET) } else { quote!(Identity, Impl, OFFSET) };
+        let parent_vtable_generics = quote!(Identity, Impl, OFFSET);
         let vtable_entries = self
             .methods
             .iter()
@@ -189,7 +189,7 @@ impl Interface {
                     .collect::<Vec<_>>();
                 let ret = &m.ret;
                 quote! {
-                    unsafe extern "system" fn #name<Identity: ::windows::core::IUnknownImpl, Impl: #trait_name, const OFFSET: isize>(this: *mut ::core::ffi::c_void, #(#args),*) #ret {
+                    unsafe extern "system" fn #name<Identity: ::windows::core::IUnknown_Impl, Impl: #trait_name, const OFFSET: isize>(this: *mut ::core::ffi::c_void, #(#args),*) #ret {
                         let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
                         let this = (*this).get_impl() as *mut Impl;
                         (*this).#name(#(#params),*).into()
@@ -216,7 +216,7 @@ impl Interface {
             }
 
             impl #vtable_name {
-                pub const fn new<Identity: ::windows::core::IUnknownImpl, Impl: #trait_name, const OFFSET: isize>() -> Self {
+                pub const fn new<Identity: ::windows::core::IUnknown_Impl, Impl: #trait_name, const OFFSET: isize>() -> Self {
                     #(#functions)*
                     Self { base__: #parent_vtable::new::<#parent_vtable_generics>(), #(#entries),* }
                 }
@@ -283,25 +283,13 @@ impl Interface {
         quote!(#i)
     }
 
-    fn parent_is_iunknown(&self) -> bool {
-        let end = self.parent.segments.last();
-        let end = match end {
-            Some(e) => e,
-            None => return false,
-        };
-        end.ident == "IUnknown"
-    }
-
     fn parent_ident(&self) -> &syn::Ident {
         &self.parent.segments.last().as_ref().expect("segements should never be empty").ident
     }
 
-    /// Gets the parent trait constrait which is nothing if the parent is IUnknown
+    /// Gets the parent trait constrait
     fn parent_trait_constraint(&self) -> proc_macro2::TokenStream {
         let i = self.parent_ident();
-        if i == "IUnknown" {
-            return quote!();
-        }
         let i = quote::format_ident!("{}_Impl", i);
         quote!(#i +)
     }

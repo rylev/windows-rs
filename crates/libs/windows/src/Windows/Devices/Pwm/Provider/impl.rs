@@ -14,8 +14,8 @@ impl ::windows::core::RuntimeName for IPwmControllerProvider {
     const NAME: &'static str = "Windows.Devices.Pwm.Provider.IPwmControllerProvider";
 }
 impl IPwmControllerProvider_Vtbl {
-    pub const fn new<Identity: ::windows::core::IUnknownImpl, Impl: IPwmControllerProvider_Impl, const OFFSET: isize>() -> IPwmControllerProvider_Vtbl {
-        unsafe extern "system" fn PinCount<Identity: ::windows::core::IUnknownImpl, Impl: IPwmControllerProvider_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows::core::HRESULT {
+    pub const fn new<Identity: ::windows::core::IUnknown_Impl, Impl: IPwmControllerProvider_Impl, const OFFSET: isize>() -> IPwmControllerProvider_Vtbl {
+        unsafe extern "system" fn PinCount<Identity: ::windows::core::IUnknown_Impl, Impl: IPwmControllerProvider_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             match (*this).PinCount() {
@@ -27,7 +27,7 @@ impl IPwmControllerProvider_Vtbl {
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
-        unsafe extern "system" fn ActualFrequency<Identity: ::windows::core::IUnknownImpl, Impl: IPwmControllerProvider_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn ActualFrequency<Identity: ::windows::core::IUnknown_Impl, Impl: IPwmControllerProvider_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             match (*this).ActualFrequency() {
@@ -39,7 +39,7 @@ impl IPwmControllerProvider_Vtbl {
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
-        unsafe extern "system" fn SetDesiredFrequency<Identity: ::windows::core::IUnknownImpl, Impl: IPwmControllerProvider_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, frequency: f64, result__: *mut f64) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn SetDesiredFrequency<Identity: ::windows::core::IUnknown_Impl, Impl: IPwmControllerProvider_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, frequency: f64, result__: *mut f64) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             match (*this).SetDesiredFrequency(frequency) {
@@ -51,7 +51,7 @@ impl IPwmControllerProvider_Vtbl {
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
-        unsafe extern "system" fn MaxFrequency<Identity: ::windows::core::IUnknownImpl, Impl: IPwmControllerProvider_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn MaxFrequency<Identity: ::windows::core::IUnknown_Impl, Impl: IPwmControllerProvider_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             match (*this).MaxFrequency() {
@@ -63,7 +63,7 @@ impl IPwmControllerProvider_Vtbl {
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
-        unsafe extern "system" fn MinFrequency<Identity: ::windows::core::IUnknownImpl, Impl: IPwmControllerProvider_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn MinFrequency<Identity: ::windows::core::IUnknown_Impl, Impl: IPwmControllerProvider_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             match (*this).MinFrequency() {
@@ -75,27 +75,27 @@ impl IPwmControllerProvider_Vtbl {
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
-        unsafe extern "system" fn AcquirePin<Identity: ::windows::core::IUnknownImpl, Impl: IPwmControllerProvider_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, pin: i32) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn AcquirePin<Identity: ::windows::core::IUnknown_Impl, Impl: IPwmControllerProvider_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, pin: i32) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).AcquirePin(pin).into()
         }
-        unsafe extern "system" fn ReleasePin<Identity: ::windows::core::IUnknownImpl, Impl: IPwmControllerProvider_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, pin: i32) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn ReleasePin<Identity: ::windows::core::IUnknown_Impl, Impl: IPwmControllerProvider_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, pin: i32) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).ReleasePin(pin).into()
         }
-        unsafe extern "system" fn EnablePin<Identity: ::windows::core::IUnknownImpl, Impl: IPwmControllerProvider_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, pin: i32) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn EnablePin<Identity: ::windows::core::IUnknown_Impl, Impl: IPwmControllerProvider_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, pin: i32) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).EnablePin(pin).into()
         }
-        unsafe extern "system" fn DisablePin<Identity: ::windows::core::IUnknownImpl, Impl: IPwmControllerProvider_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, pin: i32) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn DisablePin<Identity: ::windows::core::IUnknown_Impl, Impl: IPwmControllerProvider_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, pin: i32) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).DisablePin(pin).into()
         }
-        unsafe extern "system" fn SetPulseParameters<Identity: ::windows::core::IUnknownImpl, Impl: IPwmControllerProvider_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, pin: i32, dutycycle: f64, invertpolarity: bool) -> ::windows::core::HRESULT {
+        unsafe extern "system" fn SetPulseParameters<Identity: ::windows::core::IUnknown_Impl, Impl: IPwmControllerProvider_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, pin: i32, dutycycle: f64, invertpolarity: bool) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             (*this).SetPulseParameters(pin, dutycycle, invertpolarity).into()
@@ -128,8 +128,8 @@ impl ::windows::core::RuntimeName for IPwmProvider {
 }
 #[cfg(feature = "Foundation_Collections")]
 impl IPwmProvider_Vtbl {
-    pub const fn new<Identity: ::windows::core::IUnknownImpl, Impl: IPwmProvider_Impl, const OFFSET: isize>() -> IPwmProvider_Vtbl {
-        unsafe extern "system" fn GetControllers<Identity: ::windows::core::IUnknownImpl, Impl: IPwmProvider_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT {
+    pub const fn new<Identity: ::windows::core::IUnknown_Impl, Impl: IPwmProvider_Impl, const OFFSET: isize>() -> IPwmProvider_Vtbl {
+        unsafe extern "system" fn GetControllers<Identity: ::windows::core::IUnknown_Impl, Impl: IPwmProvider_Impl, const OFFSET: isize>(this: *mut ::core::ffi::c_void, result__: *mut ::windows::core::RawPtr) -> ::windows::core::HRESULT {
             let this = (this as *mut ::windows::core::RawPtr).offset(OFFSET) as *mut Identity;
             let this = (*this).get_impl() as *mut Impl;
             match (*this).GetControllers() {
