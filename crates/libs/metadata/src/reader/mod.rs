@@ -232,16 +232,11 @@ impl<'a> Reader<'a> {
     // Hash functions for fast type lookup
     //
 
-    // TODO: do this same Option trick for other iterators below.
     pub fn namespace_types(&self, namespace: &str) -> Option<impl Iterator<Item = TypeDef> + '_> {
-        if let Some(types) = self.types.get(namespace) {
-            return Some(types.values().flatten().copied());
-        }
-        None
+        self.types.get(namespace).map(|types| types.values().flatten().copied())
     }
-    pub fn nested_types(&'a self, type_def: TypeDef) -> Vec<TypeDef> {
-        // TODO: shouldn't have to collect, like we do in the `get` function below...
-        self.nested.get(&type_def).iter().flat_map(|map| map.values()).copied().collect()
+    pub fn nested_types(&'a self, type_def: TypeDef) -> Option<impl Iterator<Item = TypeDef> + 'a> {
+        self.nested.get(&type_def).map(|map| map.values().copied())
     }
     pub fn get(&self, type_name: TypeName) -> impl Iterator<Item = TypeDef> + '_ {
         if let Some(types) = self.types.get(type_name.namespace) {
