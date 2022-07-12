@@ -32,7 +32,10 @@ pub unsafe fn DeriveAppContainerSidFromAppContainerName(pszappcontainername: ::w
 #[doc = "*Required features: `\"Win32_Security_Isolation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DeriveRestrictedAppContainerSidFromAppContainerSidAndRestrictedName<'a, Param0: ::std::convert::Into<super::super::Foundation::PSID>>(psidappcontainersid: Param0, pszrestrictedappcontainername: ::windows::core::PCWSTR) -> ::windows::core::Result<super::super::Foundation::PSID> {
+pub unsafe fn DeriveRestrictedAppContainerSidFromAppContainerSidAndRestrictedName<'a, P0>(psidappcontainersid: P0, pszrestrictedappcontainername: ::windows::core::PCWSTR) -> ::windows::core::Result<super::super::Foundation::PSID>
+where
+    P0: ::std::convert::Into<super::super::Foundation::PSID>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeriveRestrictedAppContainerSidFromAppContainerSidAndRestrictedName(psidappcontainersid: super::super::Foundation::PSID, pszrestrictedappcontainername: ::windows::core::PCWSTR, ppsidrestrictedappcontainersid: *mut super::super::Foundation::PSID) -> ::windows::core::HRESULT;
@@ -53,7 +56,11 @@ pub unsafe fn GetAppContainerFolderPath(pszappcontainersid: ::windows::core::PCW
 #[doc = "*Required features: `\"Win32_Security_Isolation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetAppContainerNamedObjectPath<'a, Param0: ::std::convert::Into<super::super::Foundation::HANDLE>, Param1: ::std::convert::Into<super::super::Foundation::PSID>>(token: Param0, appcontainersid: Param1, objectpath: &mut [u16], returnlength: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetAppContainerNamedObjectPath<'a, P0, P1>(token: P0, appcontainersid: P1, objectpath: &mut [u16], returnlength: *mut u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
+    P1: ::std::convert::Into<super::super::Foundation::PSID>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetAppContainerNamedObjectPath(token: super::super::Foundation::HANDLE, appcontainersid: super::super::Foundation::PSID, objectpathlength: u32, objectpath: ::windows::core::PWSTR, returnlength: *mut u32) -> super::super::Foundation::BOOL;

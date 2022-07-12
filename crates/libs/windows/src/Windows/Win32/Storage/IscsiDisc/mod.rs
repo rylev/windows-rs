@@ -301,7 +301,10 @@ pub unsafe fn AddIScsiSendTargetPortalW(initiatorinstance: ::windows::core::PCWS
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AddIScsiStaticTargetA<'a, Param3: ::std::convert::Into<super::super::Foundation::BOOLEAN>>(targetname: ::windows::core::PCSTR, targetalias: ::windows::core::PCSTR, targetflags: u32, persist: Param3, mappings: *mut ISCSI_TARGET_MAPPINGA, loginoptions: *mut ISCSI_LOGIN_OPTIONS, portalgroup: *mut ISCSI_TARGET_PORTAL_GROUPA) -> u32 {
+pub unsafe fn AddIScsiStaticTargetA<'a, P0>(targetname: ::windows::core::PCSTR, targetalias: ::windows::core::PCSTR, targetflags: u32, persist: P0, mappings: *mut ISCSI_TARGET_MAPPINGA, loginoptions: *mut ISCSI_LOGIN_OPTIONS, portalgroup: *mut ISCSI_TARGET_PORTAL_GROUPA) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOLEAN>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AddIScsiStaticTargetA(targetname: ::windows::core::PCSTR, targetalias: ::windows::core::PCSTR, targetflags: u32, persist: super::super::Foundation::BOOLEAN, mappings: *mut ISCSI_TARGET_MAPPINGA, loginoptions: *mut ISCSI_LOGIN_OPTIONS, portalgroup: *mut ISCSI_TARGET_PORTAL_GROUPA) -> u32;
@@ -311,7 +314,10 @@ pub unsafe fn AddIScsiStaticTargetA<'a, Param3: ::std::convert::Into<super::supe
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AddIScsiStaticTargetW<'a, Param3: ::std::convert::Into<super::super::Foundation::BOOLEAN>>(targetname: ::windows::core::PCWSTR, targetalias: ::windows::core::PCWSTR, targetflags: u32, persist: Param3, mappings: *mut ISCSI_TARGET_MAPPINGW, loginoptions: *mut ISCSI_LOGIN_OPTIONS, portalgroup: *mut ISCSI_TARGET_PORTAL_GROUPW) -> u32 {
+pub unsafe fn AddIScsiStaticTargetW<'a, P0>(targetname: ::windows::core::PCWSTR, targetalias: ::windows::core::PCWSTR, targetflags: u32, persist: P0, mappings: *mut ISCSI_TARGET_MAPPINGW, loginoptions: *mut ISCSI_LOGIN_OPTIONS, portalgroup: *mut ISCSI_TARGET_PORTAL_GROUPW) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOLEAN>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AddIScsiStaticTargetW(targetname: ::windows::core::PCWSTR, targetalias: ::windows::core::PCWSTR, targetflags: u32, persist: super::super::Foundation::BOOLEAN, mappings: *mut ISCSI_TARGET_MAPPINGW, loginoptions: *mut ISCSI_LOGIN_OPTIONS, portalgroup: *mut ISCSI_TARGET_PORTAL_GROUPW) -> u32;
@@ -820,7 +826,10 @@ pub unsafe fn GetIScsiSessionListW(buffersize: *mut u32, sessioncount: *mut u32,
 }
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 #[inline]
-pub unsafe fn GetIScsiTargetInformationA<'a, Param2: ::std::convert::Into<TARGET_INFORMATION_CLASS>>(targetname: ::windows::core::PCSTR, discoverymechanism: ::windows::core::PCSTR, infoclass: Param2, buffersize: *mut u32, buffer: *mut ::core::ffi::c_void) -> u32 {
+pub unsafe fn GetIScsiTargetInformationA<'a, P0>(targetname: ::windows::core::PCSTR, discoverymechanism: ::windows::core::PCSTR, infoclass: P0, buffersize: *mut u32, buffer: *mut ::core::ffi::c_void) -> u32
+where
+    P0: ::std::convert::Into<TARGET_INFORMATION_CLASS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetIScsiTargetInformationA(targetname: ::windows::core::PCSTR, discoverymechanism: ::windows::core::PCSTR, infoclass: TARGET_INFORMATION_CLASS, buffersize: *mut u32, buffer: *mut ::core::ffi::c_void) -> u32;
@@ -829,7 +838,10 @@ pub unsafe fn GetIScsiTargetInformationA<'a, Param2: ::std::convert::Into<TARGET
 }
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`*"]
 #[inline]
-pub unsafe fn GetIScsiTargetInformationW<'a, Param2: ::std::convert::Into<TARGET_INFORMATION_CLASS>>(targetname: ::windows::core::PCWSTR, discoverymechanism: ::windows::core::PCWSTR, infoclass: Param2, buffersize: *mut u32, buffer: *mut ::core::ffi::c_void) -> u32 {
+pub unsafe fn GetIScsiTargetInformationW<'a, P0>(targetname: ::windows::core::PCWSTR, discoverymechanism: ::windows::core::PCWSTR, infoclass: P0, buffersize: *mut u32, buffer: *mut ::core::ffi::c_void) -> u32
+where
+    P0: ::std::convert::Into<TARGET_INFORMATION_CLASS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetIScsiTargetInformationW(targetname: ::windows::core::PCWSTR, discoverymechanism: ::windows::core::PCWSTR, infoclass: TARGET_INFORMATION_CLASS, buffersize: *mut u32, buffer: *mut ::core::ffi::c_void) -> u32;
@@ -2349,7 +2361,11 @@ impl ::core::default::Default for ISCSI_VERSION_INFO {
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn LoginIScsiTargetA<'a, Param1: ::std::convert::Into<super::super::Foundation::BOOLEAN>, Param10: ::std::convert::Into<super::super::Foundation::BOOLEAN>>(targetname: ::windows::core::PCSTR, isinformationalsession: Param1, initiatorinstance: ::windows::core::PCSTR, initiatorportnumber: u32, targetportal: *mut ISCSI_TARGET_PORTALA, securityflags: u64, mappings: *mut ISCSI_TARGET_MAPPINGA, loginoptions: *mut ISCSI_LOGIN_OPTIONS, key: &[u8], ispersistent: Param10, uniquesessionid: *mut ISCSI_UNIQUE_SESSION_ID, uniqueconnectionid: *mut ISCSI_UNIQUE_SESSION_ID) -> u32 {
+pub unsafe fn LoginIScsiTargetA<'a, P0, P1>(targetname: ::windows::core::PCSTR, isinformationalsession: P0, initiatorinstance: ::windows::core::PCSTR, initiatorportnumber: u32, targetportal: *mut ISCSI_TARGET_PORTALA, securityflags: u64, mappings: *mut ISCSI_TARGET_MAPPINGA, loginoptions: *mut ISCSI_LOGIN_OPTIONS, key: &[u8], ispersistent: P1, uniquesessionid: *mut ISCSI_UNIQUE_SESSION_ID, uniqueconnectionid: *mut ISCSI_UNIQUE_SESSION_ID) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOLEAN>,
+    P1: ::std::convert::Into<super::super::Foundation::BOOLEAN>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LoginIScsiTargetA(targetname: ::windows::core::PCSTR, isinformationalsession: super::super::Foundation::BOOLEAN, initiatorinstance: ::windows::core::PCSTR, initiatorportnumber: u32, targetportal: *mut ISCSI_TARGET_PORTALA, securityflags: u64, mappings: *mut ISCSI_TARGET_MAPPINGA, loginoptions: *mut ISCSI_LOGIN_OPTIONS, keysize: u32, key: ::windows::core::PCSTR, ispersistent: super::super::Foundation::BOOLEAN, uniquesessionid: *mut ISCSI_UNIQUE_SESSION_ID, uniqueconnectionid: *mut ISCSI_UNIQUE_SESSION_ID) -> u32;
@@ -2373,7 +2389,11 @@ pub unsafe fn LoginIScsiTargetA<'a, Param1: ::std::convert::Into<super::super::F
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn LoginIScsiTargetW<'a, Param1: ::std::convert::Into<super::super::Foundation::BOOLEAN>, Param10: ::std::convert::Into<super::super::Foundation::BOOLEAN>>(targetname: ::windows::core::PCWSTR, isinformationalsession: Param1, initiatorinstance: ::windows::core::PCWSTR, initiatorportnumber: u32, targetportal: *mut ISCSI_TARGET_PORTALW, securityflags: u64, mappings: *mut ISCSI_TARGET_MAPPINGW, loginoptions: *mut ISCSI_LOGIN_OPTIONS, key: &[u8], ispersistent: Param10, uniquesessionid: *mut ISCSI_UNIQUE_SESSION_ID, uniqueconnectionid: *mut ISCSI_UNIQUE_SESSION_ID) -> u32 {
+pub unsafe fn LoginIScsiTargetW<'a, P0, P1>(targetname: ::windows::core::PCWSTR, isinformationalsession: P0, initiatorinstance: ::windows::core::PCWSTR, initiatorportnumber: u32, targetportal: *mut ISCSI_TARGET_PORTALW, securityflags: u64, mappings: *mut ISCSI_TARGET_MAPPINGW, loginoptions: *mut ISCSI_LOGIN_OPTIONS, key: &[u8], ispersistent: P1, uniquesessionid: *mut ISCSI_UNIQUE_SESSION_ID, uniqueconnectionid: *mut ISCSI_UNIQUE_SESSION_ID) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOLEAN>,
+    P1: ::std::convert::Into<super::super::Foundation::BOOLEAN>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LoginIScsiTargetW(targetname: ::windows::core::PCWSTR, isinformationalsession: super::super::Foundation::BOOLEAN, initiatorinstance: ::windows::core::PCWSTR, initiatorportnumber: u32, targetportal: *mut ISCSI_TARGET_PORTALW, securityflags: u64, mappings: *mut ISCSI_TARGET_MAPPINGW, loginoptions: *mut ISCSI_LOGIN_OPTIONS, keysize: u32, key: ::windows::core::PCSTR, ispersistent: super::super::Foundation::BOOLEAN, uniquesessionid: *mut ISCSI_UNIQUE_SESSION_ID, uniqueconnectionid: *mut ISCSI_UNIQUE_SESSION_ID) -> u32;
@@ -3676,7 +3696,10 @@ pub unsafe fn ReportIScsiTargetPortalsW(initiatorname: ::windows::core::PCWSTR, 
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ReportIScsiTargetsA<'a, Param0: ::std::convert::Into<super::super::Foundation::BOOLEAN>>(forceupdate: Param0, buffersize: *mut u32, buffer: ::windows::core::PSTR) -> u32 {
+pub unsafe fn ReportIScsiTargetsA<'a, P0>(forceupdate: P0, buffersize: *mut u32, buffer: ::windows::core::PSTR) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOLEAN>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReportIScsiTargetsA(forceupdate: super::super::Foundation::BOOLEAN, buffersize: *mut u32, buffer: ::windows::core::PSTR) -> u32;
@@ -3686,7 +3709,10 @@ pub unsafe fn ReportIScsiTargetsA<'a, Param0: ::std::convert::Into<super::super:
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ReportIScsiTargetsW<'a, Param0: ::std::convert::Into<super::super::Foundation::BOOLEAN>>(forceupdate: Param0, buffersize: *mut u32, buffer: ::windows::core::PWSTR) -> u32 {
+pub unsafe fn ReportIScsiTargetsW<'a, P0>(forceupdate: P0, buffersize: *mut u32, buffer: ::windows::core::PWSTR) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOLEAN>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReportIScsiTargetsW(forceupdate: super::super::Foundation::BOOLEAN, buffersize: *mut u32, buffer: ::windows::core::PWSTR) -> u32;
@@ -4953,7 +4979,10 @@ pub unsafe fn SendScsiReportLuns(uniquesessionid: *mut ISCSI_UNIQUE_SESSION_ID, 
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetIScsiGroupPresharedKey<'a, Param2: ::std::convert::Into<super::super::Foundation::BOOLEAN>>(keylength: u32, key: *mut u8, persist: Param2) -> u32 {
+pub unsafe fn SetIScsiGroupPresharedKey<'a, P0>(keylength: u32, key: *mut u8, persist: P0) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOLEAN>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetIScsiGroupPresharedKey(keylength: u32, key: *mut u8, persist: super::super::Foundation::BOOLEAN) -> u32;
@@ -4963,7 +4992,10 @@ pub unsafe fn SetIScsiGroupPresharedKey<'a, Param2: ::std::convert::Into<super::
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetIScsiIKEInfoA<'a, Param3: ::std::convert::Into<super::super::Foundation::BOOLEAN>>(initiatorname: ::windows::core::PCSTR, initiatorportnumber: u32, authinfo: *mut IKE_AUTHENTICATION_INFORMATION, persist: Param3) -> u32 {
+pub unsafe fn SetIScsiIKEInfoA<'a, P0>(initiatorname: ::windows::core::PCSTR, initiatorportnumber: u32, authinfo: *mut IKE_AUTHENTICATION_INFORMATION, persist: P0) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOLEAN>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetIScsiIKEInfoA(initiatorname: ::windows::core::PCSTR, initiatorportnumber: u32, authinfo: *mut IKE_AUTHENTICATION_INFORMATION, persist: super::super::Foundation::BOOLEAN) -> u32;
@@ -4973,7 +5005,10 @@ pub unsafe fn SetIScsiIKEInfoA<'a, Param3: ::std::convert::Into<super::super::Fo
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetIScsiIKEInfoW<'a, Param3: ::std::convert::Into<super::super::Foundation::BOOLEAN>>(initiatorname: ::windows::core::PCWSTR, initiatorportnumber: u32, authinfo: *mut IKE_AUTHENTICATION_INFORMATION, persist: Param3) -> u32 {
+pub unsafe fn SetIScsiIKEInfoW<'a, P0>(initiatorname: ::windows::core::PCWSTR, initiatorportnumber: u32, authinfo: *mut IKE_AUTHENTICATION_INFORMATION, persist: P0) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOLEAN>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetIScsiIKEInfoW(initiatorname: ::windows::core::PCWSTR, initiatorportnumber: u32, authinfo: *mut IKE_AUTHENTICATION_INFORMATION, persist: super::super::Foundation::BOOLEAN) -> u32;
@@ -5019,7 +5054,10 @@ pub unsafe fn SetIScsiInitiatorRADIUSSharedSecret(sharedsecretlength: u32, share
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetIScsiTunnelModeOuterAddressA<'a, Param4: ::std::convert::Into<super::super::Foundation::BOOLEAN>>(initiatorname: ::windows::core::PCSTR, initiatorportnumber: u32, destinationaddress: ::windows::core::PCSTR, outermodeaddress: ::windows::core::PCSTR, persist: Param4) -> u32 {
+pub unsafe fn SetIScsiTunnelModeOuterAddressA<'a, P0>(initiatorname: ::windows::core::PCSTR, initiatorportnumber: u32, destinationaddress: ::windows::core::PCSTR, outermodeaddress: ::windows::core::PCSTR, persist: P0) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOLEAN>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetIScsiTunnelModeOuterAddressA(initiatorname: ::windows::core::PCSTR, initiatorportnumber: u32, destinationaddress: ::windows::core::PCSTR, outermodeaddress: ::windows::core::PCSTR, persist: super::super::Foundation::BOOLEAN) -> u32;
@@ -5029,7 +5067,10 @@ pub unsafe fn SetIScsiTunnelModeOuterAddressA<'a, Param4: ::std::convert::Into<s
 #[doc = "*Required features: `\"Win32_Storage_IscsiDisc\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetIScsiTunnelModeOuterAddressW<'a, Param4: ::std::convert::Into<super::super::Foundation::BOOLEAN>>(initiatorname: ::windows::core::PCWSTR, initiatorportnumber: u32, destinationaddress: ::windows::core::PCWSTR, outermodeaddress: ::windows::core::PCWSTR, persist: Param4) -> u32 {
+pub unsafe fn SetIScsiTunnelModeOuterAddressW<'a, P0>(initiatorname: ::windows::core::PCWSTR, initiatorportnumber: u32, destinationaddress: ::windows::core::PCWSTR, outermodeaddress: ::windows::core::PCWSTR, persist: P0) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOLEAN>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetIScsiTunnelModeOuterAddressW(initiatorname: ::windows::core::PCWSTR, initiatorportnumber: u32, destinationaddress: ::windows::core::PCWSTR, outermodeaddress: ::windows::core::PCWSTR, persist: super::super::Foundation::BOOLEAN) -> u32;

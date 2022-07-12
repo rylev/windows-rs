@@ -847,7 +847,11 @@ pub unsafe fn NPAddConnection(lpnetresource: *const NETRESOURCEW, lppassword: ::
 #[doc = "*Required features: `\"Win32_NetworkManagement_WNet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn NPAddConnection3<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>, Param4: ::std::convert::Into<NET_USE_CONNECT_FLAGS>>(hwndowner: Param0, lpnetresource: *const NETRESOURCEW, lppassword: ::windows::core::PCWSTR, lpusername: ::windows::core::PCWSTR, dwflags: Param4) -> u32 {
+pub unsafe fn NPAddConnection3<'a, P0, P1>(hwndowner: P0, lpnetresource: *const NETRESOURCEW, lppassword: ::windows::core::PCWSTR, lpusername: ::windows::core::PCWSTR, dwflags: P1) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+    P1: ::std::convert::Into<NET_USE_CONNECT_FLAGS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NPAddConnection3(hwndowner: super::super::Foundation::HWND, lpnetresource: *const NETRESOURCEW, lppassword: ::windows::core::PCWSTR, lpusername: ::windows::core::PCWSTR, dwflags: NET_USE_CONNECT_FLAGS) -> u32;
@@ -857,7 +861,10 @@ pub unsafe fn NPAddConnection3<'a, Param0: ::std::convert::Into<super::super::Fo
 #[doc = "*Required features: `\"Win32_NetworkManagement_WNet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn NPAddConnection4<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(hwndowner: Param0, lpnetresource: *const NETRESOURCEW, lpauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, dwflags: u32, lpuseoptions: *const u8, cbuseoptions: u32) -> u32 {
+pub unsafe fn NPAddConnection4<'a, P0>(hwndowner: P0, lpnetresource: *const NETRESOURCEW, lpauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, dwflags: u32, lpuseoptions: *const u8, cbuseoptions: u32) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NPAddConnection4(hwndowner: super::super::Foundation::HWND, lpnetresource: *const NETRESOURCEW, lpauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, dwflags: u32, lpuseoptions: *const u8, cbuseoptions: u32) -> u32;
@@ -867,7 +874,10 @@ pub unsafe fn NPAddConnection4<'a, Param0: ::std::convert::Into<super::super::Fo
 #[doc = "*Required features: `\"Win32_NetworkManagement_WNet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn NPCancelConnection<'a, Param1: ::std::convert::Into<super::super::Foundation::BOOL>>(lpname: ::windows::core::PCWSTR, fforce: Param1) -> u32 {
+pub unsafe fn NPCancelConnection<'a, P0>(lpname: ::windows::core::PCWSTR, fforce: P0) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NPCancelConnection(lpname: ::windows::core::PCWSTR, fforce: super::super::Foundation::BOOL) -> u32;
@@ -877,7 +887,10 @@ pub unsafe fn NPCancelConnection<'a, Param1: ::std::convert::Into<super::super::
 #[doc = "*Required features: `\"Win32_NetworkManagement_WNet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn NPCancelConnection2<'a, Param1: ::std::convert::Into<super::super::Foundation::BOOL>>(lpname: ::windows::core::PCWSTR, fforce: Param1, dwflags: u32) -> u32 {
+pub unsafe fn NPCancelConnection2<'a, P0>(lpname: ::windows::core::PCWSTR, fforce: P0, dwflags: u32) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NPCancelConnection2(lpname: ::windows::core::PCWSTR, fforce: super::super::Foundation::BOOL, dwflags: u32) -> u32;
@@ -887,7 +900,10 @@ pub unsafe fn NPCancelConnection2<'a, Param1: ::std::convert::Into<super::super:
 #[doc = "*Required features: `\"Win32_NetworkManagement_WNet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn NPCloseEnum<'a, Param0: ::std::convert::Into<super::super::Foundation::HANDLE>>(henum: Param0) -> u32 {
+pub unsafe fn NPCloseEnum<'a, P0>(henum: P0) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NPCloseEnum(henum: super::super::Foundation::HANDLE) -> u32;
@@ -926,7 +942,10 @@ impl ::core::fmt::Debug for NPDIRECTORY_NOTIFY_OPERATION {
 #[doc = "*Required features: `\"Win32_NetworkManagement_WNet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn NPEnumResource<'a, Param0: ::std::convert::Into<super::super::Foundation::HANDLE>>(henum: Param0, lpccount: *mut u32, lpbuffer: *mut ::core::ffi::c_void, lpbuffersize: *mut u32) -> u32 {
+pub unsafe fn NPEnumResource<'a, P0>(henum: P0, lpccount: *mut u32, lpbuffer: *mut ::core::ffi::c_void, lpbuffersize: *mut u32) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NPEnumResource(henum: super::super::Foundation::HANDLE, lpccount: *mut u32, lpbuffer: *mut ::core::ffi::c_void, lpbuffersize: *mut u32) -> u32;
@@ -935,7 +954,10 @@ pub unsafe fn NPEnumResource<'a, Param0: ::std::convert::Into<super::super::Foun
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_WNet\"`*"]
 #[inline]
-pub unsafe fn NPFormatNetworkName<'a, Param3: ::std::convert::Into<NETWORK_NAME_FORMAT_FLAGS>>(lpremotename: ::windows::core::PCWSTR, lpformattedname: ::windows::core::PWSTR, lpnlength: *mut u32, dwflags: Param3, dwavecharperline: u32) -> u32 {
+pub unsafe fn NPFormatNetworkName<'a, P0>(lpremotename: ::windows::core::PCWSTR, lpformattedname: ::windows::core::PWSTR, lpnlength: *mut u32, dwflags: P0, dwavecharperline: u32) -> u32
+where
+    P0: ::std::convert::Into<NETWORK_NAME_FORMAT_FLAGS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NPFormatNetworkName(lpremotename: ::windows::core::PCWSTR, lpformattedname: ::windows::core::PWSTR, lpnlength: *mut u32, dwflags: NETWORK_NAME_FORMAT_FLAGS, dwavecharperline: u32) -> u32;
@@ -1007,7 +1029,10 @@ pub unsafe fn NPGetResourceParent(lpnetresource: *const NETRESOURCEW, lpbuffer: 
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_WNet\"`*"]
 #[inline]
-pub unsafe fn NPGetUniversalName<'a, Param1: ::std::convert::Into<UNC_INFO_LEVEL>>(lplocalpath: ::windows::core::PCWSTR, dwinfolevel: Param1, lpbuffer: *mut ::core::ffi::c_void, lpbuffersize: *mut u32) -> u32 {
+pub unsafe fn NPGetUniversalName<'a, P0>(lplocalpath: ::windows::core::PCWSTR, dwinfolevel: P0, lpbuffer: *mut ::core::ffi::c_void, lpbuffersize: *mut u32) -> u32
+where
+    P0: ::std::convert::Into<UNC_INFO_LEVEL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NPGetUniversalName(lplocalpath: ::windows::core::PCWSTR, dwinfolevel: UNC_INFO_LEVEL, lpbuffer: *mut ::core::ffi::c_void, lpbuffersize: *mut u32) -> u32;
@@ -1575,7 +1600,10 @@ pub unsafe fn WNetAddConnection2W(lpnetresource: *const NETRESOURCEW, lppassword
 #[doc = "*Required features: `\"Win32_NetworkManagement_WNet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WNetAddConnection3A<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(hwndowner: Param0, lpnetresource: *const NETRESOURCEA, lppassword: ::windows::core::PCSTR, lpusername: ::windows::core::PCSTR, dwflags: u32) -> u32 {
+pub unsafe fn WNetAddConnection3A<'a, P0>(hwndowner: P0, lpnetresource: *const NETRESOURCEA, lppassword: ::windows::core::PCSTR, lpusername: ::windows::core::PCSTR, dwflags: u32) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WNetAddConnection3A(hwndowner: super::super::Foundation::HWND, lpnetresource: *const NETRESOURCEA, lppassword: ::windows::core::PCSTR, lpusername: ::windows::core::PCSTR, dwflags: u32) -> u32;
@@ -1585,7 +1613,10 @@ pub unsafe fn WNetAddConnection3A<'a, Param0: ::std::convert::Into<super::super:
 #[doc = "*Required features: `\"Win32_NetworkManagement_WNet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WNetAddConnection3W<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(hwndowner: Param0, lpnetresource: *const NETRESOURCEW, lppassword: ::windows::core::PCWSTR, lpusername: ::windows::core::PCWSTR, dwflags: u32) -> u32 {
+pub unsafe fn WNetAddConnection3W<'a, P0>(hwndowner: P0, lpnetresource: *const NETRESOURCEW, lppassword: ::windows::core::PCWSTR, lpusername: ::windows::core::PCWSTR, dwflags: u32) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WNetAddConnection3W(hwndowner: super::super::Foundation::HWND, lpnetresource: *const NETRESOURCEW, lppassword: ::windows::core::PCWSTR, lpusername: ::windows::core::PCWSTR, dwflags: u32) -> u32;
@@ -1595,7 +1626,10 @@ pub unsafe fn WNetAddConnection3W<'a, Param0: ::std::convert::Into<super::super:
 #[doc = "*Required features: `\"Win32_NetworkManagement_WNet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WNetAddConnection4A<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(hwndowner: Param0, lpnetresource: *const NETRESOURCEA, pauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, dwflags: u32, lpuseoptions: *const u8, cbuseoptions: u32) -> u32 {
+pub unsafe fn WNetAddConnection4A<'a, P0>(hwndowner: P0, lpnetresource: *const NETRESOURCEA, pauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, dwflags: u32, lpuseoptions: *const u8, cbuseoptions: u32) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WNetAddConnection4A(hwndowner: super::super::Foundation::HWND, lpnetresource: *const NETRESOURCEA, pauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, dwflags: u32, lpuseoptions: *const u8, cbuseoptions: u32) -> u32;
@@ -1605,7 +1639,10 @@ pub unsafe fn WNetAddConnection4A<'a, Param0: ::std::convert::Into<super::super:
 #[doc = "*Required features: `\"Win32_NetworkManagement_WNet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WNetAddConnection4W<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(hwndowner: Param0, lpnetresource: *const NETRESOURCEW, pauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, dwflags: u32, lpuseoptions: *const u8, cbuseoptions: u32) -> u32 {
+pub unsafe fn WNetAddConnection4W<'a, P0>(hwndowner: P0, lpnetresource: *const NETRESOURCEW, pauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, dwflags: u32, lpuseoptions: *const u8, cbuseoptions: u32) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WNetAddConnection4W(hwndowner: super::super::Foundation::HWND, lpnetresource: *const NETRESOURCEW, pauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, dwflags: u32, lpuseoptions: *const u8, cbuseoptions: u32) -> u32;
@@ -1633,7 +1670,10 @@ pub unsafe fn WNetAddConnectionW(lpremotename: ::windows::core::PCWSTR, lppasswo
 #[doc = "*Required features: `\"Win32_NetworkManagement_WNet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WNetCancelConnection2A<'a, Param2: ::std::convert::Into<super::super::Foundation::BOOL>>(lpname: ::windows::core::PCSTR, dwflags: u32, fforce: Param2) -> u32 {
+pub unsafe fn WNetCancelConnection2A<'a, P0>(lpname: ::windows::core::PCSTR, dwflags: u32, fforce: P0) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WNetCancelConnection2A(lpname: ::windows::core::PCSTR, dwflags: u32, fforce: super::super::Foundation::BOOL) -> u32;
@@ -1643,7 +1683,10 @@ pub unsafe fn WNetCancelConnection2A<'a, Param2: ::std::convert::Into<super::sup
 #[doc = "*Required features: `\"Win32_NetworkManagement_WNet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WNetCancelConnection2W<'a, Param2: ::std::convert::Into<super::super::Foundation::BOOL>>(lpname: ::windows::core::PCWSTR, dwflags: u32, fforce: Param2) -> u32 {
+pub unsafe fn WNetCancelConnection2W<'a, P0>(lpname: ::windows::core::PCWSTR, dwflags: u32, fforce: P0) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WNetCancelConnection2W(lpname: ::windows::core::PCWSTR, dwflags: u32, fforce: super::super::Foundation::BOOL) -> u32;
@@ -1653,7 +1696,10 @@ pub unsafe fn WNetCancelConnection2W<'a, Param2: ::std::convert::Into<super::sup
 #[doc = "*Required features: `\"Win32_NetworkManagement_WNet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WNetCancelConnectionA<'a, Param1: ::std::convert::Into<super::super::Foundation::BOOL>>(lpname: ::windows::core::PCSTR, fforce: Param1) -> u32 {
+pub unsafe fn WNetCancelConnectionA<'a, P0>(lpname: ::windows::core::PCSTR, fforce: P0) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WNetCancelConnectionA(lpname: ::windows::core::PCSTR, fforce: super::super::Foundation::BOOL) -> u32;
@@ -1663,7 +1709,10 @@ pub unsafe fn WNetCancelConnectionA<'a, Param1: ::std::convert::Into<super::supe
 #[doc = "*Required features: `\"Win32_NetworkManagement_WNet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WNetCancelConnectionW<'a, Param1: ::std::convert::Into<super::super::Foundation::BOOL>>(lpname: ::windows::core::PCWSTR, fforce: Param1) -> u32 {
+pub unsafe fn WNetCancelConnectionW<'a, P0>(lpname: ::windows::core::PCWSTR, fforce: P0) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WNetCancelConnectionW(lpname: ::windows::core::PCWSTR, fforce: super::super::Foundation::BOOL) -> u32;
@@ -1673,7 +1722,10 @@ pub unsafe fn WNetCancelConnectionW<'a, Param1: ::std::convert::Into<super::supe
 #[doc = "*Required features: `\"Win32_NetworkManagement_WNet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WNetCloseEnum<'a, Param0: ::std::convert::Into<super::super::Foundation::HANDLE>>(henum: Param0) -> u32 {
+pub unsafe fn WNetCloseEnum<'a, P0>(henum: P0) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WNetCloseEnum(henum: super::super::Foundation::HANDLE) -> u32;
@@ -1683,7 +1735,10 @@ pub unsafe fn WNetCloseEnum<'a, Param0: ::std::convert::Into<super::super::Found
 #[doc = "*Required features: `\"Win32_NetworkManagement_WNet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WNetConnectionDialog<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(hwnd: Param0, dwtype: u32) -> u32 {
+pub unsafe fn WNetConnectionDialog<'a, P0>(hwnd: P0, dwtype: u32) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WNetConnectionDialog(hwnd: super::super::Foundation::HWND, dwtype: u32) -> u32;
@@ -1713,7 +1768,10 @@ pub unsafe fn WNetConnectionDialog1W(lpconndlgstruct: *mut CONNECTDLGSTRUCTW) ->
 #[doc = "*Required features: `\"Win32_NetworkManagement_WNet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WNetDisconnectDialog<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(hwnd: Param0, dwtype: u32) -> u32 {
+pub unsafe fn WNetDisconnectDialog<'a, P0>(hwnd: P0, dwtype: u32) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WNetDisconnectDialog(hwnd: super::super::Foundation::HWND, dwtype: u32) -> u32;
@@ -1743,7 +1801,10 @@ pub unsafe fn WNetDisconnectDialog1W(lpconndlgstruct: *const DISCDLGSTRUCTW) -> 
 #[doc = "*Required features: `\"Win32_NetworkManagement_WNet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WNetEnumResourceA<'a, Param0: ::std::convert::Into<super::super::Foundation::HANDLE>>(henum: Param0, lpccount: *mut u32, lpbuffer: *mut ::core::ffi::c_void, lpbuffersize: *mut u32) -> u32 {
+pub unsafe fn WNetEnumResourceA<'a, P0>(henum: P0, lpccount: *mut u32, lpbuffer: *mut ::core::ffi::c_void, lpbuffersize: *mut u32) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WNetEnumResourceA(henum: super::super::Foundation::HANDLE, lpccount: *mut u32, lpbuffer: *mut ::core::ffi::c_void, lpbuffersize: *mut u32) -> u32;
@@ -1753,7 +1814,10 @@ pub unsafe fn WNetEnumResourceA<'a, Param0: ::std::convert::Into<super::super::F
 #[doc = "*Required features: `\"Win32_NetworkManagement_WNet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WNetEnumResourceW<'a, Param0: ::std::convert::Into<super::super::Foundation::HANDLE>>(henum: Param0, lpccount: *mut u32, lpbuffer: *mut ::core::ffi::c_void, lpbuffersize: *mut u32) -> u32 {
+pub unsafe fn WNetEnumResourceW<'a, P0>(henum: P0, lpccount: *mut u32, lpbuffer: *mut ::core::ffi::c_void, lpbuffersize: *mut u32) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WNetEnumResourceW(henum: super::super::Foundation::HANDLE, lpccount: *mut u32, lpbuffer: *mut ::core::ffi::c_void, lpbuffersize: *mut u32) -> u32;
@@ -1872,7 +1936,10 @@ pub unsafe fn WNetGetResourceParentW(lpnetresource: *const NETRESOURCEW, lpbuffe
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_WNet\"`*"]
 #[inline]
-pub unsafe fn WNetGetUniversalNameA<'a, Param1: ::std::convert::Into<UNC_INFO_LEVEL>>(lplocalpath: ::windows::core::PCSTR, dwinfolevel: Param1, lpbuffer: *mut ::core::ffi::c_void, lpbuffersize: *mut u32) -> u32 {
+pub unsafe fn WNetGetUniversalNameA<'a, P0>(lplocalpath: ::windows::core::PCSTR, dwinfolevel: P0, lpbuffer: *mut ::core::ffi::c_void, lpbuffersize: *mut u32) -> u32
+where
+    P0: ::std::convert::Into<UNC_INFO_LEVEL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WNetGetUniversalNameA(lplocalpath: ::windows::core::PCSTR, dwinfolevel: UNC_INFO_LEVEL, lpbuffer: *mut ::core::ffi::c_void, lpbuffersize: *mut u32) -> u32;
@@ -1881,7 +1948,10 @@ pub unsafe fn WNetGetUniversalNameA<'a, Param1: ::std::convert::Into<UNC_INFO_LE
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_WNet\"`*"]
 #[inline]
-pub unsafe fn WNetGetUniversalNameW<'a, Param1: ::std::convert::Into<UNC_INFO_LEVEL>>(lplocalpath: ::windows::core::PCWSTR, dwinfolevel: Param1, lpbuffer: *mut ::core::ffi::c_void, lpbuffersize: *mut u32) -> u32 {
+pub unsafe fn WNetGetUniversalNameW<'a, P0>(lplocalpath: ::windows::core::PCWSTR, dwinfolevel: P0, lpbuffer: *mut ::core::ffi::c_void, lpbuffersize: *mut u32) -> u32
+where
+    P0: ::std::convert::Into<UNC_INFO_LEVEL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WNetGetUniversalNameW(lplocalpath: ::windows::core::PCWSTR, dwinfolevel: UNC_INFO_LEVEL, lpbuffer: *mut ::core::ffi::c_void, lpbuffersize: *mut u32) -> u32;
@@ -1908,7 +1978,12 @@ pub unsafe fn WNetGetUserW(lpname: ::windows::core::PCWSTR, lpusername: ::window
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_WNet\"`*"]
 #[inline]
-pub unsafe fn WNetOpenEnumA<'a, Param0: ::std::convert::Into<NET_RESOURCE_SCOPE>, Param1: ::std::convert::Into<NET_RESOURCE_TYPE>, Param2: ::std::convert::Into<WNET_OPEN_ENUM_USAGE>>(dwscope: Param0, dwtype: Param1, dwusage: Param2, lpnetresource: *const NETRESOURCEA, lphenum: *mut NetEnumHandle) -> u32 {
+pub unsafe fn WNetOpenEnumA<'a, P0, P1, P2>(dwscope: P0, dwtype: P1, dwusage: P2, lpnetresource: *const NETRESOURCEA, lphenum: *mut NetEnumHandle) -> u32
+where
+    P0: ::std::convert::Into<NET_RESOURCE_SCOPE>,
+    P1: ::std::convert::Into<NET_RESOURCE_TYPE>,
+    P2: ::std::convert::Into<WNET_OPEN_ENUM_USAGE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WNetOpenEnumA(dwscope: NET_RESOURCE_SCOPE, dwtype: NET_RESOURCE_TYPE, dwusage: WNET_OPEN_ENUM_USAGE, lpnetresource: *const NETRESOURCEA, lphenum: *mut NetEnumHandle) -> u32;
@@ -1917,7 +1992,12 @@ pub unsafe fn WNetOpenEnumA<'a, Param0: ::std::convert::Into<NET_RESOURCE_SCOPE>
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_WNet\"`*"]
 #[inline]
-pub unsafe fn WNetOpenEnumW<'a, Param0: ::std::convert::Into<NET_RESOURCE_SCOPE>, Param1: ::std::convert::Into<NET_RESOURCE_TYPE>, Param2: ::std::convert::Into<WNET_OPEN_ENUM_USAGE>>(dwscope: Param0, dwtype: Param1, dwusage: Param2, lpnetresource: *const NETRESOURCEW, lphenum: *mut NetEnumHandle) -> u32 {
+pub unsafe fn WNetOpenEnumW<'a, P0, P1, P2>(dwscope: P0, dwtype: P1, dwusage: P2, lpnetresource: *const NETRESOURCEW, lphenum: *mut NetEnumHandle) -> u32
+where
+    P0: ::std::convert::Into<NET_RESOURCE_SCOPE>,
+    P1: ::std::convert::Into<NET_RESOURCE_TYPE>,
+    P2: ::std::convert::Into<WNET_OPEN_ENUM_USAGE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WNetOpenEnumW(dwscope: NET_RESOURCE_SCOPE, dwtype: NET_RESOURCE_TYPE, dwusage: WNET_OPEN_ENUM_USAGE, lpnetresource: *const NETRESOURCEW, lphenum: *mut NetEnumHandle) -> u32;
@@ -1945,7 +2025,10 @@ pub unsafe fn WNetSetLastErrorW(err: u32, lperror: ::windows::core::PCWSTR, lppr
 #[doc = "*Required features: `\"Win32_NetworkManagement_WNet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WNetUseConnection4A<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(hwndowner: Param0, lpnetresource: *const NETRESOURCEA, pauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, dwflags: u32, lpuseoptions: *const u8, cbuseoptions: u32, lpaccessname: ::windows::core::PSTR, lpbuffersize: *mut u32, lpresult: *mut u32) -> u32 {
+pub unsafe fn WNetUseConnection4A<'a, P0>(hwndowner: P0, lpnetresource: *const NETRESOURCEA, pauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, dwflags: u32, lpuseoptions: *const u8, cbuseoptions: u32, lpaccessname: ::windows::core::PSTR, lpbuffersize: *mut u32, lpresult: *mut u32) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WNetUseConnection4A(hwndowner: super::super::Foundation::HWND, lpnetresource: *const NETRESOURCEA, pauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, dwflags: u32, lpuseoptions: *const u8, cbuseoptions: u32, lpaccessname: ::windows::core::PSTR, lpbuffersize: *mut u32, lpresult: *mut u32) -> u32;
@@ -1955,7 +2038,10 @@ pub unsafe fn WNetUseConnection4A<'a, Param0: ::std::convert::Into<super::super:
 #[doc = "*Required features: `\"Win32_NetworkManagement_WNet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WNetUseConnection4W<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(hwndowner: Param0, lpnetresource: *const NETRESOURCEW, pauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, dwflags: u32, lpuseoptions: *const u8, cbuseoptions: u32, lpaccessname: ::windows::core::PWSTR, lpbuffersize: *mut u32, lpresult: *mut u32) -> u32 {
+pub unsafe fn WNetUseConnection4W<'a, P0>(hwndowner: P0, lpnetresource: *const NETRESOURCEW, pauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, dwflags: u32, lpuseoptions: *const u8, cbuseoptions: u32, lpaccessname: ::windows::core::PWSTR, lpbuffersize: *mut u32, lpresult: *mut u32) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WNetUseConnection4W(hwndowner: super::super::Foundation::HWND, lpnetresource: *const NETRESOURCEW, pauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, dwflags: u32, lpuseoptions: *const u8, cbuseoptions: u32, lpaccessname: ::windows::core::PWSTR, lpbuffersize: *mut u32, lpresult: *mut u32) -> u32;
@@ -1965,7 +2051,11 @@ pub unsafe fn WNetUseConnection4W<'a, Param0: ::std::convert::Into<super::super:
 #[doc = "*Required features: `\"Win32_NetworkManagement_WNet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WNetUseConnectionA<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>, Param4: ::std::convert::Into<NET_USE_CONNECT_FLAGS>>(hwndowner: Param0, lpnetresource: *const NETRESOURCEA, lppassword: ::windows::core::PCSTR, lpuserid: ::windows::core::PCSTR, dwflags: Param4, lpaccessname: ::windows::core::PSTR, lpbuffersize: *mut u32, lpresult: *mut u32) -> u32 {
+pub unsafe fn WNetUseConnectionA<'a, P0, P1>(hwndowner: P0, lpnetresource: *const NETRESOURCEA, lppassword: ::windows::core::PCSTR, lpuserid: ::windows::core::PCSTR, dwflags: P1, lpaccessname: ::windows::core::PSTR, lpbuffersize: *mut u32, lpresult: *mut u32) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+    P1: ::std::convert::Into<NET_USE_CONNECT_FLAGS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WNetUseConnectionA(hwndowner: super::super::Foundation::HWND, lpnetresource: *const NETRESOURCEA, lppassword: ::windows::core::PCSTR, lpuserid: ::windows::core::PCSTR, dwflags: NET_USE_CONNECT_FLAGS, lpaccessname: ::windows::core::PSTR, lpbuffersize: *mut u32, lpresult: *mut u32) -> u32;
@@ -1975,7 +2065,11 @@ pub unsafe fn WNetUseConnectionA<'a, Param0: ::std::convert::Into<super::super::
 #[doc = "*Required features: `\"Win32_NetworkManagement_WNet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WNetUseConnectionW<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>, Param4: ::std::convert::Into<NET_USE_CONNECT_FLAGS>>(hwndowner: Param0, lpnetresource: *const NETRESOURCEW, lppassword: ::windows::core::PCWSTR, lpuserid: ::windows::core::PCWSTR, dwflags: Param4, lpaccessname: ::windows::core::PWSTR, lpbuffersize: *mut u32, lpresult: *mut u32) -> u32 {
+pub unsafe fn WNetUseConnectionW<'a, P0, P1>(hwndowner: P0, lpnetresource: *const NETRESOURCEW, lppassword: ::windows::core::PCWSTR, lpuserid: ::windows::core::PCWSTR, dwflags: P1, lpaccessname: ::windows::core::PWSTR, lpbuffersize: *mut u32, lpresult: *mut u32) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+    P1: ::std::convert::Into<NET_USE_CONNECT_FLAGS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WNetUseConnectionW(hwndowner: super::super::Foundation::HWND, lpnetresource: *const NETRESOURCEW, lppassword: ::windows::core::PCWSTR, lpuserid: ::windows::core::PCWSTR, dwflags: NET_USE_CONNECT_FLAGS, lpaccessname: ::windows::core::PWSTR, lpbuffersize: *mut u32, lpresult: *mut u32) -> u32;

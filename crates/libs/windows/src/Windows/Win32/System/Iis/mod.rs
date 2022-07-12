@@ -2831,7 +2831,11 @@ impl IMSAdminBase2W {
     }
     #[doc = "*Required features: `\"Win32_System_Iis\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CopyKey<'a, Param4: ::std::convert::Into<super::super::Foundation::BOOL>, Param5: ::std::convert::Into<super::super::Foundation::BOOL>>(&self, hmdsourcehandle: u32, pszmdsourcepath: ::windows::core::PCWSTR, hmddesthandle: u32, pszmddestpath: ::windows::core::PCWSTR, bmdoverwriteflag: Param4, bmdcopyflag: Param5) -> ::windows::core::Result<()> {
+    pub unsafe fn CopyKey<'a, P0, P1>(&self, hmdsourcehandle: u32, pszmdsourcepath: ::windows::core::PCWSTR, hmddesthandle: u32, pszmddestpath: ::windows::core::PCWSTR, bmdoverwriteflag: P0, bmdcopyflag: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+        P1: ::std::convert::Into<super::super::Foundation::BOOL>,
+    {
         (::windows::core::Interface::vtable(self).base__.CopyKey)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(hmdsourcehandle), ::core::mem::transmute(pszmdsourcepath), ::core::mem::transmute(hmddesthandle), ::core::mem::transmute(pszmddestpath), bmdoverwriteflag.into(), bmdcopyflag.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Iis\"`*"]
@@ -2864,7 +2868,10 @@ impl IMSAdminBase2W {
     }
     #[doc = "*Required features: `\"Win32_System_Iis\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CopyData<'a, Param7: ::std::convert::Into<super::super::Foundation::BOOL>>(&self, hmdsourcehandle: u32, pszmdsourcepath: ::windows::core::PCWSTR, hmddesthandle: u32, pszmddestpath: ::windows::core::PCWSTR, dwmdattributes: u32, dwmdusertype: u32, dwmddatatype: u32, bmdcopyflag: Param7) -> ::windows::core::Result<()> {
+    pub unsafe fn CopyData<'a, P0>(&self, hmdsourcehandle: u32, pszmdsourcepath: ::windows::core::PCWSTR, hmddesthandle: u32, pszmddestpath: ::windows::core::PCWSTR, dwmdattributes: u32, dwmdusertype: u32, dwmddatatype: u32, bmdcopyflag: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+    {
         (::windows::core::Interface::vtable(self).base__.CopyData)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(hmdsourcehandle), ::core::mem::transmute(pszmdsourcepath), ::core::mem::transmute(hmddesthandle), ::core::mem::transmute(pszmddestpath), ::core::mem::transmute(dwmdattributes), ::core::mem::transmute(dwmdusertype), ::core::mem::transmute(dwmddatatype), bmdcopyflag.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Iis\"`*"]
@@ -2905,12 +2912,18 @@ impl IMSAdminBase2W {
     }
     #[doc = "*Required features: `\"Win32_System_Iis\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetLastChangeTime<'a, Param3: ::std::convert::Into<super::super::Foundation::BOOL>>(&self, hmdhandle: u32, pszmdpath: ::windows::core::PCWSTR, pftmdlastchangetime: *const super::super::Foundation::FILETIME, blocaltime: Param3) -> ::windows::core::Result<()> {
+    pub unsafe fn SetLastChangeTime<'a, P0>(&self, hmdhandle: u32, pszmdpath: ::windows::core::PCWSTR, pftmdlastchangetime: *const super::super::Foundation::FILETIME, blocaltime: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+    {
         (::windows::core::Interface::vtable(self).base__.SetLastChangeTime)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(hmdhandle), ::core::mem::transmute(pszmdpath), ::core::mem::transmute(pftmdlastchangetime), blocaltime.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Iis\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetLastChangeTime<'a, Param3: ::std::convert::Into<super::super::Foundation::BOOL>>(&self, hmdhandle: u32, pszmdpath: ::windows::core::PCWSTR, pftmdlastchangetime: *mut super::super::Foundation::FILETIME, blocaltime: Param3) -> ::windows::core::Result<()> {
+    pub unsafe fn GetLastChangeTime<'a, P0>(&self, hmdhandle: u32, pszmdpath: ::windows::core::PCWSTR, pftmdlastchangetime: *mut super::super::Foundation::FILETIME, blocaltime: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+    {
         (::windows::core::Interface::vtable(self).base__.GetLastChangeTime)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(hmdhandle), ::core::mem::transmute(pszmdpath), ::core::mem::transmute(pftmdlastchangetime), blocaltime.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Iis\"`*"]
@@ -3059,7 +3072,11 @@ impl IMSAdminBase3W {
     }
     #[doc = "*Required features: `\"Win32_System_Iis\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CopyKey<'a, Param4: ::std::convert::Into<super::super::Foundation::BOOL>, Param5: ::std::convert::Into<super::super::Foundation::BOOL>>(&self, hmdsourcehandle: u32, pszmdsourcepath: ::windows::core::PCWSTR, hmddesthandle: u32, pszmddestpath: ::windows::core::PCWSTR, bmdoverwriteflag: Param4, bmdcopyflag: Param5) -> ::windows::core::Result<()> {
+    pub unsafe fn CopyKey<'a, P0, P1>(&self, hmdsourcehandle: u32, pszmdsourcepath: ::windows::core::PCWSTR, hmddesthandle: u32, pszmddestpath: ::windows::core::PCWSTR, bmdoverwriteflag: P0, bmdcopyflag: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+        P1: ::std::convert::Into<super::super::Foundation::BOOL>,
+    {
         (::windows::core::Interface::vtable(self).base__.base__.CopyKey)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(hmdsourcehandle), ::core::mem::transmute(pszmdsourcepath), ::core::mem::transmute(hmddesthandle), ::core::mem::transmute(pszmddestpath), bmdoverwriteflag.into(), bmdcopyflag.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Iis\"`*"]
@@ -3092,7 +3109,10 @@ impl IMSAdminBase3W {
     }
     #[doc = "*Required features: `\"Win32_System_Iis\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CopyData<'a, Param7: ::std::convert::Into<super::super::Foundation::BOOL>>(&self, hmdsourcehandle: u32, pszmdsourcepath: ::windows::core::PCWSTR, hmddesthandle: u32, pszmddestpath: ::windows::core::PCWSTR, dwmdattributes: u32, dwmdusertype: u32, dwmddatatype: u32, bmdcopyflag: Param7) -> ::windows::core::Result<()> {
+    pub unsafe fn CopyData<'a, P0>(&self, hmdsourcehandle: u32, pszmdsourcepath: ::windows::core::PCWSTR, hmddesthandle: u32, pszmddestpath: ::windows::core::PCWSTR, dwmdattributes: u32, dwmdusertype: u32, dwmddatatype: u32, bmdcopyflag: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+    {
         (::windows::core::Interface::vtable(self).base__.base__.CopyData)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(hmdsourcehandle), ::core::mem::transmute(pszmdsourcepath), ::core::mem::transmute(hmddesthandle), ::core::mem::transmute(pszmddestpath), ::core::mem::transmute(dwmdattributes), ::core::mem::transmute(dwmdusertype), ::core::mem::transmute(dwmddatatype), bmdcopyflag.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Iis\"`*"]
@@ -3133,12 +3153,18 @@ impl IMSAdminBase3W {
     }
     #[doc = "*Required features: `\"Win32_System_Iis\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetLastChangeTime<'a, Param3: ::std::convert::Into<super::super::Foundation::BOOL>>(&self, hmdhandle: u32, pszmdpath: ::windows::core::PCWSTR, pftmdlastchangetime: *const super::super::Foundation::FILETIME, blocaltime: Param3) -> ::windows::core::Result<()> {
+    pub unsafe fn SetLastChangeTime<'a, P0>(&self, hmdhandle: u32, pszmdpath: ::windows::core::PCWSTR, pftmdlastchangetime: *const super::super::Foundation::FILETIME, blocaltime: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+    {
         (::windows::core::Interface::vtable(self).base__.base__.SetLastChangeTime)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(hmdhandle), ::core::mem::transmute(pszmdpath), ::core::mem::transmute(pftmdlastchangetime), blocaltime.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Iis\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetLastChangeTime<'a, Param3: ::std::convert::Into<super::super::Foundation::BOOL>>(&self, hmdhandle: u32, pszmdpath: ::windows::core::PCWSTR, pftmdlastchangetime: *mut super::super::Foundation::FILETIME, blocaltime: Param3) -> ::windows::core::Result<()> {
+    pub unsafe fn GetLastChangeTime<'a, P0>(&self, hmdhandle: u32, pszmdpath: ::windows::core::PCWSTR, pftmdlastchangetime: *mut super::super::Foundation::FILETIME, blocaltime: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+    {
         (::windows::core::Interface::vtable(self).base__.base__.GetLastChangeTime)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(hmdhandle), ::core::mem::transmute(pszmdpath), ::core::mem::transmute(pftmdlastchangetime), blocaltime.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Iis\"`*"]
@@ -3353,7 +3379,11 @@ impl IMSAdminBaseW {
     }
     #[doc = "*Required features: `\"Win32_System_Iis\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CopyKey<'a, Param4: ::std::convert::Into<super::super::Foundation::BOOL>, Param5: ::std::convert::Into<super::super::Foundation::BOOL>>(&self, hmdsourcehandle: u32, pszmdsourcepath: ::windows::core::PCWSTR, hmddesthandle: u32, pszmddestpath: ::windows::core::PCWSTR, bmdoverwriteflag: Param4, bmdcopyflag: Param5) -> ::windows::core::Result<()> {
+    pub unsafe fn CopyKey<'a, P0, P1>(&self, hmdsourcehandle: u32, pszmdsourcepath: ::windows::core::PCWSTR, hmddesthandle: u32, pszmddestpath: ::windows::core::PCWSTR, bmdoverwriteflag: P0, bmdcopyflag: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+        P1: ::std::convert::Into<super::super::Foundation::BOOL>,
+    {
         (::windows::core::Interface::vtable(self).CopyKey)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(hmdsourcehandle), ::core::mem::transmute(pszmdsourcepath), ::core::mem::transmute(hmddesthandle), ::core::mem::transmute(pszmddestpath), bmdoverwriteflag.into(), bmdcopyflag.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Iis\"`*"]
@@ -3386,7 +3416,10 @@ impl IMSAdminBaseW {
     }
     #[doc = "*Required features: `\"Win32_System_Iis\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CopyData<'a, Param7: ::std::convert::Into<super::super::Foundation::BOOL>>(&self, hmdsourcehandle: u32, pszmdsourcepath: ::windows::core::PCWSTR, hmddesthandle: u32, pszmddestpath: ::windows::core::PCWSTR, dwmdattributes: u32, dwmdusertype: u32, dwmddatatype: u32, bmdcopyflag: Param7) -> ::windows::core::Result<()> {
+    pub unsafe fn CopyData<'a, P0>(&self, hmdsourcehandle: u32, pszmdsourcepath: ::windows::core::PCWSTR, hmddesthandle: u32, pszmddestpath: ::windows::core::PCWSTR, dwmdattributes: u32, dwmdusertype: u32, dwmddatatype: u32, bmdcopyflag: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+    {
         (::windows::core::Interface::vtable(self).CopyData)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(hmdsourcehandle), ::core::mem::transmute(pszmdsourcepath), ::core::mem::transmute(hmddesthandle), ::core::mem::transmute(pszmddestpath), ::core::mem::transmute(dwmdattributes), ::core::mem::transmute(dwmdusertype), ::core::mem::transmute(dwmddatatype), bmdcopyflag.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Iis\"`*"]
@@ -3427,12 +3460,18 @@ impl IMSAdminBaseW {
     }
     #[doc = "*Required features: `\"Win32_System_Iis\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetLastChangeTime<'a, Param3: ::std::convert::Into<super::super::Foundation::BOOL>>(&self, hmdhandle: u32, pszmdpath: ::windows::core::PCWSTR, pftmdlastchangetime: *const super::super::Foundation::FILETIME, blocaltime: Param3) -> ::windows::core::Result<()> {
+    pub unsafe fn SetLastChangeTime<'a, P0>(&self, hmdhandle: u32, pszmdpath: ::windows::core::PCWSTR, pftmdlastchangetime: *const super::super::Foundation::FILETIME, blocaltime: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+    {
         (::windows::core::Interface::vtable(self).SetLastChangeTime)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(hmdhandle), ::core::mem::transmute(pszmdpath), ::core::mem::transmute(pftmdlastchangetime), blocaltime.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Iis\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetLastChangeTime<'a, Param3: ::std::convert::Into<super::super::Foundation::BOOL>>(&self, hmdhandle: u32, pszmdpath: ::windows::core::PCWSTR, pftmdlastchangetime: *mut super::super::Foundation::FILETIME, blocaltime: Param3) -> ::windows::core::Result<()> {
+    pub unsafe fn GetLastChangeTime<'a, P0>(&self, hmdhandle: u32, pszmdpath: ::windows::core::PCWSTR, pftmdlastchangetime: *mut super::super::Foundation::FILETIME, blocaltime: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+    {
         (::windows::core::Interface::vtable(self).GetLastChangeTime)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(hmdhandle), ::core::mem::transmute(pszmdpath), ::core::mem::transmute(pftmdlastchangetime), blocaltime.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Iis\"`*"]

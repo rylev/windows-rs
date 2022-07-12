@@ -160,7 +160,10 @@ pub unsafe fn DavAddConnection(connectionhandle: *mut super::super::Foundation::
 #[doc = "*Required features: `\"Win32_NetworkManagement_WebDav\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DavCancelConnectionsToServer<'a, Param1: ::std::convert::Into<super::super::Foundation::BOOL>>(lpname: ::windows::core::PCWSTR, fforce: Param1) -> u32 {
+pub unsafe fn DavCancelConnectionsToServer<'a, P0>(lpname: ::windows::core::PCWSTR, fforce: P0) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DavCancelConnectionsToServer(lpname: ::windows::core::PCWSTR, fforce: super::super::Foundation::BOOL) -> u32;
@@ -170,7 +173,10 @@ pub unsafe fn DavCancelConnectionsToServer<'a, Param1: ::std::convert::Into<supe
 #[doc = "*Required features: `\"Win32_NetworkManagement_WebDav\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DavDeleteConnection<'a, Param0: ::std::convert::Into<super::super::Foundation::HANDLE>>(connectionhandle: Param0) -> u32 {
+pub unsafe fn DavDeleteConnection<'a, P0>(connectionhandle: P0) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DavDeleteConnection(connectionhandle: super::super::Foundation::HANDLE) -> u32;
@@ -180,7 +186,10 @@ pub unsafe fn DavDeleteConnection<'a, Param0: ::std::convert::Into<super::super:
 #[doc = "*Required features: `\"Win32_NetworkManagement_WebDav\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DavFlushFile<'a, Param0: ::std::convert::Into<super::super::Foundation::HANDLE>>(hfile: Param0) -> u32 {
+pub unsafe fn DavFlushFile<'a, P0>(hfile: P0) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DavFlushFile(hfile: super::super::Foundation::HANDLE) -> u32;
@@ -190,7 +199,10 @@ pub unsafe fn DavFlushFile<'a, Param0: ::std::convert::Into<super::super::Founda
 #[doc = "*Required features: `\"Win32_NetworkManagement_WebDav\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DavGetExtendedError<'a, Param0: ::std::convert::Into<super::super::Foundation::HANDLE>>(hfile: Param0, exterror: *mut u32, exterrorstring: ::windows::core::PWSTR, cchsize: *mut u32) -> u32 {
+pub unsafe fn DavGetExtendedError<'a, P0>(hfile: P0, exterror: *mut u32, exterrorstring: ::windows::core::PWSTR, cchsize: *mut u32) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DavGetExtendedError(hfile: super::super::Foundation::HANDLE, exterror: *mut u32, exterrorstring: ::windows::core::PWSTR, cchsize: *mut u32) -> u32;

@@ -1028,7 +1028,11 @@ pub struct IWSMan(::windows::core::IUnknown);
 impl IWSMan {
     #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn CreateSession<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>, Param2: ::std::convert::Into<::windows::core::InParam<'a, super::Com::IDispatch>>>(&self, connection: Param0, flags: i32, connectionoptions: Param2) -> ::windows::core::Result<super::Com::IDispatch> {
+    pub unsafe fn CreateSession<'a, P0, P1>(&self, connection: P0, flags: i32, connectionoptions: P1) -> ::windows::core::Result<super::Com::IDispatch>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, super::Com::IDispatch>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).CreateSession)(::windows::core::Interface::as_raw(self), connection.into().abi(), ::core::mem::transmute(flags), connectionoptions.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Com::IDispatch>(result__)
     }
@@ -1148,12 +1152,18 @@ impl IWSManConnectionOptions {
     }
     #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetUserName<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>>(&self, name: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetUserName<'a, P0>(&self, name: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>,
+    {
         (::windows::core::Interface::vtable(self).SetUserName)(::windows::core::Interface::as_raw(self), name.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetPassword<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>>(&self, password: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetPassword<'a, P0>(&self, password: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>,
+    {
         (::windows::core::Interface::vtable(self).SetPassword)(::windows::core::Interface::as_raw(self), password.into().abi()).ok()
     }
 }
@@ -1250,12 +1260,18 @@ impl IWSManConnectionOptionsEx {
     }
     #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetUserName<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>>(&self, name: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetUserName<'a, P0>(&self, name: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>,
+    {
         (::windows::core::Interface::vtable(self).base__.SetUserName)(::windows::core::Interface::as_raw(self), name.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetPassword<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>>(&self, password: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetPassword<'a, P0>(&self, password: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>,
+    {
         (::windows::core::Interface::vtable(self).base__.SetPassword)(::windows::core::Interface::as_raw(self), password.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`, `\"Win32_Foundation\"`*"]
@@ -1266,7 +1282,10 @@ impl IWSManConnectionOptionsEx {
     }
     #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetCertificateThumbprint<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>>(&self, thumbprint: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetCertificateThumbprint<'a, P0>(&self, thumbprint: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>,
+    {
         (::windows::core::Interface::vtable(self).SetCertificateThumbprint)(::windows::core::Interface::as_raw(self), thumbprint.into().abi()).ok()
     }
 }
@@ -1377,12 +1396,18 @@ impl IWSManConnectionOptionsEx2 {
     }
     #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetUserName<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>>(&self, name: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetUserName<'a, P0>(&self, name: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>,
+    {
         (::windows::core::Interface::vtable(self).base__.base__.SetUserName)(::windows::core::Interface::as_raw(self), name.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetPassword<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>>(&self, password: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetPassword<'a, P0>(&self, password: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>,
+    {
         (::windows::core::Interface::vtable(self).base__.base__.SetPassword)(::windows::core::Interface::as_raw(self), password.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`, `\"Win32_Foundation\"`*"]
@@ -1393,12 +1418,19 @@ impl IWSManConnectionOptionsEx2 {
     }
     #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetCertificateThumbprint<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>>(&self, thumbprint: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetCertificateThumbprint<'a, P0>(&self, thumbprint: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>,
+    {
         (::windows::core::Interface::vtable(self).base__.SetCertificateThumbprint)(::windows::core::Interface::as_raw(self), thumbprint.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetProxy<'a, Param2: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>, Param3: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>>(&self, accesstype: i32, authenticationmechanism: i32, username: Param2, password: Param3) -> ::windows::core::Result<()> {
+    pub unsafe fn SetProxy<'a, P0, P1>(&self, accesstype: i32, authenticationmechanism: i32, username: P0, password: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>,
+    {
         (::windows::core::Interface::vtable(self).SetProxy)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(accesstype), ::core::mem::transmute(authenticationmechanism), username.into().abi(), password.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`*"]
@@ -1659,7 +1691,11 @@ pub struct IWSManEx(::windows::core::IUnknown);
 impl IWSManEx {
     #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn CreateSession<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>, Param2: ::std::convert::Into<::windows::core::InParam<'a, super::Com::IDispatch>>>(&self, connection: Param0, flags: i32, connectionoptions: Param2) -> ::windows::core::Result<super::Com::IDispatch> {
+    pub unsafe fn CreateSession<'a, P0, P1>(&self, connection: P0, flags: i32, connectionoptions: P1) -> ::windows::core::Result<super::Com::IDispatch>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, super::Com::IDispatch>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).base__.CreateSession)(::windows::core::Interface::as_raw(self), connection.into().abi(), ::core::mem::transmute(flags), connectionoptions.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Com::IDispatch>(result__)
     }
@@ -1683,7 +1719,10 @@ impl IWSManEx {
     }
     #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn CreateResourceLocator<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>>(&self, strresourcelocator: Param0) -> ::windows::core::Result<super::Com::IDispatch> {
+    pub unsafe fn CreateResourceLocator<'a, P0>(&self, strresourcelocator: P0) -> ::windows::core::Result<super::Com::IDispatch>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).CreateResourceLocator)(::windows::core::Interface::as_raw(self), strresourcelocator.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Com::IDispatch>(result__)
     }
@@ -1903,7 +1942,11 @@ pub struct IWSManEx2(::windows::core::IUnknown);
 impl IWSManEx2 {
     #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn CreateSession<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>, Param2: ::std::convert::Into<::windows::core::InParam<'a, super::Com::IDispatch>>>(&self, connection: Param0, flags: i32, connectionoptions: Param2) -> ::windows::core::Result<super::Com::IDispatch> {
+    pub unsafe fn CreateSession<'a, P0, P1>(&self, connection: P0, flags: i32, connectionoptions: P1) -> ::windows::core::Result<super::Com::IDispatch>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, super::Com::IDispatch>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).base__.base__.CreateSession)(::windows::core::Interface::as_raw(self), connection.into().abi(), ::core::mem::transmute(flags), connectionoptions.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Com::IDispatch>(result__)
     }
@@ -1927,7 +1970,10 @@ impl IWSManEx2 {
     }
     #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn CreateResourceLocator<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>>(&self, strresourcelocator: Param0) -> ::windows::core::Result<super::Com::IDispatch> {
+    pub unsafe fn CreateResourceLocator<'a, P0>(&self, strresourcelocator: P0) -> ::windows::core::Result<super::Com::IDispatch>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).base__.CreateResourceLocator)(::windows::core::Interface::as_raw(self), strresourcelocator.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Com::IDispatch>(result__)
     }
@@ -2145,7 +2191,11 @@ pub struct IWSManEx3(::windows::core::IUnknown);
 impl IWSManEx3 {
     #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn CreateSession<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>, Param2: ::std::convert::Into<::windows::core::InParam<'a, super::Com::IDispatch>>>(&self, connection: Param0, flags: i32, connectionoptions: Param2) -> ::windows::core::Result<super::Com::IDispatch> {
+    pub unsafe fn CreateSession<'a, P0, P1>(&self, connection: P0, flags: i32, connectionoptions: P1) -> ::windows::core::Result<super::Com::IDispatch>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, super::Com::IDispatch>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).base__.base__.base__.CreateSession)(::windows::core::Interface::as_raw(self), connection.into().abi(), ::core::mem::transmute(flags), connectionoptions.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Com::IDispatch>(result__)
     }
@@ -2169,7 +2219,10 @@ impl IWSManEx3 {
     }
     #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn CreateResourceLocator<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>>(&self, strresourcelocator: Param0) -> ::windows::core::Result<super::Com::IDispatch> {
+    pub unsafe fn CreateResourceLocator<'a, P0>(&self, strresourcelocator: P0) -> ::windows::core::Result<super::Com::IDispatch>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).base__.base__.CreateResourceLocator)(::windows::core::Interface::as_raw(self), strresourcelocator.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Com::IDispatch>(result__)
     }
@@ -2446,7 +2499,11 @@ pub struct IWSManInternal(::windows::core::IUnknown);
 impl IWSManInternal {
     #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn ConfigSDDL<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, super::Com::IDispatch>>, Param1: ::std::convert::Into<::windows::core::InParam<'a, super::Com::VARIANT>>>(&self, session: Param0, resourceuri: Param1, flags: i32) -> ::windows::core::Result<super::super::Foundation::BSTR> {
+    pub unsafe fn ConfigSDDL<'a, P0, P1>(&self, session: P0, resourceuri: P1, flags: i32) -> ::windows::core::Result<super::super::Foundation::BSTR>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, super::Com::IDispatch>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, super::Com::VARIANT>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
         (::windows::core::Interface::vtable(self).ConfigSDDL)(::windows::core::Interface::as_raw(self), session.into().abi(), resourceuri.into().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
     }
@@ -2530,7 +2587,10 @@ pub struct IWSManResourceLocator(::windows::core::IUnknown);
 impl IWSManResourceLocator {
     #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetResourceURI<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>>(&self, uri: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetResourceURI<'a, P0>(&self, uri: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>,
+    {
         (::windows::core::Interface::vtable(self).SetResourceURI)(::windows::core::Interface::as_raw(self), uri.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`, `\"Win32_Foundation\"`*"]
@@ -2541,7 +2601,11 @@ impl IWSManResourceLocator {
     }
     #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn AddSelector<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>, Param1: ::std::convert::Into<::windows::core::InParam<'a, super::Com::VARIANT>>>(&self, resourceselname: Param0, selvalue: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn AddSelector<'a, P0, P1>(&self, resourceselname: P0, selvalue: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, super::Com::VARIANT>>,
+    {
         (::windows::core::Interface::vtable(self).AddSelector)(::windows::core::Interface::as_raw(self), resourceselname.into().abi(), selvalue.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`*"]
@@ -2556,7 +2620,10 @@ impl IWSManResourceLocator {
     }
     #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetFragmentPath<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>>(&self, text: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetFragmentPath<'a, P0>(&self, text: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>,
+    {
         (::windows::core::Interface::vtable(self).SetFragmentPath)(::windows::core::Interface::as_raw(self), text.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`, `\"Win32_Foundation\"`*"]
@@ -2567,17 +2634,28 @@ impl IWSManResourceLocator {
     }
     #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetFragmentDialect<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>>(&self, text: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetFragmentDialect<'a, P0>(&self, text: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>,
+    {
         (::windows::core::Interface::vtable(self).SetFragmentDialect)(::windows::core::Interface::as_raw(self), text.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn AddOption<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>, Param1: ::std::convert::Into<::windows::core::InParam<'a, super::Com::VARIANT>>, Param2: ::std::convert::Into<super::super::Foundation::BOOL>>(&self, optionname: Param0, optionvalue: Param1, mustcomply: Param2) -> ::windows::core::Result<()> {
+    pub unsafe fn AddOption<'a, P0, P1, P2>(&self, optionname: P0, optionvalue: P1, mustcomply: P2) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, super::Com::VARIANT>>,
+        P2: ::std::convert::Into<super::super::Foundation::BOOL>,
+    {
         (::windows::core::Interface::vtable(self).AddOption)(::windows::core::Interface::as_raw(self), optionname.into().abi(), optionvalue.into().abi(), mustcomply.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetMustUnderstandOptions<'a, Param0: ::std::convert::Into<super::super::Foundation::BOOL>>(&self, mustunderstand: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetMustUnderstandOptions<'a, P0>(&self, mustunderstand: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+    {
         (::windows::core::Interface::vtable(self).SetMustUnderstandOptions)(::windows::core::Interface::as_raw(self), mustunderstand.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`, `\"Win32_Foundation\"`*"]
@@ -2762,36 +2840,60 @@ pub struct IWSManSession(::windows::core::IUnknown);
 impl IWSManSession {
     #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn Get<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, super::Com::VARIANT>>>(&self, resourceuri: Param0, flags: i32) -> ::windows::core::Result<super::super::Foundation::BSTR> {
+    pub unsafe fn Get<'a, P0>(&self, resourceuri: P0, flags: i32) -> ::windows::core::Result<super::super::Foundation::BSTR>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, super::Com::VARIANT>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
         (::windows::core::Interface::vtable(self).Get)(::windows::core::Interface::as_raw(self), resourceuri.into().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn Put<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, super::Com::VARIANT>>, Param1: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>>(&self, resourceuri: Param0, resource: Param1, flags: i32) -> ::windows::core::Result<super::super::Foundation::BSTR> {
+    pub unsafe fn Put<'a, P0, P1>(&self, resourceuri: P0, resource: P1, flags: i32) -> ::windows::core::Result<super::super::Foundation::BSTR>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, super::Com::VARIANT>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
         (::windows::core::Interface::vtable(self).Put)(::windows::core::Interface::as_raw(self), resourceuri.into().abi(), resource.into().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn Create<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, super::Com::VARIANT>>, Param1: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>>(&self, resourceuri: Param0, resource: Param1, flags: i32) -> ::windows::core::Result<super::super::Foundation::BSTR> {
+    pub unsafe fn Create<'a, P0, P1>(&self, resourceuri: P0, resource: P1, flags: i32) -> ::windows::core::Result<super::super::Foundation::BSTR>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, super::Com::VARIANT>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
         (::windows::core::Interface::vtable(self).Create)(::windows::core::Interface::as_raw(self), resourceuri.into().abi(), resource.into().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn Delete<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, super::Com::VARIANT>>>(&self, resourceuri: Param0, flags: i32) -> ::windows::core::Result<()> {
+    pub unsafe fn Delete<'a, P0>(&self, resourceuri: P0, flags: i32) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, super::Com::VARIANT>>,
+    {
         (::windows::core::Interface::vtable(self).Delete)(::windows::core::Interface::as_raw(self), resourceuri.into().abi(), ::core::mem::transmute(flags)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn Invoke2<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>, Param1: ::std::convert::Into<::windows::core::InParam<'a, super::Com::VARIANT>>, Param2: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>>(&self, actionuri: Param0, resourceuri: Param1, parameters: Param2, flags: i32) -> ::windows::core::Result<super::super::Foundation::BSTR> {
+    pub unsafe fn Invoke2<'a, P0, P1, P2>(&self, actionuri: P0, resourceuri: P1, parameters: P2, flags: i32) -> ::windows::core::Result<super::super::Foundation::BSTR>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, super::Com::VARIANT>>,
+        P2: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
         (::windows::core::Interface::vtable(self).Invoke2)(::windows::core::Interface::as_raw(self), actionuri.into().abi(), resourceuri.into().abi(), parameters.into().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn Enumerate<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, super::Com::VARIANT>>, Param1: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>, Param2: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>>(&self, resourceuri: Param0, filter: Param1, dialect: Param2, flags: i32) -> ::windows::core::Result<super::Com::IDispatch> {
+    pub unsafe fn Enumerate<'a, P0, P1, P2>(&self, resourceuri: P0, filter: P1, dialect: P2, flags: i32) -> ::windows::core::Result<super::Com::IDispatch>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, super::Com::VARIANT>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>,
+        P2: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).Enumerate)(::windows::core::Interface::as_raw(self), resourceuri.into().abi(), filter.into().abi(), dialect.into().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Com::IDispatch>(result__)
     }
@@ -4414,7 +4516,10 @@ pub unsafe fn WSManGetErrorMessage(apihandle: *const WSMAN_API, flags: u32, lang
 }
 #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`*"]
 #[inline]
-pub unsafe fn WSManGetSessionOptionAsDword<'a, Param1: ::std::convert::Into<WSManSessionOption>>(session: *const WSMAN_SESSION, option: Param1, value: *mut u32) -> u32 {
+pub unsafe fn WSManGetSessionOptionAsDword<'a, P0>(session: *const WSMAN_SESSION, option: P0, value: *mut u32) -> u32
+where
+    P0: ::std::convert::Into<WSManSessionOption>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSManGetSessionOptionAsDword(session: *const WSMAN_SESSION, option: WSManSessionOption, value: *mut u32) -> u32;
@@ -4423,7 +4528,10 @@ pub unsafe fn WSManGetSessionOptionAsDword<'a, Param1: ::std::convert::Into<WSMa
 }
 #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`*"]
 #[inline]
-pub unsafe fn WSManGetSessionOptionAsString<'a, Param1: ::std::convert::Into<WSManSessionOption>>(session: *const WSMAN_SESSION, option: Param1, string: &mut [u16], stringlengthused: *mut u32) -> u32 {
+pub unsafe fn WSManGetSessionOptionAsString<'a, P0>(session: *const WSMAN_SESSION, option: P0, string: &mut [u16], stringlengthused: *mut u32) -> u32
+where
+    P0: ::std::convert::Into<WSManSessionOption>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSManGetSessionOptionAsString(session: *const WSMAN_SESSION, option: WSManSessionOption, stringlength: u32, string: ::windows::core::PWSTR, stringlengthused: *mut u32) -> u32;
@@ -4463,7 +4571,11 @@ pub unsafe fn WSManPluginAuthzQueryQuotaComplete(senderdetails: *const WSMAN_SEN
 #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WSManPluginAuthzUserComplete<'a, Param3: ::std::convert::Into<super::super::Foundation::HANDLE>, Param4: ::std::convert::Into<super::super::Foundation::BOOL>>(senderdetails: *const WSMAN_SENDER_DETAILS, flags: u32, userauthorizationcontext: *const ::core::ffi::c_void, impersonationtoken: Param3, userisadministrator: Param4, errorcode: u32, extendederrorinformation: ::windows::core::PCWSTR) -> u32 {
+pub unsafe fn WSManPluginAuthzUserComplete<'a, P0, P1>(senderdetails: *const WSMAN_SENDER_DETAILS, flags: u32, userauthorizationcontext: *const ::core::ffi::c_void, impersonationtoken: P0, userisadministrator: P1, errorcode: u32, extendederrorinformation: ::windows::core::PCWSTR) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
+    P1: ::std::convert::Into<super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSManPluginAuthzUserComplete(senderdetails: *const WSMAN_SENDER_DETAILS, flags: u32, userauthorizationcontext: *const ::core::ffi::c_void, impersonationtoken: super::super::Foundation::HANDLE, userisadministrator: super::super::Foundation::BOOL, errorcode: u32, extendederrorinformation: ::windows::core::PCWSTR) -> u32;
@@ -4679,7 +4791,10 @@ pub unsafe fn WSManRunShellCommandEx(shell: *mut WSMAN_SHELL, flags: u32, comman
 #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WSManSendShellInput<'a, Param5: ::std::convert::Into<super::super::Foundation::BOOL>>(shell: *const WSMAN_SHELL, command: *const WSMAN_COMMAND, flags: u32, streamid: ::windows::core::PCWSTR, streamdata: *const WSMAN_DATA, endofstream: Param5, r#async: *const WSMAN_SHELL_ASYNC, sendoperation: *mut *mut WSMAN_OPERATION) {
+pub unsafe fn WSManSendShellInput<'a, P0>(shell: *const WSMAN_SHELL, command: *const WSMAN_COMMAND, flags: u32, streamid: ::windows::core::PCWSTR, streamdata: *const WSMAN_DATA, endofstream: P0, r#async: *const WSMAN_SHELL_ASYNC, sendoperation: *mut *mut WSMAN_OPERATION)
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSManSendShellInput(shell: *const WSMAN_SHELL, command: *const WSMAN_COMMAND, flags: u32, streamid: ::windows::core::PCWSTR, streamdata: *const WSMAN_DATA, endofstream: super::super::Foundation::BOOL, r#async: *const WSMAN_SHELL_ASYNC, sendoperation: *mut *mut WSMAN_OPERATION);
@@ -4814,7 +4929,10 @@ impl ::core::fmt::Debug for WSManSessionOption {
 }
 #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`*"]
 #[inline]
-pub unsafe fn WSManSetSessionOption<'a, Param1: ::std::convert::Into<WSManSessionOption>>(session: *const WSMAN_SESSION, option: Param1, data: *const WSMAN_DATA) -> u32 {
+pub unsafe fn WSManSetSessionOption<'a, P0>(session: *const WSMAN_SESSION, option: P0, data: *const WSMAN_DATA) -> u32
+where
+    P0: ::std::convert::Into<WSManSessionOption>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSManSetSessionOption(session: *const WSMAN_SESSION, option: WSManSessionOption, data: *const WSMAN_DATA) -> u32;

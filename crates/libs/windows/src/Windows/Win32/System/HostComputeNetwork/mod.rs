@@ -515,7 +515,10 @@ pub unsafe fn HcnRegisterServiceCallback(callback: HCN_NOTIFICATION_CALLBACK, co
 #[doc = "*Required features: `\"Win32_System_HostComputeNetwork\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn HcnReleaseGuestNetworkServicePortReservationHandle<'a, Param0: ::std::convert::Into<super::super::Foundation::HANDLE>>(portreservationhandle: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn HcnReleaseGuestNetworkServicePortReservationHandle<'a, P0>(portreservationhandle: P0) -> ::windows::core::Result<()>
+where
+    P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HcnReleaseGuestNetworkServicePortReservationHandle(portreservationhandle: super::super::Foundation::HANDLE) -> ::windows::core::HRESULT;
@@ -525,7 +528,11 @@ pub unsafe fn HcnReleaseGuestNetworkServicePortReservationHandle<'a, Param0: ::s
 #[doc = "*Required features: `\"Win32_System_HostComputeNetwork\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn HcnReserveGuestNetworkServicePort<'a, Param1: ::std::convert::Into<HCN_PORT_PROTOCOL>, Param2: ::std::convert::Into<HCN_PORT_ACCESS>>(guestnetworkservice: *const ::core::ffi::c_void, protocol: Param1, access: Param2, port: u16) -> ::windows::core::Result<super::super::Foundation::HANDLE> {
+pub unsafe fn HcnReserveGuestNetworkServicePort<'a, P0, P1>(guestnetworkservice: *const ::core::ffi::c_void, protocol: P0, access: P1, port: u16) -> ::windows::core::Result<super::super::Foundation::HANDLE>
+where
+    P0: ::std::convert::Into<HCN_PORT_PROTOCOL>,
+    P1: ::std::convert::Into<HCN_PORT_ACCESS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HcnReserveGuestNetworkServicePort(guestnetworkservice: *const ::core::ffi::c_void, protocol: HCN_PORT_PROTOCOL, access: HCN_PORT_ACCESS, port: u16, portreservationhandle: *mut super::super::Foundation::HANDLE) -> ::windows::core::HRESULT;

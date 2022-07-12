@@ -107,7 +107,10 @@ pub unsafe fn JsCreateArray(length: u32, result: *mut *mut ::core::ffi::c_void) 
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_System_Diagnostics_Debug")]
 #[inline]
-pub unsafe fn JsCreateContext<'a, Param1: ::std::convert::Into<::windows::core::InParam<'a, super::Diagnostics::Debug::IDebugApplication64>>>(runtime: *const ::core::ffi::c_void, debugapplication: Param1, newcontext: *mut *mut ::core::ffi::c_void) -> JsErrorCode {
+pub unsafe fn JsCreateContext<'a, P0>(runtime: *const ::core::ffi::c_void, debugapplication: P0, newcontext: *mut *mut ::core::ffi::c_void) -> JsErrorCode
+where
+    P0: ::std::convert::Into<::windows::core::InParam<'a, super::Diagnostics::Debug::IDebugApplication64>>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn JsCreateContext(runtime: *const ::core::ffi::c_void, debugapplication: *mut ::core::ffi::c_void, newcontext: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
@@ -118,7 +121,10 @@ pub unsafe fn JsCreateContext<'a, Param1: ::std::convert::Into<::windows::core::
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_System_Diagnostics_Debug")]
 #[inline]
-pub unsafe fn JsCreateContext<'a, Param1: ::std::convert::Into<::windows::core::InParam<'a, super::Diagnostics::Debug::IDebugApplication32>>>(runtime: *const ::core::ffi::c_void, debugapplication: Param1, newcontext: *mut *mut ::core::ffi::c_void) -> JsErrorCode {
+pub unsafe fn JsCreateContext<'a, P0>(runtime: *const ::core::ffi::c_void, debugapplication: P0, newcontext: *mut *mut ::core::ffi::c_void) -> JsErrorCode
+where
+    P0: ::std::convert::Into<::windows::core::InParam<'a, super::Diagnostics::Debug::IDebugApplication32>>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn JsCreateContext(runtime: *const ::core::ffi::c_void, debugapplication: *mut ::core::ffi::c_void, newcontext: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
@@ -181,7 +187,11 @@ pub unsafe fn JsCreateReferenceError(message: *const ::core::ffi::c_void, error:
 }
 #[doc = "*Required features: `\"Win32_System_Js\"`*"]
 #[inline]
-pub unsafe fn JsCreateRuntime<'a, Param0: ::std::convert::Into<JsRuntimeAttributes>, Param1: ::std::convert::Into<JsRuntimeVersion>>(attributes: Param0, runtimeversion: Param1, threadservice: JsThreadServiceCallback, runtime: *mut *mut ::core::ffi::c_void) -> JsErrorCode {
+pub unsafe fn JsCreateRuntime<'a, P0, P1>(attributes: P0, runtimeversion: P1, threadservice: JsThreadServiceCallback, runtime: *mut *mut ::core::ffi::c_void) -> JsErrorCode
+where
+    P0: ::std::convert::Into<JsRuntimeAttributes>,
+    P1: ::std::convert::Into<JsRuntimeVersion>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn JsCreateRuntime(attributes: JsRuntimeAttributes, runtimeversion: JsRuntimeVersion, threadservice: *mut ::core::ffi::c_void, runtime: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
@@ -904,7 +914,10 @@ pub unsafe fn JsSetRuntimeMemoryLimit(runtime: *const ::core::ffi::c_void, memor
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_System_Diagnostics_Debug")]
 #[inline]
-pub unsafe fn JsStartDebugging<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, super::Diagnostics::Debug::IDebugApplication64>>>(debugapplication: Param0) -> JsErrorCode {
+pub unsafe fn JsStartDebugging<'a, P0>(debugapplication: P0) -> JsErrorCode
+where
+    P0: ::std::convert::Into<::windows::core::InParam<'a, super::Diagnostics::Debug::IDebugApplication64>>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn JsStartDebugging(debugapplication: *mut ::core::ffi::c_void) -> JsErrorCode;
@@ -915,7 +928,10 @@ pub unsafe fn JsStartDebugging<'a, Param0: ::std::convert::Into<::windows::core:
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_System_Diagnostics_Debug")]
 #[inline]
-pub unsafe fn JsStartDebugging<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, super::Diagnostics::Debug::IDebugApplication32>>>(debugapplication: Param0) -> JsErrorCode {
+pub unsafe fn JsStartDebugging<'a, P0>(debugapplication: P0) -> JsErrorCode
+where
+    P0: ::std::convert::Into<::windows::core::InParam<'a, super::Diagnostics::Debug::IDebugApplication32>>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn JsStartDebugging(debugapplication: *mut ::core::ffi::c_void) -> JsErrorCode;
@@ -925,7 +941,11 @@ pub unsafe fn JsStartDebugging<'a, Param0: ::std::convert::Into<::windows::core:
 #[doc = "*Required features: `\"Win32_System_Js\"`, `\"Win32_System_Diagnostics_Debug\"`*"]
 #[cfg(feature = "Win32_System_Diagnostics_Debug")]
 #[inline]
-pub unsafe fn JsStartProfiling<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, super::Diagnostics::Debug::IActiveScriptProfilerCallback>>, Param1: ::std::convert::Into<super::Diagnostics::Debug::PROFILER_EVENT_MASK>>(callback: Param0, eventmask: Param1, context: u32) -> JsErrorCode {
+pub unsafe fn JsStartProfiling<'a, P0, P1>(callback: P0, eventmask: P1, context: u32) -> JsErrorCode
+where
+    P0: ::std::convert::Into<::windows::core::InParam<'a, super::Diagnostics::Debug::IActiveScriptProfilerCallback>>,
+    P1: ::std::convert::Into<super::Diagnostics::Debug::PROFILER_EVENT_MASK>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn JsStartProfiling(callback: *mut ::core::ffi::c_void, eventmask: super::Diagnostics::Debug::PROFILER_EVENT_MASK, context: u32) -> JsErrorCode;

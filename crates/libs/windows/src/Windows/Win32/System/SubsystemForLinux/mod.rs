@@ -59,7 +59,10 @@ impl ::core::ops::Not for WSL_DISTRIBUTION_FLAGS {
 }
 #[doc = "*Required features: `\"Win32_System_SubsystemForLinux\"`*"]
 #[inline]
-pub unsafe fn WslConfigureDistribution<'a, Param2: ::std::convert::Into<WSL_DISTRIBUTION_FLAGS>>(distributionname: ::windows::core::PCWSTR, defaultuid: u32, wsldistributionflags: Param2) -> ::windows::core::Result<()> {
+pub unsafe fn WslConfigureDistribution<'a, P0>(distributionname: ::windows::core::PCWSTR, defaultuid: u32, wsldistributionflags: P0) -> ::windows::core::Result<()>
+where
+    P0: ::std::convert::Into<WSL_DISTRIBUTION_FLAGS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WslConfigureDistribution(distributionname: ::windows::core::PCWSTR, defaultuid: u32, wsldistributionflags: WSL_DISTRIBUTION_FLAGS) -> ::windows::core::HRESULT;
@@ -88,7 +91,13 @@ pub unsafe fn WslIsDistributionRegistered(distributionname: ::windows::core::PCW
 #[doc = "*Required features: `\"Win32_System_SubsystemForLinux\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WslLaunch<'a, Param2: ::std::convert::Into<super::super::Foundation::BOOL>, Param3: ::std::convert::Into<super::super::Foundation::HANDLE>, Param4: ::std::convert::Into<super::super::Foundation::HANDLE>, Param5: ::std::convert::Into<super::super::Foundation::HANDLE>>(distributionname: ::windows::core::PCWSTR, command: ::windows::core::PCWSTR, usecurrentworkingdirectory: Param2, stdin: Param3, stdout: Param4, stderr: Param5) -> ::windows::core::Result<super::super::Foundation::HANDLE> {
+pub unsafe fn WslLaunch<'a, P0, P1, P2, P3>(distributionname: ::windows::core::PCWSTR, command: ::windows::core::PCWSTR, usecurrentworkingdirectory: P0, stdin: P1, stdout: P2, stderr: P3) -> ::windows::core::Result<super::super::Foundation::HANDLE>
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+    P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
+    P2: ::std::convert::Into<super::super::Foundation::HANDLE>,
+    P3: ::std::convert::Into<super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WslLaunch(distributionname: ::windows::core::PCWSTR, command: ::windows::core::PCWSTR, usecurrentworkingdirectory: super::super::Foundation::BOOL, stdin: super::super::Foundation::HANDLE, stdout: super::super::Foundation::HANDLE, stderr: super::super::Foundation::HANDLE, process: *mut super::super::Foundation::HANDLE) -> ::windows::core::HRESULT;
@@ -99,7 +108,10 @@ pub unsafe fn WslLaunch<'a, Param2: ::std::convert::Into<super::super::Foundatio
 #[doc = "*Required features: `\"Win32_System_SubsystemForLinux\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WslLaunchInteractive<'a, Param2: ::std::convert::Into<super::super::Foundation::BOOL>>(distributionname: ::windows::core::PCWSTR, command: ::windows::core::PCWSTR, usecurrentworkingdirectory: Param2) -> ::windows::core::Result<u32> {
+pub unsafe fn WslLaunchInteractive<'a, P0>(distributionname: ::windows::core::PCWSTR, command: ::windows::core::PCWSTR, usecurrentworkingdirectory: P0) -> ::windows::core::Result<u32>
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WslLaunchInteractive(distributionname: ::windows::core::PCWSTR, command: ::windows::core::PCWSTR, usecurrentworkingdirectory: super::super::Foundation::BOOL, exitcode: *mut u32) -> ::windows::core::HRESULT;

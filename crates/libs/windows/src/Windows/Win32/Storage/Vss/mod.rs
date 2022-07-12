@@ -13,7 +13,10 @@ pub unsafe fn CreateVssExpressWriterInternal() -> ::windows::core::Result<IVssEx
 pub struct IVssAdmin(::windows::core::IUnknown);
 impl IVssAdmin {
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`*"]
-    pub unsafe fn RegisterProvider<'a, Param3: ::std::convert::Into<VSS_PROVIDER_TYPE>>(&self, pproviderid: ::windows::core::GUID, classid: ::windows::core::GUID, pwszprovidername: *const u16, eprovidertype: Param3, pwszproviderversion: *const u16, providerversionid: ::windows::core::GUID) -> ::windows::core::Result<()> {
+    pub unsafe fn RegisterProvider<'a, P0>(&self, pproviderid: ::windows::core::GUID, classid: ::windows::core::GUID, pwszprovidername: *const u16, eprovidertype: P0, pwszproviderversion: *const u16, providerversionid: ::windows::core::GUID) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<VSS_PROVIDER_TYPE>,
+    {
         (::windows::core::Interface::vtable(self).RegisterProvider)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pproviderid), ::core::mem::transmute(classid), ::core::mem::transmute(pwszprovidername), eprovidertype.into(), ::core::mem::transmute(pwszproviderversion), ::core::mem::transmute(providerversionid)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`*"]
@@ -79,7 +82,10 @@ pub struct IVssAdmin_Vtbl {
 pub struct IVssAdminEx(::windows::core::IUnknown);
 impl IVssAdminEx {
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`*"]
-    pub unsafe fn RegisterProvider<'a, Param3: ::std::convert::Into<VSS_PROVIDER_TYPE>>(&self, pproviderid: ::windows::core::GUID, classid: ::windows::core::GUID, pwszprovidername: *const u16, eprovidertype: Param3, pwszproviderversion: *const u16, providerversionid: ::windows::core::GUID) -> ::windows::core::Result<()> {
+    pub unsafe fn RegisterProvider<'a, P0>(&self, pproviderid: ::windows::core::GUID, classid: ::windows::core::GUID, pwszprovidername: *const u16, eprovidertype: P0, pwszproviderversion: *const u16, providerversionid: ::windows::core::GUID) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<VSS_PROVIDER_TYPE>,
+    {
         (::windows::core::Interface::vtable(self).base__.RegisterProvider)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pproviderid), ::core::mem::transmute(classid), ::core::mem::transmute(pwszprovidername), eprovidertype.into(), ::core::mem::transmute(pwszproviderversion), ::core::mem::transmute(providerversionid)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`*"]
@@ -321,7 +327,10 @@ impl IVssComponent {
         (::windows::core::Interface::vtable(self).GetRestoreMetadata)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pbstrrestoremetadata)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`*"]
-    pub unsafe fn SetRestoreTarget<'a, Param0: ::std::convert::Into<VSS_RESTORE_TARGET>>(&self, target: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetRestoreTarget<'a, P0>(&self, target: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<VSS_RESTORE_TARGET>,
+    {
         (::windows::core::Interface::vtable(self).SetRestoreTarget)(::windows::core::Interface::as_raw(self), target.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`*"]
@@ -385,12 +394,19 @@ impl IVssComponent {
     }
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn AddDifferencedFilesByLastModifyTime<'a, Param2: ::std::convert::Into<super::super::Foundation::BOOL>>(&self, wszpath: ::windows::core::PCWSTR, wszfilespec: ::windows::core::PCWSTR, brecursive: Param2, ftlastmodifytime: super::super::Foundation::FILETIME) -> ::windows::core::Result<()> {
+    pub unsafe fn AddDifferencedFilesByLastModifyTime<'a, P0>(&self, wszpath: ::windows::core::PCWSTR, wszfilespec: ::windows::core::PCWSTR, brecursive: P0, ftlastmodifytime: super::super::Foundation::FILETIME) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+    {
         (::windows::core::Interface::vtable(self).AddDifferencedFilesByLastModifyTime)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(wszpath), ::core::mem::transmute(wszfilespec), brecursive.into(), ::core::mem::transmute(ftlastmodifytime)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn AddDifferencedFilesByLastModifyLSN<'a, Param2: ::std::convert::Into<super::super::Foundation::BOOL>, Param3: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>>(&self, wszpath: ::windows::core::PCWSTR, wszfilespec: ::windows::core::PCWSTR, brecursive: Param2, bstrlsnstring: Param3) -> ::windows::core::Result<()> {
+    pub unsafe fn AddDifferencedFilesByLastModifyLSN<'a, P0, P1>(&self, wszpath: ::windows::core::PCWSTR, wszfilespec: ::windows::core::PCWSTR, brecursive: P0, bstrlsnstring: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>,
+    {
         (::windows::core::Interface::vtable(self).AddDifferencedFilesByLastModifyLSN)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(wszpath), ::core::mem::transmute(wszfilespec), brecursive.into(), bstrlsnstring.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`*"]
@@ -622,7 +638,10 @@ impl IVssComponentEx {
         (::windows::core::Interface::vtable(self).base__.GetRestoreMetadata)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pbstrrestoremetadata)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`*"]
-    pub unsafe fn SetRestoreTarget<'a, Param0: ::std::convert::Into<VSS_RESTORE_TARGET>>(&self, target: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetRestoreTarget<'a, P0>(&self, target: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<VSS_RESTORE_TARGET>,
+    {
         (::windows::core::Interface::vtable(self).base__.SetRestoreTarget)(::windows::core::Interface::as_raw(self), target.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`*"]
@@ -686,12 +705,19 @@ impl IVssComponentEx {
     }
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn AddDifferencedFilesByLastModifyTime<'a, Param2: ::std::convert::Into<super::super::Foundation::BOOL>>(&self, wszpath: ::windows::core::PCWSTR, wszfilespec: ::windows::core::PCWSTR, brecursive: Param2, ftlastmodifytime: super::super::Foundation::FILETIME) -> ::windows::core::Result<()> {
+    pub unsafe fn AddDifferencedFilesByLastModifyTime<'a, P0>(&self, wszpath: ::windows::core::PCWSTR, wszfilespec: ::windows::core::PCWSTR, brecursive: P0, ftlastmodifytime: super::super::Foundation::FILETIME) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+    {
         (::windows::core::Interface::vtable(self).base__.AddDifferencedFilesByLastModifyTime)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(wszpath), ::core::mem::transmute(wszfilespec), brecursive.into(), ::core::mem::transmute(ftlastmodifytime)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn AddDifferencedFilesByLastModifyLSN<'a, Param2: ::std::convert::Into<super::super::Foundation::BOOL>, Param3: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>>(&self, wszpath: ::windows::core::PCWSTR, wszfilespec: ::windows::core::PCWSTR, brecursive: Param2, bstrlsnstring: Param3) -> ::windows::core::Result<()> {
+    pub unsafe fn AddDifferencedFilesByLastModifyLSN<'a, P0, P1>(&self, wszpath: ::windows::core::PCWSTR, wszfilespec: ::windows::core::PCWSTR, brecursive: P0, bstrlsnstring: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>,
+    {
         (::windows::core::Interface::vtable(self).base__.AddDifferencedFilesByLastModifyLSN)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(wszpath), ::core::mem::transmute(wszfilespec), brecursive.into(), bstrlsnstring.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`*"]
@@ -907,7 +933,10 @@ impl IVssComponentEx2 {
         (::windows::core::Interface::vtable(self).base__.base__.GetRestoreMetadata)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pbstrrestoremetadata)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`*"]
-    pub unsafe fn SetRestoreTarget<'a, Param0: ::std::convert::Into<VSS_RESTORE_TARGET>>(&self, target: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetRestoreTarget<'a, P0>(&self, target: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<VSS_RESTORE_TARGET>,
+    {
         (::windows::core::Interface::vtable(self).base__.base__.SetRestoreTarget)(::windows::core::Interface::as_raw(self), target.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`*"]
@@ -971,12 +1000,19 @@ impl IVssComponentEx2 {
     }
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn AddDifferencedFilesByLastModifyTime<'a, Param2: ::std::convert::Into<super::super::Foundation::BOOL>>(&self, wszpath: ::windows::core::PCWSTR, wszfilespec: ::windows::core::PCWSTR, brecursive: Param2, ftlastmodifytime: super::super::Foundation::FILETIME) -> ::windows::core::Result<()> {
+    pub unsafe fn AddDifferencedFilesByLastModifyTime<'a, P0>(&self, wszpath: ::windows::core::PCWSTR, wszfilespec: ::windows::core::PCWSTR, brecursive: P0, ftlastmodifytime: super::super::Foundation::FILETIME) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+    {
         (::windows::core::Interface::vtable(self).base__.base__.AddDifferencedFilesByLastModifyTime)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(wszpath), ::core::mem::transmute(wszfilespec), brecursive.into(), ::core::mem::transmute(ftlastmodifytime)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn AddDifferencedFilesByLastModifyLSN<'a, Param2: ::std::convert::Into<super::super::Foundation::BOOL>, Param3: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>>(&self, wszpath: ::windows::core::PCWSTR, wszfilespec: ::windows::core::PCWSTR, brecursive: Param2, bstrlsnstring: Param3) -> ::windows::core::Result<()> {
+    pub unsafe fn AddDifferencedFilesByLastModifyLSN<'a, P0, P1>(&self, wszpath: ::windows::core::PCWSTR, wszfilespec: ::windows::core::PCWSTR, brecursive: P0, bstrlsnstring: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, super::super::Foundation::BSTR>>,
+    {
         (::windows::core::Interface::vtable(self).base__.base__.AddDifferencedFilesByLastModifyLSN)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(wszpath), ::core::mem::transmute(wszfilespec), brecursive.into(), bstrlsnstring.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`*"]
@@ -1118,7 +1154,10 @@ impl IVssCreateExpressWriterMetadata {
         (::windows::core::Interface::vtable(self).AddExcludeFiles)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(wszpath), ::core::mem::transmute(wszfilespec), ::core::mem::transmute(brecursive)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`*"]
-    pub unsafe fn AddComponent<'a, Param0: ::std::convert::Into<VSS_COMPONENT_TYPE>>(&self, ct: Param0, wszlogicalpath: ::windows::core::PCWSTR, wszcomponentname: ::windows::core::PCWSTR, wszcaption: ::windows::core::PCWSTR, pbicon: *const u8, cbicon: u32, brestoremetadata: u8, bnotifyonbackupcomplete: u8, bselectable: u8, bselectableforrestore: u8, dwcomponentflags: u32) -> ::windows::core::Result<()> {
+    pub unsafe fn AddComponent<'a, P0>(&self, ct: P0, wszlogicalpath: ::windows::core::PCWSTR, wszcomponentname: ::windows::core::PCWSTR, wszcaption: ::windows::core::PCWSTR, pbicon: *const u8, cbicon: u32, brestoremetadata: u8, bnotifyonbackupcomplete: u8, bselectable: u8, bselectableforrestore: u8, dwcomponentflags: u32) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<VSS_COMPONENT_TYPE>,
+    {
         (::windows::core::Interface::vtable(self).AddComponent)(::windows::core::Interface::as_raw(self), ct.into(), ::core::mem::transmute(wszlogicalpath), ::core::mem::transmute(wszcomponentname), ::core::mem::transmute(wszcaption), ::core::mem::transmute(pbicon), ::core::mem::transmute(cbicon), ::core::mem::transmute(brestoremetadata), ::core::mem::transmute(bnotifyonbackupcomplete), ::core::mem::transmute(bselectable), ::core::mem::transmute(bselectableforrestore), ::core::mem::transmute(dwcomponentflags)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`*"]
@@ -1126,7 +1165,11 @@ impl IVssCreateExpressWriterMetadata {
         (::windows::core::Interface::vtable(self).AddFilesToFileGroup)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(wszlogicalpath), ::core::mem::transmute(wszgroupname), ::core::mem::transmute(wszpath), ::core::mem::transmute(wszfilespec), ::core::mem::transmute(brecursive), ::core::mem::transmute(wszalternatelocation), ::core::mem::transmute(dwbackuptypemask)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`*"]
-    pub unsafe fn SetRestoreMethod<'a, Param0: ::std::convert::Into<VSS_RESTOREMETHOD_ENUM>, Param3: ::std::convert::Into<VSS_WRITERRESTORE_ENUM>>(&self, method: Param0, wszservice: ::windows::core::PCWSTR, wszuserprocedure: ::windows::core::PCWSTR, writerrestore: Param3, brebootrequired: u8) -> ::windows::core::Result<()> {
+    pub unsafe fn SetRestoreMethod<'a, P0, P1>(&self, method: P0, wszservice: ::windows::core::PCWSTR, wszuserprocedure: ::windows::core::PCWSTR, writerrestore: P1, brebootrequired: u8) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<VSS_RESTOREMETHOD_ENUM>,
+        P1: ::std::convert::Into<VSS_WRITERRESTORE_ENUM>,
+    {
         (::windows::core::Interface::vtable(self).SetRestoreMethod)(::windows::core::Interface::as_raw(self), method.into(), ::core::mem::transmute(wszservice), ::core::mem::transmute(wszuserprocedure), writerrestore.into(), ::core::mem::transmute(brebootrequired)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`*"]
@@ -1207,7 +1250,10 @@ impl IVssCreateWriterMetadata {
         (::windows::core::Interface::vtable(self).AddExcludeFiles)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(wszpath), ::core::mem::transmute(wszfilespec), ::core::mem::transmute(brecursive)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`*"]
-    pub unsafe fn AddComponent<'a, Param0: ::std::convert::Into<VSS_COMPONENT_TYPE>>(&self, ct: Param0, wszlogicalpath: ::windows::core::PCWSTR, wszcomponentname: ::windows::core::PCWSTR, wszcaption: ::windows::core::PCWSTR, pbicon: *const u8, cbicon: u32, brestoremetadata: u8, bnotifyonbackupcomplete: u8, bselectable: u8, bselectableforrestore: u8, dwcomponentflags: u32) -> ::windows::core::Result<()> {
+    pub unsafe fn AddComponent<'a, P0>(&self, ct: P0, wszlogicalpath: ::windows::core::PCWSTR, wszcomponentname: ::windows::core::PCWSTR, wszcaption: ::windows::core::PCWSTR, pbicon: *const u8, cbicon: u32, brestoremetadata: u8, bnotifyonbackupcomplete: u8, bselectable: u8, bselectableforrestore: u8, dwcomponentflags: u32) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<VSS_COMPONENT_TYPE>,
+    {
         (::windows::core::Interface::vtable(self).AddComponent)(::windows::core::Interface::as_raw(self), ct.into(), ::core::mem::transmute(wszlogicalpath), ::core::mem::transmute(wszcomponentname), ::core::mem::transmute(wszcaption), ::core::mem::transmute(pbicon), ::core::mem::transmute(cbicon), ::core::mem::transmute(brestoremetadata), ::core::mem::transmute(bnotifyonbackupcomplete), ::core::mem::transmute(bselectable), ::core::mem::transmute(bselectableforrestore), ::core::mem::transmute(dwcomponentflags)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`*"]
@@ -1223,7 +1269,11 @@ impl IVssCreateWriterMetadata {
         (::windows::core::Interface::vtable(self).AddFilesToFileGroup)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(wszlogicalpath), ::core::mem::transmute(wszgroupname), ::core::mem::transmute(wszpath), ::core::mem::transmute(wszfilespec), ::core::mem::transmute(brecursive), ::core::mem::transmute(wszalternatelocation), ::core::mem::transmute(dwbackuptypemask)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`*"]
-    pub unsafe fn SetRestoreMethod<'a, Param0: ::std::convert::Into<VSS_RESTOREMETHOD_ENUM>, Param3: ::std::convert::Into<VSS_WRITERRESTORE_ENUM>>(&self, method: Param0, wszservice: ::windows::core::PCWSTR, wszuserprocedure: ::windows::core::PCWSTR, writerrestore: Param3, brebootrequired: u8) -> ::windows::core::Result<()> {
+    pub unsafe fn SetRestoreMethod<'a, P0, P1>(&self, method: P0, wszservice: ::windows::core::PCWSTR, wszuserprocedure: ::windows::core::PCWSTR, writerrestore: P1, brebootrequired: u8) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<VSS_RESTOREMETHOD_ENUM>,
+        P1: ::std::convert::Into<VSS_WRITERRESTORE_ENUM>,
+    {
         (::windows::core::Interface::vtable(self).SetRestoreMethod)(::windows::core::Interface::as_raw(self), method.into(), ::core::mem::transmute(wszservice), ::core::mem::transmute(wszuserprocedure), writerrestore.into(), ::core::mem::transmute(brebootrequired)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`*"]
@@ -1405,7 +1455,10 @@ impl IVssDifferentialSoftwareSnapshotMgmt2 {
     }
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ChangeDiffAreaMaximumSizeEx<'a, Param3: ::std::convert::Into<super::super::Foundation::BOOL>>(&self, pwszvolumename: *const u16, pwszdiffareavolumename: *const u16, llmaximumdiffspace: i64, bvolatile: Param3) -> ::windows::core::Result<()> {
+    pub unsafe fn ChangeDiffAreaMaximumSizeEx<'a, P0>(&self, pwszvolumename: *const u16, pwszdiffareavolumename: *const u16, llmaximumdiffspace: i64, bvolatile: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+    {
         (::windows::core::Interface::vtable(self).ChangeDiffAreaMaximumSizeEx)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pwszvolumename), ::core::mem::transmute(pwszdiffareavolumename), ::core::mem::transmute(llmaximumdiffspace), bvolatile.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`*"]
@@ -1518,7 +1571,10 @@ impl IVssDifferentialSoftwareSnapshotMgmt3 {
     }
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ChangeDiffAreaMaximumSizeEx<'a, Param3: ::std::convert::Into<super::super::Foundation::BOOL>>(&self, pwszvolumename: *const u16, pwszdiffareavolumename: *const u16, llmaximumdiffspace: i64, bvolatile: Param3) -> ::windows::core::Result<()> {
+    pub unsafe fn ChangeDiffAreaMaximumSizeEx<'a, P0>(&self, pwszvolumename: *const u16, pwszdiffareavolumename: *const u16, llmaximumdiffspace: i64, bvolatile: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+    {
         (::windows::core::Interface::vtable(self).base__.ChangeDiffAreaMaximumSizeEx)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pwszvolumename), ::core::mem::transmute(pwszdiffareavolumename), ::core::mem::transmute(llmaximumdiffspace), bvolatile.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`*"]
@@ -1535,7 +1591,10 @@ impl IVssDifferentialSoftwareSnapshotMgmt3 {
         (::windows::core::Interface::vtable(self).base__.SetSnapshotPriority)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(idsnapshot), ::core::mem::transmute(priority)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`*"]
-    pub unsafe fn SetVolumeProtectLevel<'a, Param1: ::std::convert::Into<VSS_PROTECTION_LEVEL>>(&self, pwszvolumename: *const u16, protectionlevel: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn SetVolumeProtectLevel<'a, P0>(&self, pwszvolumename: *const u16, protectionlevel: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<VSS_PROTECTION_LEVEL>,
+    {
         (::windows::core::Interface::vtable(self).SetVolumeProtectLevel)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pwszvolumename), protectionlevel.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`, `\"Win32_Foundation\"`*"]
@@ -1772,7 +1831,10 @@ pub struct IVssExamineWriterMetadata(pub u8);
 pub struct IVssExpressWriter(::windows::core::IUnknown);
 impl IVssExpressWriter {
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`*"]
-    pub unsafe fn CreateMetadata<'a, Param2: ::std::convert::Into<VSS_USAGE_TYPE>>(&self, writerid: ::windows::core::GUID, writername: ::windows::core::PCWSTR, usagetype: Param2, versionmajor: u32, versionminor: u32, reserved: u32) -> ::windows::core::Result<IVssCreateExpressWriterMetadata> {
+    pub unsafe fn CreateMetadata<'a, P0>(&self, writerid: ::windows::core::GUID, writername: ::windows::core::PCWSTR, usagetype: P0, versionmajor: u32, versionminor: u32, reserved: u32) -> ::windows::core::Result<IVssCreateExpressWriterMetadata>
+    where
+        P0: ::std::convert::Into<VSS_USAGE_TYPE>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).CreateMetadata)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(writerid), ::core::mem::transmute(writername), usagetype.into(), ::core::mem::transmute(versionmajor), ::core::mem::transmute(versionminor), ::core::mem::transmute(reserved), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVssCreateExpressWriterMetadata>(result__)
     }
@@ -1847,13 +1909,21 @@ impl IVssFileShareSnapshotProvider {
         (::windows::core::Interface::vtable(self).GetSnapshotProperties)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(snapshotid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VSS_SNAPSHOT_PROP>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`*"]
-    pub unsafe fn Query<'a, Param1: ::std::convert::Into<VSS_OBJECT_TYPE>, Param2: ::std::convert::Into<VSS_OBJECT_TYPE>>(&self, queriedobjectid: ::windows::core::GUID, equeriedobjecttype: Param1, ereturnedobjectstype: Param2) -> ::windows::core::Result<IVssEnumObject> {
+    pub unsafe fn Query<'a, P0, P1>(&self, queriedobjectid: ::windows::core::GUID, equeriedobjecttype: P0, ereturnedobjectstype: P1) -> ::windows::core::Result<IVssEnumObject>
+    where
+        P0: ::std::convert::Into<VSS_OBJECT_TYPE>,
+        P1: ::std::convert::Into<VSS_OBJECT_TYPE>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).Query)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(queriedobjectid), equeriedobjecttype.into(), ereturnedobjectstype.into(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVssEnumObject>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DeleteSnapshots<'a, Param1: ::std::convert::Into<VSS_OBJECT_TYPE>, Param2: ::std::convert::Into<super::super::Foundation::BOOL>>(&self, sourceobjectid: ::windows::core::GUID, esourceobjecttype: Param1, bforcedelete: Param2, pldeletedsnapshots: *mut i32, pnondeletedsnapshotid: *mut ::windows::core::GUID) -> ::windows::core::Result<()> {
+    pub unsafe fn DeleteSnapshots<'a, P0, P1>(&self, sourceobjectid: ::windows::core::GUID, esourceobjecttype: P0, bforcedelete: P1, pldeletedsnapshots: *mut i32, pnondeletedsnapshotid: *mut ::windows::core::GUID) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<VSS_OBJECT_TYPE>,
+        P1: ::std::convert::Into<super::super::Foundation::BOOL>,
+    {
         (::windows::core::Interface::vtable(self).DeleteSnapshots)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(sourceobjectid), esourceobjecttype.into(), bforcedelete.into(), ::core::mem::transmute(pldeletedsnapshots), ::core::mem::transmute(pnondeletedsnapshotid)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`*"]
@@ -1873,7 +1943,11 @@ impl IVssFileShareSnapshotProvider {
     }
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn SetSnapshotProperty<'a, Param1: ::std::convert::Into<VSS_SNAPSHOT_PROPERTY_ID>, Param2: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::VARIANT>>>(&self, snapshotid: ::windows::core::GUID, esnapshotpropertyid: Param1, vproperty: Param2) -> ::windows::core::Result<()> {
+    pub unsafe fn SetSnapshotProperty<'a, P0, P1>(&self, snapshotid: ::windows::core::GUID, esnapshotpropertyid: P0, vproperty: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<VSS_SNAPSHOT_PROPERTY_ID>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::VARIANT>>,
+    {
         (::windows::core::Interface::vtable(self).SetSnapshotProperty)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(snapshotid), esnapshotpropertyid.into(), vproperty.into().abi()).ok()
     }
 }
@@ -2245,12 +2319,18 @@ pub struct IVssProviderCreateSnapshotSet_Vtbl {
 pub struct IVssProviderNotifications(::windows::core::IUnknown);
 impl IVssProviderNotifications {
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`*"]
-    pub unsafe fn OnLoad<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>>(&self, pcallback: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn OnLoad<'a, P0>(&self, pcallback: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
+    {
         (::windows::core::Interface::vtable(self).OnLoad)(::windows::core::Interface::as_raw(self), pcallback.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn OnUnload<'a, Param0: ::std::convert::Into<super::super::Foundation::BOOL>>(&self, bforceunload: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn OnUnload<'a, P0>(&self, bforceunload: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+    {
         (::windows::core::Interface::vtable(self).OnUnload)(::windows::core::Interface::as_raw(self), bforceunload.into()).ok()
     }
 }
@@ -2427,13 +2507,21 @@ impl IVssSoftwareSnapshotProvider {
         (::windows::core::Interface::vtable(self).GetSnapshotProperties)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(snapshotid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<VSS_SNAPSHOT_PROP>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`*"]
-    pub unsafe fn Query<'a, Param1: ::std::convert::Into<VSS_OBJECT_TYPE>, Param2: ::std::convert::Into<VSS_OBJECT_TYPE>>(&self, queriedobjectid: ::windows::core::GUID, equeriedobjecttype: Param1, ereturnedobjectstype: Param2) -> ::windows::core::Result<IVssEnumObject> {
+    pub unsafe fn Query<'a, P0, P1>(&self, queriedobjectid: ::windows::core::GUID, equeriedobjecttype: P0, ereturnedobjectstype: P1) -> ::windows::core::Result<IVssEnumObject>
+    where
+        P0: ::std::convert::Into<VSS_OBJECT_TYPE>,
+        P1: ::std::convert::Into<VSS_OBJECT_TYPE>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).Query)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(queriedobjectid), equeriedobjecttype.into(), ereturnedobjectstype.into(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IVssEnumObject>(result__)
     }
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DeleteSnapshots<'a, Param1: ::std::convert::Into<VSS_OBJECT_TYPE>, Param2: ::std::convert::Into<super::super::Foundation::BOOL>>(&self, sourceobjectid: ::windows::core::GUID, esourceobjecttype: Param1, bforcedelete: Param2, pldeletedsnapshots: *mut i32, pnondeletedsnapshotid: *mut ::windows::core::GUID) -> ::windows::core::Result<()> {
+    pub unsafe fn DeleteSnapshots<'a, P0, P1>(&self, sourceobjectid: ::windows::core::GUID, esourceobjecttype: P0, bforcedelete: P1, pldeletedsnapshots: *mut i32, pnondeletedsnapshotid: *mut ::windows::core::GUID) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<VSS_OBJECT_TYPE>,
+        P1: ::std::convert::Into<super::super::Foundation::BOOL>,
+    {
         (::windows::core::Interface::vtable(self).DeleteSnapshots)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(sourceobjectid), esourceobjecttype.into(), bforcedelete.into(), ::core::mem::transmute(pldeletedsnapshots), ::core::mem::transmute(pnondeletedsnapshotid)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`*"]
@@ -2453,7 +2541,11 @@ impl IVssSoftwareSnapshotProvider {
     }
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn SetSnapshotProperty<'a, Param1: ::std::convert::Into<VSS_SNAPSHOT_PROPERTY_ID>, Param2: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::VARIANT>>>(&self, snapshotid: ::windows::core::GUID, esnapshotpropertyid: Param1, vproperty: Param2) -> ::windows::core::Result<()> {
+    pub unsafe fn SetSnapshotProperty<'a, P0, P1>(&self, snapshotid: ::windows::core::GUID, esnapshotpropertyid: P0, vproperty: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<VSS_SNAPSHOT_PROPERTY_ID>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::VARIANT>>,
+    {
         (::windows::core::Interface::vtable(self).SetSnapshotProperty)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(snapshotid), esnapshotpropertyid.into(), vproperty.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`*"]
@@ -2733,7 +2825,13 @@ pub struct IVssWriterComponents_Vtbl {
 pub struct IVssWriterImpl(::windows::core::IUnknown);
 impl IVssWriterImpl {
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`*"]
-    pub unsafe fn Initialize<'a, Param5: ::std::convert::Into<VSS_USAGE_TYPE>, Param6: ::std::convert::Into<VSS_SOURCE_TYPE>, Param7: ::std::convert::Into<VSS_APPLICATION_LEVEL>, Param9: ::std::convert::Into<VSS_ALTERNATE_WRITER_STATE>>(&self, writerid: ::windows::core::GUID, wszwritername: ::windows::core::PCWSTR, wszwriterinstancename: ::windows::core::PCWSTR, dwmajorversion: u32, dwminorversion: u32, ut: Param5, st: Param6, nlevel: Param7, dwtimeout: u32, aws: Param9, biothrottlingonly: u8) -> ::windows::core::Result<()> {
+    pub unsafe fn Initialize<'a, P0, P1, P2, P3>(&self, writerid: ::windows::core::GUID, wszwritername: ::windows::core::PCWSTR, wszwriterinstancename: ::windows::core::PCWSTR, dwmajorversion: u32, dwminorversion: u32, ut: P0, st: P1, nlevel: P2, dwtimeout: u32, aws: P3, biothrottlingonly: u8) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<VSS_USAGE_TYPE>,
+        P1: ::std::convert::Into<VSS_SOURCE_TYPE>,
+        P2: ::std::convert::Into<VSS_APPLICATION_LEVEL>,
+        P3: ::std::convert::Into<VSS_ALTERNATE_WRITER_STATE>,
+    {
         (::windows::core::Interface::vtable(self).Initialize)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(writerid), ::core::mem::transmute(wszwritername), ::core::mem::transmute(wszwriterinstancename), ::core::mem::transmute(dwmajorversion), ::core::mem::transmute(dwminorversion), ut.into(), st.into(), nlevel.into(), ::core::mem::transmute(dwtimeout), aws.into(), ::core::mem::transmute(biothrottlingonly)).ok()
     }
     #[doc = "*Required features: `\"Win32_Storage_Vss\"`*"]

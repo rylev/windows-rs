@@ -1293,7 +1293,12 @@ impl IPrintDialogCallback {
     }
     #[doc = "*Required features: `\"Win32_UI_Controls_Dialogs\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn HandleMessage<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HWND>, Param2: ::std::convert::Into<super::super::super::Foundation::WPARAM>, Param3: ::std::convert::Into<super::super::super::Foundation::LPARAM>>(&self, hdlg: Param0, umsg: u32, wparam: Param2, lparam: Param3, presult: *mut super::super::super::Foundation::LRESULT) -> ::windows::core::Result<()> {
+    pub unsafe fn HandleMessage<'a, P0, P1, P2>(&self, hdlg: P0, umsg: u32, wparam: P1, lparam: P2, presult: *mut super::super::super::Foundation::LRESULT) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<super::super::super::Foundation::HWND>,
+        P1: ::std::convert::Into<super::super::super::Foundation::WPARAM>,
+        P2: ::std::convert::Into<super::super::super::Foundation::LPARAM>,
+    {
         (::windows::core::Interface::vtable(self).HandleMessage)(::windows::core::Interface::as_raw(self), hdlg.into(), ::core::mem::transmute(umsg), wparam.into(), lparam.into(), ::core::mem::transmute(presult)).ok()
     }
 }

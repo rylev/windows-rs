@@ -365,7 +365,10 @@ pub type RM_WRITE_STATUS_CALLBACK = ::core::option::Option<unsafe extern "system
 #[doc = "*Required features: `\"Win32_System_RestartManager\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RmAddFilter<'a, Param4: ::std::convert::Into<RM_FILTER_ACTION>>(dwsessionhandle: u32, strmodulename: ::windows::core::PCWSTR, pprocess: *const RM_UNIQUE_PROCESS, strserviceshortname: ::windows::core::PCWSTR, filteraction: Param4) -> u32 {
+pub unsafe fn RmAddFilter<'a, P0>(dwsessionhandle: u32, strmodulename: ::windows::core::PCWSTR, pprocess: *const RM_UNIQUE_PROCESS, strserviceshortname: ::windows::core::PCWSTR, filteraction: P0) -> u32
+where
+    P0: ::std::convert::Into<RM_FILTER_ACTION>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RmAddFilter(dwsessionhandle: u32, strmodulename: ::windows::core::PCWSTR, pprocess: *const RM_UNIQUE_PROCESS, strserviceshortname: ::windows::core::PCWSTR, filteraction: RM_FILTER_ACTION) -> u32;

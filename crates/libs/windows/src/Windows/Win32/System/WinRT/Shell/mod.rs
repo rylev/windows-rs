@@ -33,7 +33,12 @@ pub struct IDDEInitializer(::windows::core::IUnknown);
 impl IDDEInitializer {
     #[doc = "*Required features: `\"Win32_System_WinRT_Shell\"`, `\"Win32_UI_Shell\"`*"]
     #[cfg(feature = "Win32_UI_Shell")]
-    pub unsafe fn Initialize<'a, Param1: ::std::convert::Into<CreateProcessMethod>, Param3: ::std::convert::Into<::windows::core::InParam<'a, super::super::super::UI::Shell::IShellItem>>, Param4: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>>(&self, fileextensionorprotocol: ::windows::core::PCWSTR, method: Param1, currentdirectory: ::windows::core::PCWSTR, exectarget: Param3, site: Param4, application: ::windows::core::PCWSTR, targetfile: ::windows::core::PCWSTR, arguments: ::windows::core::PCWSTR, verb: ::windows::core::PCWSTR) -> ::windows::core::Result<()> {
+    pub unsafe fn Initialize<'a, P0, P1, P2>(&self, fileextensionorprotocol: ::windows::core::PCWSTR, method: P0, currentdirectory: ::windows::core::PCWSTR, exectarget: P1, site: P2, application: ::windows::core::PCWSTR, targetfile: ::windows::core::PCWSTR, arguments: ::windows::core::PCWSTR, verb: ::windows::core::PCWSTR) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<CreateProcessMethod>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, super::super::super::UI::Shell::IShellItem>>,
+        P2: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
+    {
         (::windows::core::Interface::vtable(self).Initialize)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(fileextensionorprotocol), method.into(), ::core::mem::transmute(currentdirectory), exectarget.into().abi(), site.into().abi(), ::core::mem::transmute(application), ::core::mem::transmute(targetfile), ::core::mem::transmute(arguments), ::core::mem::transmute(verb)).ok()
     }
 }

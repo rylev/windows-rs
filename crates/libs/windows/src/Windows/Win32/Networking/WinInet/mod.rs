@@ -893,7 +893,10 @@ pub unsafe fn CreateUrlCacheEntryA(lpszurlname: ::windows::core::PCSTR, dwexpect
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CreateUrlCacheEntryExW<'a, Param5: ::std::convert::Into<super::super::Foundation::BOOL>>(lpszurlname: ::windows::core::PCWSTR, dwexpectedfilesize: u32, lpszfileextension: ::windows::core::PCWSTR, lpszfilename: &mut [u16; 260], dwreserved: u32, fpreserveincomingfilename: Param5) -> super::super::Foundation::BOOL {
+pub unsafe fn CreateUrlCacheEntryExW<'a, P0>(lpszurlname: ::windows::core::PCWSTR, dwexpectedfilesize: u32, lpszfileextension: ::windows::core::PCWSTR, lpszfilename: &mut [u16; 260], dwreserved: u32, fpreserveincomingfilename: P0) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateUrlCacheEntryExW(lpszurlname: ::windows::core::PCWSTR, dwexpectedfilesize: u32, lpszfileextension: ::windows::core::PCWSTR, lpszfilename: ::windows::core::PWSTR, dwreserved: u32, fpreserveincomingfilename: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
@@ -964,7 +967,11 @@ pub const DUO_PROTOCOL_MASK: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DeleteIE3Cache<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>, Param1: ::std::convert::Into<super::super::Foundation::HINSTANCE>>(hwnd: Param0, hinst: Param1, lpszcmd: ::windows::core::PCSTR, ncmdshow: i32) -> u32 {
+pub unsafe fn DeleteIE3Cache<'a, P0, P1>(hwnd: P0, hinst: P1, lpszcmd: ::windows::core::PCSTR, ncmdshow: i32) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+    P1: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeleteIE3Cache(hwnd: super::super::Foundation::HWND, hinst: super::super::Foundation::HINSTANCE, lpszcmd: ::windows::core::PCSTR, ncmdshow: i32) -> u32;
@@ -1034,7 +1041,10 @@ pub unsafe fn DeleteUrlCacheGroup(groupid: i64, dwflags: u32, lpreserved: *mut :
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DeleteWpadCacheForNetworks<'a, Param0: ::std::convert::Into<WPAD_CACHE_DELETE>>(param0: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn DeleteWpadCacheForNetworks<'a, P0>(param0: P0) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<WPAD_CACHE_DELETE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeleteWpadCacheForNetworks(param0: WPAD_CACHE_DELETE) -> super::super::Foundation::BOOL;
@@ -1044,7 +1054,10 @@ pub unsafe fn DeleteWpadCacheForNetworks<'a, Param0: ::std::convert::Into<WPAD_C
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DetectAutoProxyUrl<'a, Param2: ::std::convert::Into<PROXY_AUTO_DETECT_TYPE>>(pszautoproxyurl: &mut [u8], dwdetectflags: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn DetectAutoProxyUrl<'a, P0>(pszautoproxyurl: &mut [u8], dwdetectflags: P0) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<PROXY_AUTO_DETECT_TYPE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DetectAutoProxyUrl(pszautoproxyurl: ::windows::core::PSTR, cchautoproxyurl: u32, dwdetectflags: PROXY_AUTO_DETECT_TYPE) -> super::super::Foundation::BOOL;
@@ -1300,7 +1313,10 @@ pub const ERROR_INTERNET_UNRECOGNIZED_SCHEME: u32 = 12006u32;
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ExportCookieFileA<'a, Param1: ::std::convert::Into<super::super::Foundation::BOOL>>(szfilename: ::windows::core::PCSTR, fappend: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn ExportCookieFileA<'a, P0>(szfilename: ::windows::core::PCSTR, fappend: P0) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ExportCookieFileA(szfilename: ::windows::core::PCSTR, fappend: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
@@ -1310,7 +1326,10 @@ pub unsafe fn ExportCookieFileA<'a, Param1: ::std::convert::Into<super::super::F
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ExportCookieFileW<'a, Param1: ::std::convert::Into<super::super::Foundation::BOOL>>(szfilename: ::windows::core::PCWSTR, fappend: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn ExportCookieFileW<'a, P0>(szfilename: ::windows::core::PCWSTR, fappend: P0) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ExportCookieFileW(szfilename: ::windows::core::PCWSTR, fappend: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
@@ -1423,7 +1442,10 @@ impl ::core::fmt::Debug for FTP_FLAGS {
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FindCloseUrlCache<'a, Param0: ::std::convert::Into<super::super::Foundation::HANDLE>>(henumhandle: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn FindCloseUrlCache<'a, P0>(henumhandle: P0) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindCloseUrlCache(henumhandle: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
@@ -1508,7 +1530,10 @@ pub unsafe fn FindFirstUrlCacheGroup(dwflags: u32, dwfilter: u32, lpsearchcondit
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FindNextUrlCacheContainerA<'a, Param0: ::std::convert::Into<super::super::Foundation::HANDLE>>(henumhandle: Param0, lpcontainerinfo: *mut INTERNET_CACHE_CONTAINER_INFOA, lpcbcontainerinfo: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn FindNextUrlCacheContainerA<'a, P0>(henumhandle: P0, lpcontainerinfo: *mut INTERNET_CACHE_CONTAINER_INFOA, lpcbcontainerinfo: *mut u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindNextUrlCacheContainerA(henumhandle: super::super::Foundation::HANDLE, lpcontainerinfo: *mut INTERNET_CACHE_CONTAINER_INFOA, lpcbcontainerinfo: *mut u32) -> super::super::Foundation::BOOL;
@@ -1518,7 +1543,10 @@ pub unsafe fn FindNextUrlCacheContainerA<'a, Param0: ::std::convert::Into<super:
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FindNextUrlCacheContainerW<'a, Param0: ::std::convert::Into<super::super::Foundation::HANDLE>>(henumhandle: Param0, lpcontainerinfo: *mut INTERNET_CACHE_CONTAINER_INFOW, lpcbcontainerinfo: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn FindNextUrlCacheContainerW<'a, P0>(henumhandle: P0, lpcontainerinfo: *mut INTERNET_CACHE_CONTAINER_INFOW, lpcbcontainerinfo: *mut u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindNextUrlCacheContainerW(henumhandle: super::super::Foundation::HANDLE, lpcontainerinfo: *mut INTERNET_CACHE_CONTAINER_INFOW, lpcbcontainerinfo: *mut u32) -> super::super::Foundation::BOOL;
@@ -1528,7 +1556,10 @@ pub unsafe fn FindNextUrlCacheContainerW<'a, Param0: ::std::convert::Into<super:
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FindNextUrlCacheEntryA<'a, Param0: ::std::convert::Into<super::super::Foundation::HANDLE>>(henumhandle: Param0, lpnextcacheentryinfo: *mut INTERNET_CACHE_ENTRY_INFOA, lpcbcacheentryinfo: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn FindNextUrlCacheEntryA<'a, P0>(henumhandle: P0, lpnextcacheentryinfo: *mut INTERNET_CACHE_ENTRY_INFOA, lpcbcacheentryinfo: *mut u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindNextUrlCacheEntryA(henumhandle: super::super::Foundation::HANDLE, lpnextcacheentryinfo: *mut INTERNET_CACHE_ENTRY_INFOA, lpcbcacheentryinfo: *mut u32) -> super::super::Foundation::BOOL;
@@ -1538,7 +1569,10 @@ pub unsafe fn FindNextUrlCacheEntryA<'a, Param0: ::std::convert::Into<super::sup
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FindNextUrlCacheEntryExA<'a, Param0: ::std::convert::Into<super::super::Foundation::HANDLE>>(henumhandle: Param0, lpnextcacheentryinfo: *mut INTERNET_CACHE_ENTRY_INFOA, lpcbcacheentryinfo: *mut u32, lpgroupattributes: *mut ::core::ffi::c_void, lpcbgroupattributes: *mut u32, lpreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn FindNextUrlCacheEntryExA<'a, P0>(henumhandle: P0, lpnextcacheentryinfo: *mut INTERNET_CACHE_ENTRY_INFOA, lpcbcacheentryinfo: *mut u32, lpgroupattributes: *mut ::core::ffi::c_void, lpcbgroupattributes: *mut u32, lpreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindNextUrlCacheEntryExA(henumhandle: super::super::Foundation::HANDLE, lpnextcacheentryinfo: *mut INTERNET_CACHE_ENTRY_INFOA, lpcbcacheentryinfo: *mut u32, lpgroupattributes: *mut ::core::ffi::c_void, lpcbgroupattributes: *mut u32, lpreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
@@ -1548,7 +1582,10 @@ pub unsafe fn FindNextUrlCacheEntryExA<'a, Param0: ::std::convert::Into<super::s
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FindNextUrlCacheEntryExW<'a, Param0: ::std::convert::Into<super::super::Foundation::HANDLE>>(henumhandle: Param0, lpnextcacheentryinfo: *mut INTERNET_CACHE_ENTRY_INFOW, lpcbcacheentryinfo: *mut u32, lpgroupattributes: *mut ::core::ffi::c_void, lpcbgroupattributes: *mut u32, lpreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn FindNextUrlCacheEntryExW<'a, P0>(henumhandle: P0, lpnextcacheentryinfo: *mut INTERNET_CACHE_ENTRY_INFOW, lpcbcacheentryinfo: *mut u32, lpgroupattributes: *mut ::core::ffi::c_void, lpcbgroupattributes: *mut u32, lpreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindNextUrlCacheEntryExW(henumhandle: super::super::Foundation::HANDLE, lpnextcacheentryinfo: *mut INTERNET_CACHE_ENTRY_INFOW, lpcbcacheentryinfo: *mut u32, lpgroupattributes: *mut ::core::ffi::c_void, lpcbgroupattributes: *mut u32, lpreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
@@ -1558,7 +1595,10 @@ pub unsafe fn FindNextUrlCacheEntryExW<'a, Param0: ::std::convert::Into<super::s
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FindNextUrlCacheEntryW<'a, Param0: ::std::convert::Into<super::super::Foundation::HANDLE>>(henumhandle: Param0, lpnextcacheentryinfo: *mut INTERNET_CACHE_ENTRY_INFOW, lpcbcacheentryinfo: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn FindNextUrlCacheEntryW<'a, P0>(henumhandle: P0, lpnextcacheentryinfo: *mut INTERNET_CACHE_ENTRY_INFOW, lpcbcacheentryinfo: *mut u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindNextUrlCacheEntryW(henumhandle: super::super::Foundation::HANDLE, lpnextcacheentryinfo: *mut INTERNET_CACHE_ENTRY_INFOW, lpcbcacheentryinfo: *mut u32) -> super::super::Foundation::BOOL;
@@ -1568,7 +1608,10 @@ pub unsafe fn FindNextUrlCacheEntryW<'a, Param0: ::std::convert::Into<super::sup
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FindNextUrlCacheGroup<'a, Param0: ::std::convert::Into<super::super::Foundation::HANDLE>>(hfind: Param0, lpgroupid: *mut i64, lpreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn FindNextUrlCacheGroup<'a, P0>(hfind: P0, lpgroupid: *mut i64, lpreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindNextUrlCacheGroup(hfind: super::super::Foundation::HANDLE, lpgroupid: *mut i64, lpreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
@@ -1607,7 +1650,11 @@ pub unsafe fn FreeUrlCacheSpaceW(lpszcachepath: ::windows::core::PCWSTR, dwsize:
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FtpCommandA<'a, Param1: ::std::convert::Into<super::super::Foundation::BOOL>, Param2: ::std::convert::Into<FTP_FLAGS>>(hconnect: *const ::core::ffi::c_void, fexpectresponse: Param1, dwflags: Param2, lpszcommand: ::windows::core::PCSTR, dwcontext: usize, phftpcommand: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn FtpCommandA<'a, P0, P1>(hconnect: *const ::core::ffi::c_void, fexpectresponse: P0, dwflags: P1, lpszcommand: ::windows::core::PCSTR, dwcontext: usize, phftpcommand: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+    P1: ::std::convert::Into<FTP_FLAGS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FtpCommandA(hconnect: *const ::core::ffi::c_void, fexpectresponse: super::super::Foundation::BOOL, dwflags: FTP_FLAGS, lpszcommand: ::windows::core::PCSTR, dwcontext: usize, phftpcommand: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
@@ -1617,7 +1664,11 @@ pub unsafe fn FtpCommandA<'a, Param1: ::std::convert::Into<super::super::Foundat
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FtpCommandW<'a, Param1: ::std::convert::Into<super::super::Foundation::BOOL>, Param2: ::std::convert::Into<FTP_FLAGS>>(hconnect: *const ::core::ffi::c_void, fexpectresponse: Param1, dwflags: Param2, lpszcommand: ::windows::core::PCWSTR, dwcontext: usize, phftpcommand: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn FtpCommandW<'a, P0, P1>(hconnect: *const ::core::ffi::c_void, fexpectresponse: P0, dwflags: P1, lpszcommand: ::windows::core::PCWSTR, dwcontext: usize, phftpcommand: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+    P1: ::std::convert::Into<FTP_FLAGS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FtpCommandW(hconnect: *const ::core::ffi::c_void, fexpectresponse: super::super::Foundation::BOOL, dwflags: FTP_FLAGS, lpszcommand: ::windows::core::PCWSTR, dwcontext: usize, phftpcommand: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
@@ -1707,7 +1758,10 @@ pub unsafe fn FtpGetCurrentDirectoryW(hconnect: *const ::core::ffi::c_void, lpsz
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FtpGetFileA<'a, Param3: ::std::convert::Into<super::super::Foundation::BOOL>>(hconnect: *const ::core::ffi::c_void, lpszremotefile: ::windows::core::PCSTR, lpsznewfile: ::windows::core::PCSTR, ffailifexists: Param3, dwflagsandattributes: u32, dwflags: u32, dwcontext: usize) -> super::super::Foundation::BOOL {
+pub unsafe fn FtpGetFileA<'a, P0>(hconnect: *const ::core::ffi::c_void, lpszremotefile: ::windows::core::PCSTR, lpsznewfile: ::windows::core::PCSTR, ffailifexists: P0, dwflagsandattributes: u32, dwflags: u32, dwcontext: usize) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FtpGetFileA(hconnect: *const ::core::ffi::c_void, lpszremotefile: ::windows::core::PCSTR, lpsznewfile: ::windows::core::PCSTR, ffailifexists: super::super::Foundation::BOOL, dwflagsandattributes: u32, dwflags: u32, dwcontext: usize) -> super::super::Foundation::BOOL;
@@ -1717,7 +1771,10 @@ pub unsafe fn FtpGetFileA<'a, Param3: ::std::convert::Into<super::super::Foundat
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FtpGetFileEx<'a, Param3: ::std::convert::Into<super::super::Foundation::BOOL>>(hftpsession: *const ::core::ffi::c_void, lpszremotefile: ::windows::core::PCSTR, lpsznewfile: ::windows::core::PCWSTR, ffailifexists: Param3, dwflagsandattributes: u32, dwflags: u32, dwcontext: usize) -> super::super::Foundation::BOOL {
+pub unsafe fn FtpGetFileEx<'a, P0>(hftpsession: *const ::core::ffi::c_void, lpszremotefile: ::windows::core::PCSTR, lpsznewfile: ::windows::core::PCWSTR, ffailifexists: P0, dwflagsandattributes: u32, dwflags: u32, dwcontext: usize) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FtpGetFileEx(hftpsession: *const ::core::ffi::c_void, lpszremotefile: ::windows::core::PCSTR, lpsznewfile: ::windows::core::PCWSTR, ffailifexists: super::super::Foundation::BOOL, dwflagsandattributes: u32, dwflags: u32, dwcontext: usize) -> super::super::Foundation::BOOL;
@@ -1736,7 +1793,10 @@ pub unsafe fn FtpGetFileSize(hfile: *const ::core::ffi::c_void, lpdwfilesizehigh
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FtpGetFileW<'a, Param3: ::std::convert::Into<super::super::Foundation::BOOL>>(hconnect: *const ::core::ffi::c_void, lpszremotefile: ::windows::core::PCWSTR, lpsznewfile: ::windows::core::PCWSTR, ffailifexists: Param3, dwflagsandattributes: u32, dwflags: u32, dwcontext: usize) -> super::super::Foundation::BOOL {
+pub unsafe fn FtpGetFileW<'a, P0>(hconnect: *const ::core::ffi::c_void, lpszremotefile: ::windows::core::PCWSTR, lpsznewfile: ::windows::core::PCWSTR, ffailifexists: P0, dwflagsandattributes: u32, dwflags: u32, dwcontext: usize) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FtpGetFileW(hconnect: *const ::core::ffi::c_void, lpszremotefile: ::windows::core::PCWSTR, lpsznewfile: ::windows::core::PCWSTR, ffailifexists: super::super::Foundation::BOOL, dwflagsandattributes: u32, dwflags: u32, dwcontext: usize) -> super::super::Foundation::BOOL;
@@ -1745,7 +1805,10 @@ pub unsafe fn FtpGetFileW<'a, Param3: ::std::convert::Into<super::super::Foundat
 }
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`*"]
 #[inline]
-pub unsafe fn FtpOpenFileA<'a, Param3: ::std::convert::Into<FTP_FLAGS>>(hconnect: *const ::core::ffi::c_void, lpszfilename: ::windows::core::PCSTR, dwaccess: u32, dwflags: Param3, dwcontext: usize) -> *mut ::core::ffi::c_void {
+pub unsafe fn FtpOpenFileA<'a, P0>(hconnect: *const ::core::ffi::c_void, lpszfilename: ::windows::core::PCSTR, dwaccess: u32, dwflags: P0, dwcontext: usize) -> *mut ::core::ffi::c_void
+where
+    P0: ::std::convert::Into<FTP_FLAGS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FtpOpenFileA(hconnect: *const ::core::ffi::c_void, lpszfilename: ::windows::core::PCSTR, dwaccess: u32, dwflags: FTP_FLAGS, dwcontext: usize) -> *mut ::core::ffi::c_void;
@@ -1754,7 +1817,10 @@ pub unsafe fn FtpOpenFileA<'a, Param3: ::std::convert::Into<FTP_FLAGS>>(hconnect
 }
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`*"]
 #[inline]
-pub unsafe fn FtpOpenFileW<'a, Param3: ::std::convert::Into<FTP_FLAGS>>(hconnect: *const ::core::ffi::c_void, lpszfilename: ::windows::core::PCWSTR, dwaccess: u32, dwflags: Param3, dwcontext: usize) -> *mut ::core::ffi::c_void {
+pub unsafe fn FtpOpenFileW<'a, P0>(hconnect: *const ::core::ffi::c_void, lpszfilename: ::windows::core::PCWSTR, dwaccess: u32, dwflags: P0, dwcontext: usize) -> *mut ::core::ffi::c_void
+where
+    P0: ::std::convert::Into<FTP_FLAGS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FtpOpenFileW(hconnect: *const ::core::ffi::c_void, lpszfilename: ::windows::core::PCWSTR, dwaccess: u32, dwflags: FTP_FLAGS, dwcontext: usize) -> *mut ::core::ffi::c_void;
@@ -1764,7 +1830,10 @@ pub unsafe fn FtpOpenFileW<'a, Param3: ::std::convert::Into<FTP_FLAGS>>(hconnect
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FtpPutFileA<'a, Param3: ::std::convert::Into<FTP_FLAGS>>(hconnect: *const ::core::ffi::c_void, lpszlocalfile: ::windows::core::PCSTR, lpsznewremotefile: ::windows::core::PCSTR, dwflags: Param3, dwcontext: usize) -> super::super::Foundation::BOOL {
+pub unsafe fn FtpPutFileA<'a, P0>(hconnect: *const ::core::ffi::c_void, lpszlocalfile: ::windows::core::PCSTR, lpsznewremotefile: ::windows::core::PCSTR, dwflags: P0, dwcontext: usize) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<FTP_FLAGS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FtpPutFileA(hconnect: *const ::core::ffi::c_void, lpszlocalfile: ::windows::core::PCSTR, lpsznewremotefile: ::windows::core::PCSTR, dwflags: FTP_FLAGS, dwcontext: usize) -> super::super::Foundation::BOOL;
@@ -1784,7 +1853,10 @@ pub unsafe fn FtpPutFileEx(hftpsession: *const ::core::ffi::c_void, lpszlocalfil
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FtpPutFileW<'a, Param3: ::std::convert::Into<FTP_FLAGS>>(hconnect: *const ::core::ffi::c_void, lpszlocalfile: ::windows::core::PCWSTR, lpsznewremotefile: ::windows::core::PCWSTR, dwflags: Param3, dwcontext: usize) -> super::super::Foundation::BOOL {
+pub unsafe fn FtpPutFileW<'a, P0>(hconnect: *const ::core::ffi::c_void, lpszlocalfile: ::windows::core::PCWSTR, lpsznewremotefile: ::windows::core::PCWSTR, dwflags: P0, dwcontext: usize) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<FTP_FLAGS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FtpPutFileW(hconnect: *const ::core::ffi::c_void, lpszlocalfile: ::windows::core::PCWSTR, lpsznewremotefile: ::windows::core::PCWSTR, dwflags: FTP_FLAGS, dwcontext: usize) -> super::super::Foundation::BOOL;
@@ -2739,7 +2811,10 @@ pub unsafe fn GetDiskInfoA(pszpath: ::windows::core::PCSTR, pdwclustersize: *mut
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetUrlCacheConfigInfoA<'a, Param2: ::std::convert::Into<CACHE_CONFIG>>(lpcacheconfiginfo: *mut INTERNET_CACHE_CONFIG_INFOA, lpcbcacheconfiginfo: *mut u32, dwfieldcontrol: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn GetUrlCacheConfigInfoA<'a, P0>(lpcacheconfiginfo: *mut INTERNET_CACHE_CONFIG_INFOA, lpcbcacheconfiginfo: *mut u32, dwfieldcontrol: P0) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<CACHE_CONFIG>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetUrlCacheConfigInfoA(lpcacheconfiginfo: *mut INTERNET_CACHE_CONFIG_INFOA, lpcbcacheconfiginfo: *mut u32, dwfieldcontrol: CACHE_CONFIG) -> super::super::Foundation::BOOL;
@@ -2749,7 +2824,10 @@ pub unsafe fn GetUrlCacheConfigInfoA<'a, Param2: ::std::convert::Into<CACHE_CONF
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetUrlCacheConfigInfoW<'a, Param2: ::std::convert::Into<CACHE_CONFIG>>(lpcacheconfiginfo: *mut INTERNET_CACHE_CONFIG_INFOW, lpcbcacheconfiginfo: *mut u32, dwfieldcontrol: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn GetUrlCacheConfigInfoW<'a, P0>(lpcacheconfiginfo: *mut INTERNET_CACHE_CONFIG_INFOW, lpcbcacheconfiginfo: *mut u32, dwfieldcontrol: P0) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<CACHE_CONFIG>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetUrlCacheConfigInfoW(lpcacheconfiginfo: *mut INTERNET_CACHE_CONFIG_INFOW, lpcbcacheconfiginfo: *mut u32, dwfieldcontrol: CACHE_CONFIG) -> super::super::Foundation::BOOL;
@@ -3626,7 +3704,10 @@ impl ::core::fmt::Debug for HTTP_WEB_SOCKET_OPERATION {
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn HttpAddRequestHeadersA<'a, Param3: ::std::convert::Into<HTTP_ADDREQ_FLAG>>(hrequest: *const ::core::ffi::c_void, lpszheaders: &[u8], dwmodifiers: Param3) -> super::super::Foundation::BOOL {
+pub unsafe fn HttpAddRequestHeadersA<'a, P0>(hrequest: *const ::core::ffi::c_void, lpszheaders: &[u8], dwmodifiers: P0) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HTTP_ADDREQ_FLAG>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HttpAddRequestHeadersA(hrequest: *const ::core::ffi::c_void, lpszheaders: ::windows::core::PCSTR, dwheaderslength: u32, dwmodifiers: HTTP_ADDREQ_FLAG) -> super::super::Foundation::BOOL;
@@ -3636,7 +3717,10 @@ pub unsafe fn HttpAddRequestHeadersA<'a, Param3: ::std::convert::Into<HTTP_ADDRE
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn HttpAddRequestHeadersW<'a, Param3: ::std::convert::Into<HTTP_ADDREQ_FLAG>>(hrequest: *const ::core::ffi::c_void, lpszheaders: &[u16], dwmodifiers: Param3) -> super::super::Foundation::BOOL {
+pub unsafe fn HttpAddRequestHeadersW<'a, P0>(hrequest: *const ::core::ffi::c_void, lpszheaders: &[u16], dwmodifiers: P0) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HTTP_ADDREQ_FLAG>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HttpAddRequestHeadersW(hrequest: *const ::core::ffi::c_void, lpszheaders: ::windows::core::PCWSTR, dwheaderslength: u32, dwmodifiers: HTTP_ADDREQ_FLAG) -> super::super::Foundation::BOOL;
@@ -3646,7 +3730,10 @@ pub unsafe fn HttpAddRequestHeadersW<'a, Param3: ::std::convert::Into<HTTP_ADDRE
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn HttpCheckDavComplianceA<'a, Param3: ::std::convert::Into<super::super::Foundation::HWND>>(lpszurl: ::windows::core::PCSTR, lpszcompliancetoken: ::windows::core::PCSTR, lpffound: *mut i32, hwnd: Param3, lpvreserved: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn HttpCheckDavComplianceA<'a, P0>(lpszurl: ::windows::core::PCSTR, lpszcompliancetoken: ::windows::core::PCSTR, lpffound: *mut i32, hwnd: P0, lpvreserved: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HttpCheckDavComplianceA(lpszurl: ::windows::core::PCSTR, lpszcompliancetoken: ::windows::core::PCSTR, lpffound: *mut i32, hwnd: super::super::Foundation::HWND, lpvreserved: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
@@ -3656,7 +3743,10 @@ pub unsafe fn HttpCheckDavComplianceA<'a, Param3: ::std::convert::Into<super::su
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn HttpCheckDavComplianceW<'a, Param3: ::std::convert::Into<super::super::Foundation::HWND>>(lpszurl: ::windows::core::PCWSTR, lpszcompliancetoken: ::windows::core::PCWSTR, lpffound: *mut i32, hwnd: Param3, lpvreserved: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn HttpCheckDavComplianceW<'a, P0>(lpszurl: ::windows::core::PCWSTR, lpszcompliancetoken: ::windows::core::PCWSTR, lpffound: *mut i32, hwnd: P0, lpvreserved: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HttpCheckDavComplianceW(lpszurl: ::windows::core::PCWSTR, lpszcompliancetoken: ::windows::core::PCWSTR, lpffound: *mut i32, hwnd: super::super::Foundation::HWND, lpvreserved: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
@@ -3732,7 +3822,10 @@ pub unsafe fn HttpIsHostHstsEnabled(pcwszurl: ::windows::core::PCWSTR, pfishsts:
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn HttpOpenDependencyHandle<'a, Param1: ::std::convert::Into<super::super::Foundation::BOOL>>(hrequesthandle: *const ::core::ffi::c_void, fbackground: Param1, phdependencyhandle: *mut *mut ::core::ffi::c_void) -> u32 {
+pub unsafe fn HttpOpenDependencyHandle<'a, P0>(hrequesthandle: *const ::core::ffi::c_void, fbackground: P0, phdependencyhandle: *mut *mut ::core::ffi::c_void) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HttpOpenDependencyHandle(hrequesthandle: *const ::core::ffi::c_void, fbackground: super::super::Foundation::BOOL, phdependencyhandle: *mut *mut ::core::ffi::c_void) -> u32;
@@ -3759,7 +3852,10 @@ pub unsafe fn HttpOpenRequestW(hconnect: *const ::core::ffi::c_void, lpszverb: :
 }
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`*"]
 #[inline]
-pub unsafe fn HttpPushClose<'a, Param0: ::std::convert::Into<HTTP_PUSH_WAIT_HANDLE>>(hwait: Param0) {
+pub unsafe fn HttpPushClose<'a, P0>(hwait: P0)
+where
+    P0: ::std::convert::Into<HTTP_PUSH_WAIT_HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HttpPushClose(hwait: HTTP_PUSH_WAIT_HANDLE);
@@ -3778,7 +3874,11 @@ pub unsafe fn HttpPushEnable(hrequest: *const ::core::ffi::c_void, ptransportset
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn HttpPushWait<'a, Param0: ::std::convert::Into<HTTP_PUSH_WAIT_HANDLE>, Param1: ::std::convert::Into<HTTP_PUSH_WAIT_TYPE>>(hwait: Param0, etype: Param1, pnotificationstatus: *mut HTTP_PUSH_NOTIFICATION_STATUS) -> u32 {
+pub unsafe fn HttpPushWait<'a, P0, P1>(hwait: P0, etype: P1, pnotificationstatus: *mut HTTP_PUSH_NOTIFICATION_STATUS) -> u32
+where
+    P0: ::std::convert::Into<HTTP_PUSH_WAIT_HANDLE>,
+    P1: ::std::convert::Into<HTTP_PUSH_WAIT_TYPE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HttpPushWait(hwait: HTTP_PUSH_WAIT_HANDLE, etype: HTTP_PUSH_WAIT_TYPE, pnotificationstatus: *mut HTTP_PUSH_NOTIFICATION_STATUS) -> u32;
@@ -3887,7 +3987,10 @@ pub unsafe fn HttpWebSocketReceive(hwebsocket: *const ::core::ffi::c_void, pvbuf
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn HttpWebSocketSend<'a, Param1: ::std::convert::Into<HTTP_WEB_SOCKET_BUFFER_TYPE>>(hwebsocket: *const ::core::ffi::c_void, buffertype: Param1, pvbuffer: *const ::core::ffi::c_void, dwbufferlength: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn HttpWebSocketSend<'a, P0>(hwebsocket: *const ::core::ffi::c_void, buffertype: P0, pvbuffer: *const ::core::ffi::c_void, dwbufferlength: u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HTTP_WEB_SOCKET_BUFFER_TYPE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HttpWebSocketSend(hwebsocket: *const ::core::ffi::c_void, buffertype: HTTP_WEB_SOCKET_BUFFER_TYPE, pvbuffer: *const ::core::ffi::c_void, dwbufferlength: u32) -> super::super::Foundation::BOOL;
@@ -3981,7 +4084,10 @@ pub struct IDialBranding_Vtbl {
 pub struct IDialEngine(::windows::core::IUnknown);
 impl IDialEngine {
     #[doc = "*Required features: `\"Win32_Networking_WinInet\"`*"]
-    pub unsafe fn Initialize<'a, Param1: ::std::convert::Into<::windows::core::InParam<'a, IDialEventSink>>>(&self, pwzconnectoid: ::windows::core::PCWSTR, pides: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn Initialize<'a, P0>(&self, pwzconnectoid: ::windows::core::PCWSTR, pides: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDialEventSink>>,
+    {
         (::windows::core::Interface::vtable(self).Initialize)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pwzconnectoid), pides.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_Networking_WinInet\"`*"]
@@ -6905,7 +7011,10 @@ pub struct IProofOfPossessionCookieInfoManager_Vtbl {
 pub struct IProofOfPossessionCookieInfoManager2(::windows::core::IUnknown);
 impl IProofOfPossessionCookieInfoManager2 {
     #[doc = "*Required features: `\"Win32_Networking_WinInet\"`*"]
-    pub unsafe fn GetCookieInfoWithUriForAccount<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IInspectable>>>(&self, webaccount: Param0, uri: ::windows::core::PCWSTR, cookieinfocount: *mut u32, cookieinfo: *mut *mut ProofOfPossessionCookieInfo) -> ::windows::core::Result<()> {
+    pub unsafe fn GetCookieInfoWithUriForAccount<'a, P0>(&self, webaccount: P0, uri: ::windows::core::PCWSTR, cookieinfocount: *mut u32, cookieinfo: *mut *mut ProofOfPossessionCookieInfo) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IInspectable>>,
+    {
         (::windows::core::Interface::vtable(self).GetCookieInfoWithUriForAccount)(::windows::core::Interface::as_raw(self), webaccount.into().abi(), ::core::mem::transmute(uri), ::core::mem::transmute(cookieinfocount), ::core::mem::transmute(cookieinfo)).ok()
     }
 }
@@ -7073,7 +7182,11 @@ pub unsafe fn InternetAttemptConnect(dwreserved: u32) -> u32 {
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn InternetAutodial<'a, Param0: ::std::convert::Into<INTERNET_AUTODIAL>, Param1: ::std::convert::Into<super::super::Foundation::HWND>>(dwflags: Param0, hwndparent: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn InternetAutodial<'a, P0, P1>(dwflags: P0, hwndparent: P1) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<INTERNET_AUTODIAL>,
+    P1: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn InternetAutodial(dwflags: INTERNET_AUTODIAL, hwndparent: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
@@ -7173,7 +7286,11 @@ pub unsafe fn InternetCombineUrlW(lpszbaseurl: ::windows::core::PCWSTR, lpszrela
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn InternetConfirmZoneCrossing<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>, Param3: ::std::convert::Into<super::super::Foundation::BOOL>>(hwnd: Param0, szurlprev: ::windows::core::PCSTR, szurlnew: ::windows::core::PCSTR, bpost: Param3) -> u32 {
+pub unsafe fn InternetConfirmZoneCrossing<'a, P0, P1>(hwnd: P0, szurlprev: ::windows::core::PCSTR, szurlnew: ::windows::core::PCSTR, bpost: P1) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+    P1: ::std::convert::Into<super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn InternetConfirmZoneCrossing(hwnd: super::super::Foundation::HWND, szurlprev: ::windows::core::PCSTR, szurlnew: ::windows::core::PCSTR, bpost: super::super::Foundation::BOOL) -> u32;
@@ -7183,7 +7300,11 @@ pub unsafe fn InternetConfirmZoneCrossing<'a, Param0: ::std::convert::Into<super
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn InternetConfirmZoneCrossingA<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>, Param3: ::std::convert::Into<super::super::Foundation::BOOL>>(hwnd: Param0, szurlprev: ::windows::core::PCSTR, szurlnew: ::windows::core::PCSTR, bpost: Param3) -> u32 {
+pub unsafe fn InternetConfirmZoneCrossingA<'a, P0, P1>(hwnd: P0, szurlprev: ::windows::core::PCSTR, szurlnew: ::windows::core::PCSTR, bpost: P1) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+    P1: ::std::convert::Into<super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn InternetConfirmZoneCrossingA(hwnd: super::super::Foundation::HWND, szurlprev: ::windows::core::PCSTR, szurlnew: ::windows::core::PCSTR, bpost: super::super::Foundation::BOOL) -> u32;
@@ -7193,7 +7314,11 @@ pub unsafe fn InternetConfirmZoneCrossingA<'a, Param0: ::std::convert::Into<supe
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn InternetConfirmZoneCrossingW<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>, Param3: ::std::convert::Into<super::super::Foundation::BOOL>>(hwnd: Param0, szurlprev: ::windows::core::PCWSTR, szurlnew: ::windows::core::PCWSTR, bpost: Param3) -> u32 {
+pub unsafe fn InternetConfirmZoneCrossingW<'a, P0, P1>(hwnd: P0, szurlprev: ::windows::core::PCWSTR, szurlnew: ::windows::core::PCWSTR, bpost: P1) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+    P1: ::std::convert::Into<super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn InternetConfirmZoneCrossingW(hwnd: super::super::Foundation::HWND, szurlprev: ::windows::core::PCWSTR, szurlnew: ::windows::core::PCWSTR, bpost: super::super::Foundation::BOOL) -> u32;
@@ -7221,7 +7346,10 @@ pub unsafe fn InternetConnectW(hinternet: *const ::core::ffi::c_void, lpszserver
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn InternetConvertUrlFromWireToWideChar<'a, Param5: ::std::convert::Into<super::super::Foundation::BOOL>>(pcszurl: &[u8], pcwszbaseurl: ::windows::core::PCWSTR, dwcodepagehost: u32, dwcodepagepath: u32, fencodepathextra: Param5, dwcodepageextra: u32, ppwszconvertedurl: *mut ::windows::core::PWSTR) -> u32 {
+pub unsafe fn InternetConvertUrlFromWireToWideChar<'a, P0>(pcszurl: &[u8], pcwszbaseurl: ::windows::core::PCWSTR, dwcodepagehost: u32, dwcodepagepath: u32, fencodepathextra: P0, dwcodepageextra: u32, ppwszconvertedurl: *mut ::windows::core::PWSTR) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn InternetConvertUrlFromWireToWideChar(pcszurl: ::windows::core::PCSTR, cchurl: u32, pcwszbaseurl: ::windows::core::PCWSTR, dwcodepagehost: u32, dwcodepagepath: u32, fencodepathextra: super::super::Foundation::BOOL, dwcodepageextra: u32, ppwszconvertedurl: *mut ::windows::core::PWSTR) -> u32;
@@ -7309,7 +7437,10 @@ impl ::core::fmt::Debug for InternetCookieState {
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`, `\"Win32_Networking_WinHttp\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinHttp"))]
 #[inline]
-pub unsafe fn InternetCrackUrlA<'a, Param2: ::std::convert::Into<super::WinHttp::WIN_HTTP_CREATE_URL_FLAGS>>(lpszurl: &[u8], dwflags: Param2, lpurlcomponents: *mut URL_COMPONENTSA) -> super::super::Foundation::BOOL {
+pub unsafe fn InternetCrackUrlA<'a, P0>(lpszurl: &[u8], dwflags: P0, lpurlcomponents: *mut URL_COMPONENTSA) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::WinHttp::WIN_HTTP_CREATE_URL_FLAGS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn InternetCrackUrlA(lpszurl: ::windows::core::PCSTR, dwurllength: u32, dwflags: super::WinHttp::WIN_HTTP_CREATE_URL_FLAGS, lpurlcomponents: *mut URL_COMPONENTSA) -> super::super::Foundation::BOOL;
@@ -7319,7 +7450,10 @@ pub unsafe fn InternetCrackUrlA<'a, Param2: ::std::convert::Into<super::WinHttp:
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`, `\"Win32_Networking_WinHttp\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinHttp"))]
 #[inline]
-pub unsafe fn InternetCrackUrlW<'a, Param2: ::std::convert::Into<super::WinHttp::WIN_HTTP_CREATE_URL_FLAGS>>(lpszurl: &[u16], dwflags: Param2, lpurlcomponents: *mut URL_COMPONENTSW) -> super::super::Foundation::BOOL {
+pub unsafe fn InternetCrackUrlW<'a, P0>(lpszurl: &[u16], dwflags: P0, lpurlcomponents: *mut URL_COMPONENTSW) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::WinHttp::WIN_HTTP_CREATE_URL_FLAGS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn InternetCrackUrlW(lpszurl: ::windows::core::PCWSTR, dwurllength: u32, dwflags: super::WinHttp::WIN_HTTP_CREATE_URL_FLAGS, lpurlcomponents: *mut URL_COMPONENTSW) -> super::super::Foundation::BOOL;
@@ -7349,7 +7483,10 @@ pub unsafe fn InternetCreateUrlW(lpurlcomponents: *const URL_COMPONENTSW, dwflag
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn InternetDial<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(hwndparent: Param0, lpszconnectoid: ::windows::core::PCSTR, dwflags: u32, lpdwconnection: *mut u32, dwreserved: u32) -> u32 {
+pub unsafe fn InternetDial<'a, P0>(hwndparent: P0, lpszconnectoid: ::windows::core::PCSTR, dwflags: u32, lpdwconnection: *mut u32, dwreserved: u32) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn InternetDial(hwndparent: super::super::Foundation::HWND, lpszconnectoid: ::windows::core::PCSTR, dwflags: u32, lpdwconnection: *mut u32, dwreserved: u32) -> u32;
@@ -7359,7 +7496,10 @@ pub unsafe fn InternetDial<'a, Param0: ::std::convert::Into<super::super::Founda
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn InternetDialA<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(hwndparent: Param0, lpszconnectoid: ::windows::core::PCSTR, dwflags: u32, lpdwconnection: *mut usize, dwreserved: u32) -> u32 {
+pub unsafe fn InternetDialA<'a, P0>(hwndparent: P0, lpszconnectoid: ::windows::core::PCSTR, dwflags: u32, lpdwconnection: *mut usize, dwreserved: u32) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn InternetDialA(hwndparent: super::super::Foundation::HWND, lpszconnectoid: ::windows::core::PCSTR, dwflags: u32, lpdwconnection: *mut usize, dwreserved: u32) -> u32;
@@ -7369,7 +7509,10 @@ pub unsafe fn InternetDialA<'a, Param0: ::std::convert::Into<super::super::Found
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn InternetDialW<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(hwndparent: Param0, lpszconnectoid: ::windows::core::PCWSTR, dwflags: u32, lpdwconnection: *mut usize, dwreserved: u32) -> u32 {
+pub unsafe fn InternetDialW<'a, P0>(hwndparent: P0, lpszconnectoid: ::windows::core::PCWSTR, dwflags: u32, lpdwconnection: *mut usize, dwreserved: u32) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn InternetDialW(hwndparent: super::super::Foundation::HWND, lpszconnectoid: ::windows::core::PCWSTR, dwflags: u32, lpdwconnection: *mut usize, dwreserved: u32) -> u32;
@@ -7399,7 +7542,10 @@ pub unsafe fn InternetEnumPerSiteCookieDecisionW(pszsitename: ::windows::core::P
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn InternetErrorDlg<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(hwnd: Param0, hrequest: *mut ::core::ffi::c_void, dwerror: u32, dwflags: u32, lppvdata: *mut *mut ::core::ffi::c_void) -> u32 {
+pub unsafe fn InternetErrorDlg<'a, P0>(hwnd: P0, hrequest: *mut ::core::ffi::c_void, dwerror: u32, dwflags: u32, lppvdata: *mut *mut ::core::ffi::c_void) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn InternetErrorDlg(hwnd: super::super::Foundation::HWND, hrequest: *mut ::core::ffi::c_void, dwerror: u32, dwflags: u32, lppvdata: *mut *mut ::core::ffi::c_void) -> u32;
@@ -7429,7 +7575,10 @@ pub unsafe fn InternetFindNextFileW(hfind: *const ::core::ffi::c_void, lpvfindda
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn InternetFortezzaCommand<'a, Param1: ::std::convert::Into<super::super::Foundation::HWND>>(dwcommand: u32, hwnd: Param1, dwreserved: usize) -> super::super::Foundation::BOOL {
+pub unsafe fn InternetFortezzaCommand<'a, P0>(dwcommand: u32, hwnd: P0, dwreserved: usize) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn InternetFortezzaCommand(dwcommand: u32, hwnd: super::super::Foundation::HWND, dwreserved: usize) -> super::super::Foundation::BOOL;
@@ -7519,7 +7668,10 @@ pub unsafe fn InternetGetCookieEx2(pcwszurl: ::windows::core::PCWSTR, pcwszcooki
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn InternetGetCookieExA<'a, Param4: ::std::convert::Into<INTERNET_COOKIE_FLAGS>>(lpszurl: ::windows::core::PCSTR, lpszcookiename: ::windows::core::PCSTR, lpszcookiedata: ::windows::core::PCSTR, lpdwsize: *mut u32, dwflags: Param4, lpreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn InternetGetCookieExA<'a, P0>(lpszurl: ::windows::core::PCSTR, lpszcookiename: ::windows::core::PCSTR, lpszcookiedata: ::windows::core::PCSTR, lpdwsize: *mut u32, dwflags: P0, lpreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<INTERNET_COOKIE_FLAGS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn InternetGetCookieExA(lpszurl: ::windows::core::PCSTR, lpszcookiename: ::windows::core::PCSTR, lpszcookiedata: ::windows::core::PCSTR, lpdwsize: *mut u32, dwflags: INTERNET_COOKIE_FLAGS, lpreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
@@ -7529,7 +7681,10 @@ pub unsafe fn InternetGetCookieExA<'a, Param4: ::std::convert::Into<INTERNET_COO
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn InternetGetCookieExW<'a, Param4: ::std::convert::Into<INTERNET_COOKIE_FLAGS>>(lpszurl: ::windows::core::PCWSTR, lpszcookiename: ::windows::core::PCWSTR, lpszcookiedata: ::windows::core::PCWSTR, lpdwsize: *mut u32, dwflags: Param4, lpreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn InternetGetCookieExW<'a, P0>(lpszurl: ::windows::core::PCWSTR, lpszcookiename: ::windows::core::PCWSTR, lpszcookiedata: ::windows::core::PCWSTR, lpdwsize: *mut u32, dwflags: P0, lpreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<INTERNET_COOKIE_FLAGS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn InternetGetCookieExW(lpszurl: ::windows::core::PCWSTR, lpszcookiename: ::windows::core::PCWSTR, lpszcookiedata: ::windows::core::PCWSTR, lpdwsize: *mut u32, dwflags: INTERNET_COOKIE_FLAGS, lpreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
@@ -7629,7 +7784,10 @@ pub unsafe fn InternetGetSecurityInfoByURLW(lpszurl: ::windows::core::PCWSTR, pp
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn InternetGoOnline<'a, Param1: ::std::convert::Into<super::super::Foundation::HWND>>(lpszurl: ::windows::core::PCSTR, hwndparent: Param1, dwflags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn InternetGoOnline<'a, P0>(lpszurl: ::windows::core::PCSTR, hwndparent: P0, dwflags: u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn InternetGoOnline(lpszurl: ::windows::core::PCSTR, hwndparent: super::super::Foundation::HWND, dwflags: u32) -> super::super::Foundation::BOOL;
@@ -7639,7 +7797,10 @@ pub unsafe fn InternetGoOnline<'a, Param1: ::std::convert::Into<super::super::Fo
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn InternetGoOnlineA<'a, Param1: ::std::convert::Into<super::super::Foundation::HWND>>(lpszurl: ::windows::core::PCSTR, hwndparent: Param1, dwflags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn InternetGoOnlineA<'a, P0>(lpszurl: ::windows::core::PCSTR, hwndparent: P0, dwflags: u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn InternetGoOnlineA(lpszurl: ::windows::core::PCSTR, hwndparent: super::super::Foundation::HWND, dwflags: u32) -> super::super::Foundation::BOOL;
@@ -7649,7 +7810,10 @@ pub unsafe fn InternetGoOnlineA<'a, Param1: ::std::convert::Into<super::super::F
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn InternetGoOnlineW<'a, Param1: ::std::convert::Into<super::super::Foundation::HWND>>(lpszurl: ::windows::core::PCWSTR, hwndparent: Param1, dwflags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn InternetGoOnlineW<'a, P0>(lpszurl: ::windows::core::PCWSTR, hwndparent: P0, dwflags: u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn InternetGoOnlineW(lpszurl: ::windows::core::PCWSTR, hwndparent: super::super::Foundation::HWND, dwflags: u32) -> super::super::Foundation::BOOL;
@@ -7988,7 +8152,10 @@ pub unsafe fn InternetSetStatusCallbackW(hinternet: *const ::core::ffi::c_void, 
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn InternetShowSecurityInfoByURL<'a, Param1: ::std::convert::Into<super::super::Foundation::HWND>>(lpszurl: ::windows::core::PCSTR, hwndparent: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn InternetShowSecurityInfoByURL<'a, P0>(lpszurl: ::windows::core::PCSTR, hwndparent: P0) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn InternetShowSecurityInfoByURL(lpszurl: ::windows::core::PCSTR, hwndparent: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
@@ -7998,7 +8165,10 @@ pub unsafe fn InternetShowSecurityInfoByURL<'a, Param1: ::std::convert::Into<sup
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn InternetShowSecurityInfoByURLA<'a, Param1: ::std::convert::Into<super::super::Foundation::HWND>>(lpszurl: ::windows::core::PCSTR, hwndparent: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn InternetShowSecurityInfoByURLA<'a, P0>(lpszurl: ::windows::core::PCSTR, hwndparent: P0) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn InternetShowSecurityInfoByURLA(lpszurl: ::windows::core::PCSTR, hwndparent: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
@@ -8008,7 +8178,10 @@ pub unsafe fn InternetShowSecurityInfoByURLA<'a, Param1: ::std::convert::Into<su
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn InternetShowSecurityInfoByURLW<'a, Param1: ::std::convert::Into<super::super::Foundation::HWND>>(lpszurl: ::windows::core::PCWSTR, hwndparent: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn InternetShowSecurityInfoByURLW<'a, P0>(lpszurl: ::windows::core::PCWSTR, hwndparent: P0) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn InternetShowSecurityInfoByURLW(lpszurl: ::windows::core::PCWSTR, hwndparent: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
@@ -8078,7 +8251,10 @@ pub unsafe fn InternetTimeToSystemTimeW(lpsztime: ::windows::core::PCWSTR, pst: 
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn InternetUnlockRequestFile<'a, Param0: ::std::convert::Into<super::super::Foundation::HANDLE>>(hlockrequestinfo: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn InternetUnlockRequestFile<'a, P0>(hlockrequestinfo: P0) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn InternetUnlockRequestFile(hlockrequestinfo: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
@@ -8138,7 +8314,10 @@ pub unsafe fn IsDomainLegalCookieDomainW(pchdomain: ::windows::core::PCWSTR, pch
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IsHostInProxyBypassList<'a, Param0: ::std::convert::Into<INTERNET_SCHEME>>(tscheme: Param0, lpszhost: &[u8]) -> super::super::Foundation::BOOL {
+pub unsafe fn IsHostInProxyBypassList<'a, P0>(tscheme: P0, lpszhost: &[u8]) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<INTERNET_SCHEME>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsHostInProxyBypassList(tscheme: INTERNET_SCHEME, lpszhost: ::windows::core::PCSTR, cchhost: u32) -> super::super::Foundation::BOOL;
@@ -8472,7 +8651,10 @@ pub unsafe fn ReadGuidsForConnectedNetworks(pcnetworks: *mut u32, pppwsznetworkg
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ReadUrlCacheEntryStream<'a, Param0: ::std::convert::Into<super::super::Foundation::HANDLE>>(hurlcachestream: Param0, dwlocation: u32, lpbuffer: *mut ::core::ffi::c_void, lpdwlen: *mut u32, reserved: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn ReadUrlCacheEntryStream<'a, P0>(hurlcachestream: P0, dwlocation: u32, lpbuffer: *mut ::core::ffi::c_void, lpdwlen: *mut u32, reserved: u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReadUrlCacheEntryStream(hurlcachestream: super::super::Foundation::HANDLE, dwlocation: u32, lpbuffer: *mut ::core::ffi::c_void, lpdwlen: *mut u32, reserved: u32) -> super::super::Foundation::BOOL;
@@ -8482,7 +8664,10 @@ pub unsafe fn ReadUrlCacheEntryStream<'a, Param0: ::std::convert::Into<super::su
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ReadUrlCacheEntryStreamEx<'a, Param0: ::std::convert::Into<super::super::Foundation::HANDLE>>(hurlcachestream: Param0, qwlocation: u64, lpbuffer: *mut ::core::ffi::c_void, lpdwlen: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn ReadUrlCacheEntryStreamEx<'a, P0>(hurlcachestream: P0, qwlocation: u64, lpbuffer: *mut ::core::ffi::c_void, lpdwlen: *mut u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReadUrlCacheEntryStreamEx(hurlcachestream: super::super::Foundation::HANDLE, qwlocation: u64, lpbuffer: *mut ::core::ffi::c_void, lpdwlen: *mut u32) -> super::super::Foundation::BOOL;
@@ -8492,7 +8677,10 @@ pub unsafe fn ReadUrlCacheEntryStreamEx<'a, Param0: ::std::convert::Into<super::
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegisterUrlCacheNotification<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(hwnd: Param0, umsg: u32, gid: i64, dwopsfilter: u32, dwreserved: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn RegisterUrlCacheNotification<'a, P0>(hwnd: P0, umsg: u32, gid: i64, dwopsfilter: u32, dwreserved: u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RegisterUrlCacheNotification(hwnd: super::super::Foundation::HWND, umsg: u32, gid: i64, dwopsfilter: u32, dwreserved: u32) -> super::super::Foundation::BOOL;
@@ -8532,7 +8720,10 @@ pub unsafe fn RetrieveUrlCacheEntryFileW(lpszurlname: ::windows::core::PCWSTR, l
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RetrieveUrlCacheEntryStreamA<'a, Param3: ::std::convert::Into<super::super::Foundation::BOOL>>(lpszurlname: ::windows::core::PCSTR, lpcacheentryinfo: *mut INTERNET_CACHE_ENTRY_INFOA, lpcbcacheentryinfo: *mut u32, frandomread: Param3, dwreserved: u32) -> ::windows::core::Result<super::super::Foundation::HANDLE> {
+pub unsafe fn RetrieveUrlCacheEntryStreamA<'a, P0>(lpszurlname: ::windows::core::PCSTR, lpcacheentryinfo: *mut INTERNET_CACHE_ENTRY_INFOA, lpcbcacheentryinfo: *mut u32, frandomread: P0, dwreserved: u32) -> ::windows::core::Result<super::super::Foundation::HANDLE>
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RetrieveUrlCacheEntryStreamA(lpszurlname: ::windows::core::PCSTR, lpcacheentryinfo: *mut INTERNET_CACHE_ENTRY_INFOA, lpcbcacheentryinfo: *mut u32, frandomread: super::super::Foundation::BOOL, dwreserved: u32) -> super::super::Foundation::HANDLE;
@@ -8543,7 +8734,10 @@ pub unsafe fn RetrieveUrlCacheEntryStreamA<'a, Param3: ::std::convert::Into<supe
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RetrieveUrlCacheEntryStreamW<'a, Param3: ::std::convert::Into<super::super::Foundation::BOOL>>(lpszurlname: ::windows::core::PCWSTR, lpcacheentryinfo: *mut INTERNET_CACHE_ENTRY_INFOW, lpcbcacheentryinfo: *mut u32, frandomread: Param3, dwreserved: u32) -> ::windows::core::Result<super::super::Foundation::HANDLE> {
+pub unsafe fn RetrieveUrlCacheEntryStreamW<'a, P0>(lpszurlname: ::windows::core::PCWSTR, lpcacheentryinfo: *mut INTERNET_CACHE_ENTRY_INFOW, lpcbcacheentryinfo: *mut u32, frandomread: P0, dwreserved: u32) -> ::windows::core::Result<super::super::Foundation::HANDLE>
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RetrieveUrlCacheEntryStreamW(lpszurlname: ::windows::core::PCWSTR, lpcacheentryinfo: *mut INTERNET_CACHE_ENTRY_INFOW, lpcbcacheentryinfo: *mut u32, frandomread: super::super::Foundation::BOOL, dwreserved: u32) -> super::super::Foundation::HANDLE;
@@ -8554,7 +8748,11 @@ pub unsafe fn RetrieveUrlCacheEntryStreamW<'a, Param3: ::std::convert::Into<supe
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RunOnceUrlCache<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>, Param1: ::std::convert::Into<super::super::Foundation::HINSTANCE>>(hwnd: Param0, hinst: Param1, lpszcmd: ::windows::core::PCSTR, ncmdshow: i32) -> u32 {
+pub unsafe fn RunOnceUrlCache<'a, P0, P1>(hwnd: P0, hinst: P1, lpszcmd: ::windows::core::PCSTR, ncmdshow: i32) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+    P1: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RunOnceUrlCache(hwnd: super::super::Foundation::HWND, hinst: super::super::Foundation::HINSTANCE, lpszcmd: ::windows::core::PCSTR, ncmdshow: i32) -> u32;
@@ -8706,7 +8904,10 @@ pub unsafe fn SetUrlCacheHeaderData(nidx: u32, dwdata: u32) -> super::super::Fou
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ShowClientAuthCerts<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(hwndparent: Param0) -> u32 {
+pub unsafe fn ShowClientAuthCerts<'a, P0>(hwndparent: P0) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ShowClientAuthCerts(hwndparent: super::super::Foundation::HWND) -> u32;
@@ -8716,7 +8917,10 @@ pub unsafe fn ShowClientAuthCerts<'a, Param0: ::std::convert::Into<super::super:
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`, `\"Win32_Security_Authentication_Identity\"`, `\"Win32_Security_Cryptography\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Authentication_Identity", feature = "Win32_Security_Cryptography"))]
 #[inline]
-pub unsafe fn ShowSecurityInfo<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(hwndparent: Param0, psecurityinfo: *const INTERNET_SECURITY_INFO) -> u32 {
+pub unsafe fn ShowSecurityInfo<'a, P0>(hwndparent: P0, psecurityinfo: *const INTERNET_SECURITY_INFO) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ShowSecurityInfo(hwndparent: super::super::Foundation::HWND, psecurityinfo: *const INTERNET_SECURITY_INFO) -> u32;
@@ -8726,7 +8930,10 @@ pub unsafe fn ShowSecurityInfo<'a, Param0: ::std::convert::Into<super::super::Fo
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ShowX509EncodedCertificate<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(hwndparent: Param0, lpcert: *const u8, cbcert: u32) -> u32 {
+pub unsafe fn ShowX509EncodedCertificate<'a, P0>(hwndparent: P0, lpcert: *const u8, cbcert: u32) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ShowX509EncodedCertificate(hwndparent: super::super::Foundation::HWND, lpcert: *const u8, cbcert: u32) -> u32;
@@ -8993,7 +9200,10 @@ pub unsafe fn UnlockUrlCacheEntryFileW(lpszurlname: ::windows::core::PCWSTR, dwr
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn UnlockUrlCacheEntryStream<'a, Param0: ::std::convert::Into<super::super::Foundation::HANDLE>>(hurlcachestream: Param0, reserved: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn UnlockUrlCacheEntryStream<'a, P0>(hurlcachestream: P0, reserved: u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UnlockUrlCacheEntryStream(hurlcachestream: super::super::Foundation::HANDLE, reserved: u32) -> super::super::Foundation::BOOL;
@@ -9060,7 +9270,10 @@ pub unsafe fn UrlCacheFindFirstEntry(pwszprefix: ::windows::core::PCWSTR, dwflag
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn UrlCacheFindNextEntry<'a, Param0: ::std::convert::Into<super::super::Foundation::HANDLE>>(hfind: Param0, pcacheentryinfo: *mut URLCACHE_ENTRY_INFO) -> u32 {
+pub unsafe fn UrlCacheFindNextEntry<'a, P0>(hfind: P0, pcacheentryinfo: *mut URLCACHE_ENTRY_INFO) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UrlCacheFindNextEntry(hfind: super::super::Foundation::HANDLE, pcacheentryinfo: *mut URLCACHE_ENTRY_INFO) -> u32;
@@ -9116,7 +9329,10 @@ pub unsafe fn UrlCacheGetGlobalCacheSize(dwfilter: u32, pullsize: *mut u64, pull
 }
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`*"]
 #[inline]
-pub unsafe fn UrlCacheGetGlobalLimit<'a, Param0: ::std::convert::Into<URL_CACHE_LIMIT_TYPE>>(limittype: Param0, pulllimit: *mut u64) -> u32 {
+pub unsafe fn UrlCacheGetGlobalLimit<'a, P0>(limittype: P0, pulllimit: *mut u64) -> u32
+where
+    P0: ::std::convert::Into<URL_CACHE_LIMIT_TYPE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UrlCacheGetGlobalLimit(limittype: URL_CACHE_LIMIT_TYPE, pulllimit: *mut u64) -> u32;
@@ -9154,7 +9370,10 @@ pub unsafe fn UrlCacheRetrieveEntryFile(happcache: *const ::core::ffi::c_void, p
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn UrlCacheRetrieveEntryStream<'a, Param2: ::std::convert::Into<super::super::Foundation::BOOL>>(happcache: *const ::core::ffi::c_void, pcwszurl: ::windows::core::PCWSTR, frandomread: Param2, pcacheentryinfo: *mut URLCACHE_ENTRY_INFO, phentrystream: *mut *mut ::core::ffi::c_void) -> u32 {
+pub unsafe fn UrlCacheRetrieveEntryStream<'a, P0>(happcache: *const ::core::ffi::c_void, pcwszurl: ::windows::core::PCWSTR, frandomread: P0, pcacheentryinfo: *mut URLCACHE_ENTRY_INFO, phentrystream: *mut *mut ::core::ffi::c_void) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UrlCacheRetrieveEntryStream(happcache: *const ::core::ffi::c_void, pcwszurl: ::windows::core::PCWSTR, frandomread: super::super::Foundation::BOOL, pcacheentryinfo: *mut URLCACHE_ENTRY_INFO, phentrystream: *mut *mut ::core::ffi::c_void) -> u32;
@@ -9172,7 +9391,10 @@ pub unsafe fn UrlCacheServer() -> u32 {
 }
 #[doc = "*Required features: `\"Win32_Networking_WinInet\"`*"]
 #[inline]
-pub unsafe fn UrlCacheSetGlobalLimit<'a, Param0: ::std::convert::Into<URL_CACHE_LIMIT_TYPE>>(limittype: Param0, ulllimit: u64) -> u32 {
+pub unsafe fn UrlCacheSetGlobalLimit<'a, P0>(limittype: P0, ulllimit: u64) -> u32
+where
+    P0: ::std::convert::Into<URL_CACHE_LIMIT_TYPE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UrlCacheSetGlobalLimit(limittype: URL_CACHE_LIMIT_TYPE, ulllimit: u64) -> u32;

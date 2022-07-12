@@ -255,7 +255,10 @@ pub const CM_ADD_RANGE_DONOTADDIFCONFLICT: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Data_HtmlHelp\"`*"]
 #[cfg(feature = "Win32_Data_HtmlHelp")]
 #[inline]
-pub unsafe fn CM_Add_Empty_Log_Conf<'a, Param2: ::std::convert::Into<super::super::Data::HtmlHelp::PRIORITY>>(plclogconf: *mut usize, dndevinst: u32, priority: Param2, ulflags: u32) -> CONFIGRET {
+pub unsafe fn CM_Add_Empty_Log_Conf<'a, P0>(plclogconf: *mut usize, dndevinst: u32, priority: P0, ulflags: u32) -> CONFIGRET
+where
+    P0: ::std::convert::Into<super::super::Data::HtmlHelp::PRIORITY>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CM_Add_Empty_Log_Conf(plclogconf: *mut usize, dndevinst: u32, priority: super::super::Data::HtmlHelp::PRIORITY, ulflags: u32) -> CONFIGRET;
@@ -265,7 +268,10 @@ pub unsafe fn CM_Add_Empty_Log_Conf<'a, Param2: ::std::convert::Into<super::supe
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Data_HtmlHelp\"`*"]
 #[cfg(feature = "Win32_Data_HtmlHelp")]
 #[inline]
-pub unsafe fn CM_Add_Empty_Log_Conf_Ex<'a, Param2: ::std::convert::Into<super::super::Data::HtmlHelp::PRIORITY>>(plclogconf: *mut usize, dndevinst: u32, priority: Param2, ulflags: u32, hmachine: isize) -> CONFIGRET {
+pub unsafe fn CM_Add_Empty_Log_Conf_Ex<'a, P0>(plclogconf: *mut usize, dndevinst: u32, priority: P0, ulflags: u32, hmachine: isize) -> CONFIGRET
+where
+    P0: ::std::convert::Into<super::super::Data::HtmlHelp::PRIORITY>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CM_Add_Empty_Log_Conf_Ex(plclogconf: *mut usize, dndevinst: u32, priority: super::super::Data::HtmlHelp::PRIORITY, ulflags: u32, hmachine: isize) -> CONFIGRET;
@@ -1969,7 +1975,10 @@ pub unsafe fn CM_Locate_DevNode_ExW(pdndevinst: *mut u32, pdeviceid: *const u16,
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_MapCrToWin32Err<'a, Param0: ::std::convert::Into<CONFIGRET>>(cmreturncode: Param0, defaulterr: u32) -> u32 {
+pub unsafe fn CM_MapCrToWin32Err<'a, P0>(cmreturncode: P0, defaulterr: u32) -> u32
+where
+    P0: ::std::convert::Into<CONFIGRET>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CM_MapCrToWin32Err(cmreturncode: CONFIGRET, defaulterr: u32) -> u32;
@@ -3316,7 +3325,10 @@ pub unsafe fn CM_Unregister_Device_Interface_ExW(pszdeviceinterface: ::windows::
 }
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
 #[inline]
-pub unsafe fn CM_Unregister_Notification<'a, Param0: ::std::convert::Into<HCMNOTIFICATION>>(notifycontext: Param0) -> CONFIGRET {
+pub unsafe fn CM_Unregister_Notification<'a, P0>(notifycontext: P0) -> CONFIGRET
+where
+    P0: ::std::convert::Into<HCMNOTIFICATION>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CM_Unregister_Notification(notifycontext: HCMNOTIFICATION) -> CONFIGRET;
@@ -4522,7 +4534,11 @@ impl ::core::default::Default for DevPrivate_Resource_s {
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DiInstallDevice<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>, Param1: ::std::convert::Into<HDEVINFO>>(hwndparent: Param0, deviceinfoset: Param1, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_A, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
+pub unsafe fn DiInstallDevice<'a, P0, P1>(hwndparent: P0, deviceinfoset: P1, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_A, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+    P1: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DiInstallDevice(hwndparent: super::super::Foundation::HWND, deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_A, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
@@ -4532,7 +4548,10 @@ pub unsafe fn DiInstallDevice<'a, Param0: ::std::convert::Into<super::super::Fou
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DiInstallDriverA<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(hwndparent: Param0, infpath: ::windows::core::PCSTR, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
+pub unsafe fn DiInstallDriverA<'a, P0>(hwndparent: P0, infpath: ::windows::core::PCSTR, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DiInstallDriverA(hwndparent: super::super::Foundation::HWND, infpath: ::windows::core::PCSTR, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
@@ -4542,7 +4561,10 @@ pub unsafe fn DiInstallDriverA<'a, Param0: ::std::convert::Into<super::super::Fo
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DiInstallDriverW<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(hwndparent: Param0, infpath: ::windows::core::PCWSTR, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
+pub unsafe fn DiInstallDriverW<'a, P0>(hwndparent: P0, infpath: ::windows::core::PCWSTR, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DiInstallDriverW(hwndparent: super::super::Foundation::HWND, infpath: ::windows::core::PCWSTR, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
@@ -4552,7 +4574,11 @@ pub unsafe fn DiInstallDriverW<'a, Param0: ::std::convert::Into<super::super::Fo
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DiRollbackDriver<'a, Param0: ::std::convert::Into<HDEVINFO>, Param2: ::std::convert::Into<super::super::Foundation::HWND>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, hwndparent: Param2, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
+pub unsafe fn DiRollbackDriver<'a, P0, P1>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA, hwndparent: P1, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+    P1: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DiRollbackDriver(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, hwndparent: super::super::Foundation::HWND, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
@@ -4562,7 +4588,11 @@ pub unsafe fn DiRollbackDriver<'a, Param0: ::std::convert::Into<HDEVINFO>, Param
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DiShowUpdateDevice<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>, Param1: ::std::convert::Into<HDEVINFO>>(hwndparent: Param0, deviceinfoset: Param1, deviceinfodata: *const SP_DEVINFO_DATA, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
+pub unsafe fn DiShowUpdateDevice<'a, P0, P1>(hwndparent: P0, deviceinfoset: P1, deviceinfodata: *const SP_DEVINFO_DATA, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+    P1: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DiShowUpdateDevice(hwndparent: super::super::Foundation::HWND, deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
@@ -4572,7 +4602,10 @@ pub unsafe fn DiShowUpdateDevice<'a, Param0: ::std::convert::Into<super::super::
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DiShowUpdateDriver<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(hwndparent: Param0, filepath: ::windows::core::PCWSTR, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
+pub unsafe fn DiShowUpdateDriver<'a, P0>(hwndparent: P0, filepath: ::windows::core::PCWSTR, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DiShowUpdateDriver(hwndparent: super::super::Foundation::HWND, filepath: ::windows::core::PCWSTR, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
@@ -4582,7 +4615,11 @@ pub unsafe fn DiShowUpdateDriver<'a, Param0: ::std::convert::Into<super::super::
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DiUninstallDevice<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>, Param1: ::std::convert::Into<HDEVINFO>>(hwndparent: Param0, deviceinfoset: Param1, deviceinfodata: *const SP_DEVINFO_DATA, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
+pub unsafe fn DiUninstallDevice<'a, P0, P1>(hwndparent: P0, deviceinfoset: P1, deviceinfodata: *const SP_DEVINFO_DATA, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+    P1: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DiUninstallDevice(hwndparent: super::super::Foundation::HWND, deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
@@ -4592,7 +4629,10 @@ pub unsafe fn DiUninstallDevice<'a, Param0: ::std::convert::Into<super::super::F
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DiUninstallDriverA<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(hwndparent: Param0, infpath: ::windows::core::PCSTR, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
+pub unsafe fn DiUninstallDriverA<'a, P0>(hwndparent: P0, infpath: ::windows::core::PCSTR, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DiUninstallDriverA(hwndparent: super::super::Foundation::HWND, infpath: ::windows::core::PCSTR, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
@@ -4602,7 +4642,10 @@ pub unsafe fn DiUninstallDriverA<'a, Param0: ::std::convert::Into<super::super::
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DiUninstallDriverW<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(hwndparent: Param0, infpath: ::windows::core::PCWSTR, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
+pub unsafe fn DiUninstallDriverW<'a, P0>(hwndparent: P0, infpath: ::windows::core::PCWSTR, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DiUninstallDriverW(hwndparent: super::super::Foundation::HWND, infpath: ::windows::core::PCWSTR, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
@@ -6247,7 +6290,11 @@ impl ::core::default::Default for IRQ_RESOURCE_64 {
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn InstallHinfSectionA<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>, Param1: ::std::convert::Into<super::super::Foundation::HINSTANCE>>(window: Param0, modulehandle: Param1, commandline: ::windows::core::PCSTR, showcommand: i32) {
+pub unsafe fn InstallHinfSectionA<'a, P0, P1>(window: P0, modulehandle: P1, commandline: ::windows::core::PCSTR, showcommand: i32)
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+    P1: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn InstallHinfSectionA(window: super::super::Foundation::HWND, modulehandle: super::super::Foundation::HINSTANCE, commandline: ::windows::core::PCSTR, showcommand: i32);
@@ -6257,7 +6304,11 @@ pub unsafe fn InstallHinfSectionA<'a, Param0: ::std::convert::Into<super::super:
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn InstallHinfSectionW<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>, Param1: ::std::convert::Into<super::super::Foundation::HINSTANCE>>(window: Param0, modulehandle: Param1, commandline: ::windows::core::PCWSTR, showcommand: i32) {
+pub unsafe fn InstallHinfSectionW<'a, P0, P1>(window: P0, modulehandle: P1, commandline: ::windows::core::PCWSTR, showcommand: i32)
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+    P1: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn InstallHinfSectionW(window: super::super::Foundation::HWND, modulehandle: super::super::Foundation::HINSTANCE, commandline: ::windows::core::PCWSTR, showcommand: i32);
@@ -11567,7 +11618,10 @@ pub unsafe fn SetupAddInstallSectionToDiskSpaceListW(diskspace: *const ::core::f
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupAddSectionToDiskSpaceListA<'a, Param4: ::std::convert::Into<SETUP_FILE_OPERATION>>(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, sectionname: ::windows::core::PCSTR, operation: Param4, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupAddSectionToDiskSpaceListA<'a, P0>(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, sectionname: ::windows::core::PCSTR, operation: P0, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<SETUP_FILE_OPERATION>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupAddSectionToDiskSpaceListA(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, sectionname: ::windows::core::PCSTR, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
@@ -11577,7 +11631,10 @@ pub unsafe fn SetupAddSectionToDiskSpaceListA<'a, Param4: ::std::convert::Into<S
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupAddSectionToDiskSpaceListW<'a, Param4: ::std::convert::Into<SETUP_FILE_OPERATION>>(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, sectionname: ::windows::core::PCWSTR, operation: Param4, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupAddSectionToDiskSpaceListW<'a, P0>(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, sectionname: ::windows::core::PCWSTR, operation: P0, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<SETUP_FILE_OPERATION>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupAddSectionToDiskSpaceListW(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, sectionname: ::windows::core::PCWSTR, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
@@ -11587,7 +11644,10 @@ pub unsafe fn SetupAddSectionToDiskSpaceListW<'a, Param4: ::std::convert::Into<S
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupAddToDiskSpaceListA<'a, Param3: ::std::convert::Into<SETUP_FILE_OPERATION>>(diskspace: *const ::core::ffi::c_void, targetfilespec: ::windows::core::PCSTR, filesize: i64, operation: Param3, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupAddToDiskSpaceListA<'a, P0>(diskspace: *const ::core::ffi::c_void, targetfilespec: ::windows::core::PCSTR, filesize: i64, operation: P0, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<SETUP_FILE_OPERATION>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupAddToDiskSpaceListA(diskspace: *const ::core::ffi::c_void, targetfilespec: ::windows::core::PCSTR, filesize: i64, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
@@ -11597,7 +11657,10 @@ pub unsafe fn SetupAddToDiskSpaceListA<'a, Param3: ::std::convert::Into<SETUP_FI
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupAddToDiskSpaceListW<'a, Param3: ::std::convert::Into<SETUP_FILE_OPERATION>>(diskspace: *const ::core::ffi::c_void, targetfilespec: ::windows::core::PCWSTR, filesize: i64, operation: Param3, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupAddToDiskSpaceListW<'a, P0>(diskspace: *const ::core::ffi::c_void, targetfilespec: ::windows::core::PCWSTR, filesize: i64, operation: P0, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<SETUP_FILE_OPERATION>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupAddToDiskSpaceListW(diskspace: *const ::core::ffi::c_void, targetfilespec: ::windows::core::PCWSTR, filesize: i64, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
@@ -11647,7 +11710,10 @@ pub unsafe fn SetupAdjustDiskSpaceListW(diskspace: *const ::core::ffi::c_void, d
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupBackupErrorA<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(hwndparent: Param0, dialogtitle: ::windows::core::PCSTR, sourcefile: ::windows::core::PCSTR, targetfile: ::windows::core::PCSTR, win32errorcode: u32, style: u32) -> u32 {
+pub unsafe fn SetupBackupErrorA<'a, P0>(hwndparent: P0, dialogtitle: ::windows::core::PCSTR, sourcefile: ::windows::core::PCSTR, targetfile: ::windows::core::PCSTR, win32errorcode: u32, style: u32) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupBackupErrorA(hwndparent: super::super::Foundation::HWND, dialogtitle: ::windows::core::PCSTR, sourcefile: ::windows::core::PCSTR, targetfile: ::windows::core::PCSTR, win32errorcode: u32, style: u32) -> u32;
@@ -11657,7 +11723,10 @@ pub unsafe fn SetupBackupErrorA<'a, Param0: ::std::convert::Into<super::super::F
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupBackupErrorW<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(hwndparent: Param0, dialogtitle: ::windows::core::PCWSTR, sourcefile: ::windows::core::PCWSTR, targetfile: ::windows::core::PCWSTR, win32errorcode: u32, style: u32) -> u32 {
+pub unsafe fn SetupBackupErrorW<'a, P0>(hwndparent: P0, dialogtitle: ::windows::core::PCWSTR, sourcefile: ::windows::core::PCWSTR, targetfile: ::windows::core::PCWSTR, win32errorcode: u32, style: u32) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupBackupErrorW(hwndparent: super::super::Foundation::HWND, dialogtitle: ::windows::core::PCWSTR, sourcefile: ::windows::core::PCWSTR, targetfile: ::windows::core::PCWSTR, win32errorcode: u32, style: u32) -> u32;
@@ -11705,7 +11774,10 @@ pub unsafe fn SetupCloseLog() {
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupCommitFileQueueA<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(owner: Param0, queuehandle: *const ::core::ffi::c_void, msghandler: PSP_FILE_CALLBACK_A, context: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupCommitFileQueueA<'a, P0>(owner: P0, queuehandle: *const ::core::ffi::c_void, msghandler: PSP_FILE_CALLBACK_A, context: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupCommitFileQueueA(owner: super::super::Foundation::HWND, queuehandle: *const ::core::ffi::c_void, msghandler: *mut ::core::ffi::c_void, context: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
@@ -11715,7 +11787,10 @@ pub unsafe fn SetupCommitFileQueueA<'a, Param0: ::std::convert::Into<super::supe
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupCommitFileQueueW<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(owner: Param0, queuehandle: *const ::core::ffi::c_void, msghandler: PSP_FILE_CALLBACK_W, context: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupCommitFileQueueW<'a, P0>(owner: P0, queuehandle: *const ::core::ffi::c_void, msghandler: PSP_FILE_CALLBACK_W, context: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupCommitFileQueueW(owner: super::super::Foundation::HWND, queuehandle: *const ::core::ffi::c_void, msghandler: *mut ::core::ffi::c_void, context: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
@@ -11745,7 +11820,10 @@ pub unsafe fn SetupConfigureWmiFromInfSectionW(infhandle: *const ::core::ffi::c_
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupCopyErrorA<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(hwndparent: Param0, dialogtitle: ::windows::core::PCSTR, diskname: ::windows::core::PCSTR, pathtosource: ::windows::core::PCSTR, sourcefile: ::windows::core::PCSTR, targetpathfile: ::windows::core::PCSTR, win32errorcode: u32, style: u32, pathbuffer: &mut [u8], pathrequiredsize: *mut u32) -> u32 {
+pub unsafe fn SetupCopyErrorA<'a, P0>(hwndparent: P0, dialogtitle: ::windows::core::PCSTR, diskname: ::windows::core::PCSTR, pathtosource: ::windows::core::PCSTR, sourcefile: ::windows::core::PCSTR, targetpathfile: ::windows::core::PCSTR, win32errorcode: u32, style: u32, pathbuffer: &mut [u8], pathrequiredsize: *mut u32) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupCopyErrorA(hwndparent: super::super::Foundation::HWND, dialogtitle: ::windows::core::PCSTR, diskname: ::windows::core::PCSTR, pathtosource: ::windows::core::PCSTR, sourcefile: ::windows::core::PCSTR, targetpathfile: ::windows::core::PCSTR, win32errorcode: u32, style: u32, pathbuffer: ::windows::core::PSTR, pathbuffersize: u32, pathrequiredsize: *mut u32) -> u32;
@@ -11755,7 +11833,10 @@ pub unsafe fn SetupCopyErrorA<'a, Param0: ::std::convert::Into<super::super::Fou
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupCopyErrorW<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(hwndparent: Param0, dialogtitle: ::windows::core::PCWSTR, diskname: ::windows::core::PCWSTR, pathtosource: ::windows::core::PCWSTR, sourcefile: ::windows::core::PCWSTR, targetpathfile: ::windows::core::PCWSTR, win32errorcode: u32, style: u32, pathbuffer: &mut [u16], pathrequiredsize: *mut u32) -> u32 {
+pub unsafe fn SetupCopyErrorW<'a, P0>(hwndparent: P0, dialogtitle: ::windows::core::PCWSTR, diskname: ::windows::core::PCWSTR, pathtosource: ::windows::core::PCWSTR, sourcefile: ::windows::core::PCWSTR, targetpathfile: ::windows::core::PCWSTR, win32errorcode: u32, style: u32, pathbuffer: &mut [u16], pathrequiredsize: *mut u32) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupCopyErrorW(hwndparent: super::super::Foundation::HWND, dialogtitle: ::windows::core::PCWSTR, diskname: ::windows::core::PCWSTR, pathtosource: ::windows::core::PCWSTR, sourcefile: ::windows::core::PCWSTR, targetpathfile: ::windows::core::PCWSTR, win32errorcode: u32, style: u32, pathbuffer: ::windows::core::PWSTR, pathbuffersize: u32, pathrequiredsize: *mut u32) -> u32;
@@ -11765,7 +11846,10 @@ pub unsafe fn SetupCopyErrorW<'a, Param0: ::std::convert::Into<super::super::Fou
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupCopyOEMInfA<'a, Param2: ::std::convert::Into<OEM_SOURCE_MEDIA_TYPE>>(sourceinffilename: ::windows::core::PCSTR, oemsourcemedialocation: ::windows::core::PCSTR, oemsourcemediatype: Param2, copystyle: u32, destinationinffilename: &mut [u8], requiredsize: *mut u32, destinationinffilenamecomponent: *mut ::windows::core::PSTR) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupCopyOEMInfA<'a, P0>(sourceinffilename: ::windows::core::PCSTR, oemsourcemedialocation: ::windows::core::PCSTR, oemsourcemediatype: P0, copystyle: u32, destinationinffilename: &mut [u8], requiredsize: *mut u32, destinationinffilenamecomponent: *mut ::windows::core::PSTR) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<OEM_SOURCE_MEDIA_TYPE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupCopyOEMInfA(sourceinffilename: ::windows::core::PCSTR, oemsourcemedialocation: ::windows::core::PCSTR, oemsourcemediatype: OEM_SOURCE_MEDIA_TYPE, copystyle: u32, destinationinffilename: ::windows::core::PSTR, destinationinffilenamesize: u32, requiredsize: *mut u32, destinationinffilenamecomponent: *mut ::windows::core::PSTR) -> super::super::Foundation::BOOL;
@@ -11775,7 +11859,10 @@ pub unsafe fn SetupCopyOEMInfA<'a, Param2: ::std::convert::Into<OEM_SOURCE_MEDIA
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupCopyOEMInfW<'a, Param2: ::std::convert::Into<OEM_SOURCE_MEDIA_TYPE>>(sourceinffilename: ::windows::core::PCWSTR, oemsourcemedialocation: ::windows::core::PCWSTR, oemsourcemediatype: Param2, copystyle: u32, destinationinffilename: &mut [u16], requiredsize: *mut u32, destinationinffilenamecomponent: *mut ::windows::core::PWSTR) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupCopyOEMInfW<'a, P0>(sourceinffilename: ::windows::core::PCWSTR, oemsourcemedialocation: ::windows::core::PCWSTR, oemsourcemediatype: P0, copystyle: u32, destinationinffilename: &mut [u16], requiredsize: *mut u32, destinationinffilenamecomponent: *mut ::windows::core::PWSTR) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<OEM_SOURCE_MEDIA_TYPE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupCopyOEMInfW(sourceinffilename: ::windows::core::PCWSTR, oemsourcemedialocation: ::windows::core::PCWSTR, oemsourcemediatype: OEM_SOURCE_MEDIA_TYPE, copystyle: u32, destinationinffilename: ::windows::core::PWSTR, destinationinffilenamesize: u32, requiredsize: *mut u32, destinationinffilenamecomponent: *mut ::windows::core::PWSTR) -> super::super::Foundation::BOOL;
@@ -11839,7 +11926,10 @@ pub unsafe fn SetupDefaultQueueCallbackW(context: *const ::core::ffi::c_void, no
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDeleteErrorA<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(hwndparent: Param0, dialogtitle: ::windows::core::PCSTR, file: ::windows::core::PCSTR, win32errorcode: u32, style: u32) -> u32 {
+pub unsafe fn SetupDeleteErrorA<'a, P0>(hwndparent: P0, dialogtitle: ::windows::core::PCSTR, file: ::windows::core::PCSTR, win32errorcode: u32, style: u32) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDeleteErrorA(hwndparent: super::super::Foundation::HWND, dialogtitle: ::windows::core::PCSTR, file: ::windows::core::PCSTR, win32errorcode: u32, style: u32) -> u32;
@@ -11849,7 +11939,10 @@ pub unsafe fn SetupDeleteErrorA<'a, Param0: ::std::convert::Into<super::super::F
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDeleteErrorW<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(hwndparent: Param0, dialogtitle: ::windows::core::PCWSTR, file: ::windows::core::PCWSTR, win32errorcode: u32, style: u32) -> u32 {
+pub unsafe fn SetupDeleteErrorW<'a, P0>(hwndparent: P0, dialogtitle: ::windows::core::PCWSTR, file: ::windows::core::PCWSTR, win32errorcode: u32, style: u32) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDeleteErrorW(hwndparent: super::super::Foundation::HWND, dialogtitle: ::windows::core::PCWSTR, file: ::windows::core::PCWSTR, win32errorcode: u32, style: u32) -> u32;
@@ -11869,7 +11962,10 @@ pub unsafe fn SetupDestroyDiskSpaceList(diskspace: *mut ::core::ffi::c_void) -> 
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiAskForOEMDisk<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiAskForOEMDisk<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiAskForOEMDisk(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
@@ -11909,7 +12005,11 @@ pub unsafe fn SetupDiBuildClassInfoListExW(flags: u32, classguidlist: &mut [::wi
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiBuildDriverInfoList<'a, Param0: ::std::convert::Into<HDEVINFO>, Param2: ::std::convert::Into<SETUP_DI_BUILD_DRIVER_DRIVER_TYPE>>(deviceinfoset: Param0, deviceinfodata: *mut SP_DEVINFO_DATA, drivertype: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiBuildDriverInfoList<'a, P0, P1>(deviceinfoset: P0, deviceinfodata: *mut SP_DEVINFO_DATA, drivertype: P1) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+    P1: ::std::convert::Into<SETUP_DI_BUILD_DRIVER_DRIVER_TYPE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiBuildDriverInfoList(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA, drivertype: SETUP_DI_BUILD_DRIVER_DRIVER_TYPE) -> super::super::Foundation::BOOL;
@@ -11919,7 +12019,10 @@ pub unsafe fn SetupDiBuildDriverInfoList<'a, Param0: ::std::convert::Into<HDEVIN
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiCallClassInstaller<'a, Param1: ::std::convert::Into<HDEVINFO>>(installfunction: u32, deviceinfoset: Param1, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiCallClassInstaller<'a, P0>(installfunction: u32, deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiCallClassInstaller(installfunction: u32, deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
@@ -11929,7 +12032,10 @@ pub unsafe fn SetupDiCallClassInstaller<'a, Param1: ::std::convert::Into<HDEVINF
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiCancelDriverInfoSearch<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiCancelDriverInfoSearch<'a, P0>(deviceinfoset: P0) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiCancelDriverInfoSearch(deviceinfoset: HDEVINFO) -> super::super::Foundation::BOOL;
@@ -11939,7 +12045,10 @@ pub unsafe fn SetupDiCancelDriverInfoSearch<'a, Param0: ::std::convert::Into<HDE
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiChangeState<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiChangeState<'a, P0>(deviceinfoset: P0, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiChangeState(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
@@ -12029,7 +12138,10 @@ pub unsafe fn SetupDiClassNameFromGuidW(classguid: *const ::windows::core::GUID,
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_System_Registry\"`*"]
 #[cfg(feature = "Win32_System_Registry")]
 #[inline]
-pub unsafe fn SetupDiCreateDevRegKeyA<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, scope: u32, hwprofile: u32, keytype: u32, infhandle: *const ::core::ffi::c_void, infsectionname: ::windows::core::PCSTR) -> ::windows::core::Result<super::super::System::Registry::HKEY> {
+pub unsafe fn SetupDiCreateDevRegKeyA<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA, scope: u32, hwprofile: u32, keytype: u32, infhandle: *const ::core::ffi::c_void, infsectionname: ::windows::core::PCSTR) -> ::windows::core::Result<super::super::System::Registry::HKEY>
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiCreateDevRegKeyA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, scope: u32, hwprofile: u32, keytype: u32, infhandle: *const ::core::ffi::c_void, infsectionname: ::windows::core::PCSTR) -> super::super::System::Registry::HKEY;
@@ -12040,7 +12152,10 @@ pub unsafe fn SetupDiCreateDevRegKeyA<'a, Param0: ::std::convert::Into<HDEVINFO>
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_System_Registry\"`*"]
 #[cfg(feature = "Win32_System_Registry")]
 #[inline]
-pub unsafe fn SetupDiCreateDevRegKeyW<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, scope: u32, hwprofile: u32, keytype: u32, infhandle: *const ::core::ffi::c_void, infsectionname: ::windows::core::PCWSTR) -> ::windows::core::Result<super::super::System::Registry::HKEY> {
+pub unsafe fn SetupDiCreateDevRegKeyW<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA, scope: u32, hwprofile: u32, keytype: u32, infhandle: *const ::core::ffi::c_void, infsectionname: ::windows::core::PCWSTR) -> ::windows::core::Result<super::super::System::Registry::HKEY>
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiCreateDevRegKeyW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, scope: u32, hwprofile: u32, keytype: u32, infhandle: *const ::core::ffi::c_void, infsectionname: ::windows::core::PCWSTR) -> super::super::System::Registry::HKEY;
@@ -12051,7 +12166,11 @@ pub unsafe fn SetupDiCreateDevRegKeyW<'a, Param0: ::std::convert::Into<HDEVINFO>
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiCreateDeviceInfoA<'a, Param0: ::std::convert::Into<HDEVINFO>, Param4: ::std::convert::Into<super::super::Foundation::HWND>>(deviceinfoset: Param0, devicename: ::windows::core::PCSTR, classguid: *const ::windows::core::GUID, devicedescription: ::windows::core::PCSTR, hwndparent: Param4, creationflags: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiCreateDeviceInfoA<'a, P0, P1>(deviceinfoset: P0, devicename: ::windows::core::PCSTR, classguid: *const ::windows::core::GUID, devicedescription: ::windows::core::PCSTR, hwndparent: P1, creationflags: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+    P1: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiCreateDeviceInfoA(deviceinfoset: HDEVINFO, devicename: ::windows::core::PCSTR, classguid: *const ::windows::core::GUID, devicedescription: ::windows::core::PCSTR, hwndparent: super::super::Foundation::HWND, creationflags: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
@@ -12061,7 +12180,10 @@ pub unsafe fn SetupDiCreateDeviceInfoA<'a, Param0: ::std::convert::Into<HDEVINFO
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiCreateDeviceInfoList<'a, Param1: ::std::convert::Into<super::super::Foundation::HWND>>(classguid: *const ::windows::core::GUID, hwndparent: Param1) -> ::windows::core::Result<HDEVINFO> {
+pub unsafe fn SetupDiCreateDeviceInfoList<'a, P0>(classguid: *const ::windows::core::GUID, hwndparent: P0) -> ::windows::core::Result<HDEVINFO>
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiCreateDeviceInfoList(classguid: *const ::windows::core::GUID, hwndparent: super::super::Foundation::HWND) -> HDEVINFO;
@@ -12072,7 +12194,10 @@ pub unsafe fn SetupDiCreateDeviceInfoList<'a, Param1: ::std::convert::Into<super
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiCreateDeviceInfoListExA<'a, Param1: ::std::convert::Into<super::super::Foundation::HWND>>(classguid: *const ::windows::core::GUID, hwndparent: Param1, machinename: ::windows::core::PCSTR, reserved: *mut ::core::ffi::c_void) -> ::windows::core::Result<HDEVINFO> {
+pub unsafe fn SetupDiCreateDeviceInfoListExA<'a, P0>(classguid: *const ::windows::core::GUID, hwndparent: P0, machinename: ::windows::core::PCSTR, reserved: *mut ::core::ffi::c_void) -> ::windows::core::Result<HDEVINFO>
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiCreateDeviceInfoListExA(classguid: *const ::windows::core::GUID, hwndparent: super::super::Foundation::HWND, machinename: ::windows::core::PCSTR, reserved: *mut ::core::ffi::c_void) -> HDEVINFO;
@@ -12083,7 +12208,10 @@ pub unsafe fn SetupDiCreateDeviceInfoListExA<'a, Param1: ::std::convert::Into<su
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiCreateDeviceInfoListExW<'a, Param1: ::std::convert::Into<super::super::Foundation::HWND>>(classguid: *const ::windows::core::GUID, hwndparent: Param1, machinename: ::windows::core::PCWSTR, reserved: *mut ::core::ffi::c_void) -> ::windows::core::Result<HDEVINFO> {
+pub unsafe fn SetupDiCreateDeviceInfoListExW<'a, P0>(classguid: *const ::windows::core::GUID, hwndparent: P0, machinename: ::windows::core::PCWSTR, reserved: *mut ::core::ffi::c_void) -> ::windows::core::Result<HDEVINFO>
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiCreateDeviceInfoListExW(classguid: *const ::windows::core::GUID, hwndparent: super::super::Foundation::HWND, machinename: ::windows::core::PCWSTR, reserved: *mut ::core::ffi::c_void) -> HDEVINFO;
@@ -12094,7 +12222,11 @@ pub unsafe fn SetupDiCreateDeviceInfoListExW<'a, Param1: ::std::convert::Into<su
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiCreateDeviceInfoW<'a, Param0: ::std::convert::Into<HDEVINFO>, Param4: ::std::convert::Into<super::super::Foundation::HWND>>(deviceinfoset: Param0, devicename: ::windows::core::PCWSTR, classguid: *const ::windows::core::GUID, devicedescription: ::windows::core::PCWSTR, hwndparent: Param4, creationflags: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiCreateDeviceInfoW<'a, P0, P1>(deviceinfoset: P0, devicename: ::windows::core::PCWSTR, classguid: *const ::windows::core::GUID, devicedescription: ::windows::core::PCWSTR, hwndparent: P1, creationflags: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+    P1: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiCreateDeviceInfoW(deviceinfoset: HDEVINFO, devicename: ::windows::core::PCWSTR, classguid: *const ::windows::core::GUID, devicedescription: ::windows::core::PCWSTR, hwndparent: super::super::Foundation::HWND, creationflags: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
@@ -12104,7 +12236,10 @@ pub unsafe fn SetupDiCreateDeviceInfoW<'a, Param0: ::std::convert::Into<HDEVINFO
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiCreateDeviceInterfaceA<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, interfaceclassguid: *const ::windows::core::GUID, referencestring: ::windows::core::PCSTR, creationflags: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiCreateDeviceInterfaceA<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA, interfaceclassguid: *const ::windows::core::GUID, referencestring: ::windows::core::PCSTR, creationflags: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiCreateDeviceInterfaceA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, interfaceclassguid: *const ::windows::core::GUID, referencestring: ::windows::core::PCSTR, creationflags: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL;
@@ -12114,7 +12249,10 @@ pub unsafe fn SetupDiCreateDeviceInterfaceA<'a, Param0: ::std::convert::Into<HDE
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_System_Registry\"`*"]
 #[cfg(feature = "Win32_System_Registry")]
 #[inline]
-pub unsafe fn SetupDiCreateDeviceInterfaceRegKeyA<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, reserved: u32, samdesired: u32, infhandle: *const ::core::ffi::c_void, infsectionname: ::windows::core::PCSTR) -> ::windows::core::Result<super::super::System::Registry::HKEY> {
+pub unsafe fn SetupDiCreateDeviceInterfaceRegKeyA<'a, P0>(deviceinfoset: P0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, reserved: u32, samdesired: u32, infhandle: *const ::core::ffi::c_void, infsectionname: ::windows::core::PCSTR) -> ::windows::core::Result<super::super::System::Registry::HKEY>
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiCreateDeviceInterfaceRegKeyA(deviceinfoset: HDEVINFO, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, reserved: u32, samdesired: u32, infhandle: *const ::core::ffi::c_void, infsectionname: ::windows::core::PCSTR) -> super::super::System::Registry::HKEY;
@@ -12125,7 +12263,10 @@ pub unsafe fn SetupDiCreateDeviceInterfaceRegKeyA<'a, Param0: ::std::convert::In
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_System_Registry\"`*"]
 #[cfg(feature = "Win32_System_Registry")]
 #[inline]
-pub unsafe fn SetupDiCreateDeviceInterfaceRegKeyW<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, reserved: u32, samdesired: u32, infhandle: *const ::core::ffi::c_void, infsectionname: ::windows::core::PCWSTR) -> ::windows::core::Result<super::super::System::Registry::HKEY> {
+pub unsafe fn SetupDiCreateDeviceInterfaceRegKeyW<'a, P0>(deviceinfoset: P0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, reserved: u32, samdesired: u32, infhandle: *const ::core::ffi::c_void, infsectionname: ::windows::core::PCWSTR) -> ::windows::core::Result<super::super::System::Registry::HKEY>
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiCreateDeviceInterfaceRegKeyW(deviceinfoset: HDEVINFO, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, reserved: u32, samdesired: u32, infhandle: *const ::core::ffi::c_void, infsectionname: ::windows::core::PCWSTR) -> super::super::System::Registry::HKEY;
@@ -12136,7 +12277,10 @@ pub unsafe fn SetupDiCreateDeviceInterfaceRegKeyW<'a, Param0: ::std::convert::In
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiCreateDeviceInterfaceW<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, interfaceclassguid: *const ::windows::core::GUID, referencestring: ::windows::core::PCWSTR, creationflags: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiCreateDeviceInterfaceW<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA, interfaceclassguid: *const ::windows::core::GUID, referencestring: ::windows::core::PCWSTR, creationflags: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiCreateDeviceInterfaceW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, interfaceclassguid: *const ::windows::core::GUID, referencestring: ::windows::core::PCWSTR, creationflags: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL;
@@ -12146,7 +12290,10 @@ pub unsafe fn SetupDiCreateDeviceInterfaceW<'a, Param0: ::std::convert::Into<HDE
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiDeleteDevRegKey<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, scope: u32, hwprofile: u32, keytype: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiDeleteDevRegKey<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA, scope: u32, hwprofile: u32, keytype: u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiDeleteDevRegKey(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, scope: u32, hwprofile: u32, keytype: u32) -> super::super::Foundation::BOOL;
@@ -12156,7 +12303,10 @@ pub unsafe fn SetupDiDeleteDevRegKey<'a, Param0: ::std::convert::Into<HDEVINFO>>
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiDeleteDeviceInfo<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiDeleteDeviceInfo<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiDeleteDeviceInfo(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
@@ -12166,7 +12316,10 @@ pub unsafe fn SetupDiDeleteDeviceInfo<'a, Param0: ::std::convert::Into<HDEVINFO>
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiDeleteDeviceInterfaceData<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiDeleteDeviceInterfaceData<'a, P0>(deviceinfoset: P0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiDeleteDeviceInterfaceData(deviceinfoset: HDEVINFO, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL;
@@ -12176,7 +12329,10 @@ pub unsafe fn SetupDiDeleteDeviceInterfaceData<'a, Param0: ::std::convert::Into<
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiDeleteDeviceInterfaceRegKey<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, reserved: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiDeleteDeviceInterfaceRegKey<'a, P0>(deviceinfoset: P0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, reserved: u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiDeleteDeviceInterfaceRegKey(deviceinfoset: HDEVINFO, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, reserved: u32) -> super::super::Foundation::BOOL;
@@ -12196,7 +12352,10 @@ pub unsafe fn SetupDiDestroyClassImageList(classimagelistdata: *const SP_CLASSIM
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiDestroyDeviceInfoList<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiDestroyDeviceInfoList<'a, P0>(deviceinfoset: P0) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiDestroyDeviceInfoList(deviceinfoset: HDEVINFO) -> super::super::Foundation::BOOL;
@@ -12206,7 +12365,10 @@ pub unsafe fn SetupDiDestroyDeviceInfoList<'a, Param0: ::std::convert::Into<HDEV
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiDestroyDriverInfoList<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, drivertype: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiDestroyDriverInfoList<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA, drivertype: u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiDestroyDriverInfoList(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, drivertype: u32) -> super::super::Foundation::BOOL;
@@ -12216,7 +12378,10 @@ pub unsafe fn SetupDiDestroyDriverInfoList<'a, Param0: ::std::convert::Into<HDEV
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
-pub unsafe fn SetupDiDrawMiniIcon<'a, Param0: ::std::convert::Into<super::super::Graphics::Gdi::HDC>>(hdc: Param0, rc: super::super::Foundation::RECT, miniiconindex: i32, flags: u32) -> i32 {
+pub unsafe fn SetupDiDrawMiniIcon<'a, P0>(hdc: P0, rc: super::super::Foundation::RECT, miniiconindex: i32, flags: u32) -> i32
+where
+    P0: ::std::convert::Into<super::super::Graphics::Gdi::HDC>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiDrawMiniIcon(hdc: super::super::Graphics::Gdi::HDC, rc: super::super::Foundation::RECT, miniiconindex: i32, flags: u32) -> i32;
@@ -12226,7 +12391,10 @@ pub unsafe fn SetupDiDrawMiniIcon<'a, Param0: ::std::convert::Into<super::super:
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiEnumDeviceInfo<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, memberindex: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiEnumDeviceInfo<'a, P0>(deviceinfoset: P0, memberindex: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiEnumDeviceInfo(deviceinfoset: HDEVINFO, memberindex: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
@@ -12236,7 +12404,10 @@ pub unsafe fn SetupDiEnumDeviceInfo<'a, Param0: ::std::convert::Into<HDEVINFO>>(
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiEnumDeviceInterfaces<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, interfaceclassguid: *const ::windows::core::GUID, memberindex: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiEnumDeviceInterfaces<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA, interfaceclassguid: *const ::windows::core::GUID, memberindex: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiEnumDeviceInterfaces(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, interfaceclassguid: *const ::windows::core::GUID, memberindex: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL;
@@ -12246,7 +12417,10 @@ pub unsafe fn SetupDiEnumDeviceInterfaces<'a, Param0: ::std::convert::Into<HDEVI
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiEnumDriverInfoA<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, drivertype: u32, memberindex: u32, driverinfodata: *mut SP_DRVINFO_DATA_V2_A) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiEnumDriverInfoA<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA, drivertype: u32, memberindex: u32, driverinfodata: *mut SP_DRVINFO_DATA_V2_A) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiEnumDriverInfoA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, drivertype: u32, memberindex: u32, driverinfodata: *mut SP_DRVINFO_DATA_V2_A) -> super::super::Foundation::BOOL;
@@ -12256,7 +12430,10 @@ pub unsafe fn SetupDiEnumDriverInfoA<'a, Param0: ::std::convert::Into<HDEVINFO>>
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiEnumDriverInfoW<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, drivertype: u32, memberindex: u32, driverinfodata: *mut SP_DRVINFO_DATA_V2_W) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiEnumDriverInfoW<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA, drivertype: u32, memberindex: u32, driverinfodata: *mut SP_DRVINFO_DATA_V2_W) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiEnumDriverInfoW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, drivertype: u32, memberindex: u32, driverinfodata: *mut SP_DRVINFO_DATA_V2_W) -> super::super::Foundation::BOOL;
@@ -12376,7 +12553,10 @@ pub unsafe fn SetupDiGetClassDescriptionW(classguid: *const ::windows::core::GUI
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`, `\"Win32_UI_Controls\"`, `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
 #[inline]
-pub unsafe fn SetupDiGetClassDevPropertySheetsA<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, propertysheetheader: *const super::super::UI::Controls::PROPSHEETHEADERA_V2, propertysheetheaderpagelistsize: u32, requiredsize: *mut u32, propertysheettype: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetClassDevPropertySheetsA<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA, propertysheetheader: *const super::super::UI::Controls::PROPSHEETHEADERA_V2, propertysheetheaderpagelistsize: u32, requiredsize: *mut u32, propertysheettype: u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiGetClassDevPropertySheetsA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, propertysheetheader: *const super::super::UI::Controls::PROPSHEETHEADERA_V2, propertysheetheaderpagelistsize: u32, requiredsize: *mut u32, propertysheettype: u32) -> super::super::Foundation::BOOL;
@@ -12386,7 +12566,10 @@ pub unsafe fn SetupDiGetClassDevPropertySheetsA<'a, Param0: ::std::convert::Into
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`, `\"Win32_UI_Controls\"`, `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
 #[inline]
-pub unsafe fn SetupDiGetClassDevPropertySheetsW<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, propertysheetheader: *const super::super::UI::Controls::PROPSHEETHEADERW_V2, propertysheetheaderpagelistsize: u32, requiredsize: *mut u32, propertysheettype: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetClassDevPropertySheetsW<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA, propertysheetheader: *const super::super::UI::Controls::PROPSHEETHEADERW_V2, propertysheetheaderpagelistsize: u32, requiredsize: *mut u32, propertysheettype: u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiGetClassDevPropertySheetsW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, propertysheetheader: *const super::super::UI::Controls::PROPSHEETHEADERW_V2, propertysheetheaderpagelistsize: u32, requiredsize: *mut u32, propertysheettype: u32) -> super::super::Foundation::BOOL;
@@ -12396,7 +12579,10 @@ pub unsafe fn SetupDiGetClassDevPropertySheetsW<'a, Param0: ::std::convert::Into
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetClassDevsA<'a, Param2: ::std::convert::Into<super::super::Foundation::HWND>>(classguid: *const ::windows::core::GUID, enumerator: ::windows::core::PCSTR, hwndparent: Param2, flags: u32) -> ::windows::core::Result<HDEVINFO> {
+pub unsafe fn SetupDiGetClassDevsA<'a, P0>(classguid: *const ::windows::core::GUID, enumerator: ::windows::core::PCSTR, hwndparent: P0, flags: u32) -> ::windows::core::Result<HDEVINFO>
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiGetClassDevsA(classguid: *const ::windows::core::GUID, enumerator: ::windows::core::PCSTR, hwndparent: super::super::Foundation::HWND, flags: u32) -> HDEVINFO;
@@ -12407,7 +12593,11 @@ pub unsafe fn SetupDiGetClassDevsA<'a, Param2: ::std::convert::Into<super::super
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetClassDevsExA<'a, Param2: ::std::convert::Into<super::super::Foundation::HWND>, Param4: ::std::convert::Into<HDEVINFO>>(classguid: *const ::windows::core::GUID, enumerator: ::windows::core::PCSTR, hwndparent: Param2, flags: u32, deviceinfoset: Param4, machinename: ::windows::core::PCSTR, reserved: *mut ::core::ffi::c_void) -> ::windows::core::Result<HDEVINFO> {
+pub unsafe fn SetupDiGetClassDevsExA<'a, P0, P1>(classguid: *const ::windows::core::GUID, enumerator: ::windows::core::PCSTR, hwndparent: P0, flags: u32, deviceinfoset: P1, machinename: ::windows::core::PCSTR, reserved: *mut ::core::ffi::c_void) -> ::windows::core::Result<HDEVINFO>
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+    P1: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiGetClassDevsExA(classguid: *const ::windows::core::GUID, enumerator: ::windows::core::PCSTR, hwndparent: super::super::Foundation::HWND, flags: u32, deviceinfoset: HDEVINFO, machinename: ::windows::core::PCSTR, reserved: *mut ::core::ffi::c_void) -> HDEVINFO;
@@ -12418,7 +12608,11 @@ pub unsafe fn SetupDiGetClassDevsExA<'a, Param2: ::std::convert::Into<super::sup
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetClassDevsExW<'a, Param2: ::std::convert::Into<super::super::Foundation::HWND>, Param4: ::std::convert::Into<HDEVINFO>>(classguid: *const ::windows::core::GUID, enumerator: ::windows::core::PCWSTR, hwndparent: Param2, flags: u32, deviceinfoset: Param4, machinename: ::windows::core::PCWSTR, reserved: *mut ::core::ffi::c_void) -> ::windows::core::Result<HDEVINFO> {
+pub unsafe fn SetupDiGetClassDevsExW<'a, P0, P1>(classguid: *const ::windows::core::GUID, enumerator: ::windows::core::PCWSTR, hwndparent: P0, flags: u32, deviceinfoset: P1, machinename: ::windows::core::PCWSTR, reserved: *mut ::core::ffi::c_void) -> ::windows::core::Result<HDEVINFO>
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+    P1: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiGetClassDevsExW(classguid: *const ::windows::core::GUID, enumerator: ::windows::core::PCWSTR, hwndparent: super::super::Foundation::HWND, flags: u32, deviceinfoset: HDEVINFO, machinename: ::windows::core::PCWSTR, reserved: *mut ::core::ffi::c_void) -> HDEVINFO;
@@ -12429,7 +12623,10 @@ pub unsafe fn SetupDiGetClassDevsExW<'a, Param2: ::std::convert::Into<super::sup
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetClassDevsW<'a, Param2: ::std::convert::Into<super::super::Foundation::HWND>>(classguid: *const ::windows::core::GUID, enumerator: ::windows::core::PCWSTR, hwndparent: Param2, flags: u32) -> ::windows::core::Result<HDEVINFO> {
+pub unsafe fn SetupDiGetClassDevsW<'a, P0>(classguid: *const ::windows::core::GUID, enumerator: ::windows::core::PCWSTR, hwndparent: P0, flags: u32) -> ::windows::core::Result<HDEVINFO>
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiGetClassDevsW(classguid: *const ::windows::core::GUID, enumerator: ::windows::core::PCWSTR, hwndparent: super::super::Foundation::HWND, flags: u32) -> HDEVINFO;
@@ -12480,7 +12677,10 @@ pub unsafe fn SetupDiGetClassImageListExW(classimagelistdata: *mut SP_CLASSIMAGE
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetClassInstallParamsA<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, classinstallparams: *mut SP_CLASSINSTALL_HEADER, classinstallparamssize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetClassInstallParamsA<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA, classinstallparams: *mut SP_CLASSINSTALL_HEADER, classinstallparamssize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiGetClassInstallParamsA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, classinstallparams: *mut SP_CLASSINSTALL_HEADER, classinstallparamssize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
@@ -12490,7 +12690,10 @@ pub unsafe fn SetupDiGetClassInstallParamsA<'a, Param0: ::std::convert::Into<HDE
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetClassInstallParamsW<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, classinstallparams: *mut SP_CLASSINSTALL_HEADER, classinstallparamssize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetClassInstallParamsW<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA, classinstallparams: *mut SP_CLASSINSTALL_HEADER, classinstallparamssize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiGetClassInstallParamsW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, classinstallparams: *mut SP_CLASSINSTALL_HEADER, classinstallparamssize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
@@ -12560,7 +12763,10 @@ pub unsafe fn SetupDiGetClassRegistryPropertyW(classguid: *const ::windows::core
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetCustomDevicePropertyA<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, custompropertyname: ::windows::core::PCSTR, flags: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetCustomDevicePropertyA<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA, custompropertyname: ::windows::core::PCSTR, flags: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiGetCustomDevicePropertyA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, custompropertyname: ::windows::core::PCSTR, flags: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
@@ -12570,7 +12776,10 @@ pub unsafe fn SetupDiGetCustomDevicePropertyA<'a, Param0: ::std::convert::Into<H
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetCustomDevicePropertyW<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, custompropertyname: ::windows::core::PCWSTR, flags: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetCustomDevicePropertyW<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA, custompropertyname: ::windows::core::PCWSTR, flags: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiGetCustomDevicePropertyW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, custompropertyname: ::windows::core::PCWSTR, flags: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
@@ -12580,7 +12789,10 @@ pub unsafe fn SetupDiGetCustomDevicePropertyW<'a, Param0: ::std::convert::Into<H
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetDeviceInfoListClass<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, classguid: *mut ::windows::core::GUID) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetDeviceInfoListClass<'a, P0>(deviceinfoset: P0, classguid: *mut ::windows::core::GUID) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiGetDeviceInfoListClass(deviceinfoset: HDEVINFO, classguid: *mut ::windows::core::GUID) -> super::super::Foundation::BOOL;
@@ -12590,7 +12802,10 @@ pub unsafe fn SetupDiGetDeviceInfoListClass<'a, Param0: ::std::convert::Into<HDE
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetDeviceInfoListDetailA<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfosetdetaildata: *mut SP_DEVINFO_LIST_DETAIL_DATA_A) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetDeviceInfoListDetailA<'a, P0>(deviceinfoset: P0, deviceinfosetdetaildata: *mut SP_DEVINFO_LIST_DETAIL_DATA_A) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiGetDeviceInfoListDetailA(deviceinfoset: HDEVINFO, deviceinfosetdetaildata: *mut SP_DEVINFO_LIST_DETAIL_DATA_A) -> super::super::Foundation::BOOL;
@@ -12600,7 +12815,10 @@ pub unsafe fn SetupDiGetDeviceInfoListDetailA<'a, Param0: ::std::convert::Into<H
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetDeviceInfoListDetailW<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfosetdetaildata: *mut SP_DEVINFO_LIST_DETAIL_DATA_W) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetDeviceInfoListDetailW<'a, P0>(deviceinfoset: P0, deviceinfosetdetaildata: *mut SP_DEVINFO_LIST_DETAIL_DATA_W) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiGetDeviceInfoListDetailW(deviceinfoset: HDEVINFO, deviceinfosetdetaildata: *mut SP_DEVINFO_LIST_DETAIL_DATA_W) -> super::super::Foundation::BOOL;
@@ -12610,7 +12828,10 @@ pub unsafe fn SetupDiGetDeviceInfoListDetailW<'a, Param0: ::std::convert::Into<H
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetDeviceInstallParamsA<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstallparams: *mut SP_DEVINSTALL_PARAMS_A) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetDeviceInstallParamsA<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstallparams: *mut SP_DEVINSTALL_PARAMS_A) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiGetDeviceInstallParamsA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstallparams: *mut SP_DEVINSTALL_PARAMS_A) -> super::super::Foundation::BOOL;
@@ -12620,7 +12841,10 @@ pub unsafe fn SetupDiGetDeviceInstallParamsA<'a, Param0: ::std::convert::Into<HD
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetDeviceInstallParamsW<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstallparams: *mut SP_DEVINSTALL_PARAMS_W) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetDeviceInstallParamsW<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstallparams: *mut SP_DEVINSTALL_PARAMS_W) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiGetDeviceInstallParamsW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstallparams: *mut SP_DEVINSTALL_PARAMS_W) -> super::super::Foundation::BOOL;
@@ -12630,7 +12854,10 @@ pub unsafe fn SetupDiGetDeviceInstallParamsW<'a, Param0: ::std::convert::Into<HD
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetDeviceInstanceIdA<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstanceid: &mut [u8], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetDeviceInstanceIdA<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstanceid: &mut [u8], requiredsize: *mut u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiGetDeviceInstanceIdA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstanceid: ::windows::core::PSTR, deviceinstanceidsize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
@@ -12640,7 +12867,10 @@ pub unsafe fn SetupDiGetDeviceInstanceIdA<'a, Param0: ::std::convert::Into<HDEVI
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetDeviceInstanceIdW<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstanceid: &mut [u16], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetDeviceInstanceIdW<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstanceid: &mut [u16], requiredsize: *mut u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiGetDeviceInstanceIdW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstanceid: ::windows::core::PWSTR, deviceinstanceidsize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
@@ -12650,7 +12880,10 @@ pub unsafe fn SetupDiGetDeviceInstanceIdW<'a, Param0: ::std::convert::Into<HDEVI
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetDeviceInterfaceAlias<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, aliasinterfaceclassguid: *const ::windows::core::GUID, aliasdeviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetDeviceInterfaceAlias<'a, P0>(deviceinfoset: P0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, aliasinterfaceclassguid: *const ::windows::core::GUID, aliasdeviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiGetDeviceInterfaceAlias(deviceinfoset: HDEVINFO, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, aliasinterfaceclassguid: *const ::windows::core::GUID, aliasdeviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL;
@@ -12660,7 +12893,10 @@ pub unsafe fn SetupDiGetDeviceInterfaceAlias<'a, Param0: ::std::convert::Into<HD
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetDeviceInterfaceDetailA<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, deviceinterfacedetaildata: *mut SP_DEVICE_INTERFACE_DETAIL_DATA_A, deviceinterfacedetaildatasize: u32, requiredsize: *mut u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetDeviceInterfaceDetailA<'a, P0>(deviceinfoset: P0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, deviceinterfacedetaildata: *mut SP_DEVICE_INTERFACE_DETAIL_DATA_A, deviceinterfacedetaildatasize: u32, requiredsize: *mut u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiGetDeviceInterfaceDetailA(deviceinfoset: HDEVINFO, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, deviceinterfacedetaildata: *mut SP_DEVICE_INTERFACE_DETAIL_DATA_A, deviceinterfacedetaildatasize: u32, requiredsize: *mut u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
@@ -12670,7 +12906,10 @@ pub unsafe fn SetupDiGetDeviceInterfaceDetailA<'a, Param0: ::std::convert::Into<
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetDeviceInterfaceDetailW<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, deviceinterfacedetaildata: *mut SP_DEVICE_INTERFACE_DETAIL_DATA_W, deviceinterfacedetaildatasize: u32, requiredsize: *mut u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetDeviceInterfaceDetailW<'a, P0>(deviceinfoset: P0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, deviceinterfacedetaildata: *mut SP_DEVICE_INTERFACE_DETAIL_DATA_W, deviceinterfacedetaildatasize: u32, requiredsize: *mut u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiGetDeviceInterfaceDetailW(deviceinfoset: HDEVINFO, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, deviceinterfacedetaildata: *mut SP_DEVICE_INTERFACE_DETAIL_DATA_W, deviceinterfacedetaildatasize: u32, requiredsize: *mut u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
@@ -12680,7 +12919,10 @@ pub unsafe fn SetupDiGetDeviceInterfaceDetailW<'a, Param0: ::std::convert::Into<
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Devices_Properties\"`, `\"Win32_Foundation\"`*"]
 #[cfg(all(feature = "Win32_Devices_Properties", feature = "Win32_Foundation"))]
 #[inline]
-pub unsafe fn SetupDiGetDeviceInterfacePropertyKeys<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, propertykeyarray: &mut [super::Properties::DEVPROPKEY], requiredpropertykeycount: *mut u32, flags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetDeviceInterfacePropertyKeys<'a, P0>(deviceinfoset: P0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, propertykeyarray: &mut [super::Properties::DEVPROPKEY], requiredpropertykeycount: *mut u32, flags: u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiGetDeviceInterfacePropertyKeys(deviceinfoset: HDEVINFO, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, propertykeyarray: *mut super::Properties::DEVPROPKEY, propertykeycount: u32, requiredpropertykeycount: *mut u32, flags: u32) -> super::super::Foundation::BOOL;
@@ -12690,7 +12932,10 @@ pub unsafe fn SetupDiGetDeviceInterfacePropertyKeys<'a, Param0: ::std::convert::
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Devices_Properties\"`, `\"Win32_Foundation\"`*"]
 #[cfg(all(feature = "Win32_Devices_Properties", feature = "Win32_Foundation"))]
 #[inline]
-pub unsafe fn SetupDiGetDeviceInterfacePropertyW<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, propertykey: *const super::Properties::DEVPROPKEY, propertytype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32, flags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetDeviceInterfacePropertyW<'a, P0>(deviceinfoset: P0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, propertykey: *const super::Properties::DEVPROPKEY, propertytype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32, flags: u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiGetDeviceInterfacePropertyW(deviceinfoset: HDEVINFO, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, propertykey: *const super::Properties::DEVPROPKEY, propertytype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32, flags: u32) -> super::super::Foundation::BOOL;
@@ -12700,7 +12945,10 @@ pub unsafe fn SetupDiGetDeviceInterfacePropertyW<'a, Param0: ::std::convert::Int
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Devices_Properties\"`, `\"Win32_Foundation\"`*"]
 #[cfg(all(feature = "Win32_Devices_Properties", feature = "Win32_Foundation"))]
 #[inline]
-pub unsafe fn SetupDiGetDevicePropertyKeys<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, propertykeyarray: &mut [super::Properties::DEVPROPKEY], requiredpropertykeycount: *mut u32, flags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetDevicePropertyKeys<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA, propertykeyarray: &mut [super::Properties::DEVPROPKEY], requiredpropertykeycount: *mut u32, flags: u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiGetDevicePropertyKeys(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, propertykeyarray: *mut super::Properties::DEVPROPKEY, propertykeycount: u32, requiredpropertykeycount: *mut u32, flags: u32) -> super::super::Foundation::BOOL;
@@ -12710,7 +12958,10 @@ pub unsafe fn SetupDiGetDevicePropertyKeys<'a, Param0: ::std::convert::Into<HDEV
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Devices_Properties\"`, `\"Win32_Foundation\"`*"]
 #[cfg(all(feature = "Win32_Devices_Properties", feature = "Win32_Foundation"))]
 #[inline]
-pub unsafe fn SetupDiGetDevicePropertyW<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, propertykey: *const super::Properties::DEVPROPKEY, propertytype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32, flags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetDevicePropertyW<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA, propertykey: *const super::Properties::DEVPROPKEY, propertytype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32, flags: u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiGetDevicePropertyW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, propertykey: *const super::Properties::DEVPROPKEY, propertytype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32, flags: u32) -> super::super::Foundation::BOOL;
@@ -12720,7 +12971,10 @@ pub unsafe fn SetupDiGetDevicePropertyW<'a, Param0: ::std::convert::Into<HDEVINF
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetDeviceRegistryPropertyA<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, property: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetDeviceRegistryPropertyA<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA, property: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiGetDeviceRegistryPropertyA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, property: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
@@ -12730,7 +12984,10 @@ pub unsafe fn SetupDiGetDeviceRegistryPropertyA<'a, Param0: ::std::convert::Into
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetDeviceRegistryPropertyW<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, property: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetDeviceRegistryPropertyW<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA, property: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiGetDeviceRegistryPropertyW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, property: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
@@ -12740,7 +12997,10 @@ pub unsafe fn SetupDiGetDeviceRegistryPropertyW<'a, Param0: ::std::convert::Into
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetDriverInfoDetailA<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_A, driverinfodetaildata: *mut SP_DRVINFO_DETAIL_DATA_A, driverinfodetaildatasize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetDriverInfoDetailA<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_A, driverinfodetaildata: *mut SP_DRVINFO_DETAIL_DATA_A, driverinfodetaildatasize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiGetDriverInfoDetailA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_A, driverinfodetaildata: *mut SP_DRVINFO_DETAIL_DATA_A, driverinfodetaildatasize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
@@ -12750,7 +13010,10 @@ pub unsafe fn SetupDiGetDriverInfoDetailA<'a, Param0: ::std::convert::Into<HDEVI
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetDriverInfoDetailW<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_W, driverinfodetaildata: *mut SP_DRVINFO_DETAIL_DATA_W, driverinfodetaildatasize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetDriverInfoDetailW<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_W, driverinfodetaildata: *mut SP_DRVINFO_DETAIL_DATA_W, driverinfodetaildatasize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiGetDriverInfoDetailW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_W, driverinfodetaildata: *mut SP_DRVINFO_DETAIL_DATA_W, driverinfodetaildatasize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
@@ -12760,7 +13023,10 @@ pub unsafe fn SetupDiGetDriverInfoDetailW<'a, Param0: ::std::convert::Into<HDEVI
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetDriverInstallParamsA<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_A, driverinstallparams: *mut SP_DRVINSTALL_PARAMS) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetDriverInstallParamsA<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_A, driverinstallparams: *mut SP_DRVINSTALL_PARAMS) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiGetDriverInstallParamsA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_A, driverinstallparams: *mut SP_DRVINSTALL_PARAMS) -> super::super::Foundation::BOOL;
@@ -12770,7 +13036,10 @@ pub unsafe fn SetupDiGetDriverInstallParamsA<'a, Param0: ::std::convert::Into<HD
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetDriverInstallParamsW<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_W, driverinstallparams: *mut SP_DRVINSTALL_PARAMS) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetDriverInstallParamsW<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_W, driverinstallparams: *mut SP_DRVINSTALL_PARAMS) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiGetDriverInstallParamsW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_W, driverinstallparams: *mut SP_DRVINSTALL_PARAMS) -> super::super::Foundation::BOOL;
@@ -12870,7 +13139,10 @@ pub unsafe fn SetupDiGetINFClassW(infname: ::windows::core::PCWSTR, classguid: *
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetSelectedDevice<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetSelectedDevice<'a, P0>(deviceinfoset: P0, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiGetSelectedDevice(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
@@ -12880,7 +13152,10 @@ pub unsafe fn SetupDiGetSelectedDevice<'a, Param0: ::std::convert::Into<HDEVINFO
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetSelectedDriverA<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *mut SP_DRVINFO_DATA_V2_A) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetSelectedDriverA<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *mut SP_DRVINFO_DATA_V2_A) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiGetSelectedDriverA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *mut SP_DRVINFO_DATA_V2_A) -> super::super::Foundation::BOOL;
@@ -12890,7 +13165,10 @@ pub unsafe fn SetupDiGetSelectedDriverA<'a, Param0: ::std::convert::Into<HDEVINF
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiGetSelectedDriverW<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *mut SP_DRVINFO_DATA_V2_W) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiGetSelectedDriverW<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *mut SP_DRVINFO_DATA_V2_W) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiGetSelectedDriverW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *mut SP_DRVINFO_DATA_V2_W) -> super::super::Foundation::BOOL;
@@ -12900,7 +13178,10 @@ pub unsafe fn SetupDiGetSelectedDriverW<'a, Param0: ::std::convert::Into<HDEVINF
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`, `\"Win32_UI_Controls\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
 #[inline]
-pub unsafe fn SetupDiGetWizardPage<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, installwizarddata: *const SP_INSTALLWIZARD_DATA, pagetype: u32, flags: u32) -> super::super::UI::Controls::HPROPSHEETPAGE {
+pub unsafe fn SetupDiGetWizardPage<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA, installwizarddata: *const SP_INSTALLWIZARD_DATA, pagetype: u32, flags: u32) -> super::super::UI::Controls::HPROPSHEETPAGE
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiGetWizardPage(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, installwizarddata: *const SP_INSTALLWIZARD_DATA, pagetype: u32, flags: u32) -> super::super::UI::Controls::HPROPSHEETPAGE;
@@ -12910,7 +13191,10 @@ pub unsafe fn SetupDiGetWizardPage<'a, Param0: ::std::convert::Into<HDEVINFO>>(d
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiInstallClassA<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(hwndparent: Param0, inffilename: ::windows::core::PCSTR, flags: u32, filequeue: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiInstallClassA<'a, P0>(hwndparent: P0, inffilename: ::windows::core::PCSTR, flags: u32, filequeue: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiInstallClassA(hwndparent: super::super::Foundation::HWND, inffilename: ::windows::core::PCSTR, flags: u32, filequeue: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
@@ -12920,7 +13204,10 @@ pub unsafe fn SetupDiInstallClassA<'a, Param0: ::std::convert::Into<super::super
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiInstallClassExA<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(hwndparent: Param0, inffilename: ::windows::core::PCSTR, flags: u32, filequeue: *const ::core::ffi::c_void, interfaceclassguid: *const ::windows::core::GUID, reserved1: *mut ::core::ffi::c_void, reserved2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiInstallClassExA<'a, P0>(hwndparent: P0, inffilename: ::windows::core::PCSTR, flags: u32, filequeue: *const ::core::ffi::c_void, interfaceclassguid: *const ::windows::core::GUID, reserved1: *mut ::core::ffi::c_void, reserved2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiInstallClassExA(hwndparent: super::super::Foundation::HWND, inffilename: ::windows::core::PCSTR, flags: u32, filequeue: *const ::core::ffi::c_void, interfaceclassguid: *const ::windows::core::GUID, reserved1: *mut ::core::ffi::c_void, reserved2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
@@ -12930,7 +13217,10 @@ pub unsafe fn SetupDiInstallClassExA<'a, Param0: ::std::convert::Into<super::sup
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiInstallClassExW<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(hwndparent: Param0, inffilename: ::windows::core::PCWSTR, flags: u32, filequeue: *const ::core::ffi::c_void, interfaceclassguid: *const ::windows::core::GUID, reserved1: *mut ::core::ffi::c_void, reserved2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiInstallClassExW<'a, P0>(hwndparent: P0, inffilename: ::windows::core::PCWSTR, flags: u32, filequeue: *const ::core::ffi::c_void, interfaceclassguid: *const ::windows::core::GUID, reserved1: *mut ::core::ffi::c_void, reserved2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiInstallClassExW(hwndparent: super::super::Foundation::HWND, inffilename: ::windows::core::PCWSTR, flags: u32, filequeue: *const ::core::ffi::c_void, interfaceclassguid: *const ::windows::core::GUID, reserved1: *mut ::core::ffi::c_void, reserved2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
@@ -12940,7 +13230,10 @@ pub unsafe fn SetupDiInstallClassExW<'a, Param0: ::std::convert::Into<super::sup
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiInstallClassW<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(hwndparent: Param0, inffilename: ::windows::core::PCWSTR, flags: u32, filequeue: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiInstallClassW<'a, P0>(hwndparent: P0, inffilename: ::windows::core::PCWSTR, flags: u32, filequeue: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiInstallClassW(hwndparent: super::super::Foundation::HWND, inffilename: ::windows::core::PCWSTR, flags: u32, filequeue: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
@@ -12950,7 +13243,10 @@ pub unsafe fn SetupDiInstallClassW<'a, Param0: ::std::convert::Into<super::super
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiInstallDevice<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiInstallDevice<'a, P0>(deviceinfoset: P0, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiInstallDevice(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
@@ -12960,7 +13256,10 @@ pub unsafe fn SetupDiInstallDevice<'a, Param0: ::std::convert::Into<HDEVINFO>>(d
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiInstallDeviceInterfaces<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiInstallDeviceInterfaces<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiInstallDeviceInterfaces(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
@@ -12970,7 +13269,10 @@ pub unsafe fn SetupDiInstallDeviceInterfaces<'a, Param0: ::std::convert::Into<HD
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiInstallDriverFiles<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiInstallDriverFiles<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiInstallDriverFiles(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
@@ -12990,7 +13292,10 @@ pub unsafe fn SetupDiLoadClassIcon(classguid: *const ::windows::core::GUID, larg
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`, `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
 #[inline]
-pub unsafe fn SetupDiLoadDeviceIcon<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, cxicon: u32, cyicon: u32, flags: u32, hicon: *mut super::super::UI::WindowsAndMessaging::HICON) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiLoadDeviceIcon<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA, cxicon: u32, cyicon: u32, flags: u32, hicon: *mut super::super::UI::WindowsAndMessaging::HICON) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiLoadDeviceIcon(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, cxicon: u32, cyicon: u32, flags: u32, hicon: *mut super::super::UI::WindowsAndMessaging::HICON) -> super::super::Foundation::BOOL;
@@ -13033,7 +13338,10 @@ pub unsafe fn SetupDiOpenClassRegKeyExW(classguid: *const ::windows::core::GUID,
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_System_Registry\"`*"]
 #[cfg(feature = "Win32_System_Registry")]
 #[inline]
-pub unsafe fn SetupDiOpenDevRegKey<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, scope: u32, hwprofile: u32, keytype: u32, samdesired: u32) -> ::windows::core::Result<super::super::System::Registry::HKEY> {
+pub unsafe fn SetupDiOpenDevRegKey<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA, scope: u32, hwprofile: u32, keytype: u32, samdesired: u32) -> ::windows::core::Result<super::super::System::Registry::HKEY>
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiOpenDevRegKey(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, scope: u32, hwprofile: u32, keytype: u32, samdesired: u32) -> super::super::System::Registry::HKEY;
@@ -13044,7 +13352,11 @@ pub unsafe fn SetupDiOpenDevRegKey<'a, Param0: ::std::convert::Into<HDEVINFO>>(d
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiOpenDeviceInfoA<'a, Param0: ::std::convert::Into<HDEVINFO>, Param2: ::std::convert::Into<super::super::Foundation::HWND>>(deviceinfoset: Param0, deviceinstanceid: ::windows::core::PCSTR, hwndparent: Param2, openflags: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiOpenDeviceInfoA<'a, P0, P1>(deviceinfoset: P0, deviceinstanceid: ::windows::core::PCSTR, hwndparent: P1, openflags: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+    P1: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiOpenDeviceInfoA(deviceinfoset: HDEVINFO, deviceinstanceid: ::windows::core::PCSTR, hwndparent: super::super::Foundation::HWND, openflags: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
@@ -13054,7 +13366,11 @@ pub unsafe fn SetupDiOpenDeviceInfoA<'a, Param0: ::std::convert::Into<HDEVINFO>,
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiOpenDeviceInfoW<'a, Param0: ::std::convert::Into<HDEVINFO>, Param2: ::std::convert::Into<super::super::Foundation::HWND>>(deviceinfoset: Param0, deviceinstanceid: ::windows::core::PCWSTR, hwndparent: Param2, openflags: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiOpenDeviceInfoW<'a, P0, P1>(deviceinfoset: P0, deviceinstanceid: ::windows::core::PCWSTR, hwndparent: P1, openflags: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+    P1: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiOpenDeviceInfoW(deviceinfoset: HDEVINFO, deviceinstanceid: ::windows::core::PCWSTR, hwndparent: super::super::Foundation::HWND, openflags: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
@@ -13064,7 +13380,10 @@ pub unsafe fn SetupDiOpenDeviceInfoW<'a, Param0: ::std::convert::Into<HDEVINFO>,
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiOpenDeviceInterfaceA<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, devicepath: ::windows::core::PCSTR, openflags: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiOpenDeviceInterfaceA<'a, P0>(deviceinfoset: P0, devicepath: ::windows::core::PCSTR, openflags: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiOpenDeviceInterfaceA(deviceinfoset: HDEVINFO, devicepath: ::windows::core::PCSTR, openflags: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL;
@@ -13074,7 +13393,10 @@ pub unsafe fn SetupDiOpenDeviceInterfaceA<'a, Param0: ::std::convert::Into<HDEVI
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_System_Registry\"`*"]
 #[cfg(feature = "Win32_System_Registry")]
 #[inline]
-pub unsafe fn SetupDiOpenDeviceInterfaceRegKey<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, reserved: u32, samdesired: u32) -> ::windows::core::Result<super::super::System::Registry::HKEY> {
+pub unsafe fn SetupDiOpenDeviceInterfaceRegKey<'a, P0>(deviceinfoset: P0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, reserved: u32, samdesired: u32) -> ::windows::core::Result<super::super::System::Registry::HKEY>
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiOpenDeviceInterfaceRegKey(deviceinfoset: HDEVINFO, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, reserved: u32, samdesired: u32) -> super::super::System::Registry::HKEY;
@@ -13085,7 +13407,10 @@ pub unsafe fn SetupDiOpenDeviceInterfaceRegKey<'a, Param0: ::std::convert::Into<
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiOpenDeviceInterfaceW<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, devicepath: ::windows::core::PCWSTR, openflags: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiOpenDeviceInterfaceW<'a, P0>(deviceinfoset: P0, devicepath: ::windows::core::PCWSTR, openflags: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiOpenDeviceInterfaceW(deviceinfoset: HDEVINFO, devicepath: ::windows::core::PCWSTR, openflags: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL;
@@ -13095,7 +13420,10 @@ pub unsafe fn SetupDiOpenDeviceInterfaceW<'a, Param0: ::std::convert::Into<HDEVI
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiRegisterCoDeviceInstallers<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiRegisterCoDeviceInstallers<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiRegisterCoDeviceInstallers(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
@@ -13105,7 +13433,10 @@ pub unsafe fn SetupDiRegisterCoDeviceInstallers<'a, Param0: ::std::convert::Into
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiRegisterDeviceInfo<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *mut SP_DEVINFO_DATA, flags: u32, compareproc: PSP_DETSIG_CMPPROC, comparecontext: *const ::core::ffi::c_void, dupdeviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiRegisterDeviceInfo<'a, P0>(deviceinfoset: P0, deviceinfodata: *mut SP_DEVINFO_DATA, flags: u32, compareproc: PSP_DETSIG_CMPPROC, comparecontext: *const ::core::ffi::c_void, dupdeviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiRegisterDeviceInfo(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA, flags: u32, compareproc: *mut ::core::ffi::c_void, comparecontext: *const ::core::ffi::c_void, dupdeviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
@@ -13115,7 +13446,10 @@ pub unsafe fn SetupDiRegisterDeviceInfo<'a, Param0: ::std::convert::Into<HDEVINF
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiRemoveDevice<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiRemoveDevice<'a, P0>(deviceinfoset: P0, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiRemoveDevice(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
@@ -13125,7 +13459,10 @@ pub unsafe fn SetupDiRemoveDevice<'a, Param0: ::std::convert::Into<HDEVINFO>>(de
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiRemoveDeviceInterface<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiRemoveDeviceInterface<'a, P0>(deviceinfoset: P0, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiRemoveDeviceInterface(deviceinfoset: HDEVINFO, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL;
@@ -13135,7 +13472,10 @@ pub unsafe fn SetupDiRemoveDeviceInterface<'a, Param0: ::std::convert::Into<HDEV
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiRestartDevices<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiRestartDevices<'a, P0>(deviceinfoset: P0, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiRestartDevices(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
@@ -13145,7 +13485,10 @@ pub unsafe fn SetupDiRestartDevices<'a, Param0: ::std::convert::Into<HDEVINFO>>(
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiSelectBestCompatDrv<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiSelectBestCompatDrv<'a, P0>(deviceinfoset: P0, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiSelectBestCompatDrv(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
@@ -13155,7 +13498,10 @@ pub unsafe fn SetupDiSelectBestCompatDrv<'a, Param0: ::std::convert::Into<HDEVIN
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiSelectDevice<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiSelectDevice<'a, P0>(deviceinfoset: P0, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiSelectDevice(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
@@ -13165,7 +13511,11 @@ pub unsafe fn SetupDiSelectDevice<'a, Param0: ::std::convert::Into<HDEVINFO>>(de
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiSelectOEMDrv<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>, Param1: ::std::convert::Into<HDEVINFO>>(hwndparent: Param0, deviceinfoset: Param1, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiSelectOEMDrv<'a, P0, P1>(hwndparent: P0, deviceinfoset: P1, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+    P1: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiSelectOEMDrv(hwndparent: super::super::Foundation::HWND, deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
@@ -13175,7 +13525,10 @@ pub unsafe fn SetupDiSelectOEMDrv<'a, Param0: ::std::convert::Into<super::super:
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiSetClassInstallParamsA<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, classinstallparams: *const SP_CLASSINSTALL_HEADER, classinstallparamssize: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiSetClassInstallParamsA<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA, classinstallparams: *const SP_CLASSINSTALL_HEADER, classinstallparamssize: u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiSetClassInstallParamsA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, classinstallparams: *const SP_CLASSINSTALL_HEADER, classinstallparamssize: u32) -> super::super::Foundation::BOOL;
@@ -13185,7 +13538,10 @@ pub unsafe fn SetupDiSetClassInstallParamsA<'a, Param0: ::std::convert::Into<HDE
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiSetClassInstallParamsW<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, classinstallparams: *const SP_CLASSINSTALL_HEADER, classinstallparamssize: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiSetClassInstallParamsW<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA, classinstallparams: *const SP_CLASSINSTALL_HEADER, classinstallparamssize: u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiSetClassInstallParamsW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, classinstallparams: *const SP_CLASSINSTALL_HEADER, classinstallparamssize: u32) -> super::super::Foundation::BOOL;
@@ -13235,7 +13591,10 @@ pub unsafe fn SetupDiSetClassRegistryPropertyW(classguid: *const ::windows::core
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiSetDeviceInstallParamsA<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstallparams: *const SP_DEVINSTALL_PARAMS_A) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiSetDeviceInstallParamsA<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstallparams: *const SP_DEVINSTALL_PARAMS_A) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiSetDeviceInstallParamsA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstallparams: *const SP_DEVINSTALL_PARAMS_A) -> super::super::Foundation::BOOL;
@@ -13245,7 +13604,10 @@ pub unsafe fn SetupDiSetDeviceInstallParamsA<'a, Param0: ::std::convert::Into<HD
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiSetDeviceInstallParamsW<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstallparams: *const SP_DEVINSTALL_PARAMS_W) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiSetDeviceInstallParamsW<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstallparams: *const SP_DEVINSTALL_PARAMS_W) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiSetDeviceInstallParamsW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstallparams: *const SP_DEVINSTALL_PARAMS_W) -> super::super::Foundation::BOOL;
@@ -13255,7 +13617,10 @@ pub unsafe fn SetupDiSetDeviceInstallParamsW<'a, Param0: ::std::convert::Into<HD
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiSetDeviceInterfaceDefault<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA, flags: u32, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiSetDeviceInterfaceDefault<'a, P0>(deviceinfoset: P0, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA, flags: u32, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiSetDeviceInterfaceDefault(deviceinfoset: HDEVINFO, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA, flags: u32, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
@@ -13265,7 +13630,10 @@ pub unsafe fn SetupDiSetDeviceInterfaceDefault<'a, Param0: ::std::convert::Into<
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Devices_Properties\"`, `\"Win32_Foundation\"`*"]
 #[cfg(all(feature = "Win32_Devices_Properties", feature = "Win32_Foundation"))]
 #[inline]
-pub unsafe fn SetupDiSetDeviceInterfacePropertyW<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, propertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, propertybuffer: *const u8, propertybuffersize: u32, flags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiSetDeviceInterfacePropertyW<'a, P0>(deviceinfoset: P0, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, propertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, propertybuffer: *const u8, propertybuffersize: u32, flags: u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiSetDeviceInterfacePropertyW(deviceinfoset: HDEVINFO, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, propertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, propertybuffer: *const u8, propertybuffersize: u32, flags: u32) -> super::super::Foundation::BOOL;
@@ -13275,7 +13643,10 @@ pub unsafe fn SetupDiSetDeviceInterfacePropertyW<'a, Param0: ::std::convert::Int
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Devices_Properties\"`, `\"Win32_Foundation\"`*"]
 #[cfg(all(feature = "Win32_Devices_Properties", feature = "Win32_Foundation"))]
 #[inline]
-pub unsafe fn SetupDiSetDevicePropertyW<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, propertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, propertybuffer: *const u8, propertybuffersize: u32, flags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiSetDevicePropertyW<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA, propertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, propertybuffer: *const u8, propertybuffersize: u32, flags: u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiSetDevicePropertyW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, propertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, propertybuffer: *const u8, propertybuffersize: u32, flags: u32) -> super::super::Foundation::BOOL;
@@ -13285,7 +13656,10 @@ pub unsafe fn SetupDiSetDevicePropertyW<'a, Param0: ::std::convert::Into<HDEVINF
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiSetDeviceRegistryPropertyA<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *mut SP_DEVINFO_DATA, property: u32, propertybuffer: *const u8, propertybuffersize: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiSetDeviceRegistryPropertyA<'a, P0>(deviceinfoset: P0, deviceinfodata: *mut SP_DEVINFO_DATA, property: u32, propertybuffer: *const u8, propertybuffersize: u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiSetDeviceRegistryPropertyA(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA, property: u32, propertybuffer: *const u8, propertybuffersize: u32) -> super::super::Foundation::BOOL;
@@ -13295,7 +13669,10 @@ pub unsafe fn SetupDiSetDeviceRegistryPropertyA<'a, Param0: ::std::convert::Into
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiSetDeviceRegistryPropertyW<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *mut SP_DEVINFO_DATA, property: u32, propertybuffer: *const u8, propertybuffersize: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiSetDeviceRegistryPropertyW<'a, P0>(deviceinfoset: P0, deviceinfodata: *mut SP_DEVINFO_DATA, property: u32, propertybuffer: *const u8, propertybuffersize: u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiSetDeviceRegistryPropertyW(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA, property: u32, propertybuffer: *const u8, propertybuffersize: u32) -> super::super::Foundation::BOOL;
@@ -13305,7 +13682,10 @@ pub unsafe fn SetupDiSetDeviceRegistryPropertyW<'a, Param0: ::std::convert::Into
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiSetDriverInstallParamsA<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_A, driverinstallparams: *const SP_DRVINSTALL_PARAMS) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiSetDriverInstallParamsA<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_A, driverinstallparams: *const SP_DRVINSTALL_PARAMS) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiSetDriverInstallParamsA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_A, driverinstallparams: *const SP_DRVINSTALL_PARAMS) -> super::super::Foundation::BOOL;
@@ -13315,7 +13695,10 @@ pub unsafe fn SetupDiSetDriverInstallParamsA<'a, Param0: ::std::convert::Into<HD
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiSetDriverInstallParamsW<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_W, driverinstallparams: *const SP_DRVINSTALL_PARAMS) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiSetDriverInstallParamsW<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_W, driverinstallparams: *const SP_DRVINSTALL_PARAMS) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiSetDriverInstallParamsW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_W, driverinstallparams: *const SP_DRVINSTALL_PARAMS) -> super::super::Foundation::BOOL;
@@ -13325,7 +13708,10 @@ pub unsafe fn SetupDiSetDriverInstallParamsW<'a, Param0: ::std::convert::Into<HD
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiSetSelectedDevice<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiSetSelectedDevice<'a, P0>(deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiSetSelectedDevice(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
@@ -13335,7 +13721,10 @@ pub unsafe fn SetupDiSetSelectedDevice<'a, Param0: ::std::convert::Into<HDEVINFO
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiSetSelectedDriverA<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *mut SP_DEVINFO_DATA, driverinfodata: *mut SP_DRVINFO_DATA_V2_A) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiSetSelectedDriverA<'a, P0>(deviceinfoset: P0, deviceinfodata: *mut SP_DEVINFO_DATA, driverinfodata: *mut SP_DRVINFO_DATA_V2_A) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiSetSelectedDriverA(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA, driverinfodata: *mut SP_DRVINFO_DATA_V2_A) -> super::super::Foundation::BOOL;
@@ -13345,7 +13734,10 @@ pub unsafe fn SetupDiSetSelectedDriverA<'a, Param0: ::std::convert::Into<HDEVINF
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiSetSelectedDriverW<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *mut SP_DEVINFO_DATA, driverinfodata: *mut SP_DRVINFO_DATA_V2_W) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiSetSelectedDriverW<'a, P0>(deviceinfoset: P0, deviceinfodata: *mut SP_DEVINFO_DATA, driverinfodata: *mut SP_DRVINFO_DATA_V2_W) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiSetSelectedDriverW(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA, driverinfodata: *mut SP_DRVINFO_DATA_V2_W) -> super::super::Foundation::BOOL;
@@ -13355,7 +13747,10 @@ pub unsafe fn SetupDiSetSelectedDriverW<'a, Param0: ::std::convert::Into<HDEVINF
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupDiUnremoveDevice<'a, Param0: ::std::convert::Into<HDEVINFO>>(deviceinfoset: Param0, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupDiUnremoveDevice<'a, P0>(deviceinfoset: P0, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupDiUnremoveDevice(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
@@ -13892,7 +14287,10 @@ pub unsafe fn SetupGetThreadLogToken() -> u64 {
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupInitDefaultQueueCallback<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(ownerwindow: Param0) -> *mut ::core::ffi::c_void {
+pub unsafe fn SetupInitDefaultQueueCallback<'a, P0>(ownerwindow: P0) -> *mut ::core::ffi::c_void
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupInitDefaultQueueCallback(ownerwindow: super::super::Foundation::HWND) -> *mut ::core::ffi::c_void;
@@ -13902,7 +14300,11 @@ pub unsafe fn SetupInitDefaultQueueCallback<'a, Param0: ::std::convert::Into<sup
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupInitDefaultQueueCallbackEx<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>, Param1: ::std::convert::Into<super::super::Foundation::HWND>>(ownerwindow: Param0, alternateprogresswindow: Param1, progressmessage: u32, reserved1: u32, reserved2: *mut ::core::ffi::c_void) -> *mut ::core::ffi::c_void {
+pub unsafe fn SetupInitDefaultQueueCallbackEx<'a, P0, P1>(ownerwindow: P0, alternateprogresswindow: P1, progressmessage: u32, reserved1: u32, reserved2: *mut ::core::ffi::c_void) -> *mut ::core::ffi::c_void
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+    P1: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupInitDefaultQueueCallbackEx(ownerwindow: super::super::Foundation::HWND, alternateprogresswindow: super::super::Foundation::HWND, progressmessage: u32, reserved1: u32, reserved2: *mut ::core::ffi::c_void) -> *mut ::core::ffi::c_void;
@@ -13930,7 +14332,10 @@ pub unsafe fn SetupInitializeFileLogW(logfilename: ::windows::core::PCWSTR, flag
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupInstallFileA<'a, Param5: ::std::convert::Into<SP_COPY_STYLE>>(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, sourcefile: ::windows::core::PCSTR, sourcepathroot: ::windows::core::PCSTR, destinationname: ::windows::core::PCSTR, copystyle: Param5, copymsghandler: PSP_FILE_CALLBACK_A, context: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupInstallFileA<'a, P0>(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, sourcefile: ::windows::core::PCSTR, sourcepathroot: ::windows::core::PCSTR, destinationname: ::windows::core::PCSTR, copystyle: P0, copymsghandler: PSP_FILE_CALLBACK_A, context: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<SP_COPY_STYLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupInstallFileA(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, sourcefile: ::windows::core::PCSTR, sourcepathroot: ::windows::core::PCSTR, destinationname: ::windows::core::PCSTR, copystyle: SP_COPY_STYLE, copymsghandler: *mut ::core::ffi::c_void, context: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
@@ -13940,7 +14345,10 @@ pub unsafe fn SetupInstallFileA<'a, Param5: ::std::convert::Into<SP_COPY_STYLE>>
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupInstallFileExA<'a, Param5: ::std::convert::Into<SP_COPY_STYLE>>(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, sourcefile: ::windows::core::PCSTR, sourcepathroot: ::windows::core::PCSTR, destinationname: ::windows::core::PCSTR, copystyle: Param5, copymsghandler: PSP_FILE_CALLBACK_A, context: *const ::core::ffi::c_void, filewasinuse: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupInstallFileExA<'a, P0>(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, sourcefile: ::windows::core::PCSTR, sourcepathroot: ::windows::core::PCSTR, destinationname: ::windows::core::PCSTR, copystyle: P0, copymsghandler: PSP_FILE_CALLBACK_A, context: *const ::core::ffi::c_void, filewasinuse: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<SP_COPY_STYLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupInstallFileExA(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, sourcefile: ::windows::core::PCSTR, sourcepathroot: ::windows::core::PCSTR, destinationname: ::windows::core::PCSTR, copystyle: SP_COPY_STYLE, copymsghandler: *mut ::core::ffi::c_void, context: *const ::core::ffi::c_void, filewasinuse: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
@@ -13950,7 +14358,10 @@ pub unsafe fn SetupInstallFileExA<'a, Param5: ::std::convert::Into<SP_COPY_STYLE
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupInstallFileExW<'a, Param5: ::std::convert::Into<SP_COPY_STYLE>>(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, sourcefile: ::windows::core::PCWSTR, sourcepathroot: ::windows::core::PCWSTR, destinationname: ::windows::core::PCWSTR, copystyle: Param5, copymsghandler: PSP_FILE_CALLBACK_W, context: *const ::core::ffi::c_void, filewasinuse: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupInstallFileExW<'a, P0>(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, sourcefile: ::windows::core::PCWSTR, sourcepathroot: ::windows::core::PCWSTR, destinationname: ::windows::core::PCWSTR, copystyle: P0, copymsghandler: PSP_FILE_CALLBACK_W, context: *const ::core::ffi::c_void, filewasinuse: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<SP_COPY_STYLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupInstallFileExW(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, sourcefile: ::windows::core::PCWSTR, sourcepathroot: ::windows::core::PCWSTR, destinationname: ::windows::core::PCWSTR, copystyle: SP_COPY_STYLE, copymsghandler: *mut ::core::ffi::c_void, context: *const ::core::ffi::c_void, filewasinuse: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
@@ -13960,7 +14371,10 @@ pub unsafe fn SetupInstallFileExW<'a, Param5: ::std::convert::Into<SP_COPY_STYLE
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupInstallFileW<'a, Param5: ::std::convert::Into<SP_COPY_STYLE>>(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, sourcefile: ::windows::core::PCWSTR, sourcepathroot: ::windows::core::PCWSTR, destinationname: ::windows::core::PCWSTR, copystyle: Param5, copymsghandler: PSP_FILE_CALLBACK_W, context: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupInstallFileW<'a, P0>(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, sourcefile: ::windows::core::PCWSTR, sourcepathroot: ::windows::core::PCWSTR, destinationname: ::windows::core::PCWSTR, copystyle: P0, copymsghandler: PSP_FILE_CALLBACK_W, context: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<SP_COPY_STYLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupInstallFileW(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, sourcefile: ::windows::core::PCWSTR, sourcepathroot: ::windows::core::PCWSTR, destinationname: ::windows::core::PCWSTR, copystyle: SP_COPY_STYLE, copymsghandler: *mut ::core::ffi::c_void, context: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
@@ -13990,7 +14404,12 @@ pub unsafe fn SetupInstallFilesFromInfSectionW(infhandle: *const ::core::ffi::c_
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`, `\"Win32_System_Registry\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
 #[inline]
-pub unsafe fn SetupInstallFromInfSectionA<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>, Param4: ::std::convert::Into<super::super::System::Registry::HKEY>, Param9: ::std::convert::Into<HDEVINFO>>(owner: Param0, infhandle: *const ::core::ffi::c_void, sectionname: ::windows::core::PCSTR, flags: u32, relativekeyroot: Param4, sourcerootpath: ::windows::core::PCSTR, copyflags: u32, msghandler: PSP_FILE_CALLBACK_A, context: *const ::core::ffi::c_void, deviceinfoset: Param9, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupInstallFromInfSectionA<'a, P0, P1, P2>(owner: P0, infhandle: *const ::core::ffi::c_void, sectionname: ::windows::core::PCSTR, flags: u32, relativekeyroot: P1, sourcerootpath: ::windows::core::PCSTR, copyflags: u32, msghandler: PSP_FILE_CALLBACK_A, context: *const ::core::ffi::c_void, deviceinfoset: P2, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+    P1: ::std::convert::Into<super::super::System::Registry::HKEY>,
+    P2: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupInstallFromInfSectionA(owner: super::super::Foundation::HWND, infhandle: *const ::core::ffi::c_void, sectionname: ::windows::core::PCSTR, flags: u32, relativekeyroot: super::super::System::Registry::HKEY, sourcerootpath: ::windows::core::PCSTR, copyflags: u32, msghandler: *mut ::core::ffi::c_void, context: *const ::core::ffi::c_void, deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
@@ -14000,7 +14419,12 @@ pub unsafe fn SetupInstallFromInfSectionA<'a, Param0: ::std::convert::Into<super
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`, `\"Win32_System_Registry\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
 #[inline]
-pub unsafe fn SetupInstallFromInfSectionW<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>, Param4: ::std::convert::Into<super::super::System::Registry::HKEY>, Param9: ::std::convert::Into<HDEVINFO>>(owner: Param0, infhandle: *const ::core::ffi::c_void, sectionname: ::windows::core::PCWSTR, flags: u32, relativekeyroot: Param4, sourcerootpath: ::windows::core::PCWSTR, copyflags: u32, msghandler: PSP_FILE_CALLBACK_W, context: *const ::core::ffi::c_void, deviceinfoset: Param9, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupInstallFromInfSectionW<'a, P0, P1, P2>(owner: P0, infhandle: *const ::core::ffi::c_void, sectionname: ::windows::core::PCWSTR, flags: u32, relativekeyroot: P1, sourcerootpath: ::windows::core::PCWSTR, copyflags: u32, msghandler: PSP_FILE_CALLBACK_W, context: *const ::core::ffi::c_void, deviceinfoset: P2, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+    P1: ::std::convert::Into<super::super::System::Registry::HKEY>,
+    P2: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupInstallFromInfSectionW(owner: super::super::Foundation::HWND, infhandle: *const ::core::ffi::c_void, sectionname: ::windows::core::PCWSTR, flags: u32, relativekeyroot: super::super::System::Registry::HKEY, sourcerootpath: ::windows::core::PCWSTR, copyflags: u32, msghandler: *mut ::core::ffi::c_void, context: *const ::core::ffi::c_void, deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
@@ -14020,7 +14444,10 @@ pub unsafe fn SetupInstallServicesFromInfSectionA(infhandle: *const ::core::ffi:
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupInstallServicesFromInfSectionExA<'a, Param3: ::std::convert::Into<HDEVINFO>>(infhandle: *const ::core::ffi::c_void, sectionname: ::windows::core::PCSTR, flags: u32, deviceinfoset: Param3, deviceinfodata: *const SP_DEVINFO_DATA, reserved1: *mut ::core::ffi::c_void, reserved2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupInstallServicesFromInfSectionExA<'a, P0>(infhandle: *const ::core::ffi::c_void, sectionname: ::windows::core::PCSTR, flags: u32, deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA, reserved1: *mut ::core::ffi::c_void, reserved2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupInstallServicesFromInfSectionExA(infhandle: *const ::core::ffi::c_void, sectionname: ::windows::core::PCSTR, flags: u32, deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, reserved1: *mut ::core::ffi::c_void, reserved2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
@@ -14030,7 +14457,10 @@ pub unsafe fn SetupInstallServicesFromInfSectionExA<'a, Param3: ::std::convert::
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupInstallServicesFromInfSectionExW<'a, Param3: ::std::convert::Into<HDEVINFO>>(infhandle: *const ::core::ffi::c_void, sectionname: ::windows::core::PCWSTR, flags: u32, deviceinfoset: Param3, deviceinfodata: *const SP_DEVINFO_DATA, reserved1: *mut ::core::ffi::c_void, reserved2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupInstallServicesFromInfSectionExW<'a, P0>(infhandle: *const ::core::ffi::c_void, sectionname: ::windows::core::PCWSTR, flags: u32, deviceinfoset: P0, deviceinfodata: *const SP_DEVINFO_DATA, reserved1: *mut ::core::ffi::c_void, reserved2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<HDEVINFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupInstallServicesFromInfSectionExW(infhandle: *const ::core::ffi::c_void, sectionname: ::windows::core::PCWSTR, flags: u32, deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, reserved1: *mut ::core::ffi::c_void, reserved2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
@@ -14157,7 +14587,10 @@ pub unsafe fn SetupOpenInfFileW(filename: ::windows::core::PCWSTR, infclass: ::w
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupOpenLog<'a, Param0: ::std::convert::Into<super::super::Foundation::BOOL>>(erase: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupOpenLog<'a, P0>(erase: P0) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupOpenLog(erase: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
@@ -14196,7 +14629,10 @@ pub unsafe fn SetupPrepareQueueForRestoreW(queuehandle: *const ::core::ffi::c_vo
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupPromptForDiskA<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(hwndparent: Param0, dialogtitle: ::windows::core::PCSTR, diskname: ::windows::core::PCSTR, pathtosource: ::windows::core::PCSTR, filesought: ::windows::core::PCSTR, tagfile: ::windows::core::PCSTR, diskpromptstyle: u32, pathbuffer: &mut [u8], pathrequiredsize: *mut u32) -> u32 {
+pub unsafe fn SetupPromptForDiskA<'a, P0>(hwndparent: P0, dialogtitle: ::windows::core::PCSTR, diskname: ::windows::core::PCSTR, pathtosource: ::windows::core::PCSTR, filesought: ::windows::core::PCSTR, tagfile: ::windows::core::PCSTR, diskpromptstyle: u32, pathbuffer: &mut [u8], pathrequiredsize: *mut u32) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupPromptForDiskA(hwndparent: super::super::Foundation::HWND, dialogtitle: ::windows::core::PCSTR, diskname: ::windows::core::PCSTR, pathtosource: ::windows::core::PCSTR, filesought: ::windows::core::PCSTR, tagfile: ::windows::core::PCSTR, diskpromptstyle: u32, pathbuffer: ::windows::core::PSTR, pathbuffersize: u32, pathrequiredsize: *mut u32) -> u32;
@@ -14206,7 +14642,10 @@ pub unsafe fn SetupPromptForDiskA<'a, Param0: ::std::convert::Into<super::super:
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupPromptForDiskW<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(hwndparent: Param0, dialogtitle: ::windows::core::PCWSTR, diskname: ::windows::core::PCWSTR, pathtosource: ::windows::core::PCWSTR, filesought: ::windows::core::PCWSTR, tagfile: ::windows::core::PCWSTR, diskpromptstyle: u32, pathbuffer: &mut [u16], pathrequiredsize: *mut u32) -> u32 {
+pub unsafe fn SetupPromptForDiskW<'a, P0>(hwndparent: P0, dialogtitle: ::windows::core::PCWSTR, diskname: ::windows::core::PCWSTR, pathtosource: ::windows::core::PCWSTR, filesought: ::windows::core::PCWSTR, tagfile: ::windows::core::PCWSTR, diskpromptstyle: u32, pathbuffer: &mut [u16], pathrequiredsize: *mut u32) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupPromptForDiskW(hwndparent: super::super::Foundation::HWND, dialogtitle: ::windows::core::PCWSTR, diskname: ::windows::core::PCWSTR, pathtosource: ::windows::core::PCWSTR, filesought: ::windows::core::PCWSTR, tagfile: ::windows::core::PCWSTR, diskpromptstyle: u32, pathbuffer: ::windows::core::PWSTR, pathbuffersize: u32, pathrequiredsize: *mut u32) -> u32;
@@ -14216,7 +14655,11 @@ pub unsafe fn SetupPromptForDiskW<'a, Param0: ::std::convert::Into<super::super:
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupPromptReboot<'a, Param1: ::std::convert::Into<super::super::Foundation::HWND>, Param2: ::std::convert::Into<super::super::Foundation::BOOL>>(filequeue: *const ::core::ffi::c_void, owner: Param1, scanonly: Param2) -> i32 {
+pub unsafe fn SetupPromptReboot<'a, P0, P1>(filequeue: *const ::core::ffi::c_void, owner: P0, scanonly: P1) -> i32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+    P1: ::std::convert::Into<super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupPromptReboot(filequeue: *const ::core::ffi::c_void, owner: super::super::Foundation::HWND, scanonly: super::super::Foundation::BOOL) -> i32;
@@ -14246,7 +14689,10 @@ pub unsafe fn SetupQueryDrivesInDiskSpaceListW(diskspace: *const ::core::ffi::c_
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupQueryFileLogA<'a, Param3: ::std::convert::Into<SetupFileLogInfo>>(fileloghandle: *const ::core::ffi::c_void, logsectionname: ::windows::core::PCSTR, targetfilename: ::windows::core::PCSTR, desiredinfo: Param3, dataout: &mut [u8], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupQueryFileLogA<'a, P0>(fileloghandle: *const ::core::ffi::c_void, logsectionname: ::windows::core::PCSTR, targetfilename: ::windows::core::PCSTR, desiredinfo: P0, dataout: &mut [u8], requiredsize: *mut u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<SetupFileLogInfo>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupQueryFileLogA(fileloghandle: *const ::core::ffi::c_void, logsectionname: ::windows::core::PCSTR, targetfilename: ::windows::core::PCSTR, desiredinfo: SetupFileLogInfo, dataout: ::windows::core::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
@@ -14256,7 +14702,10 @@ pub unsafe fn SetupQueryFileLogA<'a, Param3: ::std::convert::Into<SetupFileLogIn
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupQueryFileLogW<'a, Param3: ::std::convert::Into<SetupFileLogInfo>>(fileloghandle: *const ::core::ffi::c_void, logsectionname: ::windows::core::PCWSTR, targetfilename: ::windows::core::PCWSTR, desiredinfo: Param3, dataout: &mut [u16], requiredsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupQueryFileLogW<'a, P0>(fileloghandle: *const ::core::ffi::c_void, logsectionname: ::windows::core::PCWSTR, targetfilename: ::windows::core::PCWSTR, desiredinfo: P0, dataout: &mut [u16], requiredsize: *mut u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<SetupFileLogInfo>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupQueryFileLogW(fileloghandle: *const ::core::ffi::c_void, logsectionname: ::windows::core::PCWSTR, targetfilename: ::windows::core::PCWSTR, desiredinfo: SetupFileLogInfo, dataout: ::windows::core::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
@@ -14546,7 +14995,10 @@ pub unsafe fn SetupRemoveFileLogEntryW(fileloghandle: *const ::core::ffi::c_void
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupRemoveFromDiskSpaceListA<'a, Param2: ::std::convert::Into<SETUP_FILE_OPERATION>>(diskspace: *const ::core::ffi::c_void, targetfilespec: ::windows::core::PCSTR, operation: Param2, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupRemoveFromDiskSpaceListA<'a, P0>(diskspace: *const ::core::ffi::c_void, targetfilespec: ::windows::core::PCSTR, operation: P0, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<SETUP_FILE_OPERATION>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupRemoveFromDiskSpaceListA(diskspace: *const ::core::ffi::c_void, targetfilespec: ::windows::core::PCSTR, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
@@ -14556,7 +15008,10 @@ pub unsafe fn SetupRemoveFromDiskSpaceListA<'a, Param2: ::std::convert::Into<SET
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupRemoveFromDiskSpaceListW<'a, Param2: ::std::convert::Into<SETUP_FILE_OPERATION>>(diskspace: *const ::core::ffi::c_void, targetfilespec: ::windows::core::PCWSTR, operation: Param2, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupRemoveFromDiskSpaceListW<'a, P0>(diskspace: *const ::core::ffi::c_void, targetfilespec: ::windows::core::PCWSTR, operation: P0, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<SETUP_FILE_OPERATION>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupRemoveFromDiskSpaceListW(diskspace: *const ::core::ffi::c_void, targetfilespec: ::windows::core::PCWSTR, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
@@ -14606,7 +15061,10 @@ pub unsafe fn SetupRemoveInstallSectionFromDiskSpaceListW(diskspace: *const ::co
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupRemoveSectionFromDiskSpaceListA<'a, Param4: ::std::convert::Into<SETUP_FILE_OPERATION>>(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, sectionname: ::windows::core::PCSTR, operation: Param4, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupRemoveSectionFromDiskSpaceListA<'a, P0>(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, sectionname: ::windows::core::PCSTR, operation: P0, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<SETUP_FILE_OPERATION>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupRemoveSectionFromDiskSpaceListA(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, sectionname: ::windows::core::PCSTR, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
@@ -14616,7 +15074,10 @@ pub unsafe fn SetupRemoveSectionFromDiskSpaceListA<'a, Param4: ::std::convert::I
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupRemoveSectionFromDiskSpaceListW<'a, Param4: ::std::convert::Into<SETUP_FILE_OPERATION>>(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, sectionname: ::windows::core::PCWSTR, operation: Param4, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupRemoveSectionFromDiskSpaceListW<'a, P0>(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, sectionname: ::windows::core::PCWSTR, operation: P0, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<SETUP_FILE_OPERATION>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupRemoveSectionFromDiskSpaceListW(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, sectionname: ::windows::core::PCWSTR, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
@@ -14626,7 +15087,10 @@ pub unsafe fn SetupRemoveSectionFromDiskSpaceListW<'a, Param4: ::std::convert::I
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupRenameErrorA<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(hwndparent: Param0, dialogtitle: ::windows::core::PCSTR, sourcefile: ::windows::core::PCSTR, targetfile: ::windows::core::PCSTR, win32errorcode: u32, style: u32) -> u32 {
+pub unsafe fn SetupRenameErrorA<'a, P0>(hwndparent: P0, dialogtitle: ::windows::core::PCSTR, sourcefile: ::windows::core::PCSTR, targetfile: ::windows::core::PCSTR, win32errorcode: u32, style: u32) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupRenameErrorA(hwndparent: super::super::Foundation::HWND, dialogtitle: ::windows::core::PCSTR, sourcefile: ::windows::core::PCSTR, targetfile: ::windows::core::PCSTR, win32errorcode: u32, style: u32) -> u32;
@@ -14636,7 +15100,10 @@ pub unsafe fn SetupRenameErrorA<'a, Param0: ::std::convert::Into<super::super::F
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupRenameErrorW<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(hwndparent: Param0, dialogtitle: ::windows::core::PCWSTR, sourcefile: ::windows::core::PCWSTR, targetfile: ::windows::core::PCWSTR, win32errorcode: u32, style: u32) -> u32 {
+pub unsafe fn SetupRenameErrorW<'a, P0>(hwndparent: P0, dialogtitle: ::windows::core::PCWSTR, sourcefile: ::windows::core::PCWSTR, targetfile: ::windows::core::PCWSTR, win32errorcode: u32, style: u32) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupRenameErrorW(hwndparent: super::super::Foundation::HWND, dialogtitle: ::windows::core::PCWSTR, sourcefile: ::windows::core::PCWSTR, targetfile: ::windows::core::PCWSTR, win32errorcode: u32, style: u32) -> u32;
@@ -14646,7 +15113,10 @@ pub unsafe fn SetupRenameErrorW<'a, Param0: ::std::convert::Into<super::super::F
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupScanFileQueueA<'a, Param2: ::std::convert::Into<super::super::Foundation::HWND>>(filequeue: *const ::core::ffi::c_void, flags: u32, window: Param2, callbackroutine: PSP_FILE_CALLBACK_A, callbackcontext: *const ::core::ffi::c_void, result: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupScanFileQueueA<'a, P0>(filequeue: *const ::core::ffi::c_void, flags: u32, window: P0, callbackroutine: PSP_FILE_CALLBACK_A, callbackcontext: *const ::core::ffi::c_void, result: *mut u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupScanFileQueueA(filequeue: *const ::core::ffi::c_void, flags: u32, window: super::super::Foundation::HWND, callbackroutine: *mut ::core::ffi::c_void, callbackcontext: *const ::core::ffi::c_void, result: *mut u32) -> super::super::Foundation::BOOL;
@@ -14656,7 +15126,10 @@ pub unsafe fn SetupScanFileQueueA<'a, Param2: ::std::convert::Into<super::super:
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupScanFileQueueW<'a, Param2: ::std::convert::Into<super::super::Foundation::HWND>>(filequeue: *const ::core::ffi::c_void, flags: u32, window: Param2, callbackroutine: PSP_FILE_CALLBACK_W, callbackcontext: *const ::core::ffi::c_void, result: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupScanFileQueueW<'a, P0>(filequeue: *const ::core::ffi::c_void, flags: u32, window: P0, callbackroutine: PSP_FILE_CALLBACK_W, callbackcontext: *const ::core::ffi::c_void, result: *mut u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupScanFileQueueW(filequeue: *const ::core::ffi::c_void, flags: u32, window: super::super::Foundation::HWND, callbackroutine: *mut ::core::ffi::c_void, callbackcontext: *const ::core::ffi::c_void, result: *mut u32) -> super::super::Foundation::BOOL;
@@ -14736,7 +15209,10 @@ pub unsafe fn SetupSetFileQueueFlags(filequeue: *const ::core::ffi::c_void, flag
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupSetNonInteractiveMode<'a, Param0: ::std::convert::Into<super::super::Foundation::BOOL>>(noninteractiveflag: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupSetNonInteractiveMode<'a, P0>(noninteractiveflag: P0) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupSetNonInteractiveMode(noninteractiveflag: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
@@ -14891,7 +15367,10 @@ pub unsafe fn SetupWriteTextLogInfLine(logtoken: u64, flags: u32, infhandle: *co
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn UpdateDriverForPlugAndPlayDevicesA<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(hwndparent: Param0, hardwareid: ::windows::core::PCSTR, fullinfpath: ::windows::core::PCSTR, installflags: u32, brebootrequired: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
+pub unsafe fn UpdateDriverForPlugAndPlayDevicesA<'a, P0>(hwndparent: P0, hardwareid: ::windows::core::PCSTR, fullinfpath: ::windows::core::PCSTR, installflags: u32, brebootrequired: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UpdateDriverForPlugAndPlayDevicesA(hwndparent: super::super::Foundation::HWND, hardwareid: ::windows::core::PCSTR, fullinfpath: ::windows::core::PCSTR, installflags: u32, brebootrequired: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
@@ -14901,7 +15380,10 @@ pub unsafe fn UpdateDriverForPlugAndPlayDevicesA<'a, Param0: ::std::convert::Int
 #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn UpdateDriverForPlugAndPlayDevicesW<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(hwndparent: Param0, hardwareid: ::windows::core::PCWSTR, fullinfpath: ::windows::core::PCWSTR, installflags: u32, brebootrequired: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
+pub unsafe fn UpdateDriverForPlugAndPlayDevicesW<'a, P0>(hwndparent: P0, hardwareid: ::windows::core::PCWSTR, fullinfpath: ::windows::core::PCWSTR, installflags: u32, brebootrequired: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UpdateDriverForPlugAndPlayDevicesW(hwndparent: super::super::Foundation::HWND, hardwareid: ::windows::core::PCWSTR, fullinfpath: ::windows::core::PCWSTR, installflags: u32, brebootrequired: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;

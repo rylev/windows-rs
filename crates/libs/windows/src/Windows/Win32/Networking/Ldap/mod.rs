@@ -1541,7 +1541,10 @@ pub unsafe fn ldap_check_filterW(ld: *mut ldap, searchfilter: ::windows::core::P
 #[doc = "*Required features: `\"Win32_Networking_Ldap\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ldap_cleanup<'a, Param0: ::std::convert::Into<super::super::Foundation::HANDLE>>(hinstance: Param0) -> u32 {
+pub unsafe fn ldap_cleanup<'a, P0>(hinstance: P0) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ldap_cleanup(hinstance: super::super::Foundation::HANDLE) -> u32;
@@ -2030,7 +2033,10 @@ pub unsafe fn ldap_dn2ufnW(dn: ::windows::core::PCWSTR) -> ::windows::core::PWST
 #[doc = "*Required features: `\"Win32_Networking_Ldap\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ldap_encode_sort_controlA<'a, Param3: ::std::convert::Into<super::super::Foundation::BOOLEAN>>(externalhandle: *mut ldap, sortkeys: *mut *mut ldapsortkeyA, control: *mut ldapcontrolA, criticality: Param3) -> u32 {
+pub unsafe fn ldap_encode_sort_controlA<'a, P0>(externalhandle: *mut ldap, sortkeys: *mut *mut ldapsortkeyA, control: *mut ldapcontrolA, criticality: P0) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOLEAN>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ldap_encode_sort_controlA(externalhandle: *mut ldap, sortkeys: *mut *mut ldapsortkeyA, control: *mut ldapcontrolA, criticality: super::super::Foundation::BOOLEAN) -> u32;
@@ -2040,7 +2046,10 @@ pub unsafe fn ldap_encode_sort_controlA<'a, Param3: ::std::convert::Into<super::
 #[doc = "*Required features: `\"Win32_Networking_Ldap\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ldap_encode_sort_controlW<'a, Param3: ::std::convert::Into<super::super::Foundation::BOOLEAN>>(externalhandle: *mut ldap, sortkeys: *mut *mut ldapsortkeyW, control: *mut ldapcontrolW, criticality: Param3) -> u32 {
+pub unsafe fn ldap_encode_sort_controlW<'a, P0>(externalhandle: *mut ldap, sortkeys: *mut *mut ldapsortkeyW, control: *mut ldapcontrolW, criticality: P0) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOLEAN>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ldap_encode_sort_controlW(externalhandle: *mut ldap, sortkeys: *mut *mut ldapsortkeyW, control: *mut ldapcontrolW, criticality: super::super::Foundation::BOOLEAN) -> u32;
@@ -2761,7 +2770,10 @@ pub unsafe fn ldap_openW(hostname: ::windows::core::PCWSTR, portnumber: u32) -> 
 #[doc = "*Required features: `\"Win32_Networking_Ldap\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ldap_parse_extended_resultA<'a, Param4: ::std::convert::Into<super::super::Foundation::BOOLEAN>>(connection: *mut ldap, resultmessage: *mut LDAPMessage, resultoid: *mut ::windows::core::PSTR, resultdata: *mut *mut LDAP_BERVAL, freeit: Param4) -> u32 {
+pub unsafe fn ldap_parse_extended_resultA<'a, P0>(connection: *mut ldap, resultmessage: *mut LDAPMessage, resultoid: *mut ::windows::core::PSTR, resultdata: *mut *mut LDAP_BERVAL, freeit: P0) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOLEAN>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ldap_parse_extended_resultA(connection: *mut ldap, resultmessage: *mut LDAPMessage, resultoid: *mut ::windows::core::PSTR, resultdata: *mut *mut LDAP_BERVAL, freeit: super::super::Foundation::BOOLEAN) -> u32;
@@ -2771,7 +2783,10 @@ pub unsafe fn ldap_parse_extended_resultA<'a, Param4: ::std::convert::Into<super
 #[doc = "*Required features: `\"Win32_Networking_Ldap\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ldap_parse_extended_resultW<'a, Param4: ::std::convert::Into<super::super::Foundation::BOOLEAN>>(connection: *mut ldap, resultmessage: *mut LDAPMessage, resultoid: *mut ::windows::core::PWSTR, resultdata: *mut *mut LDAP_BERVAL, freeit: Param4) -> u32 {
+pub unsafe fn ldap_parse_extended_resultW<'a, P0>(connection: *mut ldap, resultmessage: *mut LDAPMessage, resultoid: *mut ::windows::core::PWSTR, resultdata: *mut *mut LDAP_BERVAL, freeit: P0) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOLEAN>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ldap_parse_extended_resultW(connection: *mut ldap, resultmessage: *mut LDAPMessage, resultoid: *mut ::windows::core::PWSTR, resultdata: *mut *mut LDAP_BERVAL, freeit: super::super::Foundation::BOOLEAN) -> u32;
@@ -2841,7 +2856,10 @@ pub unsafe fn ldap_parse_referenceW(connection: *mut ldap, resultmessage: *mut L
 #[doc = "*Required features: `\"Win32_Networking_Ldap\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ldap_parse_result<'a, Param7: ::std::convert::Into<super::super::Foundation::BOOLEAN>>(connection: *mut ldap, resultmessage: *mut LDAPMessage, returncode: *mut u32, matcheddns: *mut ::windows::core::PSTR, errormessage: *mut ::windows::core::PSTR, referrals: *mut *mut ::windows::core::PSTR, servercontrols: *mut *mut *mut ldapcontrolA, freeit: Param7) -> u32 {
+pub unsafe fn ldap_parse_result<'a, P0>(connection: *mut ldap, resultmessage: *mut LDAPMessage, returncode: *mut u32, matcheddns: *mut ::windows::core::PSTR, errormessage: *mut ::windows::core::PSTR, referrals: *mut *mut ::windows::core::PSTR, servercontrols: *mut *mut *mut ldapcontrolA, freeit: P0) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOLEAN>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ldap_parse_result(connection: *mut ldap, resultmessage: *mut LDAPMessage, returncode: *mut u32, matcheddns: *mut ::windows::core::PSTR, errormessage: *mut ::windows::core::PSTR, referrals: *mut *mut ::windows::core::PSTR, servercontrols: *mut *mut *mut ldapcontrolA, freeit: super::super::Foundation::BOOLEAN) -> u32;
@@ -2851,7 +2869,10 @@ pub unsafe fn ldap_parse_result<'a, Param7: ::std::convert::Into<super::super::F
 #[doc = "*Required features: `\"Win32_Networking_Ldap\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ldap_parse_resultA<'a, Param7: ::std::convert::Into<super::super::Foundation::BOOLEAN>>(connection: *mut ldap, resultmessage: *mut LDAPMessage, returncode: *mut u32, matcheddns: *mut ::windows::core::PSTR, errormessage: *mut ::windows::core::PSTR, referrals: *mut *mut *mut i8, servercontrols: *mut *mut *mut ldapcontrolA, freeit: Param7) -> u32 {
+pub unsafe fn ldap_parse_resultA<'a, P0>(connection: *mut ldap, resultmessage: *mut LDAPMessage, returncode: *mut u32, matcheddns: *mut ::windows::core::PSTR, errormessage: *mut ::windows::core::PSTR, referrals: *mut *mut *mut i8, servercontrols: *mut *mut *mut ldapcontrolA, freeit: P0) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOLEAN>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ldap_parse_resultA(connection: *mut ldap, resultmessage: *mut LDAPMessage, returncode: *mut u32, matcheddns: *mut ::windows::core::PSTR, errormessage: *mut ::windows::core::PSTR, referrals: *mut *mut *mut i8, servercontrols: *mut *mut *mut ldapcontrolA, freeit: super::super::Foundation::BOOLEAN) -> u32;
@@ -2861,7 +2882,10 @@ pub unsafe fn ldap_parse_resultA<'a, Param7: ::std::convert::Into<super::super::
 #[doc = "*Required features: `\"Win32_Networking_Ldap\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ldap_parse_resultW<'a, Param7: ::std::convert::Into<super::super::Foundation::BOOLEAN>>(connection: *mut ldap, resultmessage: *mut LDAPMessage, returncode: *mut u32, matcheddns: *mut ::windows::core::PWSTR, errormessage: *mut ::windows::core::PWSTR, referrals: *mut *mut *mut u16, servercontrols: *mut *mut *mut ldapcontrolW, freeit: Param7) -> u32 {
+pub unsafe fn ldap_parse_resultW<'a, P0>(connection: *mut ldap, resultmessage: *mut LDAPMessage, returncode: *mut u32, matcheddns: *mut ::windows::core::PWSTR, errormessage: *mut ::windows::core::PWSTR, referrals: *mut *mut *mut u16, servercontrols: *mut *mut *mut ldapcontrolW, freeit: P0) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOLEAN>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ldap_parse_resultW(connection: *mut ldap, resultmessage: *mut LDAPMessage, returncode: *mut u32, matcheddns: *mut ::windows::core::PWSTR, errormessage: *mut ::windows::core::PWSTR, referrals: *mut *mut *mut u16, servercontrols: *mut *mut *mut ldapcontrolW, freeit: super::super::Foundation::BOOLEAN) -> u32;

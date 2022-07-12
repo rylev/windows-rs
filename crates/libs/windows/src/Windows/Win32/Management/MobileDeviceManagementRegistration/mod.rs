@@ -49,7 +49,10 @@ pub unsafe fn GetDeviceManagementConfigInfo(providerid: ::windows::core::PCWSTR,
 }
 #[doc = "*Required features: `\"Win32_Management_MobileDeviceManagementRegistration\"`*"]
 #[inline]
-pub unsafe fn GetDeviceRegistrationInfo<'a, Param0: ::std::convert::Into<REGISTRATION_INFORMATION_CLASS>>(deviceinformationclass: Param0, ppdeviceregistrationinfo: *mut *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
+pub unsafe fn GetDeviceRegistrationInfo<'a, P0>(deviceinformationclass: P0, ppdeviceregistrationinfo: *mut *mut ::core::ffi::c_void) -> ::windows::core::Result<()>
+where
+    P0: ::std::convert::Into<REGISTRATION_INFORMATION_CLASS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetDeviceRegistrationInfo(deviceinformationclass: REGISTRATION_INFORMATION_CLASS, ppdeviceregistrationinfo: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
@@ -341,7 +344,10 @@ pub unsafe fn RegisterDeviceWithManagement(pszupn: ::windows::core::PCWSTR, ppsz
 #[doc = "*Required features: `\"Win32_Management_MobileDeviceManagementRegistration\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegisterDeviceWithManagementUsingAADCredentials<'a, Param0: ::std::convert::Into<super::super::Foundation::HANDLE>>(usertoken: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn RegisterDeviceWithManagementUsingAADCredentials<'a, P0>(usertoken: P0) -> ::windows::core::Result<()>
+where
+    P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RegisterDeviceWithManagementUsingAADCredentials(usertoken: super::super::Foundation::HANDLE) -> ::windows::core::HRESULT;
@@ -378,7 +384,10 @@ pub unsafe fn SetDeviceManagementConfigInfo(providerid: ::windows::core::PCWSTR,
 #[doc = "*Required features: `\"Win32_Management_MobileDeviceManagementRegistration\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetManagedExternally<'a, Param0: ::std::convert::Into<super::super::Foundation::BOOL>>(ismanagedexternally: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn SetManagedExternally<'a, P0>(ismanagedexternally: P0) -> ::windows::core::Result<()>
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetManagedExternally(ismanagedexternally: super::super::Foundation::BOOL) -> ::windows::core::HRESULT;

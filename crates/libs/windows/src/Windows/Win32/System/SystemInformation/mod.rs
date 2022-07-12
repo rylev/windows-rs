@@ -379,7 +379,10 @@ pub unsafe fn DnsHostnameToComputerNameExW(hostname: ::windows::core::PCWSTR, co
 }
 #[doc = "*Required features: `\"Win32_System_SystemInformation\"`*"]
 #[inline]
-pub unsafe fn EnumSystemFirmwareTables<'a, Param0: ::std::convert::Into<FIRMWARE_TABLE_PROVIDER>>(firmwaretableprovidersignature: Param0, pfirmwaretableenumbuffer: *mut FIRMWARE_TABLE_ID, buffersize: u32) -> u32 {
+pub unsafe fn EnumSystemFirmwareTables<'a, P0>(firmwaretableprovidersignature: P0, pfirmwaretableenumbuffer: *mut FIRMWARE_TABLE_ID, buffersize: u32) -> u32
+where
+    P0: ::std::convert::Into<FIRMWARE_TABLE_PROVIDER>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumSystemFirmwareTables(firmwaretableprovidersignature: FIRMWARE_TABLE_PROVIDER, pfirmwaretableenumbuffer: *mut FIRMWARE_TABLE_ID, buffersize: u32) -> u32;
@@ -541,7 +544,10 @@ impl ::core::default::Default for GROUP_RELATIONSHIP {
 #[doc = "*Required features: `\"Win32_System_SystemInformation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetComputerNameExA<'a, Param0: ::std::convert::Into<COMPUTER_NAME_FORMAT>>(nametype: Param0, lpbuffer: ::windows::core::PSTR, nsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetComputerNameExA<'a, P0>(nametype: P0, lpbuffer: ::windows::core::PSTR, nsize: *mut u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<COMPUTER_NAME_FORMAT>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetComputerNameExA(nametype: COMPUTER_NAME_FORMAT, lpbuffer: ::windows::core::PSTR, nsize: *mut u32) -> super::super::Foundation::BOOL;
@@ -551,7 +557,10 @@ pub unsafe fn GetComputerNameExA<'a, Param0: ::std::convert::Into<COMPUTER_NAME_
 #[doc = "*Required features: `\"Win32_System_SystemInformation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetComputerNameExW<'a, Param0: ::std::convert::Into<COMPUTER_NAME_FORMAT>>(nametype: Param0, lpbuffer: ::windows::core::PWSTR, nsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetComputerNameExW<'a, P0>(nametype: P0, lpbuffer: ::windows::core::PWSTR, nsize: *mut u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<COMPUTER_NAME_FORMAT>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetComputerNameExW(nametype: COMPUTER_NAME_FORMAT, lpbuffer: ::windows::core::PWSTR, nsize: *mut u32) -> super::super::Foundation::BOOL;
@@ -601,7 +610,10 @@ pub unsafe fn GetLogicalProcessorInformation(buffer: *mut SYSTEM_LOGICAL_PROCESS
 #[doc = "*Required features: `\"Win32_System_SystemInformation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetLogicalProcessorInformationEx<'a, Param0: ::std::convert::Into<LOGICAL_PROCESSOR_RELATIONSHIP>>(relationshiptype: Param0, buffer: *mut SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX, returnedlength: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetLogicalProcessorInformationEx<'a, P0>(relationshiptype: P0, buffer: *mut SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX, returnedlength: *mut u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<LOGICAL_PROCESSOR_RELATIONSHIP>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetLogicalProcessorInformationEx(relationshiptype: LOGICAL_PROCESSOR_RELATIONSHIP, buffer: *mut SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX, returnedlength: *mut u32) -> super::super::Foundation::BOOL;
@@ -671,7 +683,10 @@ pub unsafe fn GetProductInfo(dwosmajorversion: u32, dwosminorversion: u32, dwspm
 #[doc = "*Required features: `\"Win32_System_SystemInformation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetSystemCpuSetInformation<'a, Param3: ::std::convert::Into<super::super::Foundation::HANDLE>>(information: *mut SYSTEM_CPU_SET_INFORMATION, bufferlength: u32, returnedlength: *mut u32, process: Param3, flags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetSystemCpuSetInformation<'a, P0>(information: *mut SYSTEM_CPU_SET_INFORMATION, bufferlength: u32, returnedlength: *mut u32, process: P0, flags: u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetSystemCpuSetInformation(information: *mut SYSTEM_CPU_SET_INFORMATION, bufferlength: u32, returnedlength: *mut u32, process: super::super::Foundation::HANDLE, flags: u32) -> super::super::Foundation::BOOL;
@@ -707,7 +722,11 @@ pub unsafe fn GetSystemDirectoryW(lpbuffer: &mut [u16]) -> u32 {
 }
 #[doc = "*Required features: `\"Win32_System_SystemInformation\"`*"]
 #[inline]
-pub unsafe fn GetSystemFirmwareTable<'a, Param0: ::std::convert::Into<FIRMWARE_TABLE_PROVIDER>, Param1: ::std::convert::Into<FIRMWARE_TABLE_ID>>(firmwaretableprovidersignature: Param0, firmwaretableid: Param1, pfirmwaretablebuffer: *mut ::core::ffi::c_void, buffersize: u32) -> u32 {
+pub unsafe fn GetSystemFirmwareTable<'a, P0, P1>(firmwaretableprovidersignature: P0, firmwaretableid: P1, pfirmwaretablebuffer: *mut ::core::ffi::c_void, buffersize: u32) -> u32
+where
+    P0: ::std::convert::Into<FIRMWARE_TABLE_PROVIDER>,
+    P1: ::std::convert::Into<FIRMWARE_TABLE_ID>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetSystemFirmwareTable(firmwaretableprovidersignature: FIRMWARE_TABLE_PROVIDER, firmwaretableid: FIRMWARE_TABLE_ID, pfirmwaretablebuffer: *mut ::core::ffi::c_void, buffersize: u32) -> u32;
@@ -804,7 +823,10 @@ pub unsafe fn GetSystemWindowsDirectoryW(lpbuffer: &mut [u16]) -> u32 {
 }
 #[doc = "*Required features: `\"Win32_System_SystemInformation\"`*"]
 #[inline]
-pub unsafe fn GetSystemWow64Directory2A<'a, Param2: ::std::convert::Into<IMAGE_FILE_MACHINE>>(lpbuffer: &mut [u8], imagefilemachinetype: Param2) -> u32 {
+pub unsafe fn GetSystemWow64Directory2A<'a, P0>(lpbuffer: &mut [u8], imagefilemachinetype: P0) -> u32
+where
+    P0: ::std::convert::Into<IMAGE_FILE_MACHINE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetSystemWow64Directory2A(lpbuffer: ::windows::core::PSTR, usize: u32, imagefilemachinetype: IMAGE_FILE_MACHINE) -> u32;
@@ -813,7 +835,10 @@ pub unsafe fn GetSystemWow64Directory2A<'a, Param2: ::std::convert::Into<IMAGE_F
 }
 #[doc = "*Required features: `\"Win32_System_SystemInformation\"`*"]
 #[inline]
-pub unsafe fn GetSystemWow64Directory2W<'a, Param2: ::std::convert::Into<IMAGE_FILE_MACHINE>>(lpbuffer: &mut [u16], imagefilemachinetype: Param2) -> u32 {
+pub unsafe fn GetSystemWow64Directory2W<'a, P0>(lpbuffer: &mut [u16], imagefilemachinetype: P0) -> u32
+where
+    P0: ::std::convert::Into<IMAGE_FILE_MACHINE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetSystemWow64Directory2W(lpbuffer: ::windows::core::PWSTR, usize: u32, imagefilemachinetype: IMAGE_FILE_MACHINE) -> u32;
@@ -1012,7 +1037,10 @@ impl ::core::fmt::Debug for IMAGE_FILE_MACHINE {
 #[doc = "*Required features: `\"Win32_System_SystemInformation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IsUserCetAvailableInEnvironment<'a, Param0: ::std::convert::Into<USER_CET_ENVIRONMENT>>(usercetenvironment: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn IsUserCetAvailableInEnvironment<'a, P0>(usercetenvironment: P0) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<USER_CET_ENVIRONMENT>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsUserCetAvailableInEnvironment(usercetenvironment: USER_CET_ENVIRONMENT) -> super::super::Foundation::BOOL;
@@ -1022,7 +1050,10 @@ pub unsafe fn IsUserCetAvailableInEnvironment<'a, Param0: ::std::convert::Into<U
 #[doc = "*Required features: `\"Win32_System_SystemInformation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IsWow64GuestMachineSupported<'a, Param0: ::std::convert::Into<IMAGE_FILE_MACHINE>>(wowguestmachine: Param0) -> ::windows::core::Result<super::super::Foundation::BOOL> {
+pub unsafe fn IsWow64GuestMachineSupported<'a, P0>(wowguestmachine: P0) -> ::windows::core::Result<super::super::Foundation::BOOL>
+where
+    P0: ::std::convert::Into<IMAGE_FILE_MACHINE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsWow64GuestMachineSupported(wowguestmachine: IMAGE_FILE_MACHINE, machineissupported: *mut super::super::Foundation::BOOL) -> ::windows::core::HRESULT;
@@ -1913,7 +1944,10 @@ pub unsafe fn RtlGetProductInfo(osmajorversion: u32, osminorversion: u32, spmajo
 }
 #[doc = "*Required features: `\"Win32_System_SystemInformation\"`*"]
 #[inline]
-pub unsafe fn RtlGetSystemGlobalData<'a, Param0: ::std::convert::Into<RTL_SYSTEM_GLOBAL_DATA_ID>>(dataid: Param0, buffer: *mut ::core::ffi::c_void, size: u32) -> u32 {
+pub unsafe fn RtlGetSystemGlobalData<'a, P0>(dataid: P0, buffer: *mut ::core::ffi::c_void, size: u32) -> u32
+where
+    P0: ::std::convert::Into<RTL_SYSTEM_GLOBAL_DATA_ID>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtlGetSystemGlobalData(dataid: RTL_SYSTEM_GLOBAL_DATA_ID, buffer: *mut ::core::ffi::c_void, size: u32) -> u32;
@@ -2514,7 +2548,10 @@ pub unsafe fn SetComputerNameA(lpcomputername: ::windows::core::PCSTR) -> super:
 #[doc = "*Required features: `\"Win32_System_SystemInformation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetComputerNameEx2W<'a, Param0: ::std::convert::Into<COMPUTER_NAME_FORMAT>>(nametype: Param0, flags: u32, lpbuffer: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL {
+pub unsafe fn SetComputerNameEx2W<'a, P0>(nametype: P0, flags: u32, lpbuffer: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<COMPUTER_NAME_FORMAT>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetComputerNameEx2W(nametype: COMPUTER_NAME_FORMAT, flags: u32, lpbuffer: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
@@ -2524,7 +2561,10 @@ pub unsafe fn SetComputerNameEx2W<'a, Param0: ::std::convert::Into<COMPUTER_NAME
 #[doc = "*Required features: `\"Win32_System_SystemInformation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetComputerNameExA<'a, Param0: ::std::convert::Into<COMPUTER_NAME_FORMAT>>(nametype: Param0, lpbuffer: ::windows::core::PCSTR) -> super::super::Foundation::BOOL {
+pub unsafe fn SetComputerNameExA<'a, P0>(nametype: P0, lpbuffer: ::windows::core::PCSTR) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<COMPUTER_NAME_FORMAT>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetComputerNameExA(nametype: COMPUTER_NAME_FORMAT, lpbuffer: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
@@ -2534,7 +2574,10 @@ pub unsafe fn SetComputerNameExA<'a, Param0: ::std::convert::Into<COMPUTER_NAME_
 #[doc = "*Required features: `\"Win32_System_SystemInformation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetComputerNameExW<'a, Param0: ::std::convert::Into<COMPUTER_NAME_FORMAT>>(nametype: Param0, lpbuffer: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL {
+pub unsafe fn SetComputerNameExW<'a, P0>(nametype: P0, lpbuffer: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<COMPUTER_NAME_FORMAT>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetComputerNameExW(nametype: COMPUTER_NAME_FORMAT, lpbuffer: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
@@ -2574,7 +2617,10 @@ pub unsafe fn SetSystemTime(lpsystemtime: *const super::super::Foundation::SYSTE
 #[doc = "*Required features: `\"Win32_System_SystemInformation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetSystemTimeAdjustment<'a, Param1: ::std::convert::Into<super::super::Foundation::BOOL>>(dwtimeadjustment: u32, btimeadjustmentdisabled: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn SetSystemTimeAdjustment<'a, P0>(dwtimeadjustment: u32, btimeadjustmentdisabled: P0) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetSystemTimeAdjustment(dwtimeadjustment: u32, btimeadjustmentdisabled: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
@@ -2584,7 +2630,10 @@ pub unsafe fn SetSystemTimeAdjustment<'a, Param1: ::std::convert::Into<super::su
 #[doc = "*Required features: `\"Win32_System_SystemInformation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetSystemTimeAdjustmentPrecise<'a, Param1: ::std::convert::Into<super::super::Foundation::BOOL>>(dwtimeadjustment: u64, btimeadjustmentdisabled: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn SetSystemTimeAdjustmentPrecise<'a, P0>(dwtimeadjustment: u64, btimeadjustmentdisabled: P0) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetSystemTimeAdjustmentPrecise(dwtimeadjustment: u64, btimeadjustmentdisabled: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
@@ -2691,7 +2740,10 @@ impl ::core::ops::Not for VER_FLAGS {
 }
 #[doc = "*Required features: `\"Win32_System_SystemInformation\"`*"]
 #[inline]
-pub unsafe fn VerSetConditionMask<'a, Param1: ::std::convert::Into<VER_FLAGS>>(conditionmask: u64, typemask: Param1, condition: u8) -> u64 {
+pub unsafe fn VerSetConditionMask<'a, P0>(conditionmask: u64, typemask: P0, condition: u8) -> u64
+where
+    P0: ::std::convert::Into<VER_FLAGS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn VerSetConditionMask(conditionmask: u64, typemask: VER_FLAGS, condition: u8) -> u64;
@@ -2701,7 +2753,10 @@ pub unsafe fn VerSetConditionMask<'a, Param1: ::std::convert::Into<VER_FLAGS>>(c
 #[doc = "*Required features: `\"Win32_System_SystemInformation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn VerifyVersionInfoA<'a, Param1: ::std::convert::Into<VER_FLAGS>>(lpversioninformation: *mut OSVERSIONINFOEXA, dwtypemask: Param1, dwlconditionmask: u64) -> super::super::Foundation::BOOL {
+pub unsafe fn VerifyVersionInfoA<'a, P0>(lpversioninformation: *mut OSVERSIONINFOEXA, dwtypemask: P0, dwlconditionmask: u64) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<VER_FLAGS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn VerifyVersionInfoA(lpversioninformation: *mut OSVERSIONINFOEXA, dwtypemask: VER_FLAGS, dwlconditionmask: u64) -> super::super::Foundation::BOOL;
@@ -2711,7 +2766,10 @@ pub unsafe fn VerifyVersionInfoA<'a, Param1: ::std::convert::Into<VER_FLAGS>>(lp
 #[doc = "*Required features: `\"Win32_System_SystemInformation\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn VerifyVersionInfoW<'a, Param1: ::std::convert::Into<VER_FLAGS>>(lpversioninformation: *mut OSVERSIONINFOEXW, dwtypemask: Param1, dwlconditionmask: u64) -> super::super::Foundation::BOOL {
+pub unsafe fn VerifyVersionInfoW<'a, P0>(lpversioninformation: *mut OSVERSIONINFOEXW, dwtypemask: P0, dwlconditionmask: u64) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<VER_FLAGS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn VerifyVersionInfoW(lpversioninformation: *mut OSVERSIONINFOEXW, dwtypemask: VER_FLAGS, dwlconditionmask: u64) -> super::super::Foundation::BOOL;

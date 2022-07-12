@@ -111,12 +111,18 @@ pub struct IWsbApplicationRestoreSupport(::windows::core::IUnknown);
 impl IWsbApplicationRestoreSupport {
     #[doc = "*Required features: `\"Win32_System_ServerBackup\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn PreRestore<'a, Param3: ::std::convert::Into<super::super::Foundation::BOOLEAN>>(&self, wszwritermetadata: ::windows::core::PCWSTR, wszcomponentname: ::windows::core::PCWSTR, wszcomponentlogicalpath: ::windows::core::PCWSTR, bnorollforward: Param3) -> ::windows::core::Result<()> {
+    pub unsafe fn PreRestore<'a, P0>(&self, wszwritermetadata: ::windows::core::PCWSTR, wszcomponentname: ::windows::core::PCWSTR, wszcomponentlogicalpath: ::windows::core::PCWSTR, bnorollforward: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<super::super::Foundation::BOOLEAN>,
+    {
         (::windows::core::Interface::vtable(self).PreRestore)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(wszwritermetadata), ::core::mem::transmute(wszcomponentname), ::core::mem::transmute(wszcomponentlogicalpath), bnorollforward.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_ServerBackup\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn PostRestore<'a, Param3: ::std::convert::Into<super::super::Foundation::BOOLEAN>>(&self, wszwritermetadata: ::windows::core::PCWSTR, wszcomponentname: ::windows::core::PCWSTR, wszcomponentlogicalpath: ::windows::core::PCWSTR, bnorollforward: Param3) -> ::windows::core::Result<()> {
+    pub unsafe fn PostRestore<'a, P0>(&self, wszwritermetadata: ::windows::core::PCWSTR, wszcomponentname: ::windows::core::PCWSTR, wszcomponentlogicalpath: ::windows::core::PCWSTR, bnorollforward: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<super::super::Foundation::BOOLEAN>,
+    {
         (::windows::core::Interface::vtable(self).PostRestore)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(wszwritermetadata), ::core::mem::transmute(wszcomponentname), ::core::mem::transmute(wszcomponentlogicalpath), bnorollforward.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_ServerBackup\"`*"]

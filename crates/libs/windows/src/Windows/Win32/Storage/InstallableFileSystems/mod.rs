@@ -593,7 +593,10 @@ pub unsafe fn FilterAttachAtAltitude(lpfiltername: ::windows::core::PCWSTR, lpvo
 }
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`*"]
 #[inline]
-pub unsafe fn FilterClose<'a, Param0: ::std::convert::Into<HFILTER>>(hfilter: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn FilterClose<'a, P0>(hfilter: P0) -> ::windows::core::Result<()>
+where
+    P0: ::std::convert::Into<HFILTER>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FilterClose(hfilter: HFILTER) -> ::windows::core::HRESULT;
@@ -633,7 +636,10 @@ pub unsafe fn FilterDetach(lpfiltername: ::windows::core::PCWSTR, lpvolumename: 
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FilterFindClose<'a, Param0: ::std::convert::Into<super::super::Foundation::HANDLE>>(hfilterfind: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn FilterFindClose<'a, P0>(hfilterfind: P0) -> ::windows::core::Result<()>
+where
+    P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FilterFindClose(hfilterfind: super::super::Foundation::HANDLE) -> ::windows::core::HRESULT;
@@ -642,7 +648,10 @@ pub unsafe fn FilterFindClose<'a, Param0: ::std::convert::Into<super::super::Fou
 }
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`*"]
 #[inline]
-pub unsafe fn FilterFindFirst<'a, Param0: ::std::convert::Into<FILTER_INFORMATION_CLASS>>(dwinformationclass: Param0, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32, lpfilterfind: *mut FilterFindHandle) -> ::windows::core::Result<()> {
+pub unsafe fn FilterFindFirst<'a, P0>(dwinformationclass: P0, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32, lpfilterfind: *mut FilterFindHandle) -> ::windows::core::Result<()>
+where
+    P0: ::std::convert::Into<FILTER_INFORMATION_CLASS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FilterFindFirst(dwinformationclass: FILTER_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32, lpfilterfind: *mut FilterFindHandle) -> ::windows::core::HRESULT;
@@ -684,7 +693,11 @@ unsafe impl ::windows::core::Abi for FilterFindHandle {
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FilterFindNext<'a, Param0: ::std::convert::Into<super::super::Foundation::HANDLE>, Param1: ::std::convert::Into<FILTER_INFORMATION_CLASS>>(hfilterfind: Param0, dwinformationclass: Param1, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn FilterFindNext<'a, P0, P1>(hfilterfind: P0, dwinformationclass: P1, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows::core::Result<()>
+where
+    P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
+    P1: ::std::convert::Into<FILTER_INFORMATION_CLASS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FilterFindNext(hfilterfind: super::super::Foundation::HANDLE, dwinformationclass: FILTER_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows::core::HRESULT;
@@ -702,7 +715,11 @@ pub unsafe fn FilterGetDosName(lpvolumename: ::windows::core::PCWSTR, lpdosname:
 }
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`*"]
 #[inline]
-pub unsafe fn FilterGetInformation<'a, Param0: ::std::convert::Into<HFILTER>, Param1: ::std::convert::Into<FILTER_INFORMATION_CLASS>>(hfilter: Param0, dwinformationclass: Param1, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn FilterGetInformation<'a, P0, P1>(hfilter: P0, dwinformationclass: P1, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows::core::Result<()>
+where
+    P0: ::std::convert::Into<HFILTER>,
+    P1: ::std::convert::Into<FILTER_INFORMATION_CLASS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FilterGetInformation(hfilter: HFILTER, dwinformationclass: FILTER_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows::core::HRESULT;
@@ -712,7 +729,10 @@ pub unsafe fn FilterGetInformation<'a, Param0: ::std::convert::Into<HFILTER>, Pa
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`, `\"Win32_Foundation\"`, `\"Win32_System_IO\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
 #[inline]
-pub unsafe fn FilterGetMessage<'a, Param0: ::std::convert::Into<super::super::Foundation::HANDLE>>(hport: Param0, lpmessagebuffer: *mut FILTER_MESSAGE_HEADER, dwmessagebuffersize: u32, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows::core::Result<()> {
+pub unsafe fn FilterGetMessage<'a, P0>(hport: P0, lpmessagebuffer: *mut FILTER_MESSAGE_HEADER, dwmessagebuffersize: u32, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows::core::Result<()>
+where
+    P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FilterGetMessage(hport: super::super::Foundation::HANDLE, lpmessagebuffer: *mut FILTER_MESSAGE_HEADER, dwmessagebuffersize: u32, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows::core::HRESULT;
@@ -721,7 +741,10 @@ pub unsafe fn FilterGetMessage<'a, Param0: ::std::convert::Into<super::super::Fo
 }
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`*"]
 #[inline]
-pub unsafe fn FilterInstanceClose<'a, Param0: ::std::convert::Into<HFILTER_INSTANCE>>(hinstance: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn FilterInstanceClose<'a, P0>(hinstance: P0) -> ::windows::core::Result<()>
+where
+    P0: ::std::convert::Into<HFILTER_INSTANCE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FilterInstanceClose(hinstance: HFILTER_INSTANCE) -> ::windows::core::HRESULT;
@@ -741,7 +764,10 @@ pub unsafe fn FilterInstanceCreate(lpfiltername: ::windows::core::PCWSTR, lpvolu
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FilterInstanceFindClose<'a, Param0: ::std::convert::Into<super::super::Foundation::HANDLE>>(hfilterinstancefind: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn FilterInstanceFindClose<'a, P0>(hfilterinstancefind: P0) -> ::windows::core::Result<()>
+where
+    P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FilterInstanceFindClose(hfilterinstancefind: super::super::Foundation::HANDLE) -> ::windows::core::HRESULT;
@@ -750,7 +776,10 @@ pub unsafe fn FilterInstanceFindClose<'a, Param0: ::std::convert::Into<super::su
 }
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`*"]
 #[inline]
-pub unsafe fn FilterInstanceFindFirst<'a, Param1: ::std::convert::Into<INSTANCE_INFORMATION_CLASS>>(lpfiltername: ::windows::core::PCWSTR, dwinformationclass: Param1, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32, lpfilterinstancefind: *mut FilterInstanceFindHandle) -> ::windows::core::Result<()> {
+pub unsafe fn FilterInstanceFindFirst<'a, P0>(lpfiltername: ::windows::core::PCWSTR, dwinformationclass: P0, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32, lpfilterinstancefind: *mut FilterInstanceFindHandle) -> ::windows::core::Result<()>
+where
+    P0: ::std::convert::Into<INSTANCE_INFORMATION_CLASS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FilterInstanceFindFirst(lpfiltername: ::windows::core::PCWSTR, dwinformationclass: INSTANCE_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32, lpfilterinstancefind: *mut FilterInstanceFindHandle) -> ::windows::core::HRESULT;
@@ -792,7 +821,11 @@ unsafe impl ::windows::core::Abi for FilterInstanceFindHandle {
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FilterInstanceFindNext<'a, Param0: ::std::convert::Into<super::super::Foundation::HANDLE>, Param1: ::std::convert::Into<INSTANCE_INFORMATION_CLASS>>(hfilterinstancefind: Param0, dwinformationclass: Param1, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn FilterInstanceFindNext<'a, P0, P1>(hfilterinstancefind: P0, dwinformationclass: P1, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows::core::Result<()>
+where
+    P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
+    P1: ::std::convert::Into<INSTANCE_INFORMATION_CLASS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FilterInstanceFindNext(hfilterinstancefind: super::super::Foundation::HANDLE, dwinformationclass: INSTANCE_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows::core::HRESULT;
@@ -801,7 +834,11 @@ pub unsafe fn FilterInstanceFindNext<'a, Param0: ::std::convert::Into<super::sup
 }
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`*"]
 #[inline]
-pub unsafe fn FilterInstanceGetInformation<'a, Param0: ::std::convert::Into<HFILTER_INSTANCE>, Param1: ::std::convert::Into<INSTANCE_INFORMATION_CLASS>>(hinstance: Param0, dwinformationclass: Param1, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn FilterInstanceGetInformation<'a, P0, P1>(hinstance: P0, dwinformationclass: P1, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows::core::Result<()>
+where
+    P0: ::std::convert::Into<HFILTER_INSTANCE>,
+    P1: ::std::convert::Into<INSTANCE_INFORMATION_CLASS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FilterInstanceGetInformation(hinstance: HFILTER_INSTANCE, dwinformationclass: INSTANCE_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows::core::HRESULT;
@@ -820,7 +857,10 @@ pub unsafe fn FilterLoad(lpfiltername: ::windows::core::PCWSTR) -> ::windows::co
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FilterReplyMessage<'a, Param0: ::std::convert::Into<super::super::Foundation::HANDLE>>(hport: Param0, lpreplybuffer: *const FILTER_REPLY_HEADER, dwreplybuffersize: u32) -> ::windows::core::Result<()> {
+pub unsafe fn FilterReplyMessage<'a, P0>(hport: P0, lpreplybuffer: *const FILTER_REPLY_HEADER, dwreplybuffersize: u32) -> ::windows::core::Result<()>
+where
+    P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FilterReplyMessage(hport: super::super::Foundation::HANDLE, lpreplybuffer: *const FILTER_REPLY_HEADER, dwreplybuffersize: u32) -> ::windows::core::HRESULT;
@@ -830,7 +870,10 @@ pub unsafe fn FilterReplyMessage<'a, Param0: ::std::convert::Into<super::super::
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FilterSendMessage<'a, Param0: ::std::convert::Into<super::super::Foundation::HANDLE>>(hport: Param0, lpinbuffer: *const ::core::ffi::c_void, dwinbuffersize: u32, lpoutbuffer: *mut ::core::ffi::c_void, dwoutbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn FilterSendMessage<'a, P0>(hport: P0, lpinbuffer: *const ::core::ffi::c_void, dwinbuffersize: u32, lpoutbuffer: *mut ::core::ffi::c_void, dwoutbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows::core::Result<()>
+where
+    P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FilterSendMessage(hport: super::super::Foundation::HANDLE, lpinbuffer: *const ::core::ffi::c_void, dwinbuffersize: u32, lpoutbuffer: *mut ::core::ffi::c_void, dwoutbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows::core::HRESULT;
@@ -849,7 +892,10 @@ pub unsafe fn FilterUnload(lpfiltername: ::windows::core::PCWSTR) -> ::windows::
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FilterVolumeFindClose<'a, Param0: ::std::convert::Into<super::super::Foundation::HANDLE>>(hvolumefind: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn FilterVolumeFindClose<'a, P0>(hvolumefind: P0) -> ::windows::core::Result<()>
+where
+    P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FilterVolumeFindClose(hvolumefind: super::super::Foundation::HANDLE) -> ::windows::core::HRESULT;
@@ -858,7 +904,10 @@ pub unsafe fn FilterVolumeFindClose<'a, Param0: ::std::convert::Into<super::supe
 }
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`*"]
 #[inline]
-pub unsafe fn FilterVolumeFindFirst<'a, Param0: ::std::convert::Into<FILTER_VOLUME_INFORMATION_CLASS>>(dwinformationclass: Param0, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32, lpvolumefind: *mut FilterVolumeFindHandle) -> ::windows::core::Result<()> {
+pub unsafe fn FilterVolumeFindFirst<'a, P0>(dwinformationclass: P0, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32, lpvolumefind: *mut FilterVolumeFindHandle) -> ::windows::core::Result<()>
+where
+    P0: ::std::convert::Into<FILTER_VOLUME_INFORMATION_CLASS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FilterVolumeFindFirst(dwinformationclass: FILTER_VOLUME_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32, lpvolumefind: *mut FilterVolumeFindHandle) -> ::windows::core::HRESULT;
@@ -900,7 +949,11 @@ unsafe impl ::windows::core::Abi for FilterVolumeFindHandle {
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FilterVolumeFindNext<'a, Param0: ::std::convert::Into<super::super::Foundation::HANDLE>, Param1: ::std::convert::Into<FILTER_VOLUME_INFORMATION_CLASS>>(hvolumefind: Param0, dwinformationclass: Param1, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn FilterVolumeFindNext<'a, P0, P1>(hvolumefind: P0, dwinformationclass: P1, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows::core::Result<()>
+where
+    P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
+    P1: ::std::convert::Into<FILTER_VOLUME_INFORMATION_CLASS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FilterVolumeFindNext(hvolumefind: super::super::Foundation::HANDLE, dwinformationclass: FILTER_VOLUME_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows::core::HRESULT;
@@ -910,7 +963,10 @@ pub unsafe fn FilterVolumeFindNext<'a, Param0: ::std::convert::Into<super::super
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FilterVolumeInstanceFindClose<'a, Param0: ::std::convert::Into<super::super::Foundation::HANDLE>>(hvolumeinstancefind: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn FilterVolumeInstanceFindClose<'a, P0>(hvolumeinstancefind: P0) -> ::windows::core::Result<()>
+where
+    P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FilterVolumeInstanceFindClose(hvolumeinstancefind: super::super::Foundation::HANDLE) -> ::windows::core::HRESULT;
@@ -919,7 +975,10 @@ pub unsafe fn FilterVolumeInstanceFindClose<'a, Param0: ::std::convert::Into<sup
 }
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`*"]
 #[inline]
-pub unsafe fn FilterVolumeInstanceFindFirst<'a, Param1: ::std::convert::Into<INSTANCE_INFORMATION_CLASS>>(lpvolumename: ::windows::core::PCWSTR, dwinformationclass: Param1, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32, lpvolumeinstancefind: *mut FilterVolumeInstanceFindHandle) -> ::windows::core::Result<()> {
+pub unsafe fn FilterVolumeInstanceFindFirst<'a, P0>(lpvolumename: ::windows::core::PCWSTR, dwinformationclass: P0, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32, lpvolumeinstancefind: *mut FilterVolumeInstanceFindHandle) -> ::windows::core::Result<()>
+where
+    P0: ::std::convert::Into<INSTANCE_INFORMATION_CLASS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FilterVolumeInstanceFindFirst(lpvolumename: ::windows::core::PCWSTR, dwinformationclass: INSTANCE_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32, lpvolumeinstancefind: *mut FilterVolumeInstanceFindHandle) -> ::windows::core::HRESULT;
@@ -961,7 +1020,11 @@ unsafe impl ::windows::core::Abi for FilterVolumeInstanceFindHandle {
 #[doc = "*Required features: `\"Win32_Storage_InstallableFileSystems\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FilterVolumeInstanceFindNext<'a, Param0: ::std::convert::Into<super::super::Foundation::HANDLE>, Param1: ::std::convert::Into<INSTANCE_INFORMATION_CLASS>>(hvolumeinstancefind: Param0, dwinformationclass: Param1, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows::core::Result<()> {
+pub unsafe fn FilterVolumeInstanceFindNext<'a, P0, P1>(hvolumeinstancefind: P0, dwinformationclass: P1, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows::core::Result<()>
+where
+    P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
+    P1: ::std::convert::Into<INSTANCE_INFORMATION_CLASS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FilterVolumeInstanceFindNext(hvolumeinstancefind: super::super::Foundation::HANDLE, dwinformationclass: INSTANCE_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows::core::HRESULT;

@@ -120,7 +120,10 @@ pub unsafe fn OnDemandRegisterNotification(callback: ONDEMAND_NOTIFICATION_CALLB
 #[doc = "*Required features: `\"Win32_NetworkManagement_WindowsConnectionManager\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn OnDemandUnRegisterNotification<'a, Param0: ::std::convert::Into<super::super::Foundation::HANDLE>>(registrationhandle: Param0) -> ::windows::core::Result<()> {
+pub unsafe fn OnDemandUnRegisterNotification<'a, P0>(registrationhandle: P0) -> ::windows::core::Result<()>
+where
+    P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn OnDemandUnRegisterNotification(registrationhandle: super::super::Foundation::HANDLE) -> ::windows::core::HRESULT;
@@ -589,7 +592,10 @@ pub unsafe fn WcmGetProfileList(preserved: *mut ::core::ffi::c_void, ppprofileli
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_WindowsConnectionManager\"`*"]
 #[inline]
-pub unsafe fn WcmQueryProperty<'a, Param2: ::std::convert::Into<WCM_PROPERTY>>(pinterface: *const ::windows::core::GUID, strprofilename: ::windows::core::PCWSTR, property: Param2, preserved: *mut ::core::ffi::c_void, pdwdatasize: *mut u32, ppdata: *mut *mut u8) -> u32 {
+pub unsafe fn WcmQueryProperty<'a, P0>(pinterface: *const ::windows::core::GUID, strprofilename: ::windows::core::PCWSTR, property: P0, preserved: *mut ::core::ffi::c_void, pdwdatasize: *mut u32, ppdata: *mut *mut u8) -> u32
+where
+    P0: ::std::convert::Into<WCM_PROPERTY>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WcmQueryProperty(pinterface: *const ::windows::core::GUID, strprofilename: ::windows::core::PCWSTR, property: WCM_PROPERTY, preserved: *mut ::core::ffi::c_void, pdwdatasize: *mut u32, ppdata: *mut *mut u8) -> u32;
@@ -599,7 +605,10 @@ pub unsafe fn WcmQueryProperty<'a, Param2: ::std::convert::Into<WCM_PROPERTY>>(p
 #[doc = "*Required features: `\"Win32_NetworkManagement_WindowsConnectionManager\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WcmSetProfileList<'a, Param2: ::std::convert::Into<super::super::Foundation::BOOL>>(pprofilelist: *const WCM_PROFILE_INFO_LIST, dwposition: u32, fignoreunknownprofiles: Param2, preserved: *mut ::core::ffi::c_void) -> u32 {
+pub unsafe fn WcmSetProfileList<'a, P0>(pprofilelist: *const WCM_PROFILE_INFO_LIST, dwposition: u32, fignoreunknownprofiles: P0, preserved: *mut ::core::ffi::c_void) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WcmSetProfileList(pprofilelist: *const WCM_PROFILE_INFO_LIST, dwposition: u32, fignoreunknownprofiles: super::super::Foundation::BOOL, preserved: *mut ::core::ffi::c_void) -> u32;
@@ -608,7 +617,10 @@ pub unsafe fn WcmSetProfileList<'a, Param2: ::std::convert::Into<super::super::F
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_WindowsConnectionManager\"`*"]
 #[inline]
-pub unsafe fn WcmSetProperty<'a, Param2: ::std::convert::Into<WCM_PROPERTY>>(pinterface: *const ::windows::core::GUID, strprofilename: ::windows::core::PCWSTR, property: Param2, preserved: *mut ::core::ffi::c_void, pbdata: &[u8]) -> u32 {
+pub unsafe fn WcmSetProperty<'a, P0>(pinterface: *const ::windows::core::GUID, strprofilename: ::windows::core::PCWSTR, property: P0, preserved: *mut ::core::ffi::c_void, pbdata: &[u8]) -> u32
+where
+    P0: ::std::convert::Into<WCM_PROPERTY>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WcmSetProperty(pinterface: *const ::windows::core::GUID, strprofilename: ::windows::core::PCWSTR, property: WCM_PROPERTY, preserved: *mut ::core::ffi::c_void, dwdatasize: u32, pbdata: *const u8) -> u32;

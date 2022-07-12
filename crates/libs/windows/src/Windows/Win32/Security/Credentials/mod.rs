@@ -1145,7 +1145,10 @@ pub unsafe fn CredDeleteW(targetname: ::windows::core::PCWSTR, r#type: u32, flag
 #[doc = "*Required features: `\"Win32_Security_Credentials\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CredEnumerateA<'a, Param1: ::std::convert::Into<CRED_ENUMERATE_FLAGS>>(filter: ::windows::core::PCSTR, flags: Param1, count: *mut u32, credential: *mut *mut *mut CREDENTIALA) -> super::super::Foundation::BOOL {
+pub unsafe fn CredEnumerateA<'a, P0>(filter: ::windows::core::PCSTR, flags: P0, count: *mut u32, credential: *mut *mut *mut CREDENTIALA) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<CRED_ENUMERATE_FLAGS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CredEnumerateA(filter: ::windows::core::PCSTR, flags: CRED_ENUMERATE_FLAGS, count: *mut u32, credential: *mut *mut *mut CREDENTIALA) -> super::super::Foundation::BOOL;
@@ -1155,7 +1158,10 @@ pub unsafe fn CredEnumerateA<'a, Param1: ::std::convert::Into<CRED_ENUMERATE_FLA
 #[doc = "*Required features: `\"Win32_Security_Credentials\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CredEnumerateW<'a, Param1: ::std::convert::Into<CRED_ENUMERATE_FLAGS>>(filter: ::windows::core::PCWSTR, flags: Param1, count: *mut u32, credential: *mut *mut *mut CREDENTIALW) -> super::super::Foundation::BOOL {
+pub unsafe fn CredEnumerateW<'a, P0>(filter: ::windows::core::PCWSTR, flags: P0, count: *mut u32, credential: *mut *mut *mut CREDENTIALW) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<CRED_ENUMERATE_FLAGS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CredEnumerateW(filter: ::windows::core::PCWSTR, flags: CRED_ENUMERATE_FLAGS, count: *mut u32, credential: *mut *mut *mut CREDENTIALW) -> super::super::Foundation::BOOL;
@@ -1264,7 +1270,10 @@ pub unsafe fn CredIsProtectedW(pszprotectedcredentials: ::windows::core::PCWSTR,
 #[doc = "*Required features: `\"Win32_Security_Credentials\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CredMarshalCredentialA<'a, Param0: ::std::convert::Into<CRED_MARSHAL_TYPE>>(credtype: Param0, credential: *const ::core::ffi::c_void, marshaledcredential: *mut ::windows::core::PSTR) -> super::super::Foundation::BOOL {
+pub unsafe fn CredMarshalCredentialA<'a, P0>(credtype: P0, credential: *const ::core::ffi::c_void, marshaledcredential: *mut ::windows::core::PSTR) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<CRED_MARSHAL_TYPE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CredMarshalCredentialA(credtype: CRED_MARSHAL_TYPE, credential: *const ::core::ffi::c_void, marshaledcredential: *mut ::windows::core::PSTR) -> super::super::Foundation::BOOL;
@@ -1274,7 +1283,10 @@ pub unsafe fn CredMarshalCredentialA<'a, Param0: ::std::convert::Into<CRED_MARSH
 #[doc = "*Required features: `\"Win32_Security_Credentials\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CredMarshalCredentialW<'a, Param0: ::std::convert::Into<CRED_MARSHAL_TYPE>>(credtype: Param0, credential: *const ::core::ffi::c_void, marshaledcredential: *mut ::windows::core::PWSTR) -> super::super::Foundation::BOOL {
+pub unsafe fn CredMarshalCredentialW<'a, P0>(credtype: P0, credential: *const ::core::ffi::c_void, marshaledcredential: *mut ::windows::core::PWSTR) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<CRED_MARSHAL_TYPE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CredMarshalCredentialW(credtype: CRED_MARSHAL_TYPE, credential: *const ::core::ffi::c_void, marshaledcredential: *mut ::windows::core::PWSTR) -> super::super::Foundation::BOOL;
@@ -1284,7 +1296,10 @@ pub unsafe fn CredMarshalCredentialW<'a, Param0: ::std::convert::Into<CRED_MARSH
 #[doc = "*Required features: `\"Win32_Security_Credentials\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CredPackAuthenticationBufferA<'a, Param0: ::std::convert::Into<CRED_PACK_FLAGS>>(dwflags: Param0, pszusername: ::windows::core::PCSTR, pszpassword: ::windows::core::PCSTR, ppackedcredentials: *mut u8, pcbpackedcredentials: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CredPackAuthenticationBufferA<'a, P0>(dwflags: P0, pszusername: ::windows::core::PCSTR, pszpassword: ::windows::core::PCSTR, ppackedcredentials: *mut u8, pcbpackedcredentials: *mut u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<CRED_PACK_FLAGS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CredPackAuthenticationBufferA(dwflags: CRED_PACK_FLAGS, pszusername: ::windows::core::PCSTR, pszpassword: ::windows::core::PCSTR, ppackedcredentials: *mut u8, pcbpackedcredentials: *mut u32) -> super::super::Foundation::BOOL;
@@ -1294,7 +1309,10 @@ pub unsafe fn CredPackAuthenticationBufferA<'a, Param0: ::std::convert::Into<CRE
 #[doc = "*Required features: `\"Win32_Security_Credentials\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CredPackAuthenticationBufferW<'a, Param0: ::std::convert::Into<CRED_PACK_FLAGS>>(dwflags: Param0, pszusername: ::windows::core::PCWSTR, pszpassword: ::windows::core::PCWSTR, ppackedcredentials: *mut u8, pcbpackedcredentials: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CredPackAuthenticationBufferW<'a, P0>(dwflags: P0, pszusername: ::windows::core::PCWSTR, pszpassword: ::windows::core::PCWSTR, ppackedcredentials: *mut u8, pcbpackedcredentials: *mut u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<CRED_PACK_FLAGS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CredPackAuthenticationBufferW(dwflags: CRED_PACK_FLAGS, pszusername: ::windows::core::PCWSTR, pszpassword: ::windows::core::PCWSTR, ppackedcredentials: *mut u8, pcbpackedcredentials: *mut u32) -> super::super::Foundation::BOOL;
@@ -1304,7 +1322,10 @@ pub unsafe fn CredPackAuthenticationBufferW<'a, Param0: ::std::convert::Into<CRE
 #[doc = "*Required features: `\"Win32_Security_Credentials\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CredProtectA<'a, Param0: ::std::convert::Into<super::super::Foundation::BOOL>>(fasself: Param0, pszcredentials: &[u8], pszprotectedcredentials: ::windows::core::PSTR, pcchmaxchars: *mut u32, protectiontype: *mut CRED_PROTECTION_TYPE) -> super::super::Foundation::BOOL {
+pub unsafe fn CredProtectA<'a, P0>(fasself: P0, pszcredentials: &[u8], pszprotectedcredentials: ::windows::core::PSTR, pcchmaxchars: *mut u32, protectiontype: *mut CRED_PROTECTION_TYPE) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CredProtectA(fasself: super::super::Foundation::BOOL, pszcredentials: ::windows::core::PCSTR, cchcredentials: u32, pszprotectedcredentials: ::windows::core::PSTR, pcchmaxchars: *mut u32, protectiontype: *mut CRED_PROTECTION_TYPE) -> super::super::Foundation::BOOL;
@@ -1314,7 +1335,10 @@ pub unsafe fn CredProtectA<'a, Param0: ::std::convert::Into<super::super::Founda
 #[doc = "*Required features: `\"Win32_Security_Credentials\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CredProtectW<'a, Param0: ::std::convert::Into<super::super::Foundation::BOOL>>(fasself: Param0, pszcredentials: &[u16], pszprotectedcredentials: ::windows::core::PWSTR, pcchmaxchars: *mut u32, protectiontype: *mut CRED_PROTECTION_TYPE) -> super::super::Foundation::BOOL {
+pub unsafe fn CredProtectW<'a, P0>(fasself: P0, pszcredentials: &[u16], pszprotectedcredentials: ::windows::core::PWSTR, pcchmaxchars: *mut u32, protectiontype: *mut CRED_PROTECTION_TYPE) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CredProtectW(fasself: super::super::Foundation::BOOL, pszcredentials: ::windows::core::PCWSTR, cchcredentials: u32, pszprotectedcredentials: ::windows::core::PWSTR, pcchmaxchars: *mut u32, protectiontype: *mut CRED_PROTECTION_TYPE) -> super::super::Foundation::BOOL;
@@ -1384,7 +1408,10 @@ pub unsafe fn CredRenameW(oldtargetname: ::windows::core::PCWSTR, newtargetname:
 #[doc = "*Required features: `\"Win32_Security_Credentials\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CredUICmdLinePromptForCredentialsA<'a, Param8: ::std::convert::Into<CREDUI_FLAGS>>(psztargetname: ::windows::core::PCSTR, pcontext: *mut SecHandle, dwautherror: u32, username: &mut [u8], pszpassword: &mut [u8], pfsave: *mut super::super::Foundation::BOOL, dwflags: Param8) -> u32 {
+pub unsafe fn CredUICmdLinePromptForCredentialsA<'a, P0>(psztargetname: ::windows::core::PCSTR, pcontext: *mut SecHandle, dwautherror: u32, username: &mut [u8], pszpassword: &mut [u8], pfsave: *mut super::super::Foundation::BOOL, dwflags: P0) -> u32
+where
+    P0: ::std::convert::Into<CREDUI_FLAGS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CredUICmdLinePromptForCredentialsA(psztargetname: ::windows::core::PCSTR, pcontext: *mut SecHandle, dwautherror: u32, username: ::windows::core::PSTR, uluserbuffersize: u32, pszpassword: ::windows::core::PSTR, ulpasswordbuffersize: u32, pfsave: *mut super::super::Foundation::BOOL, dwflags: CREDUI_FLAGS) -> u32;
@@ -1394,7 +1421,10 @@ pub unsafe fn CredUICmdLinePromptForCredentialsA<'a, Param8: ::std::convert::Int
 #[doc = "*Required features: `\"Win32_Security_Credentials\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CredUICmdLinePromptForCredentialsW<'a, Param8: ::std::convert::Into<CREDUI_FLAGS>>(psztargetname: ::windows::core::PCWSTR, pcontext: *mut SecHandle, dwautherror: u32, username: &mut [u16], pszpassword: &mut [u16], pfsave: *mut super::super::Foundation::BOOL, dwflags: Param8) -> u32 {
+pub unsafe fn CredUICmdLinePromptForCredentialsW<'a, P0>(psztargetname: ::windows::core::PCWSTR, pcontext: *mut SecHandle, dwautherror: u32, username: &mut [u16], pszpassword: &mut [u16], pfsave: *mut super::super::Foundation::BOOL, dwflags: P0) -> u32
+where
+    P0: ::std::convert::Into<CREDUI_FLAGS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CredUICmdLinePromptForCredentialsW(psztargetname: ::windows::core::PCWSTR, pcontext: *mut SecHandle, dwautherror: u32, username: ::windows::core::PWSTR, uluserbuffersize: u32, pszpassword: ::windows::core::PWSTR, ulpasswordbuffersize: u32, pfsave: *mut super::super::Foundation::BOOL, dwflags: CREDUI_FLAGS) -> u32;
@@ -1404,7 +1434,10 @@ pub unsafe fn CredUICmdLinePromptForCredentialsW<'a, Param8: ::std::convert::Int
 #[doc = "*Required features: `\"Win32_Security_Credentials\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CredUIConfirmCredentialsA<'a, Param1: ::std::convert::Into<super::super::Foundation::BOOL>>(psztargetname: ::windows::core::PCSTR, bconfirm: Param1) -> u32 {
+pub unsafe fn CredUIConfirmCredentialsA<'a, P0>(psztargetname: ::windows::core::PCSTR, bconfirm: P0) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CredUIConfirmCredentialsA(psztargetname: ::windows::core::PCSTR, bconfirm: super::super::Foundation::BOOL) -> u32;
@@ -1414,7 +1447,10 @@ pub unsafe fn CredUIConfirmCredentialsA<'a, Param1: ::std::convert::Into<super::
 #[doc = "*Required features: `\"Win32_Security_Credentials\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CredUIConfirmCredentialsW<'a, Param1: ::std::convert::Into<super::super::Foundation::BOOL>>(psztargetname: ::windows::core::PCWSTR, bconfirm: Param1) -> u32 {
+pub unsafe fn CredUIConfirmCredentialsW<'a, P0>(psztargetname: ::windows::core::PCWSTR, bconfirm: P0) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CredUIConfirmCredentialsW(psztargetname: ::windows::core::PCWSTR, bconfirm: super::super::Foundation::BOOL) -> u32;
@@ -1442,7 +1478,10 @@ pub unsafe fn CredUIParseUserNameW(username: ::windows::core::PCWSTR, user: &mut
 #[doc = "*Required features: `\"Win32_Security_Credentials\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
-pub unsafe fn CredUIPromptForCredentialsA<'a, Param9: ::std::convert::Into<CREDUI_FLAGS>>(puiinfo: *const CREDUI_INFOA, psztargetname: ::windows::core::PCSTR, pcontext: *mut SecHandle, dwautherror: u32, pszusername: &mut [u8], pszpassword: &mut [u8], save: *mut super::super::Foundation::BOOL, dwflags: Param9) -> u32 {
+pub unsafe fn CredUIPromptForCredentialsA<'a, P0>(puiinfo: *const CREDUI_INFOA, psztargetname: ::windows::core::PCSTR, pcontext: *mut SecHandle, dwautherror: u32, pszusername: &mut [u8], pszpassword: &mut [u8], save: *mut super::super::Foundation::BOOL, dwflags: P0) -> u32
+where
+    P0: ::std::convert::Into<CREDUI_FLAGS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CredUIPromptForCredentialsA(puiinfo: *const CREDUI_INFOA, psztargetname: ::windows::core::PCSTR, pcontext: *mut SecHandle, dwautherror: u32, pszusername: ::windows::core::PSTR, ulusernamebuffersize: u32, pszpassword: ::windows::core::PSTR, ulpasswordbuffersize: u32, save: *mut super::super::Foundation::BOOL, dwflags: CREDUI_FLAGS) -> u32;
@@ -1452,7 +1491,10 @@ pub unsafe fn CredUIPromptForCredentialsA<'a, Param9: ::std::convert::Into<CREDU
 #[doc = "*Required features: `\"Win32_Security_Credentials\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
-pub unsafe fn CredUIPromptForCredentialsW<'a, Param9: ::std::convert::Into<CREDUI_FLAGS>>(puiinfo: *const CREDUI_INFOW, psztargetname: ::windows::core::PCWSTR, pcontext: *mut SecHandle, dwautherror: u32, pszusername: &mut [u16], pszpassword: &mut [u16], save: *mut super::super::Foundation::BOOL, dwflags: Param9) -> u32 {
+pub unsafe fn CredUIPromptForCredentialsW<'a, P0>(puiinfo: *const CREDUI_INFOW, psztargetname: ::windows::core::PCWSTR, pcontext: *mut SecHandle, dwautherror: u32, pszusername: &mut [u16], pszpassword: &mut [u16], save: *mut super::super::Foundation::BOOL, dwflags: P0) -> u32
+where
+    P0: ::std::convert::Into<CREDUI_FLAGS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CredUIPromptForCredentialsW(puiinfo: *const CREDUI_INFOW, psztargetname: ::windows::core::PCWSTR, pcontext: *mut SecHandle, dwautherror: u32, pszusername: ::windows::core::PWSTR, ulusernamebuffersize: u32, pszpassword: ::windows::core::PWSTR, ulpasswordbuffersize: u32, save: *mut super::super::Foundation::BOOL, dwflags: CREDUI_FLAGS) -> u32;
@@ -1462,7 +1504,10 @@ pub unsafe fn CredUIPromptForCredentialsW<'a, Param9: ::std::convert::Into<CREDU
 #[doc = "*Required features: `\"Win32_Security_Credentials\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
-pub unsafe fn CredUIPromptForWindowsCredentialsA<'a, Param8: ::std::convert::Into<CREDUIWIN_FLAGS>>(puiinfo: *const CREDUI_INFOA, dwautherror: u32, pulauthpackage: *mut u32, pvinauthbuffer: *const ::core::ffi::c_void, ulinauthbuffersize: u32, ppvoutauthbuffer: *mut *mut ::core::ffi::c_void, puloutauthbuffersize: *mut u32, pfsave: *mut super::super::Foundation::BOOL, dwflags: Param8) -> u32 {
+pub unsafe fn CredUIPromptForWindowsCredentialsA<'a, P0>(puiinfo: *const CREDUI_INFOA, dwautherror: u32, pulauthpackage: *mut u32, pvinauthbuffer: *const ::core::ffi::c_void, ulinauthbuffersize: u32, ppvoutauthbuffer: *mut *mut ::core::ffi::c_void, puloutauthbuffersize: *mut u32, pfsave: *mut super::super::Foundation::BOOL, dwflags: P0) -> u32
+where
+    P0: ::std::convert::Into<CREDUIWIN_FLAGS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CredUIPromptForWindowsCredentialsA(puiinfo: *const CREDUI_INFOA, dwautherror: u32, pulauthpackage: *mut u32, pvinauthbuffer: *const ::core::ffi::c_void, ulinauthbuffersize: u32, ppvoutauthbuffer: *mut *mut ::core::ffi::c_void, puloutauthbuffersize: *mut u32, pfsave: *mut super::super::Foundation::BOOL, dwflags: CREDUIWIN_FLAGS) -> u32;
@@ -1472,7 +1517,10 @@ pub unsafe fn CredUIPromptForWindowsCredentialsA<'a, Param8: ::std::convert::Int
 #[doc = "*Required features: `\"Win32_Security_Credentials\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
-pub unsafe fn CredUIPromptForWindowsCredentialsW<'a, Param8: ::std::convert::Into<CREDUIWIN_FLAGS>>(puiinfo: *const CREDUI_INFOW, dwautherror: u32, pulauthpackage: *mut u32, pvinauthbuffer: *const ::core::ffi::c_void, ulinauthbuffersize: u32, ppvoutauthbuffer: *mut *mut ::core::ffi::c_void, puloutauthbuffersize: *mut u32, pfsave: *mut super::super::Foundation::BOOL, dwflags: Param8) -> u32 {
+pub unsafe fn CredUIPromptForWindowsCredentialsW<'a, P0>(puiinfo: *const CREDUI_INFOW, dwautherror: u32, pulauthpackage: *mut u32, pvinauthbuffer: *const ::core::ffi::c_void, ulinauthbuffersize: u32, ppvoutauthbuffer: *mut *mut ::core::ffi::c_void, puloutauthbuffersize: *mut u32, pfsave: *mut super::super::Foundation::BOOL, dwflags: P0) -> u32
+where
+    P0: ::std::convert::Into<CREDUIWIN_FLAGS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CredUIPromptForWindowsCredentialsW(puiinfo: *const CREDUI_INFOW, dwautherror: u32, pulauthpackage: *mut u32, pvinauthbuffer: *const ::core::ffi::c_void, ulinauthbuffersize: u32, ppvoutauthbuffer: *mut *mut ::core::ffi::c_void, puloutauthbuffersize: *mut u32, pfsave: *mut super::super::Foundation::BOOL, dwflags: CREDUIWIN_FLAGS) -> u32;
@@ -1491,7 +1539,10 @@ pub unsafe fn CredUIReadSSOCredW(pszrealm: ::windows::core::PCWSTR, ppszusername
 #[doc = "*Required features: `\"Win32_Security_Credentials\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CredUIStoreSSOCredW<'a, Param3: ::std::convert::Into<super::super::Foundation::BOOL>>(pszrealm: ::windows::core::PCWSTR, pszusername: ::windows::core::PCWSTR, pszpassword: ::windows::core::PCWSTR, bpersist: Param3) -> u32 {
+pub unsafe fn CredUIStoreSSOCredW<'a, P0>(pszrealm: ::windows::core::PCWSTR, pszusername: ::windows::core::PCWSTR, pszpassword: ::windows::core::PCWSTR, bpersist: P0) -> u32
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CredUIStoreSSOCredW(pszrealm: ::windows::core::PCWSTR, pszusername: ::windows::core::PCWSTR, pszpassword: ::windows::core::PCWSTR, bpersist: super::super::Foundation::BOOL) -> u32;
@@ -1501,7 +1552,10 @@ pub unsafe fn CredUIStoreSSOCredW<'a, Param3: ::std::convert::Into<super::super:
 #[doc = "*Required features: `\"Win32_Security_Credentials\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CredUnPackAuthenticationBufferA<'a, Param0: ::std::convert::Into<CRED_PACK_FLAGS>>(dwflags: Param0, pauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, pszusername: ::windows::core::PSTR, pcchlmaxusername: *mut u32, pszdomainname: ::windows::core::PSTR, pcchmaxdomainname: *mut u32, pszpassword: ::windows::core::PSTR, pcchmaxpassword: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CredUnPackAuthenticationBufferA<'a, P0>(dwflags: P0, pauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, pszusername: ::windows::core::PSTR, pcchlmaxusername: *mut u32, pszdomainname: ::windows::core::PSTR, pcchmaxdomainname: *mut u32, pszpassword: ::windows::core::PSTR, pcchmaxpassword: *mut u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<CRED_PACK_FLAGS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CredUnPackAuthenticationBufferA(dwflags: CRED_PACK_FLAGS, pauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, pszusername: ::windows::core::PSTR, pcchlmaxusername: *mut u32, pszdomainname: ::windows::core::PSTR, pcchmaxdomainname: *mut u32, pszpassword: ::windows::core::PSTR, pcchmaxpassword: *mut u32) -> super::super::Foundation::BOOL;
@@ -1511,7 +1565,10 @@ pub unsafe fn CredUnPackAuthenticationBufferA<'a, Param0: ::std::convert::Into<C
 #[doc = "*Required features: `\"Win32_Security_Credentials\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CredUnPackAuthenticationBufferW<'a, Param0: ::std::convert::Into<CRED_PACK_FLAGS>>(dwflags: Param0, pauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, pszusername: ::windows::core::PWSTR, pcchmaxusername: *mut u32, pszdomainname: ::windows::core::PWSTR, pcchmaxdomainname: *mut u32, pszpassword: ::windows::core::PWSTR, pcchmaxpassword: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CredUnPackAuthenticationBufferW<'a, P0>(dwflags: P0, pauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, pszusername: ::windows::core::PWSTR, pcchmaxusername: *mut u32, pszdomainname: ::windows::core::PWSTR, pcchmaxdomainname: *mut u32, pszpassword: ::windows::core::PWSTR, pcchmaxpassword: *mut u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<CRED_PACK_FLAGS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CredUnPackAuthenticationBufferW(dwflags: CRED_PACK_FLAGS, pauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, pszusername: ::windows::core::PWSTR, pcchmaxusername: *mut u32, pszdomainname: ::windows::core::PWSTR, pcchmaxdomainname: *mut u32, pszpassword: ::windows::core::PWSTR, pcchmaxpassword: *mut u32) -> super::super::Foundation::BOOL;
@@ -1541,7 +1598,10 @@ pub unsafe fn CredUnmarshalCredentialW(marshaledcredential: ::windows::core::PCW
 #[doc = "*Required features: `\"Win32_Security_Credentials\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CredUnprotectA<'a, Param0: ::std::convert::Into<super::super::Foundation::BOOL>>(fasself: Param0, pszprotectedcredentials: &[u8], pszcredentials: ::windows::core::PSTR, pcchmaxchars: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CredUnprotectA<'a, P0>(fasself: P0, pszprotectedcredentials: &[u8], pszcredentials: ::windows::core::PSTR, pcchmaxchars: *mut u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CredUnprotectA(fasself: super::super::Foundation::BOOL, pszprotectedcredentials: ::windows::core::PCSTR, cchprotectedcredentials: u32, pszcredentials: ::windows::core::PSTR, pcchmaxchars: *mut u32) -> super::super::Foundation::BOOL;
@@ -1551,7 +1611,10 @@ pub unsafe fn CredUnprotectA<'a, Param0: ::std::convert::Into<super::super::Foun
 #[doc = "*Required features: `\"Win32_Security_Credentials\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CredUnprotectW<'a, Param0: ::std::convert::Into<super::super::Foundation::BOOL>>(fasself: Param0, pszprotectedcredentials: &[u16], pszcredentials: ::windows::core::PWSTR, pcchmaxchars: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CredUnprotectW<'a, P0>(fasself: P0, pszprotectedcredentials: &[u16], pszcredentials: ::windows::core::PWSTR, pcchmaxchars: *mut u32) -> super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CredUnprotectW(fasself: super::super::Foundation::BOOL, pszprotectedcredentials: ::windows::core::PCWSTR, cchprotectedcredentials: u32, pszcredentials: ::windows::core::PWSTR, pcchmaxchars: *mut u32) -> super::super::Foundation::BOOL;
@@ -1643,7 +1706,10 @@ pub unsafe fn KeyCredentialManagerGetInformation() -> ::windows::core::Result<*m
 #[doc = "*Required features: `\"Win32_Security_Credentials\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn KeyCredentialManagerGetOperationErrorStates<'a, Param0: ::std::convert::Into<KeyCredentialManagerOperationType>>(keycredentialmanageroperationtype: Param0, isready: *mut super::super::Foundation::BOOL, keycredentialmanageroperationerrorstates: *mut KeyCredentialManagerOperationErrorStates) -> ::windows::core::Result<()> {
+pub unsafe fn KeyCredentialManagerGetOperationErrorStates<'a, P0>(keycredentialmanageroperationtype: P0, isready: *mut super::super::Foundation::BOOL, keycredentialmanageroperationerrorstates: *mut KeyCredentialManagerOperationErrorStates) -> ::windows::core::Result<()>
+where
+    P0: ::std::convert::Into<KeyCredentialManagerOperationType>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn KeyCredentialManagerGetOperationErrorStates(keycredentialmanageroperationtype: KeyCredentialManagerOperationType, isready: *mut super::super::Foundation::BOOL, keycredentialmanageroperationerrorstates: *mut KeyCredentialManagerOperationErrorStates) -> ::windows::core::HRESULT;
@@ -1779,7 +1845,11 @@ impl ::core::fmt::Debug for KeyCredentialManagerOperationType {
 #[doc = "*Required features: `\"Win32_Security_Credentials\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn KeyCredentialManagerShowUIOperation<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>, Param1: ::std::convert::Into<KeyCredentialManagerOperationType>>(hwndowner: Param0, keycredentialmanageroperationtype: Param1) -> ::windows::core::Result<()> {
+pub unsafe fn KeyCredentialManagerShowUIOperation<'a, P0, P1>(hwndowner: P0, keycredentialmanageroperationtype: P1) -> ::windows::core::Result<()>
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+    P1: ::std::convert::Into<KeyCredentialManagerOperationType>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn KeyCredentialManagerShowUIOperation(hwndowner: super::super::Foundation::HWND, keycredentialmanageroperationtype: KeyCredentialManagerOperationType) -> ::windows::core::HRESULT;
@@ -3009,7 +3079,10 @@ pub unsafe fn SCardEndTransaction(hcard: usize, dwdisposition: u32) -> i32 {
 }
 #[doc = "*Required features: `\"Win32_Security_Credentials\"`*"]
 #[inline]
-pub unsafe fn SCardEstablishContext<'a, Param0: ::std::convert::Into<SCARD_SCOPE>>(dwscope: Param0, pvreserved1: *const ::core::ffi::c_void, pvreserved2: *const ::core::ffi::c_void, phcontext: *mut usize) -> i32 {
+pub unsafe fn SCardEstablishContext<'a, P0>(dwscope: P0, pvreserved1: *const ::core::ffi::c_void, pvreserved2: *const ::core::ffi::c_void, phcontext: *mut usize) -> i32
+where
+    P0: ::std::convert::Into<SCARD_SCOPE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SCardEstablishContext(dwscope: SCARD_SCOPE, pvreserved1: *const ::core::ffi::c_void, pvreserved2: *const ::core::ffi::c_void, phcontext: *mut usize) -> i32;

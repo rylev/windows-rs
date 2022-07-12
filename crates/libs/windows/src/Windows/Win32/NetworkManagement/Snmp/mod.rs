@@ -750,7 +750,10 @@ pub unsafe fn SnmpCountVbl(vbl: isize) -> u32 {
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
-pub unsafe fn SnmpCreatePdu<'a, Param1: ::std::convert::Into<SNMP_PDU_TYPE>>(session: isize, pdu_type: Param1, request_id: i32, error_status: i32, error_index: i32, varbindlist: isize) -> isize {
+pub unsafe fn SnmpCreatePdu<'a, P0>(session: isize, pdu_type: P0, request_id: i32, error_status: i32, error_index: i32, varbindlist: isize) -> isize
+where
+    P0: ::std::convert::Into<SNMP_PDU_TYPE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpCreatePdu(session: isize, pdu_type: SNMP_PDU_TYPE, request_id: i32, error_status: i32, error_index: i32, varbindlist: isize) -> isize;
@@ -760,7 +763,10 @@ pub unsafe fn SnmpCreatePdu<'a, Param1: ::std::convert::Into<SNMP_PDU_TYPE>>(ses
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SnmpCreateSession<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(hwnd: Param0, wmsg: u32, fcallback: SNMPAPI_CALLBACK, lpclientdata: *mut ::core::ffi::c_void) -> isize {
+pub unsafe fn SnmpCreateSession<'a, P0>(hwnd: P0, wmsg: u32, fcallback: SNMPAPI_CALLBACK, lpclientdata: *mut ::core::ffi::c_void) -> isize
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpCreateSession(hwnd: super::super::Foundation::HWND, wmsg: u32, fcallback: *mut ::core::ffi::c_void, lpclientdata: *mut ::core::ffi::c_void) -> isize;
@@ -950,7 +956,10 @@ pub unsafe fn SnmpGetVendorInfo(vendorinfo: *mut smiVENDORINFO) -> u32 {
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
-pub unsafe fn SnmpListen<'a, Param1: ::std::convert::Into<SNMP_STATUS>>(hentity: isize, lstatus: Param1) -> u32 {
+pub unsafe fn SnmpListen<'a, P0>(hentity: isize, lstatus: P0) -> u32
+where
+    P0: ::std::convert::Into<SNMP_STATUS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpListen(hentity: isize, lstatus: SNMP_STATUS) -> u32;
@@ -1085,7 +1094,10 @@ pub unsafe fn SnmpOidToStr(srcoid: *const smiOID, string: &mut [u8]) -> u32 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SnmpOpen<'a, Param0: ::std::convert::Into<super::super::Foundation::HWND>>(hwnd: Param0, wmsg: u32) -> isize {
+pub unsafe fn SnmpOpen<'a, P0>(hwnd: P0, wmsg: u32) -> isize
+where
+    P0: ::std::convert::Into<super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpOpen(hwnd: super::super::Foundation::HWND, wmsg: u32) -> isize;
@@ -1103,7 +1115,10 @@ pub unsafe fn SnmpRecvMsg(session: isize, srcentity: *mut isize, dstentity: *mut
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
-pub unsafe fn SnmpRegister<'a, Param5: ::std::convert::Into<SNMP_STATUS>>(session: isize, srcentity: isize, dstentity: isize, context: isize, notification: *mut smiOID, state: Param5) -> u32 {
+pub unsafe fn SnmpRegister<'a, P0>(session: isize, srcentity: isize, dstentity: isize, context: isize, notification: *mut smiOID, state: P0) -> u32
+where
+    P0: ::std::convert::Into<SNMP_STATUS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpRegister(session: isize, srcentity: isize, dstentity: isize, context: isize, notification: *mut smiOID, state: SNMP_STATUS) -> u32;
@@ -1139,7 +1154,10 @@ pub unsafe fn SnmpSetPort(hentity: isize, nport: u32) -> u32 {
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
-pub unsafe fn SnmpSetRetransmitMode<'a, Param0: ::std::convert::Into<SNMP_STATUS>>(nretransmitmode: Param0) -> u32 {
+pub unsafe fn SnmpSetRetransmitMode<'a, P0>(nretransmitmode: P0) -> u32
+where
+    P0: ::std::convert::Into<SNMP_STATUS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpSetRetransmitMode(nretransmitmode: SNMP_STATUS) -> u32;
@@ -1166,7 +1184,10 @@ pub unsafe fn SnmpSetTimeout(hentity: isize, npolicytimeout: u32) -> u32 {
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
-pub unsafe fn SnmpSetTranslateMode<'a, Param0: ::std::convert::Into<SNMP_API_TRANSLATE_MODE>>(ntranslatemode: Param0) -> u32 {
+pub unsafe fn SnmpSetTranslateMode<'a, P0>(ntranslatemode: P0) -> u32
+where
+    P0: ::std::convert::Into<SNMP_API_TRANSLATE_MODE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpSetTranslateMode(ntranslatemode: SNMP_API_TRANSLATE_MODE) -> u32;
@@ -1238,7 +1259,10 @@ pub unsafe fn SnmpSvcGetUptime() -> u32 {
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
-pub unsafe fn SnmpSvcSetLogLevel<'a, Param0: ::std::convert::Into<SNMP_LOG>>(nloglevel: Param0) {
+pub unsafe fn SnmpSvcSetLogLevel<'a, P0>(nloglevel: P0)
+where
+    P0: ::std::convert::Into<SNMP_LOG>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpSvcSetLogLevel(nloglevel: SNMP_LOG);
@@ -1247,7 +1271,10 @@ pub unsafe fn SnmpSvcSetLogLevel<'a, Param0: ::std::convert::Into<SNMP_LOG>>(nlo
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
-pub unsafe fn SnmpSvcSetLogType<'a, Param0: ::std::convert::Into<SNMP_OUTPUT_LOG_TYPE>>(nlogtype: Param0) {
+pub unsafe fn SnmpSvcSetLogType<'a, P0>(nlogtype: P0)
+where
+    P0: ::std::convert::Into<SNMP_OUTPUT_LOG_TYPE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpSvcSetLogType(nlogtype: SNMP_OUTPUT_LOG_TYPE);
@@ -1276,7 +1303,10 @@ pub unsafe fn SnmpUtilAsnAnyFree(pany: *mut AsnAny) {
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
-pub unsafe fn SnmpUtilDbgPrint<'a, Param0: ::std::convert::Into<SNMP_LOG>>(nloglevel: Param0, szformat: ::windows::core::PCSTR) {
+pub unsafe fn SnmpUtilDbgPrint<'a, P0>(nloglevel: P0, szformat: ::windows::core::PCSTR)
+where
+    P0: ::std::convert::Into<SNMP_LOG>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpUtilDbgPrint(nloglevel: SNMP_LOG, szformat: ::windows::core::PCSTR);

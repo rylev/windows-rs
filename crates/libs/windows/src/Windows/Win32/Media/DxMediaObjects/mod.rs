@@ -580,7 +580,10 @@ impl IMediaObject {
         (::windows::core::Interface::vtable(self).GetInputStatus)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(dwinputstreamindex), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
     #[doc = "*Required features: `\"Win32_Media_DxMediaObjects\"`*"]
-    pub unsafe fn ProcessInput<'a, Param1: ::std::convert::Into<::windows::core::InParam<'a, IMediaBuffer>>>(&self, dwinputstreamindex: u32, pbuffer: Param1, dwflags: u32, rttimestamp: i64, rttimelength: i64) -> ::windows::core::Result<()> {
+    pub unsafe fn ProcessInput<'a, P0>(&self, dwinputstreamindex: u32, pbuffer: P0, dwflags: u32, rttimestamp: i64, rttimelength: i64) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IMediaBuffer>>,
+    {
         (::windows::core::Interface::vtable(self).ProcessInput)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(dwinputstreamindex), pbuffer.into().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(rttimestamp), ::core::mem::transmute(rttimelength)).ok()
     }
     #[doc = "*Required features: `\"Win32_Media_DxMediaObjects\"`*"]

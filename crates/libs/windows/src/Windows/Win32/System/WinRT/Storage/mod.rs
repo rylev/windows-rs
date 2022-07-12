@@ -325,7 +325,14 @@ pub struct IStorageFolderHandleAccess(::windows::core::IUnknown);
 impl IStorageFolderHandleAccess {
     #[doc = "*Required features: `\"Win32_System_WinRT_Storage\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Create<'a, Param1: ::std::convert::Into<HANDLE_CREATION_OPTIONS>, Param2: ::std::convert::Into<HANDLE_ACCESS_OPTIONS>, Param3: ::std::convert::Into<HANDLE_SHARING_OPTIONS>, Param4: ::std::convert::Into<HANDLE_OPTIONS>, Param5: ::std::convert::Into<::windows::core::InParam<'a, IOplockBreakingHandler>>>(&self, filename: ::windows::core::PCWSTR, creationoptions: Param1, accessoptions: Param2, sharingoptions: Param3, options: Param4, oplockbreakinghandler: Param5) -> ::windows::core::Result<super::super::super::Foundation::HANDLE> {
+    pub unsafe fn Create<'a, P0, P1, P2, P3, P4>(&self, filename: ::windows::core::PCWSTR, creationoptions: P0, accessoptions: P1, sharingoptions: P2, options: P3, oplockbreakinghandler: P4) -> ::windows::core::Result<super::super::super::Foundation::HANDLE>
+    where
+        P0: ::std::convert::Into<HANDLE_CREATION_OPTIONS>,
+        P1: ::std::convert::Into<HANDLE_ACCESS_OPTIONS>,
+        P2: ::std::convert::Into<HANDLE_SHARING_OPTIONS>,
+        P3: ::std::convert::Into<HANDLE_OPTIONS>,
+        P4: ::std::convert::Into<::windows::core::InParam<'a, IOplockBreakingHandler>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::HANDLE>::zeroed();
         (::windows::core::Interface::vtable(self).Create)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(filename), creationoptions.into(), accessoptions.into(), sharingoptions.into(), options.into(), oplockbreakinghandler.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::HANDLE>(result__)
     }
@@ -380,7 +387,13 @@ pub struct IStorageItemHandleAccess(::windows::core::IUnknown);
 impl IStorageItemHandleAccess {
     #[doc = "*Required features: `\"Win32_System_WinRT_Storage\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Create<'a, Param0: ::std::convert::Into<HANDLE_ACCESS_OPTIONS>, Param1: ::std::convert::Into<HANDLE_SHARING_OPTIONS>, Param2: ::std::convert::Into<HANDLE_OPTIONS>, Param3: ::std::convert::Into<::windows::core::InParam<'a, IOplockBreakingHandler>>>(&self, accessoptions: Param0, sharingoptions: Param1, options: Param2, oplockbreakinghandler: Param3) -> ::windows::core::Result<super::super::super::Foundation::HANDLE> {
+    pub unsafe fn Create<'a, P0, P1, P2, P3>(&self, accessoptions: P0, sharingoptions: P1, options: P2, oplockbreakinghandler: P3) -> ::windows::core::Result<super::super::super::Foundation::HANDLE>
+    where
+        P0: ::std::convert::Into<HANDLE_ACCESS_OPTIONS>,
+        P1: ::std::convert::Into<HANDLE_SHARING_OPTIONS>,
+        P2: ::std::convert::Into<HANDLE_OPTIONS>,
+        P3: ::std::convert::Into<::windows::core::InParam<'a, IOplockBreakingHandler>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::HANDLE>::zeroed();
         (::windows::core::Interface::vtable(self).Create)(::windows::core::Interface::as_raw(self), accessoptions.into(), sharingoptions.into(), options.into(), oplockbreakinghandler.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::HANDLE>(result__)
     }
@@ -484,7 +497,10 @@ pub struct IUnbufferedFileHandleOplockCallback_Vtbl {
 pub struct IUnbufferedFileHandleProvider(::windows::core::IUnknown);
 impl IUnbufferedFileHandleProvider {
     #[doc = "*Required features: `\"Win32_System_WinRT_Storage\"`*"]
-    pub unsafe fn OpenUnbufferedFileHandle<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IUnbufferedFileHandleOplockCallback>>>(&self, oplockbreakcallback: Param0) -> ::windows::core::Result<usize> {
+    pub unsafe fn OpenUnbufferedFileHandle<'a, P0>(&self, oplockbreakcallback: P0) -> ::windows::core::Result<usize>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IUnbufferedFileHandleOplockCallback>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<usize>::zeroed();
         (::windows::core::Interface::vtable(self).OpenUnbufferedFileHandle)(::windows::core::Interface::as_raw(self), oplockbreakcallback.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<usize>(result__)
     }

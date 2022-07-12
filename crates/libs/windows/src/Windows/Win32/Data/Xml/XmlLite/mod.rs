@@ -1,7 +1,10 @@
 #[doc = "*Required features: `\"Win32_Data_Xml_XmlLite\"`, `\"Win32_System_Com\"`*"]
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
-pub unsafe fn CreateXmlReader<'a, Param2: ::std::convert::Into<::windows::core::InParam<'a, super::super::super::System::Com::IMalloc>>>(riid: *const ::windows::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void, pmalloc: Param2) -> ::windows::core::Result<()> {
+pub unsafe fn CreateXmlReader<'a, P0>(riid: *const ::windows::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void, pmalloc: P0) -> ::windows::core::Result<()>
+where
+    P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::super::System::Com::IMalloc>>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateXmlReader(riid: *const ::windows::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void, pmalloc: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
@@ -11,7 +14,12 @@ pub unsafe fn CreateXmlReader<'a, Param2: ::std::convert::Into<::windows::core::
 #[doc = "*Required features: `\"Win32_Data_Xml_XmlLite\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
 #[inline]
-pub unsafe fn CreateXmlReaderInputWithEncodingCodePage<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>, Param1: ::std::convert::Into<::windows::core::InParam<'a, super::super::super::System::Com::IMalloc>>, Param3: ::std::convert::Into<super::super::super::Foundation::BOOL>>(pinputstream: Param0, pmalloc: Param1, nencodingcodepage: u32, fencodinghint: Param3, pwszbaseuri: ::windows::core::PCWSTR) -> ::windows::core::Result<::windows::core::IUnknown> {
+pub unsafe fn CreateXmlReaderInputWithEncodingCodePage<'a, P0, P1, P2>(pinputstream: P0, pmalloc: P1, nencodingcodepage: u32, fencodinghint: P2, pwszbaseuri: ::windows::core::PCWSTR) -> ::windows::core::Result<::windows::core::IUnknown>
+where
+    P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
+    P1: ::std::convert::Into<::windows::core::InParam<'a, super::super::super::System::Com::IMalloc>>,
+    P2: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateXmlReaderInputWithEncodingCodePage(pinputstream: *mut ::core::ffi::c_void, pmalloc: *mut ::core::ffi::c_void, nencodingcodepage: u32, fencodinghint: super::super::super::Foundation::BOOL, pwszbaseuri: ::windows::core::PCWSTR, ppinput: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
@@ -22,7 +30,12 @@ pub unsafe fn CreateXmlReaderInputWithEncodingCodePage<'a, Param0: ::std::conver
 #[doc = "*Required features: `\"Win32_Data_Xml_XmlLite\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
 #[inline]
-pub unsafe fn CreateXmlReaderInputWithEncodingName<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>, Param1: ::std::convert::Into<::windows::core::InParam<'a, super::super::super::System::Com::IMalloc>>, Param3: ::std::convert::Into<super::super::super::Foundation::BOOL>>(pinputstream: Param0, pmalloc: Param1, pwszencodingname: ::windows::core::PCWSTR, fencodinghint: Param3, pwszbaseuri: ::windows::core::PCWSTR) -> ::windows::core::Result<::windows::core::IUnknown> {
+pub unsafe fn CreateXmlReaderInputWithEncodingName<'a, P0, P1, P2>(pinputstream: P0, pmalloc: P1, pwszencodingname: ::windows::core::PCWSTR, fencodinghint: P2, pwszbaseuri: ::windows::core::PCWSTR) -> ::windows::core::Result<::windows::core::IUnknown>
+where
+    P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
+    P1: ::std::convert::Into<::windows::core::InParam<'a, super::super::super::System::Com::IMalloc>>,
+    P2: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateXmlReaderInputWithEncodingName(pinputstream: *mut ::core::ffi::c_void, pmalloc: *mut ::core::ffi::c_void, pwszencodingname: ::windows::core::PCWSTR, fencodinghint: super::super::super::Foundation::BOOL, pwszbaseuri: ::windows::core::PCWSTR, ppinput: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
@@ -33,7 +46,10 @@ pub unsafe fn CreateXmlReaderInputWithEncodingName<'a, Param0: ::std::convert::I
 #[doc = "*Required features: `\"Win32_Data_Xml_XmlLite\"`, `\"Win32_System_Com\"`*"]
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
-pub unsafe fn CreateXmlWriter<'a, Param2: ::std::convert::Into<::windows::core::InParam<'a, super::super::super::System::Com::IMalloc>>>(riid: *const ::windows::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void, pmalloc: Param2) -> ::windows::core::Result<()> {
+pub unsafe fn CreateXmlWriter<'a, P0>(riid: *const ::windows::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void, pmalloc: P0) -> ::windows::core::Result<()>
+where
+    P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::super::System::Com::IMalloc>>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateXmlWriter(riid: *const ::windows::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void, pmalloc: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
@@ -43,7 +59,11 @@ pub unsafe fn CreateXmlWriter<'a, Param2: ::std::convert::Into<::windows::core::
 #[doc = "*Required features: `\"Win32_Data_Xml_XmlLite\"`, `\"Win32_System_Com\"`*"]
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
-pub unsafe fn CreateXmlWriterOutputWithEncodingCodePage<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>, Param1: ::std::convert::Into<::windows::core::InParam<'a, super::super::super::System::Com::IMalloc>>>(poutputstream: Param0, pmalloc: Param1, nencodingcodepage: u32) -> ::windows::core::Result<::windows::core::IUnknown> {
+pub unsafe fn CreateXmlWriterOutputWithEncodingCodePage<'a, P0, P1>(poutputstream: P0, pmalloc: P1, nencodingcodepage: u32) -> ::windows::core::Result<::windows::core::IUnknown>
+where
+    P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
+    P1: ::std::convert::Into<::windows::core::InParam<'a, super::super::super::System::Com::IMalloc>>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateXmlWriterOutputWithEncodingCodePage(poutputstream: *mut ::core::ffi::c_void, pmalloc: *mut ::core::ffi::c_void, nencodingcodepage: u32, ppoutput: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
@@ -54,7 +74,11 @@ pub unsafe fn CreateXmlWriterOutputWithEncodingCodePage<'a, Param0: ::std::conve
 #[doc = "*Required features: `\"Win32_Data_Xml_XmlLite\"`, `\"Win32_System_Com\"`*"]
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
-pub unsafe fn CreateXmlWriterOutputWithEncodingName<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>, Param1: ::std::convert::Into<::windows::core::InParam<'a, super::super::super::System::Com::IMalloc>>>(poutputstream: Param0, pmalloc: Param1, pwszencodingname: ::windows::core::PCWSTR) -> ::windows::core::Result<::windows::core::IUnknown> {
+pub unsafe fn CreateXmlWriterOutputWithEncodingName<'a, P0, P1>(poutputstream: P0, pmalloc: P1, pwszencodingname: ::windows::core::PCWSTR) -> ::windows::core::Result<::windows::core::IUnknown>
+where
+    P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
+    P1: ::std::convert::Into<::windows::core::InParam<'a, super::super::super::System::Com::IMalloc>>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateXmlWriterOutputWithEncodingName(poutputstream: *mut ::core::ffi::c_void, pmalloc: *mut ::core::ffi::c_void, pwszencodingname: ::windows::core::PCWSTR, ppoutput: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
@@ -96,7 +120,10 @@ impl ::core::fmt::Debug for DtdProcessing {
 pub struct IXmlReader(::windows::core::IUnknown);
 impl IXmlReader {
     #[doc = "*Required features: `\"Win32_Data_Xml_XmlLite\"`*"]
-    pub unsafe fn SetInput<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>>(&self, pinput: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetInput<'a, P0>(&self, pinput: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
+    {
         (::windows::core::Interface::vtable(self).SetInput)(::windows::core::Interface::as_raw(self), pinput.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_Data_Xml_XmlLite\"`*"]
@@ -325,7 +352,10 @@ pub struct IXmlResolver_Vtbl {
 pub struct IXmlWriter(::windows::core::IUnknown);
 impl IXmlWriter {
     #[doc = "*Required features: `\"Win32_Data_Xml_XmlLite\"`*"]
-    pub unsafe fn SetOutput<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>>(&self, poutput: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetOutput<'a, P0>(&self, poutput: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
+    {
         (::windows::core::Interface::vtable(self).SetOutput)(::windows::core::Interface::as_raw(self), poutput.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_Data_Xml_XmlLite\"`*"]
@@ -339,7 +369,11 @@ impl IXmlWriter {
     }
     #[doc = "*Required features: `\"Win32_Data_Xml_XmlLite\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn WriteAttributes<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IXmlReader>>, Param1: ::std::convert::Into<super::super::super::Foundation::BOOL>>(&self, preader: Param0, fwritedefaultattributes: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn WriteAttributes<'a, P0, P1>(&self, preader: P0, fwritedefaultattributes: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IXmlReader>>,
+        P1: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+    {
         (::windows::core::Interface::vtable(self).WriteAttributes)(::windows::core::Interface::as_raw(self), preader.into().abi(), fwritedefaultattributes.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_Data_Xml_XmlLite\"`*"]
@@ -396,12 +430,20 @@ impl IXmlWriter {
     }
     #[doc = "*Required features: `\"Win32_Data_Xml_XmlLite\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn WriteNode<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IXmlReader>>, Param1: ::std::convert::Into<super::super::super::Foundation::BOOL>>(&self, preader: Param0, fwritedefaultattributes: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn WriteNode<'a, P0, P1>(&self, preader: P0, fwritedefaultattributes: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IXmlReader>>,
+        P1: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+    {
         (::windows::core::Interface::vtable(self).WriteNode)(::windows::core::Interface::as_raw(self), preader.into().abi(), fwritedefaultattributes.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_Data_Xml_XmlLite\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn WriteNodeShallow<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IXmlReader>>, Param1: ::std::convert::Into<super::super::super::Foundation::BOOL>>(&self, preader: Param0, fwritedefaultattributes: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn WriteNodeShallow<'a, P0, P1>(&self, preader: P0, fwritedefaultattributes: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IXmlReader>>,
+        P1: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+    {
         (::windows::core::Interface::vtable(self).WriteNodeShallow)(::windows::core::Interface::as_raw(self), preader.into().abi(), fwritedefaultattributes.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_Data_Xml_XmlLite\"`*"]
@@ -421,7 +463,10 @@ impl IXmlWriter {
         (::windows::core::Interface::vtable(self).WriteRawChars)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(::windows::core::as_ptr_or_null(pwch)), pwch.len() as _).ok()
     }
     #[doc = "*Required features: `\"Win32_Data_Xml_XmlLite\"`*"]
-    pub unsafe fn WriteStartDocument<'a, Param0: ::std::convert::Into<XmlStandalone>>(&self, standalone: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn WriteStartDocument<'a, P0>(&self, standalone: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<XmlStandalone>,
+    {
         (::windows::core::Interface::vtable(self).WriteStartDocument)(::windows::core::Interface::as_raw(self), standalone.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_Data_Xml_XmlLite\"`*"]
@@ -528,7 +573,10 @@ pub struct IXmlWriter_Vtbl {
 pub struct IXmlWriterLite(::windows::core::IUnknown);
 impl IXmlWriterLite {
     #[doc = "*Required features: `\"Win32_Data_Xml_XmlLite\"`*"]
-    pub unsafe fn SetOutput<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>>(&self, poutput: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetOutput<'a, P0>(&self, poutput: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
+    {
         (::windows::core::Interface::vtable(self).SetOutput)(::windows::core::Interface::as_raw(self), poutput.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_Data_Xml_XmlLite\"`*"]
@@ -542,7 +590,11 @@ impl IXmlWriterLite {
     }
     #[doc = "*Required features: `\"Win32_Data_Xml_XmlLite\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn WriteAttributes<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IXmlReader>>, Param1: ::std::convert::Into<super::super::super::Foundation::BOOL>>(&self, preader: Param0, fwritedefaultattributes: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn WriteAttributes<'a, P0, P1>(&self, preader: P0, fwritedefaultattributes: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IXmlReader>>,
+        P1: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+    {
         (::windows::core::Interface::vtable(self).WriteAttributes)(::windows::core::Interface::as_raw(self), preader.into().abi(), fwritedefaultattributes.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_Data_Xml_XmlLite\"`*"]
@@ -599,12 +651,20 @@ impl IXmlWriterLite {
     }
     #[doc = "*Required features: `\"Win32_Data_Xml_XmlLite\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn WriteNode<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IXmlReader>>, Param1: ::std::convert::Into<super::super::super::Foundation::BOOL>>(&self, preader: Param0, fwritedefaultattributes: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn WriteNode<'a, P0, P1>(&self, preader: P0, fwritedefaultattributes: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IXmlReader>>,
+        P1: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+    {
         (::windows::core::Interface::vtable(self).WriteNode)(::windows::core::Interface::as_raw(self), preader.into().abi(), fwritedefaultattributes.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_Data_Xml_XmlLite\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn WriteNodeShallow<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IXmlReader>>, Param1: ::std::convert::Into<super::super::super::Foundation::BOOL>>(&self, preader: Param0, fwritedefaultattributes: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn WriteNodeShallow<'a, P0, P1>(&self, preader: P0, fwritedefaultattributes: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IXmlReader>>,
+        P1: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+    {
         (::windows::core::Interface::vtable(self).WriteNodeShallow)(::windows::core::Interface::as_raw(self), preader.into().abi(), fwritedefaultattributes.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_Data_Xml_XmlLite\"`*"]
@@ -620,7 +680,10 @@ impl IXmlWriterLite {
         (::windows::core::Interface::vtable(self).WriteRawChars)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(::windows::core::as_ptr_or_null(pwch)), pwch.len() as _).ok()
     }
     #[doc = "*Required features: `\"Win32_Data_Xml_XmlLite\"`*"]
-    pub unsafe fn WriteStartDocument<'a, Param0: ::std::convert::Into<XmlStandalone>>(&self, standalone: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn WriteStartDocument<'a, P0>(&self, standalone: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<XmlStandalone>,
+    {
         (::windows::core::Interface::vtable(self).WriteStartDocument)(::windows::core::Interface::as_raw(self), standalone.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_Data_Xml_XmlLite\"`*"]

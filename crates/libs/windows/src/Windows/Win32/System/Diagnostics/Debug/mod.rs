@@ -639,7 +639,10 @@ impl ::core::default::Default for ArrayDimension {
 pub struct AsyncIDebugApplicationNodeEvents(::windows::core::IUnknown);
 impl AsyncIDebugApplicationNodeEvents {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn Begin_onAddChild<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugApplicationNode>>>(&self, prddpchild: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn Begin_onAddChild<'a, P0>(&self, prddpchild: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugApplicationNode>>,
+    {
         (::windows::core::Interface::vtable(self).Begin_onAddChild)(::windows::core::Interface::as_raw(self), prddpchild.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -647,7 +650,10 @@ impl AsyncIDebugApplicationNodeEvents {
         (::windows::core::Interface::vtable(self).Finish_onAddChild)(::windows::core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn Begin_onRemoveChild<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugApplicationNode>>>(&self, prddpchild: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn Begin_onRemoveChild<'a, P0>(&self, prddpchild: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugApplicationNode>>,
+    {
         (::windows::core::Interface::vtable(self).Begin_onRemoveChild)(::windows::core::Interface::as_raw(self), prddpchild.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -663,7 +669,10 @@ impl AsyncIDebugApplicationNodeEvents {
         (::windows::core::Interface::vtable(self).Finish_onDetach)(::windows::core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn Begin_onAttach<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugApplicationNode>>>(&self, prddpparent: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn Begin_onAttach<'a, P0>(&self, prddpparent: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugApplicationNode>>,
+    {
         (::windows::core::Interface::vtable(self).Begin_onAttach)(::windows::core::Interface::as_raw(self), prddpparent.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -2679,7 +2688,10 @@ impl ::core::fmt::Debug for CallingConventionKind {
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CheckRemoteDebuggerPresent<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, pbdebuggerpresent: *mut super::super::super::Foundation::BOOL) -> super::super::super::Foundation::BOOL {
+pub unsafe fn CheckRemoteDebuggerPresent<'a, P0>(hprocess: P0, pbdebuggerpresent: *mut super::super::super::Foundation::BOOL) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CheckRemoteDebuggerPresent(hprocess: super::super::super::Foundation::HANDLE, pbdebuggerpresent: *mut super::super::super::Foundation::BOOL) -> super::super::super::Foundation::BOOL;
@@ -2739,7 +2751,10 @@ pub unsafe fn CopyContext(destination: *mut CONTEXT, contextflags: u32, source: 
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
 #[inline]
-pub unsafe fn CreateDataModelManager<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHost>>>(debughost: Param0) -> ::windows::core::Result<IDataModelManager> {
+pub unsafe fn CreateDataModelManager<'a, P0>(debughost: P0) -> ::windows::core::Result<IDataModelManager>
+where
+    P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHost>>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateDataModelManager(debughost: *mut ::core::ffi::c_void, manager: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
@@ -6985,7 +7000,10 @@ impl DebugBaseEventCallbacks {
         (::windows::core::Interface::vtable(self).base__.GetInterestMask)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn Breakpoint<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugBreakpoint>>>(&self, bp: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn Breakpoint<'a, P0>(&self, bp: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugBreakpoint>>,
+    {
         (::windows::core::Interface::vtable(self).base__.Breakpoint)(::windows::core::Interface::as_raw(self), bp.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
@@ -7103,7 +7121,10 @@ impl DebugBaseEventCallbacksWide {
         (::windows::core::Interface::vtable(self).base__.GetInterestMask)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn Breakpoint<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugBreakpoint2>>>(&self, bp: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn Breakpoint<'a, P0>(&self, bp: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugBreakpoint2>>,
+    {
         (::windows::core::Interface::vtable(self).base__.Breakpoint)(::windows::core::Interface::as_raw(self), bp.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
@@ -7223,7 +7244,10 @@ pub unsafe fn DebugBreak() {
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DebugBreakProcess<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(process: Param0) -> super::super::super::Foundation::BOOL {
+pub unsafe fn DebugBreakProcess<'a, P0>(process: P0) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DebugBreakProcess(process: super::super::super::Foundation::HANDLE) -> super::super::super::Foundation::BOOL;
@@ -7250,7 +7274,10 @@ pub unsafe fn DebugConnectWide(remoteoptions: ::windows::core::PCWSTR, interface
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
 #[inline]
-pub unsafe fn DebugCreate<T: ::windows::core::Interface>() -> ::windows::core::Result<T> {
+pub unsafe fn DebugCreate<T>() -> ::windows::core::Result<T>
+where
+    T: ::windows::core::Interface,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DebugCreate(interfaceid: *const ::windows::core::GUID, interface: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
@@ -7260,7 +7287,10 @@ pub unsafe fn DebugCreate<T: ::windows::core::Interface>() -> ::windows::core::R
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
 #[inline]
-pub unsafe fn DebugCreateEx<T: ::windows::core::Interface>(dbgengoptions: u32) -> ::windows::core::Result<T> {
+pub unsafe fn DebugCreateEx<T>(dbgengoptions: u32) -> ::windows::core::Result<T>
+where
+    T: ::windows::core::Interface,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DebugCreateEx(interfaceid: *const ::windows::core::GUID, dbgengoptions: u32, interface: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
@@ -7322,7 +7352,10 @@ impl ::core::default::Default for DebugPropertyInfo {
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DebugSetProcessKillOnExit<'a, Param0: ::std::convert::Into<super::super::super::Foundation::BOOL>>(killonexit: Param0) -> super::super::super::Foundation::BOOL {
+pub unsafe fn DebugSetProcessKillOnExit<'a, P0>(killonexit: P0) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DebugSetProcessKillOnExit(killonexit: super::super::super::Foundation::BOOL) -> super::super::super::Foundation::BOOL;
@@ -7421,7 +7454,10 @@ pub unsafe fn DecodePointer(ptr: *const ::core::ffi::c_void) -> *mut ::core::ffi
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DecodeRemotePointer<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(processhandle: Param0, ptr: *const ::core::ffi::c_void, decodedptr: *mut *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
+pub unsafe fn DecodeRemotePointer<'a, P0>(processhandle: P0, ptr: *const ::core::ffi::c_void, decodedptr: *mut *mut ::core::ffi::c_void) -> ::windows::core::Result<()>
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DecodeRemotePointer(processhandle: super::super::super::Foundation::HANDLE, ptr: *const ::core::ffi::c_void, decodedptr: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
@@ -8193,7 +8229,10 @@ pub unsafe fn EncodePointer(ptr: *const ::core::ffi::c_void) -> *mut ::core::ffi
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EncodeRemotePointer<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(processhandle: Param0, ptr: *const ::core::ffi::c_void, encodedptr: *mut *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
+pub unsafe fn EncodeRemotePointer<'a, P0>(processhandle: P0, ptr: *const ::core::ffi::c_void, encodedptr: *mut *mut ::core::ffi::c_void) -> ::windows::core::Result<()>
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EncodeRemotePointer(processhandle: super::super::super::Foundation::HANDLE, ptr: *const ::core::ffi::c_void, encodedptr: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
@@ -8212,7 +8251,10 @@ pub unsafe fn EncodeSystemPointer(ptr: *const ::core::ffi::c_void) -> *mut ::cor
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumDirTree<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, rootpath: ::windows::core::PCSTR, inputpathname: ::windows::core::PCSTR, outputpathbuffer: ::windows::core::PSTR, cb: PENUMDIRTREE_CALLBACK, data: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL {
+pub unsafe fn EnumDirTree<'a, P0>(hprocess: P0, rootpath: ::windows::core::PCSTR, inputpathname: ::windows::core::PCSTR, outputpathbuffer: ::windows::core::PSTR, cb: PENUMDIRTREE_CALLBACK, data: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumDirTree(hprocess: super::super::super::Foundation::HANDLE, rootpath: ::windows::core::PCSTR, inputpathname: ::windows::core::PCSTR, outputpathbuffer: ::windows::core::PSTR, cb: *mut ::core::ffi::c_void, data: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
@@ -8222,7 +8264,10 @@ pub unsafe fn EnumDirTree<'a, Param0: ::std::convert::Into<super::super::super::
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumDirTreeW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, rootpath: ::windows::core::PCWSTR, inputpathname: ::windows::core::PCWSTR, outputpathbuffer: ::windows::core::PWSTR, cb: PENUMDIRTREE_CALLBACKW, data: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL {
+pub unsafe fn EnumDirTreeW<'a, P0>(hprocess: P0, rootpath: ::windows::core::PCWSTR, inputpathname: ::windows::core::PCWSTR, outputpathbuffer: ::windows::core::PWSTR, cb: PENUMDIRTREE_CALLBACKW, data: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumDirTreeW(hprocess: super::super::super::Foundation::HANDLE, rootpath: ::windows::core::PCWSTR, inputpathname: ::windows::core::PCWSTR, outputpathbuffer: ::windows::core::PWSTR, cb: *mut ::core::ffi::c_void, data: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
@@ -8233,7 +8278,10 @@ pub unsafe fn EnumDirTreeW<'a, Param0: ::std::convert::Into<super::super::super:
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumerateLoadedModules<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, enumloadedmodulescallback: PENUMLOADED_MODULES_CALLBACK, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL {
+pub unsafe fn EnumerateLoadedModules<'a, P0>(hprocess: P0, enumloadedmodulescallback: PENUMLOADED_MODULES_CALLBACK, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumerateLoadedModules(hprocess: super::super::super::Foundation::HANDLE, enumloadedmodulescallback: *mut ::core::ffi::c_void, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
@@ -8243,7 +8291,10 @@ pub unsafe fn EnumerateLoadedModules<'a, Param0: ::std::convert::Into<super::sup
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumerateLoadedModules64<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, enumloadedmodulescallback: PENUMLOADED_MODULES_CALLBACK64, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL {
+pub unsafe fn EnumerateLoadedModules64<'a, P0>(hprocess: P0, enumloadedmodulescallback: PENUMLOADED_MODULES_CALLBACK64, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumerateLoadedModules64(hprocess: super::super::super::Foundation::HANDLE, enumloadedmodulescallback: *mut ::core::ffi::c_void, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
@@ -8253,7 +8304,10 @@ pub unsafe fn EnumerateLoadedModules64<'a, Param0: ::std::convert::Into<super::s
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumerateLoadedModulesEx<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, enumloadedmodulescallback: PENUMLOADED_MODULES_CALLBACK64, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL {
+pub unsafe fn EnumerateLoadedModulesEx<'a, P0>(hprocess: P0, enumloadedmodulescallback: PENUMLOADED_MODULES_CALLBACK64, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumerateLoadedModulesEx(hprocess: super::super::super::Foundation::HANDLE, enumloadedmodulescallback: *mut ::core::ffi::c_void, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
@@ -8263,7 +8317,10 @@ pub unsafe fn EnumerateLoadedModulesEx<'a, Param0: ::std::convert::Into<super::s
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumerateLoadedModulesExW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, enumloadedmodulescallback: PENUMLOADED_MODULES_CALLBACKW64, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL {
+pub unsafe fn EnumerateLoadedModulesExW<'a, P0>(hprocess: P0, enumloadedmodulescallback: PENUMLOADED_MODULES_CALLBACKW64, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumerateLoadedModulesExW(hprocess: super::super::super::Foundation::HANDLE, enumloadedmodulescallback: *mut ::core::ffi::c_void, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
@@ -8273,7 +8330,10 @@ pub unsafe fn EnumerateLoadedModulesExW<'a, Param0: ::std::convert::Into<super::
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumerateLoadedModulesW64<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, enumloadedmodulescallback: PENUMLOADED_MODULES_CALLBACKW64, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL {
+pub unsafe fn EnumerateLoadedModulesW64<'a, P0>(hprocess: P0, enumloadedmodulescallback: PENUMLOADED_MODULES_CALLBACKW64, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumerateLoadedModulesW64(hprocess: super::super::super::Foundation::HANDLE, enumloadedmodulescallback: *mut ::core::ffi::c_void, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
@@ -8985,7 +9045,10 @@ pub unsafe fn FindExecutableImageExW(filename: ::windows::core::PCWSTR, symbolpa
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FindFileInPath<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, searchpatha: ::windows::core::PCSTR, filename: ::windows::core::PCSTR, id: *const ::core::ffi::c_void, two: u32, three: u32, flags: u32, filepath: ::windows::core::PSTR) -> super::super::super::Foundation::BOOL {
+pub unsafe fn FindFileInPath<'a, P0>(hprocess: P0, searchpatha: ::windows::core::PCSTR, filename: ::windows::core::PCSTR, id: *const ::core::ffi::c_void, two: u32, three: u32, flags: u32, filepath: ::windows::core::PSTR) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindFileInPath(hprocess: super::super::super::Foundation::HANDLE, searchpatha: ::windows::core::PCSTR, filename: ::windows::core::PCSTR, id: *const ::core::ffi::c_void, two: u32, three: u32, flags: u32, filepath: ::windows::core::PSTR) -> super::super::super::Foundation::BOOL;
@@ -8995,7 +9058,10 @@ pub unsafe fn FindFileInPath<'a, Param0: ::std::convert::Into<super::super::supe
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FindFileInSearchPath<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, searchpatha: ::windows::core::PCSTR, filename: ::windows::core::PCSTR, one: u32, two: u32, three: u32, filepath: ::windows::core::PSTR) -> super::super::super::Foundation::BOOL {
+pub unsafe fn FindFileInSearchPath<'a, P0>(hprocess: P0, searchpatha: ::windows::core::PCSTR, filename: ::windows::core::PCSTR, one: u32, two: u32, three: u32, filepath: ::windows::core::PSTR) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindFileInSearchPath(hprocess: super::super::super::Foundation::HANDLE, searchpatha: ::windows::core::PCSTR, filename: ::windows::core::PCSTR, one: u32, two: u32, three: u32, filepath: ::windows::core::PSTR) -> super::super::super::Foundation::BOOL;
@@ -9005,7 +9071,10 @@ pub unsafe fn FindFileInSearchPath<'a, Param0: ::std::convert::Into<super::super
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FlushInstructionCache<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, lpbaseaddress: *const ::core::ffi::c_void, dwsize: usize) -> super::super::super::Foundation::BOOL {
+pub unsafe fn FlushInstructionCache<'a, P0>(hprocess: P0, lpbaseaddress: *const ::core::ffi::c_void, dwsize: usize) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FlushInstructionCache(hprocess: super::super::super::Foundation::HANDLE, lpbaseaddress: *const ::core::ffi::c_void, dwsize: usize) -> super::super::super::Foundation::BOOL;
@@ -9014,7 +9083,10 @@ pub unsafe fn FlushInstructionCache<'a, Param0: ::std::convert::Into<super::supe
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
 #[inline]
-pub unsafe fn FormatMessageA<'a, Param0: ::std::convert::Into<FORMAT_MESSAGE_OPTIONS>>(dwflags: Param0, lpsource: *const ::core::ffi::c_void, dwmessageid: u32, dwlanguageid: u32, lpbuffer: ::windows::core::PSTR, nsize: u32, arguments: *const *const i8) -> u32 {
+pub unsafe fn FormatMessageA<'a, P0>(dwflags: P0, lpsource: *const ::core::ffi::c_void, dwmessageid: u32, dwlanguageid: u32, lpbuffer: ::windows::core::PSTR, nsize: u32, arguments: *const *const i8) -> u32
+where
+    P0: ::std::convert::Into<FORMAT_MESSAGE_OPTIONS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FormatMessageA(dwflags: FORMAT_MESSAGE_OPTIONS, lpsource: *const ::core::ffi::c_void, dwmessageid: u32, dwlanguageid: u32, lpbuffer: ::windows::core::PSTR, nsize: u32, arguments: *const *const i8) -> u32;
@@ -9023,7 +9095,10 @@ pub unsafe fn FormatMessageA<'a, Param0: ::std::convert::Into<FORMAT_MESSAGE_OPT
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
 #[inline]
-pub unsafe fn FormatMessageW<'a, Param0: ::std::convert::Into<FORMAT_MESSAGE_OPTIONS>>(dwflags: Param0, lpsource: *const ::core::ffi::c_void, dwmessageid: u32, dwlanguageid: u32, lpbuffer: ::windows::core::PWSTR, nsize: u32, arguments: *const *const i8) -> u32 {
+pub unsafe fn FormatMessageW<'a, P0>(dwflags: P0, lpsource: *const ::core::ffi::c_void, dwmessageid: u32, dwlanguageid: u32, lpbuffer: ::windows::core::PWSTR, nsize: u32, arguments: *const *const i8) -> u32
+where
+    P0: ::std::convert::Into<FORMAT_MESSAGE_OPTIONS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FormatMessageW(dwflags: FORMAT_MESSAGE_OPTIONS, lpsource: *const ::core::ffi::c_void, dwmessageid: u32, dwlanguageid: u32, lpbuffer: ::windows::core::PWSTR, nsize: u32, arguments: *const *const i8) -> u32;
@@ -9354,7 +9429,10 @@ pub unsafe fn GetSymLoadError() -> u32 {
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`, `\"Win32_System_Kernel\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
 #[inline]
-pub unsafe fn GetThreadContext<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hthread: Param0, lpcontext: *mut CONTEXT) -> super::super::super::Foundation::BOOL {
+pub unsafe fn GetThreadContext<'a, P0>(hthread: P0, lpcontext: *mut CONTEXT) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetThreadContext(hthread: super::super::super::Foundation::HANDLE, lpcontext: *mut CONTEXT) -> super::super::super::Foundation::BOOL;
@@ -9373,7 +9451,10 @@ pub unsafe fn GetThreadErrorMode() -> u32 {
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetThreadSelectorEntry<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hthread: Param0, dwselector: u32, lpselectorentry: *mut LDT_ENTRY) -> super::super::super::Foundation::BOOL {
+pub unsafe fn GetThreadSelectorEntry<'a, P0>(hthread: P0, dwselector: u32, lpselectorentry: *mut LDT_ENTRY) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetThreadSelectorEntry(hthread: super::super::super::Foundation::HANDLE, dwselector: u32, lpselectorentry: *mut LDT_ENTRY) -> super::super::super::Foundation::BOOL;
@@ -9383,7 +9464,10 @@ pub unsafe fn GetThreadSelectorEntry<'a, Param0: ::std::convert::Into<super::sup
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetThreadWaitChain<'a, Param2: ::std::convert::Into<WAIT_CHAIN_THREAD_OPTIONS>>(wcthandle: *const ::core::ffi::c_void, context: usize, flags: Param2, threadid: u32, nodecount: *mut u32, nodeinfoarray: *mut WAITCHAIN_NODE_INFO, iscycle: *mut i32) -> super::super::super::Foundation::BOOL {
+pub unsafe fn GetThreadWaitChain<'a, P0>(wcthandle: *const ::core::ffi::c_void, context: usize, flags: P0, threadid: u32, nodecount: *mut u32, nodeinfoarray: *mut WAITCHAIN_NODE_INFO, iscycle: *mut i32) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<WAIT_CHAIN_THREAD_OPTIONS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetThreadWaitChain(wcthandle: *const ::core::ffi::c_void, context: usize, flags: WAIT_CHAIN_THREAD_OPTIONS, threadid: u32, nodecount: *mut u32, nodeinfoarray: *mut WAITCHAIN_NODE_INFO, iscycle: *mut i32) -> super::super::super::Foundation::BOOL;
@@ -9393,7 +9477,10 @@ pub unsafe fn GetThreadWaitChain<'a, Param2: ::std::convert::Into<WAIT_CHAIN_THR
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetTimestampForLoadedLibrary<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HINSTANCE>>(module: Param0) -> u32 {
+pub unsafe fn GetTimestampForLoadedLibrary<'a, P0>(module: P0) -> u32
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HINSTANCE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetTimestampForLoadedLibrary(module: super::super::super::Foundation::HINSTANCE) -> u32;
@@ -9416,16 +9503,25 @@ pub unsafe fn GetXStateFeaturesMask(context: *const CONTEXT, featuremask: *mut u
 pub struct IActiveScript(::windows::core::IUnknown);
 impl IActiveScript {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetScriptSite<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IActiveScriptSite>>>(&self, pass: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetScriptSite<'a, P0>(&self, pass: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IActiveScriptSite>>,
+    {
         (::windows::core::Interface::vtable(self).SetScriptSite)(::windows::core::Interface::as_raw(self), pass.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn GetScriptSite<T: ::windows::core::Interface>(&self) -> ::windows::core::Result<T> {
+    pub unsafe fn GetScriptSite<T>(&self) -> ::windows::core::Result<T>
+    where
+        T: ::windows::core::Interface,
+    {
         let mut result__ = ::core::option::Option::None;
         (::windows::core::Interface::vtable(self).GetScriptSite)(::windows::core::Interface::as_raw(self), &<T as ::windows::core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetScriptState<'a, Param0: ::std::convert::Into<SCRIPTSTATE>>(&self, ss: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetScriptState<'a, P0>(&self, ss: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<SCRIPTSTATE>,
+    {
         (::windows::core::Interface::vtable(self).SetScriptState)(::windows::core::Interface::as_raw(self), ss.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -9542,7 +9638,10 @@ pub struct IActiveScriptAuthor(::windows::core::IUnknown);
 impl IActiveScriptAuthor {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn AddNamedItem<'a, Param2: ::std::convert::Into<::windows::core::InParam<'a, super::super::Com::IDispatch>>>(&self, pszname: ::windows::core::PCWSTR, dwflags: u32, pdisp: Param2) -> ::windows::core::Result<()> {
+    pub unsafe fn AddNamedItem<'a, P0>(&self, pszname: ::windows::core::PCWSTR, dwflags: u32, pdisp: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Com::IDispatch>>,
+    {
         (::windows::core::Interface::vtable(self).AddNamedItem)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pszname), ::core::mem::transmute(dwflags), pdisp.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -9573,7 +9672,10 @@ impl IActiveScriptAuthor {
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn GetEventHandler<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Com::IDispatch>>>(&self, pdisp: Param0, pszitem: ::windows::core::PCWSTR, pszsubitem: ::windows::core::PCWSTR, pszevent: ::windows::core::PCWSTR) -> ::windows::core::Result<IScriptEntry> {
+    pub unsafe fn GetEventHandler<'a, P0>(&self, pdisp: P0, pszitem: ::windows::core::PCWSTR, pszsubitem: ::windows::core::PCWSTR, pszevent: ::windows::core::PCWSTR) -> ::windows::core::Result<IScriptEntry>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Com::IDispatch>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).GetEventHandler)(::windows::core::Interface::as_raw(self), pdisp.into().abi(), ::core::mem::transmute(pszitem), ::core::mem::transmute(pszsubitem), ::core::mem::transmute(pszevent), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IScriptEntry>(result__)
     }
@@ -9678,7 +9780,10 @@ pub struct IActiveScriptAuthorProcedure(::windows::core::IUnknown);
 impl IActiveScriptAuthorProcedure {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn ParseProcedureText<'a, Param7: ::std::convert::Into<::windows::core::InParam<'a, super::super::Com::IDispatch>>>(&self, pszcode: ::windows::core::PCWSTR, pszformalparams: ::windows::core::PCWSTR, pszprocedurename: ::windows::core::PCWSTR, pszitemname: ::windows::core::PCWSTR, pszdelimiter: ::windows::core::PCWSTR, dwcookie: u32, dwflags: u32, pdispfor: Param7) -> ::windows::core::Result<()> {
+    pub unsafe fn ParseProcedureText<'a, P0>(&self, pszcode: ::windows::core::PCWSTR, pszformalparams: ::windows::core::PCWSTR, pszprocedurename: ::windows::core::PCWSTR, pszitemname: ::windows::core::PCWSTR, pszdelimiter: ::windows::core::PCWSTR, dwcookie: u32, dwflags: u32, pdispfor: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Com::IDispatch>>,
+    {
         (::windows::core::Interface::vtable(self).ParseProcedureText)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pszcode), ::core::mem::transmute(pszformalparams), ::core::mem::transmute(pszprocedurename), ::core::mem::transmute(pszitemname), ::core::mem::transmute(pszdelimiter), ::core::mem::transmute(dwcookie), ::core::mem::transmute(dwflags), pdispfor.into().abi()).ok()
     }
 }
@@ -10207,7 +10312,10 @@ pub struct IActiveScriptErrorDebug110_Vtbl {
 pub struct IActiveScriptGarbageCollector(::windows::core::IUnknown);
 impl IActiveScriptGarbageCollector {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn CollectGarbage<'a, Param0: ::std::convert::Into<SCRIPTGCTYPE>>(&self, scriptgctype: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn CollectGarbage<'a, P0>(&self, scriptgctype: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<SCRIPTGCTYPE>,
+    {
         (::windows::core::Interface::vtable(self).CollectGarbage)(::windows::core::Interface::as_raw(self), scriptgctype.into()).ok()
     }
 }
@@ -10258,7 +10366,11 @@ pub struct IActiveScriptHostEncode(::windows::core::IUnknown);
 impl IActiveScriptHostEncode {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn EncodeScriptHostFile<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, super::super::super::Foundation::BSTR>>, Param3: ::std::convert::Into<::windows::core::InParam<'a, super::super::super::Foundation::BSTR>>>(&self, bstrinfile: Param0, pbstroutfile: *mut super::super::super::Foundation::BSTR, cflags: u32, bstrdefaultlang: Param3) -> ::windows::core::Result<()> {
+    pub unsafe fn EncodeScriptHostFile<'a, P0, P1>(&self, bstrinfile: P0, pbstroutfile: *mut super::super::super::Foundation::BSTR, cflags: u32, bstrdefaultlang: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::super::Foundation::BSTR>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, super::super::super::Foundation::BSTR>>,
+    {
         (::windows::core::Interface::vtable(self).EncodeScriptHostFile)(::windows::core::Interface::as_raw(self), bstrinfile.into().abi(), ::core::mem::transmute(pbstroutfile), ::core::mem::transmute(cflags), bstrdefaultlang.into().abi()).ok()
     }
 }
@@ -10321,7 +10433,10 @@ impl IActiveScriptParse32 {
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn ParseScriptText<'a, Param2: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>>(&self, pstrcode: ::windows::core::PCWSTR, pstritemname: ::windows::core::PCWSTR, punkcontext: Param2, pstrdelimiter: ::windows::core::PCWSTR, dwsourcecontextcookie: u32, ulstartinglinenumber: u32, dwflags: u32, pvarresult: *mut super::super::Com::VARIANT, pexcepinfo: *mut super::super::Com::EXCEPINFO) -> ::windows::core::Result<()> {
+    pub unsafe fn ParseScriptText<'a, P0>(&self, pstrcode: ::windows::core::PCWSTR, pstritemname: ::windows::core::PCWSTR, punkcontext: P0, pstrdelimiter: ::windows::core::PCWSTR, dwsourcecontextcookie: u32, ulstartinglinenumber: u32, dwflags: u32, pvarresult: *mut super::super::Com::VARIANT, pexcepinfo: *mut super::super::Com::EXCEPINFO) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
+    {
         (::windows::core::Interface::vtable(self).ParseScriptText)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pstrcode), ::core::mem::transmute(pstritemname), punkcontext.into().abi(), ::core::mem::transmute(pstrdelimiter), ::core::mem::transmute(dwsourcecontextcookie), ::core::mem::transmute(ulstartinglinenumber), ::core::mem::transmute(dwflags), ::core::mem::transmute(pvarresult), ::core::mem::transmute(pexcepinfo)).ok()
     }
 }
@@ -10389,7 +10504,10 @@ impl IActiveScriptParse64 {
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn ParseScriptText<'a, Param2: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>>(&self, pstrcode: ::windows::core::PCWSTR, pstritemname: ::windows::core::PCWSTR, punkcontext: Param2, pstrdelimiter: ::windows::core::PCWSTR, dwsourcecontextcookie: u64, ulstartinglinenumber: u32, dwflags: u32, pvarresult: *mut super::super::Com::VARIANT, pexcepinfo: *mut super::super::Com::EXCEPINFO) -> ::windows::core::Result<()> {
+    pub unsafe fn ParseScriptText<'a, P0>(&self, pstrcode: ::windows::core::PCWSTR, pstritemname: ::windows::core::PCWSTR, punkcontext: P0, pstrdelimiter: ::windows::core::PCWSTR, dwsourcecontextcookie: u64, ulstartinglinenumber: u32, dwflags: u32, pvarresult: *mut super::super::Com::VARIANT, pexcepinfo: *mut super::super::Com::EXCEPINFO) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
+    {
         (::windows::core::Interface::vtable(self).ParseScriptText)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pstrcode), ::core::mem::transmute(pstritemname), punkcontext.into().abi(), ::core::mem::transmute(pstrdelimiter), ::core::mem::transmute(dwsourcecontextcookie), ::core::mem::transmute(ulstartinglinenumber), ::core::mem::transmute(dwflags), ::core::mem::transmute(pvarresult), ::core::mem::transmute(pexcepinfo)).ok()
     }
 }
@@ -10448,7 +10566,10 @@ pub struct IActiveScriptParseProcedure2_32(::windows::core::IUnknown);
 impl IActiveScriptParseProcedure2_32 {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn ParseProcedureText<'a, Param4: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>>(&self, pstrcode: ::windows::core::PCWSTR, pstrformalparams: ::windows::core::PCWSTR, pstrprocedurename: ::windows::core::PCWSTR, pstritemname: ::windows::core::PCWSTR, punkcontext: Param4, pstrdelimiter: ::windows::core::PCWSTR, dwsourcecontextcookie: u32, ulstartinglinenumber: u32, dwflags: u32) -> ::windows::core::Result<super::super::Com::IDispatch> {
+    pub unsafe fn ParseProcedureText<'a, P0>(&self, pstrcode: ::windows::core::PCWSTR, pstrformalparams: ::windows::core::PCWSTR, pstrprocedurename: ::windows::core::PCWSTR, pstritemname: ::windows::core::PCWSTR, punkcontext: P0, pstrdelimiter: ::windows::core::PCWSTR, dwsourcecontextcookie: u32, ulstartinglinenumber: u32, dwflags: u32) -> ::windows::core::Result<super::super::Com::IDispatch>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).base__.ParseProcedureText)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pstrcode), ::core::mem::transmute(pstrformalparams), ::core::mem::transmute(pstrprocedurename), ::core::mem::transmute(pstritemname), punkcontext.into().abi(), ::core::mem::transmute(pstrdelimiter), ::core::mem::transmute(dwsourcecontextcookie), ::core::mem::transmute(ulstartinglinenumber), ::core::mem::transmute(dwflags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Com::IDispatch>(result__)
     }
@@ -10514,7 +10635,10 @@ pub struct IActiveScriptParseProcedure2_64(::windows::core::IUnknown);
 impl IActiveScriptParseProcedure2_64 {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn ParseProcedureText<'a, Param4: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>>(&self, pstrcode: ::windows::core::PCWSTR, pstrformalparams: ::windows::core::PCWSTR, pstrprocedurename: ::windows::core::PCWSTR, pstritemname: ::windows::core::PCWSTR, punkcontext: Param4, pstrdelimiter: ::windows::core::PCWSTR, dwsourcecontextcookie: u64, ulstartinglinenumber: u32, dwflags: u32) -> ::windows::core::Result<super::super::Com::IDispatch> {
+    pub unsafe fn ParseProcedureText<'a, P0>(&self, pstrcode: ::windows::core::PCWSTR, pstrformalparams: ::windows::core::PCWSTR, pstrprocedurename: ::windows::core::PCWSTR, pstritemname: ::windows::core::PCWSTR, punkcontext: P0, pstrdelimiter: ::windows::core::PCWSTR, dwsourcecontextcookie: u64, ulstartinglinenumber: u32, dwflags: u32) -> ::windows::core::Result<super::super::Com::IDispatch>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).base__.ParseProcedureText)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pstrcode), ::core::mem::transmute(pstrformalparams), ::core::mem::transmute(pstrprocedurename), ::core::mem::transmute(pstritemname), punkcontext.into().abi(), ::core::mem::transmute(pstrdelimiter), ::core::mem::transmute(dwsourcecontextcookie), ::core::mem::transmute(ulstartinglinenumber), ::core::mem::transmute(dwflags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Com::IDispatch>(result__)
     }
@@ -10580,7 +10704,10 @@ pub struct IActiveScriptParseProcedure32(::windows::core::IUnknown);
 impl IActiveScriptParseProcedure32 {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn ParseProcedureText<'a, Param4: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>>(&self, pstrcode: ::windows::core::PCWSTR, pstrformalparams: ::windows::core::PCWSTR, pstrprocedurename: ::windows::core::PCWSTR, pstritemname: ::windows::core::PCWSTR, punkcontext: Param4, pstrdelimiter: ::windows::core::PCWSTR, dwsourcecontextcookie: u32, ulstartinglinenumber: u32, dwflags: u32) -> ::windows::core::Result<super::super::Com::IDispatch> {
+    pub unsafe fn ParseProcedureText<'a, P0>(&self, pstrcode: ::windows::core::PCWSTR, pstrformalparams: ::windows::core::PCWSTR, pstrprocedurename: ::windows::core::PCWSTR, pstritemname: ::windows::core::PCWSTR, punkcontext: P0, pstrdelimiter: ::windows::core::PCWSTR, dwsourcecontextcookie: u32, ulstartinglinenumber: u32, dwflags: u32) -> ::windows::core::Result<super::super::Com::IDispatch>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).ParseProcedureText)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pstrcode), ::core::mem::transmute(pstrformalparams), ::core::mem::transmute(pstrprocedurename), ::core::mem::transmute(pstritemname), punkcontext.into().abi(), ::core::mem::transmute(pstrdelimiter), ::core::mem::transmute(dwsourcecontextcookie), ::core::mem::transmute(ulstartinglinenumber), ::core::mem::transmute(dwflags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Com::IDispatch>(result__)
     }
@@ -10635,7 +10762,10 @@ pub struct IActiveScriptParseProcedure64(::windows::core::IUnknown);
 impl IActiveScriptParseProcedure64 {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn ParseProcedureText<'a, Param4: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>>(&self, pstrcode: ::windows::core::PCWSTR, pstrformalparams: ::windows::core::PCWSTR, pstrprocedurename: ::windows::core::PCWSTR, pstritemname: ::windows::core::PCWSTR, punkcontext: Param4, pstrdelimiter: ::windows::core::PCWSTR, dwsourcecontextcookie: u64, ulstartinglinenumber: u32, dwflags: u32) -> ::windows::core::Result<super::super::Com::IDispatch> {
+    pub unsafe fn ParseProcedureText<'a, P0>(&self, pstrcode: ::windows::core::PCWSTR, pstrformalparams: ::windows::core::PCWSTR, pstrprocedurename: ::windows::core::PCWSTR, pstritemname: ::windows::core::PCWSTR, punkcontext: P0, pstrdelimiter: ::windows::core::PCWSTR, dwsourcecontextcookie: u64, ulstartinglinenumber: u32, dwflags: u32) -> ::windows::core::Result<super::super::Com::IDispatch>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).ParseProcedureText)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pstrcode), ::core::mem::transmute(pstrformalparams), ::core::mem::transmute(pstrprocedurename), ::core::mem::transmute(pstritemname), punkcontext.into().abi(), ::core::mem::transmute(pstrdelimiter), ::core::mem::transmute(dwsourcecontextcookie), ::core::mem::transmute(ulstartinglinenumber), ::core::mem::transmute(dwflags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Com::IDispatch>(result__)
     }
@@ -10690,7 +10820,10 @@ pub struct IActiveScriptParseProcedureOld32(::windows::core::IUnknown);
 impl IActiveScriptParseProcedureOld32 {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn ParseProcedureText<'a, Param3: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>>(&self, pstrcode: ::windows::core::PCWSTR, pstrformalparams: ::windows::core::PCWSTR, pstritemname: ::windows::core::PCWSTR, punkcontext: Param3, pstrdelimiter: ::windows::core::PCWSTR, dwsourcecontextcookie: u32, ulstartinglinenumber: u32, dwflags: u32) -> ::windows::core::Result<super::super::Com::IDispatch> {
+    pub unsafe fn ParseProcedureText<'a, P0>(&self, pstrcode: ::windows::core::PCWSTR, pstrformalparams: ::windows::core::PCWSTR, pstritemname: ::windows::core::PCWSTR, punkcontext: P0, pstrdelimiter: ::windows::core::PCWSTR, dwsourcecontextcookie: u32, ulstartinglinenumber: u32, dwflags: u32) -> ::windows::core::Result<super::super::Com::IDispatch>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).ParseProcedureText)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pstrcode), ::core::mem::transmute(pstrformalparams), ::core::mem::transmute(pstritemname), punkcontext.into().abi(), ::core::mem::transmute(pstrdelimiter), ::core::mem::transmute(dwsourcecontextcookie), ::core::mem::transmute(ulstartinglinenumber), ::core::mem::transmute(dwflags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Com::IDispatch>(result__)
     }
@@ -10745,7 +10878,10 @@ pub struct IActiveScriptParseProcedureOld64(::windows::core::IUnknown);
 impl IActiveScriptParseProcedureOld64 {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn ParseProcedureText<'a, Param3: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>>(&self, pstrcode: ::windows::core::PCWSTR, pstrformalparams: ::windows::core::PCWSTR, pstritemname: ::windows::core::PCWSTR, punkcontext: Param3, pstrdelimiter: ::windows::core::PCWSTR, dwsourcecontextcookie: u64, ulstartinglinenumber: u32, dwflags: u32) -> ::windows::core::Result<super::super::Com::IDispatch> {
+    pub unsafe fn ParseProcedureText<'a, P0>(&self, pstrcode: ::windows::core::PCWSTR, pstrformalparams: ::windows::core::PCWSTR, pstritemname: ::windows::core::PCWSTR, punkcontext: P0, pstrdelimiter: ::windows::core::PCWSTR, dwsourcecontextcookie: u64, ulstartinglinenumber: u32, dwflags: u32) -> ::windows::core::Result<super::super::Com::IDispatch>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).ParseProcedureText)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pstrcode), ::core::mem::transmute(pstrformalparams), ::core::mem::transmute(pstritemname), punkcontext.into().abi(), ::core::mem::transmute(pstrdelimiter), ::core::mem::transmute(dwsourcecontextcookie), ::core::mem::transmute(ulstartinglinenumber), ::core::mem::transmute(dwflags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Com::IDispatch>(result__)
     }
@@ -10807,11 +10943,18 @@ impl IActiveScriptProfilerCallback {
         (::windows::core::Interface::vtable(self).Shutdown)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(hrreason)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn ScriptCompiled<'a, Param1: ::std::convert::Into<PROFILER_SCRIPT_TYPE>, Param2: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>>(&self, scriptid: i32, r#type: Param1, pidebugdocumentcontext: Param2) -> ::windows::core::Result<()> {
+    pub unsafe fn ScriptCompiled<'a, P0, P1>(&self, scriptid: i32, r#type: P0, pidebugdocumentcontext: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<PROFILER_SCRIPT_TYPE>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
+    {
         (::windows::core::Interface::vtable(self).ScriptCompiled)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(scriptid), r#type.into(), pidebugdocumentcontext.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn FunctionCompiled<'a, Param4: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>>(&self, functionid: i32, scriptid: i32, pwszfunctionname: ::windows::core::PCWSTR, pwszfunctionnamehint: ::windows::core::PCWSTR, pidebugdocumentcontext: Param4) -> ::windows::core::Result<()> {
+    pub unsafe fn FunctionCompiled<'a, P0>(&self, functionid: i32, scriptid: i32, pwszfunctionname: ::windows::core::PCWSTR, pwszfunctionnamehint: ::windows::core::PCWSTR, pidebugdocumentcontext: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
+    {
         (::windows::core::Interface::vtable(self).FunctionCompiled)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(functionid), ::core::mem::transmute(scriptid), ::core::mem::transmute(pwszfunctionname), ::core::mem::transmute(pwszfunctionnamehint), pidebugdocumentcontext.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -10882,11 +11025,18 @@ impl IActiveScriptProfilerCallback2 {
         (::windows::core::Interface::vtable(self).base__.Shutdown)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(hrreason)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn ScriptCompiled<'a, Param1: ::std::convert::Into<PROFILER_SCRIPT_TYPE>, Param2: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>>(&self, scriptid: i32, r#type: Param1, pidebugdocumentcontext: Param2) -> ::windows::core::Result<()> {
+    pub unsafe fn ScriptCompiled<'a, P0, P1>(&self, scriptid: i32, r#type: P0, pidebugdocumentcontext: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<PROFILER_SCRIPT_TYPE>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
+    {
         (::windows::core::Interface::vtable(self).base__.ScriptCompiled)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(scriptid), r#type.into(), pidebugdocumentcontext.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn FunctionCompiled<'a, Param4: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>>(&self, functionid: i32, scriptid: i32, pwszfunctionname: ::windows::core::PCWSTR, pwszfunctionnamehint: ::windows::core::PCWSTR, pidebugdocumentcontext: Param4) -> ::windows::core::Result<()> {
+    pub unsafe fn FunctionCompiled<'a, P0>(&self, functionid: i32, scriptid: i32, pwszfunctionname: ::windows::core::PCWSTR, pwszfunctionnamehint: ::windows::core::PCWSTR, pidebugdocumentcontext: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
+    {
         (::windows::core::Interface::vtable(self).base__.FunctionCompiled)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(functionid), ::core::mem::transmute(scriptid), ::core::mem::transmute(pwszfunctionname), ::core::mem::transmute(pwszfunctionnamehint), pidebugdocumentcontext.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -10898,11 +11048,17 @@ impl IActiveScriptProfilerCallback2 {
         (::windows::core::Interface::vtable(self).base__.OnFunctionExit)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(scriptid), ::core::mem::transmute(functionid)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn OnFunctionEnterByName<'a, Param1: ::std::convert::Into<PROFILER_SCRIPT_TYPE>>(&self, pwszfunctionname: ::windows::core::PCWSTR, r#type: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn OnFunctionEnterByName<'a, P0>(&self, pwszfunctionname: ::windows::core::PCWSTR, r#type: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<PROFILER_SCRIPT_TYPE>,
+    {
         (::windows::core::Interface::vtable(self).OnFunctionEnterByName)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pwszfunctionname), r#type.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn OnFunctionExitByName<'a, Param1: ::std::convert::Into<PROFILER_SCRIPT_TYPE>>(&self, pwszfunctionname: ::windows::core::PCWSTR, r#type: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn OnFunctionExitByName<'a, P0>(&self, pwszfunctionname: ::windows::core::PCWSTR, r#type: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<PROFILER_SCRIPT_TYPE>,
+    {
         (::windows::core::Interface::vtable(self).OnFunctionExitByName)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pwszfunctionname), r#type.into()).ok()
     }
 }
@@ -10976,11 +11132,18 @@ impl IActiveScriptProfilerCallback3 {
         (::windows::core::Interface::vtable(self).base__.base__.Shutdown)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(hrreason)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn ScriptCompiled<'a, Param1: ::std::convert::Into<PROFILER_SCRIPT_TYPE>, Param2: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>>(&self, scriptid: i32, r#type: Param1, pidebugdocumentcontext: Param2) -> ::windows::core::Result<()> {
+    pub unsafe fn ScriptCompiled<'a, P0, P1>(&self, scriptid: i32, r#type: P0, pidebugdocumentcontext: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<PROFILER_SCRIPT_TYPE>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
+    {
         (::windows::core::Interface::vtable(self).base__.base__.ScriptCompiled)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(scriptid), r#type.into(), pidebugdocumentcontext.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn FunctionCompiled<'a, Param4: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>>(&self, functionid: i32, scriptid: i32, pwszfunctionname: ::windows::core::PCWSTR, pwszfunctionnamehint: ::windows::core::PCWSTR, pidebugdocumentcontext: Param4) -> ::windows::core::Result<()> {
+    pub unsafe fn FunctionCompiled<'a, P0>(&self, functionid: i32, scriptid: i32, pwszfunctionname: ::windows::core::PCWSTR, pwszfunctionnamehint: ::windows::core::PCWSTR, pidebugdocumentcontext: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
+    {
         (::windows::core::Interface::vtable(self).base__.base__.FunctionCompiled)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(functionid), ::core::mem::transmute(scriptid), ::core::mem::transmute(pwszfunctionname), ::core::mem::transmute(pwszfunctionnamehint), pidebugdocumentcontext.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -10992,11 +11155,17 @@ impl IActiveScriptProfilerCallback3 {
         (::windows::core::Interface::vtable(self).base__.base__.OnFunctionExit)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(scriptid), ::core::mem::transmute(functionid)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn OnFunctionEnterByName<'a, Param1: ::std::convert::Into<PROFILER_SCRIPT_TYPE>>(&self, pwszfunctionname: ::windows::core::PCWSTR, r#type: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn OnFunctionEnterByName<'a, P0>(&self, pwszfunctionname: ::windows::core::PCWSTR, r#type: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<PROFILER_SCRIPT_TYPE>,
+    {
         (::windows::core::Interface::vtable(self).base__.OnFunctionEnterByName)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pwszfunctionname), r#type.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn OnFunctionExitByName<'a, Param1: ::std::convert::Into<PROFILER_SCRIPT_TYPE>>(&self, pwszfunctionname: ::windows::core::PCWSTR, r#type: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn OnFunctionExitByName<'a, P0>(&self, pwszfunctionname: ::windows::core::PCWSTR, r#type: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<PROFILER_SCRIPT_TYPE>,
+    {
         (::windows::core::Interface::vtable(self).base__.OnFunctionExitByName)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pwszfunctionname), r#type.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -11472,7 +11641,10 @@ impl IActiveScriptProfilerControl5 {
         (::windows::core::Interface::vtable(self).base__.SummarizeHeap)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(heapsummary)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn EnumHeap2<'a, Param0: ::std::convert::Into<PROFILER_HEAP_ENUM_FLAGS>>(&self, enumflags: Param0) -> ::windows::core::Result<IActiveScriptProfilerHeapEnum> {
+    pub unsafe fn EnumHeap2<'a, P0>(&self, enumflags: P0) -> ::windows::core::Result<IActiveScriptProfilerHeapEnum>
+    where
+        P0: ::std::convert::Into<PROFILER_HEAP_ENUM_FLAGS>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).EnumHeap2)(::windows::core::Interface::as_raw(self), enumflags.into(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IActiveScriptProfilerHeapEnum>(result__)
     }
@@ -11788,11 +11960,17 @@ impl IActiveScriptSite {
         (::windows::core::Interface::vtable(self).OnScriptTerminate)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pvarresult), ::core::mem::transmute(pexcepinfo)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn OnStateChange<'a, Param0: ::std::convert::Into<SCRIPTSTATE>>(&self, ssscriptstate: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn OnStateChange<'a, P0>(&self, ssscriptstate: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<SCRIPTSTATE>,
+    {
         (::windows::core::Interface::vtable(self).OnStateChange)(::windows::core::Interface::as_raw(self), ssscriptstate.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn OnScriptError<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IActiveScriptError>>>(&self, pscripterror: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn OnScriptError<'a, P0>(&self, pscripterror: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IActiveScriptError>>,
+    {
         (::windows::core::Interface::vtable(self).OnScriptError)(::windows::core::Interface::as_raw(self), pscripterror.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -11882,7 +12060,10 @@ impl IActiveScriptSiteDebug32 {
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn OnScriptErrorDebug<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IActiveScriptErrorDebug>>>(&self, perrordebug: Param0, pfenterdebugger: *mut super::super::super::Foundation::BOOL, pfcallonscripterrorwhencontinuing: *mut super::super::super::Foundation::BOOL) -> ::windows::core::Result<()> {
+    pub unsafe fn OnScriptErrorDebug<'a, P0>(&self, perrordebug: P0, pfenterdebugger: *mut super::super::super::Foundation::BOOL, pfcallonscripterrorwhencontinuing: *mut super::super::super::Foundation::BOOL) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IActiveScriptErrorDebug>>,
+    {
         (::windows::core::Interface::vtable(self).OnScriptErrorDebug)(::windows::core::Interface::as_raw(self), perrordebug.into().abi(), ::core::mem::transmute(pfenterdebugger), ::core::mem::transmute(pfcallonscripterrorwhencontinuing)).ok()
     }
 }
@@ -11954,7 +12135,10 @@ impl IActiveScriptSiteDebug64 {
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn OnScriptErrorDebug<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IActiveScriptErrorDebug>>>(&self, perrordebug: Param0, pfenterdebugger: *mut super::super::super::Foundation::BOOL, pfcallonscripterrorwhencontinuing: *mut super::super::super::Foundation::BOOL) -> ::windows::core::Result<()> {
+    pub unsafe fn OnScriptErrorDebug<'a, P0>(&self, perrordebug: P0, pfenterdebugger: *mut super::super::super::Foundation::BOOL, pfcallonscripterrorwhencontinuing: *mut super::super::super::Foundation::BOOL) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IActiveScriptErrorDebug>>,
+    {
         (::windows::core::Interface::vtable(self).OnScriptErrorDebug)(::windows::core::Interface::as_raw(self), perrordebug.into().abi(), ::core::mem::transmute(pfenterdebugger), ::core::mem::transmute(pfcallonscripterrorwhencontinuing)).ok()
     }
 }
@@ -12011,7 +12195,10 @@ pub struct IActiveScriptSiteDebugEx(::windows::core::IUnknown);
 impl IActiveScriptSiteDebugEx {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn OnCanNotJITScriptErrorDebug<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IActiveScriptErrorDebug>>>(&self, perrordebug: Param0) -> ::windows::core::Result<super::super::super::Foundation::BOOL> {
+    pub unsafe fn OnCanNotJITScriptErrorDebug<'a, P0>(&self, perrordebug: P0) -> ::windows::core::Result<super::super::super::Foundation::BOOL>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IActiveScriptErrorDebug>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::BOOL>::zeroed();
         (::windows::core::Interface::vtable(self).OnCanNotJITScriptErrorDebug)(::windows::core::Interface::as_raw(self), perrordebug.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BOOL>(result__)
     }
@@ -12115,7 +12302,10 @@ pub struct IActiveScriptSiteInterruptPoll_Vtbl {
 pub struct IActiveScriptSiteTraceInfo(::windows::core::IUnknown);
 impl IActiveScriptSiteTraceInfo {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SendScriptTraceInfo<'a, Param0: ::std::convert::Into<SCRIPTTRACEINFO>>(&self, stieventtype: Param0, guidcontextid: ::windows::core::GUID, dwscriptcontextcookie: u32, lscriptstatementstart: i32, lscriptstatementend: i32, dwreserved: u64) -> ::windows::core::Result<()> {
+    pub unsafe fn SendScriptTraceInfo<'a, P0>(&self, stieventtype: P0, guidcontextid: ::windows::core::GUID, dwscriptcontextcookie: u32, lscriptstatementstart: i32, lscriptstatementend: i32, dwreserved: u64) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<SCRIPTTRACEINFO>,
+    {
         (::windows::core::Interface::vtable(self).SendScriptTraceInfo)(::windows::core::Interface::as_raw(self), stieventtype.into(), ::core::mem::transmute(guidcontextid), ::core::mem::transmute(dwscriptcontextcookie), ::core::mem::transmute(lscriptstatementstart), ::core::mem::transmute(lscriptstatementend), ::core::mem::transmute(dwreserved)).ok()
     }
 }
@@ -12165,7 +12355,10 @@ pub struct IActiveScriptSiteTraceInfo_Vtbl {
 pub struct IActiveScriptSiteUIControl(::windows::core::IUnknown);
 impl IActiveScriptSiteUIControl {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn GetUIBehavior<'a, Param0: ::std::convert::Into<SCRIPTUICITEM>>(&self, uicitem: Param0) -> ::windows::core::Result<SCRIPTUICHANDLING> {
+    pub unsafe fn GetUIBehavior<'a, P0>(&self, uicitem: P0) -> ::windows::core::Result<SCRIPTUICHANDLING>
+    where
+        P0: ::std::convert::Into<SCRIPTUICITEM>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<SCRIPTUICHANDLING>::zeroed();
         (::windows::core::Interface::vtable(self).GetUIBehavior)(::windows::core::Interface::as_raw(self), uicitem.into(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<SCRIPTUICHANDLING>(result__)
     }
@@ -12223,7 +12416,10 @@ impl IActiveScriptSiteWindow {
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn EnableModeless<'a, Param0: ::std::convert::Into<super::super::super::Foundation::BOOL>>(&self, fenable: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn EnableModeless<'a, P0>(&self, fenable: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+    {
         (::windows::core::Interface::vtable(self).EnableModeless)(::windows::core::Interface::as_raw(self), fenable.into()).ok()
     }
 }
@@ -12341,7 +12537,11 @@ pub struct IActiveScriptStringCompare(::windows::core::IUnknown);
 impl IActiveScriptStringCompare {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn StrComp<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, super::super::super::Foundation::BSTR>>, Param1: ::std::convert::Into<::windows::core::InParam<'a, super::super::super::Foundation::BSTR>>>(&self, bszstr1: Param0, bszstr2: Param1) -> ::windows::core::Result<i32> {
+    pub unsafe fn StrComp<'a, P0, P1>(&self, bszstr1: P0, bszstr2: P1) -> ::windows::core::Result<i32>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::super::Foundation::BSTR>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, super::super::super::Foundation::BSTR>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows::core::Interface::vtable(self).StrComp)(::windows::core::Interface::as_raw(self), bszstr1.into().abi(), bszstr2.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
@@ -12395,7 +12595,10 @@ pub struct IActiveScriptStringCompare_Vtbl {
 pub struct IActiveScriptTraceInfo(::windows::core::IUnknown);
 impl IActiveScriptTraceInfo {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn StartScriptTracing<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IActiveScriptSiteTraceInfo>>>(&self, psitetraceinfo: Param0, guidcontextid: ::windows::core::GUID) -> ::windows::core::Result<()> {
+    pub unsafe fn StartScriptTracing<'a, P0>(&self, psitetraceinfo: P0, guidcontextid: ::windows::core::GUID) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IActiveScriptSiteTraceInfo>>,
+    {
         (::windows::core::Interface::vtable(self).StartScriptTracing)(::windows::core::Interface::as_raw(self), psitetraceinfo.into().abi(), ::core::mem::transmute(guidcontextid)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -12560,7 +12763,10 @@ impl IApplicationDebugger {
         (::windows::core::Interface::vtable(self).QueryAlive)(::windows::core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn CreateInstanceAtDebugger<'a, Param1: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>>(&self, rclsid: *const ::windows::core::GUID, punkouter: Param1, dwclscontext: u32, riid: *const ::windows::core::GUID) -> ::windows::core::Result<::windows::core::IUnknown> {
+    pub unsafe fn CreateInstanceAtDebugger<'a, P0>(&self, rclsid: *const ::windows::core::GUID, punkouter: P0, dwclscontext: u32, riid: *const ::windows::core::GUID) -> ::windows::core::Result<::windows::core::IUnknown>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).CreateInstanceAtDebugger)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(rclsid), punkouter.into().abi(), ::core::mem::transmute(dwclscontext), ::core::mem::transmute(riid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows::core::IUnknown>(result__)
     }
@@ -12569,7 +12775,12 @@ impl IApplicationDebugger {
         (::windows::core::Interface::vtable(self).onDebugOutput)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pstr)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn onHandleBreakPoint<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IRemoteDebugApplicationThread>>, Param1: ::std::convert::Into<BREAKREASON>, Param2: ::std::convert::Into<::windows::core::InParam<'a, IActiveScriptErrorDebug>>>(&self, prpt: Param0, br: Param1, perror: Param2) -> ::windows::core::Result<()> {
+    pub unsafe fn onHandleBreakPoint<'a, P0, P1, P2>(&self, prpt: P0, br: P1, perror: P2) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IRemoteDebugApplicationThread>>,
+        P1: ::std::convert::Into<BREAKREASON>,
+        P2: ::std::convert::Into<::windows::core::InParam<'a, IActiveScriptErrorDebug>>,
+    {
         (::windows::core::Interface::vtable(self).onHandleBreakPoint)(::windows::core::Interface::as_raw(self), prpt.into().abi(), br.into(), perror.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -12577,7 +12788,10 @@ impl IApplicationDebugger {
         (::windows::core::Interface::vtable(self).onClose)(::windows::core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn onDebuggerEvent<'a, Param1: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>>(&self, riid: *const ::windows::core::GUID, punk: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn onDebuggerEvent<'a, P0>(&self, riid: *const ::windows::core::GUID, punk: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
+    {
         (::windows::core::Interface::vtable(self).onDebuggerEvent)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(riid), punk.into().abi()).ok()
     }
 }
@@ -12632,11 +12846,17 @@ pub struct IApplicationDebugger_Vtbl {
 pub struct IApplicationDebuggerUI(::windows::core::IUnknown);
 impl IApplicationDebuggerUI {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn BringDocumentToTop<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugDocumentText>>>(&self, pddt: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn BringDocumentToTop<'a, P0>(&self, pddt: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugDocumentText>>,
+    {
         (::windows::core::Interface::vtable(self).BringDocumentToTop)(::windows::core::Interface::as_raw(self), pddt.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn BringDocumentContextToTop<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugDocumentContext>>>(&self, pddc: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn BringDocumentContextToTop<'a, P0>(&self, pddc: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugDocumentContext>>,
+    {
         (::windows::core::Interface::vtable(self).BringDocumentContextToTop)(::windows::core::Interface::as_raw(self), pddc.into().abi()).ok()
     }
 }
@@ -12688,7 +12908,10 @@ pub struct IBindEventHandler(::windows::core::IUnknown);
 impl IBindEventHandler {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn BindHandler<'a, Param1: ::std::convert::Into<::windows::core::InParam<'a, super::super::Com::IDispatch>>>(&self, pstrevent: ::windows::core::PCWSTR, pdisp: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn BindHandler<'a, P0>(&self, pstrevent: ::windows::core::PCWSTR, pdisp: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Com::IDispatch>>,
+    {
         (::windows::core::Interface::vtable(self).BindHandler)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pstrevent), pdisp.into().abi()).ok()
     }
 }
@@ -12741,7 +12964,10 @@ pub struct IBindEventHandler_Vtbl {
 pub struct ICodeAddressConcept(::windows::core::IUnknown);
 impl ICodeAddressConcept {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn GetContainingSymbol<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, pcontextobject: Param0) -> ::windows::core::Result<IDebugHostSymbol> {
+    pub unsafe fn GetContainingSymbol<'a, P0>(&self, pcontextobject: P0) -> ::windows::core::Result<IDebugHostSymbol>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).GetContainingSymbol)(::windows::core::Interface::as_raw(self), pcontextobject.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostSymbol>(result__)
     }
@@ -12792,7 +13018,11 @@ pub struct ICodeAddressConcept_Vtbl {
 pub struct IComparableConcept(::windows::core::IUnknown);
 impl IComparableConcept {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn CompareObjects<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>, Param1: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, contextobject: Param0, otherobject: Param1) -> ::windows::core::Result<i32> {
+    pub unsafe fn CompareObjects<'a, P0, P1>(&self, contextobject: P0, otherobject: P1) -> ::windows::core::Result<i32>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows::core::Interface::vtable(self).CompareObjects)(::windows::core::Interface::as_raw(self), contextobject.into().abi(), otherobject.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
@@ -12843,7 +13073,12 @@ pub struct IComparableConcept_Vtbl {
 pub struct IDataModelConcept(::windows::core::IUnknown);
 impl IDataModelConcept {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn InitializeObject<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>, Param1: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostTypeSignature>>, Param2: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostSymbolEnumerator>>>(&self, modelobject: Param0, matchingtypesignature: Param1, wildcardmatches: Param2) -> ::windows::core::Result<()> {
+    pub unsafe fn InitializeObject<'a, P0, P1, P2>(&self, modelobject: P0, matchingtypesignature: P1, wildcardmatches: P2) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostTypeSignature>>,
+        P2: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostSymbolEnumerator>>,
+    {
         (::windows::core::Interface::vtable(self).InitializeObject)(::windows::core::Interface::as_raw(self), modelobject.into().abi(), matchingtypesignature.into().abi(), wildcardmatches.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
@@ -12917,64 +13152,109 @@ impl IDataModelManager {
         (::windows::core::Interface::vtable(self).CreateErrorObject)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(hrerror), ::core::mem::transmute(pwszmessage), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IModelObject>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn CreateTypedObject<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>, Param2: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostType>>>(&self, context: Param0, objectlocation: Location, objecttype: Param2) -> ::windows::core::Result<IModelObject> {
+    pub unsafe fn CreateTypedObject<'a, P0, P1>(&self, context: P0, objectlocation: Location, objecttype: P1) -> ::windows::core::Result<IModelObject>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostType>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).CreateTypedObject)(::windows::core::Interface::as_raw(self), context.into().abi(), ::core::mem::transmute(objectlocation), objecttype.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IModelObject>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn CreateTypedObjectReference<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>, Param2: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostType>>>(&self, context: Param0, objectlocation: Location, objecttype: Param2) -> ::windows::core::Result<IModelObject> {
+    pub unsafe fn CreateTypedObjectReference<'a, P0, P1>(&self, context: P0, objectlocation: Location, objecttype: P1) -> ::windows::core::Result<IModelObject>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostType>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).CreateTypedObjectReference)(::windows::core::Interface::as_raw(self), context.into().abi(), ::core::mem::transmute(objectlocation), objecttype.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IModelObject>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn CreateSyntheticObject<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>>(&self, context: Param0) -> ::windows::core::Result<IModelObject> {
+    pub unsafe fn CreateSyntheticObject<'a, P0>(&self, context: P0) -> ::windows::core::Result<IModelObject>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).CreateSyntheticObject)(::windows::core::Interface::as_raw(self), context.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IModelObject>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn CreateDataModelObject<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDataModelConcept>>>(&self, datamodel: Param0) -> ::windows::core::Result<IModelObject> {
+    pub unsafe fn CreateDataModelObject<'a, P0>(&self, datamodel: P0) -> ::windows::core::Result<IModelObject>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDataModelConcept>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).CreateDataModelObject)(::windows::core::Interface::as_raw(self), datamodel.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IModelObject>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn CreateIntrinsicObject<'a, Param0: ::std::convert::Into<ModelObjectKind>>(&self, objectkind: Param0, intrinsicdata: *const super::super::Com::VARIANT) -> ::windows::core::Result<IModelObject> {
+    pub unsafe fn CreateIntrinsicObject<'a, P0>(&self, objectkind: P0, intrinsicdata: *const super::super::Com::VARIANT) -> ::windows::core::Result<IModelObject>
+    where
+        P0: ::std::convert::Into<ModelObjectKind>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).CreateIntrinsicObject)(::windows::core::Interface::as_raw(self), objectkind.into(), ::core::mem::transmute(intrinsicdata), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IModelObject>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn CreateTypedIntrinsicObject<'a, Param1: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostType>>>(&self, intrinsicdata: *const super::super::Com::VARIANT, r#type: Param1) -> ::windows::core::Result<IModelObject> {
+    pub unsafe fn CreateTypedIntrinsicObject<'a, P0>(&self, intrinsicdata: *const super::super::Com::VARIANT, r#type: P0) -> ::windows::core::Result<IModelObject>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostType>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).CreateTypedIntrinsicObject)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(intrinsicdata), r#type.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IModelObject>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn GetModelForTypeSignature<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostTypeSignature>>>(&self, typesignature: Param0) -> ::windows::core::Result<IModelObject> {
+    pub unsafe fn GetModelForTypeSignature<'a, P0>(&self, typesignature: P0) -> ::windows::core::Result<IModelObject>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostTypeSignature>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).GetModelForTypeSignature)(::windows::core::Interface::as_raw(self), typesignature.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IModelObject>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn GetModelForType<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostType>>>(&self, r#type: Param0, datamodel: *mut ::core::option::Option<IModelObject>, typesignature: *mut ::core::option::Option<IDebugHostTypeSignature>, wildcardmatches: *mut ::core::option::Option<IDebugHostSymbolEnumerator>) -> ::windows::core::Result<()> {
+    pub unsafe fn GetModelForType<'a, P0>(&self, r#type: P0, datamodel: *mut ::core::option::Option<IModelObject>, typesignature: *mut ::core::option::Option<IDebugHostTypeSignature>, wildcardmatches: *mut ::core::option::Option<IDebugHostSymbolEnumerator>) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostType>>,
+    {
         (::windows::core::Interface::vtable(self).GetModelForType)(::windows::core::Interface::as_raw(self), r#type.into().abi(), ::core::mem::transmute(datamodel), ::core::mem::transmute(typesignature), ::core::mem::transmute(wildcardmatches)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn RegisterModelForTypeSignature<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostTypeSignature>>, Param1: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, typesignature: Param0, datamodel: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn RegisterModelForTypeSignature<'a, P0, P1>(&self, typesignature: P0, datamodel: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostTypeSignature>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         (::windows::core::Interface::vtable(self).RegisterModelForTypeSignature)(::windows::core::Interface::as_raw(self), typesignature.into().abi(), datamodel.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn UnregisterModelForTypeSignature<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>, Param1: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostTypeSignature>>>(&self, datamodel: Param0, typesignature: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn UnregisterModelForTypeSignature<'a, P0, P1>(&self, datamodel: P0, typesignature: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostTypeSignature>>,
+    {
         (::windows::core::Interface::vtable(self).UnregisterModelForTypeSignature)(::windows::core::Interface::as_raw(self), datamodel.into().abi(), typesignature.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn RegisterExtensionForTypeSignature<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostTypeSignature>>, Param1: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, typesignature: Param0, datamodel: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn RegisterExtensionForTypeSignature<'a, P0, P1>(&self, typesignature: P0, datamodel: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostTypeSignature>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         (::windows::core::Interface::vtable(self).RegisterExtensionForTypeSignature)(::windows::core::Interface::as_raw(self), typesignature.into().abi(), datamodel.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn UnregisterExtensionForTypeSignature<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>, Param1: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostTypeSignature>>>(&self, datamodel: Param0, typesignature: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn UnregisterExtensionForTypeSignature<'a, P0, P1>(&self, datamodel: P0, typesignature: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostTypeSignature>>,
+    {
         (::windows::core::Interface::vtable(self).UnregisterExtensionForTypeSignature)(::windows::core::Interface::as_raw(self), datamodel.into().abi(), typesignature.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn CreateMetadataStore<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IKeyStore>>>(&self, parentstore: Param0) -> ::windows::core::Result<IKeyStore> {
+    pub unsafe fn CreateMetadataStore<'a, P0>(&self, parentstore: P0) -> ::windows::core::Result<IKeyStore>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IKeyStore>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).CreateMetadataStore)(::windows::core::Interface::as_raw(self), parentstore.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IKeyStore>(result__)
     }
@@ -12984,7 +13264,10 @@ impl IDataModelManager {
         (::windows::core::Interface::vtable(self).GetRootNamespace)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IModelObject>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn RegisterNamedModel<'a, Param1: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, modelname: ::windows::core::PCWSTR, modeobject: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn RegisterNamedModel<'a, P0>(&self, modelname: ::windows::core::PCWSTR, modeobject: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         (::windows::core::Interface::vtable(self).RegisterNamedModel)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(modelname), modeobject.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -13082,64 +13365,109 @@ impl IDataModelManager2 {
         (::windows::core::Interface::vtable(self).base__.CreateErrorObject)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(hrerror), ::core::mem::transmute(pwszmessage), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IModelObject>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn CreateTypedObject<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>, Param2: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostType>>>(&self, context: Param0, objectlocation: Location, objecttype: Param2) -> ::windows::core::Result<IModelObject> {
+    pub unsafe fn CreateTypedObject<'a, P0, P1>(&self, context: P0, objectlocation: Location, objecttype: P1) -> ::windows::core::Result<IModelObject>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostType>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).base__.CreateTypedObject)(::windows::core::Interface::as_raw(self), context.into().abi(), ::core::mem::transmute(objectlocation), objecttype.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IModelObject>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn CreateTypedObjectReference<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>, Param2: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostType>>>(&self, context: Param0, objectlocation: Location, objecttype: Param2) -> ::windows::core::Result<IModelObject> {
+    pub unsafe fn CreateTypedObjectReference<'a, P0, P1>(&self, context: P0, objectlocation: Location, objecttype: P1) -> ::windows::core::Result<IModelObject>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostType>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).base__.CreateTypedObjectReference)(::windows::core::Interface::as_raw(self), context.into().abi(), ::core::mem::transmute(objectlocation), objecttype.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IModelObject>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn CreateSyntheticObject<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>>(&self, context: Param0) -> ::windows::core::Result<IModelObject> {
+    pub unsafe fn CreateSyntheticObject<'a, P0>(&self, context: P0) -> ::windows::core::Result<IModelObject>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).base__.CreateSyntheticObject)(::windows::core::Interface::as_raw(self), context.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IModelObject>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn CreateDataModelObject<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDataModelConcept>>>(&self, datamodel: Param0) -> ::windows::core::Result<IModelObject> {
+    pub unsafe fn CreateDataModelObject<'a, P0>(&self, datamodel: P0) -> ::windows::core::Result<IModelObject>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDataModelConcept>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).base__.CreateDataModelObject)(::windows::core::Interface::as_raw(self), datamodel.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IModelObject>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn CreateIntrinsicObject<'a, Param0: ::std::convert::Into<ModelObjectKind>>(&self, objectkind: Param0, intrinsicdata: *const super::super::Com::VARIANT) -> ::windows::core::Result<IModelObject> {
+    pub unsafe fn CreateIntrinsicObject<'a, P0>(&self, objectkind: P0, intrinsicdata: *const super::super::Com::VARIANT) -> ::windows::core::Result<IModelObject>
+    where
+        P0: ::std::convert::Into<ModelObjectKind>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).base__.CreateIntrinsicObject)(::windows::core::Interface::as_raw(self), objectkind.into(), ::core::mem::transmute(intrinsicdata), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IModelObject>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn CreateTypedIntrinsicObject<'a, Param1: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostType>>>(&self, intrinsicdata: *const super::super::Com::VARIANT, r#type: Param1) -> ::windows::core::Result<IModelObject> {
+    pub unsafe fn CreateTypedIntrinsicObject<'a, P0>(&self, intrinsicdata: *const super::super::Com::VARIANT, r#type: P0) -> ::windows::core::Result<IModelObject>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostType>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).base__.CreateTypedIntrinsicObject)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(intrinsicdata), r#type.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IModelObject>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn GetModelForTypeSignature<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostTypeSignature>>>(&self, typesignature: Param0) -> ::windows::core::Result<IModelObject> {
+    pub unsafe fn GetModelForTypeSignature<'a, P0>(&self, typesignature: P0) -> ::windows::core::Result<IModelObject>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostTypeSignature>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).base__.GetModelForTypeSignature)(::windows::core::Interface::as_raw(self), typesignature.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IModelObject>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn GetModelForType<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostType>>>(&self, r#type: Param0, datamodel: *mut ::core::option::Option<IModelObject>, typesignature: *mut ::core::option::Option<IDebugHostTypeSignature>, wildcardmatches: *mut ::core::option::Option<IDebugHostSymbolEnumerator>) -> ::windows::core::Result<()> {
+    pub unsafe fn GetModelForType<'a, P0>(&self, r#type: P0, datamodel: *mut ::core::option::Option<IModelObject>, typesignature: *mut ::core::option::Option<IDebugHostTypeSignature>, wildcardmatches: *mut ::core::option::Option<IDebugHostSymbolEnumerator>) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostType>>,
+    {
         (::windows::core::Interface::vtable(self).base__.GetModelForType)(::windows::core::Interface::as_raw(self), r#type.into().abi(), ::core::mem::transmute(datamodel), ::core::mem::transmute(typesignature), ::core::mem::transmute(wildcardmatches)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn RegisterModelForTypeSignature<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostTypeSignature>>, Param1: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, typesignature: Param0, datamodel: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn RegisterModelForTypeSignature<'a, P0, P1>(&self, typesignature: P0, datamodel: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostTypeSignature>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         (::windows::core::Interface::vtable(self).base__.RegisterModelForTypeSignature)(::windows::core::Interface::as_raw(self), typesignature.into().abi(), datamodel.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn UnregisterModelForTypeSignature<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>, Param1: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostTypeSignature>>>(&self, datamodel: Param0, typesignature: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn UnregisterModelForTypeSignature<'a, P0, P1>(&self, datamodel: P0, typesignature: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostTypeSignature>>,
+    {
         (::windows::core::Interface::vtable(self).base__.UnregisterModelForTypeSignature)(::windows::core::Interface::as_raw(self), datamodel.into().abi(), typesignature.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn RegisterExtensionForTypeSignature<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostTypeSignature>>, Param1: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, typesignature: Param0, datamodel: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn RegisterExtensionForTypeSignature<'a, P0, P1>(&self, typesignature: P0, datamodel: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostTypeSignature>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         (::windows::core::Interface::vtable(self).base__.RegisterExtensionForTypeSignature)(::windows::core::Interface::as_raw(self), typesignature.into().abi(), datamodel.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn UnregisterExtensionForTypeSignature<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>, Param1: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostTypeSignature>>>(&self, datamodel: Param0, typesignature: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn UnregisterExtensionForTypeSignature<'a, P0, P1>(&self, datamodel: P0, typesignature: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostTypeSignature>>,
+    {
         (::windows::core::Interface::vtable(self).base__.UnregisterExtensionForTypeSignature)(::windows::core::Interface::as_raw(self), datamodel.into().abi(), typesignature.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn CreateMetadataStore<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IKeyStore>>>(&self, parentstore: Param0) -> ::windows::core::Result<IKeyStore> {
+    pub unsafe fn CreateMetadataStore<'a, P0>(&self, parentstore: P0) -> ::windows::core::Result<IKeyStore>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IKeyStore>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).base__.CreateMetadataStore)(::windows::core::Interface::as_raw(self), parentstore.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IKeyStore>(result__)
     }
@@ -13149,7 +13477,10 @@ impl IDataModelManager2 {
         (::windows::core::Interface::vtable(self).base__.GetRootNamespace)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IModelObject>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn RegisterNamedModel<'a, Param1: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, modelname: ::windows::core::PCWSTR, modeobject: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn RegisterNamedModel<'a, P0>(&self, modelname: ::windows::core::PCWSTR, modeobject: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         (::windows::core::Interface::vtable(self).base__.RegisterNamedModel)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(modelname), modeobject.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -13162,13 +13493,20 @@ impl IDataModelManager2 {
         (::windows::core::Interface::vtable(self).base__.AcquireNamedModel)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(modelname), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IModelObject>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn AcquireSubNamespace<'a, Param3: ::std::convert::Into<::windows::core::InParam<'a, IKeyStore>>>(&self, modelname: ::windows::core::PCWSTR, subnamespacemodelname: ::windows::core::PCWSTR, accessname: ::windows::core::PCWSTR, metadata: Param3) -> ::windows::core::Result<IModelObject> {
+    pub unsafe fn AcquireSubNamespace<'a, P0>(&self, modelname: ::windows::core::PCWSTR, subnamespacemodelname: ::windows::core::PCWSTR, accessname: ::windows::core::PCWSTR, metadata: P0) -> ::windows::core::Result<IModelObject>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IKeyStore>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).AcquireSubNamespace)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(modelname), ::core::mem::transmute(subnamespacemodelname), ::core::mem::transmute(accessname), metadata.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IModelObject>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn CreateTypedIntrinsicObjectEx<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>, Param2: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostType>>>(&self, context: Param0, intrinsicdata: *const super::super::Com::VARIANT, r#type: Param2) -> ::windows::core::Result<IModelObject> {
+    pub unsafe fn CreateTypedIntrinsicObjectEx<'a, P0, P1>(&self, context: P0, intrinsicdata: *const super::super::Com::VARIANT, r#type: P1) -> ::windows::core::Result<IModelObject>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostType>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).CreateTypedIntrinsicObjectEx)(::windows::core::Interface::as_raw(self), context.into().abi(), ::core::mem::transmute(intrinsicdata), r#type.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IModelObject>(result__)
     }
@@ -13238,20 +13576,32 @@ pub struct IDataModelManager2_Vtbl {
 pub struct IDataModelNameBinder(::windows::core::IUnknown);
 impl IDataModelNameBinder {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn BindValue<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, contextobject: Param0, name: ::windows::core::PCWSTR, value: *mut ::core::option::Option<IModelObject>, metadata: *mut ::core::option::Option<IKeyStore>) -> ::windows::core::Result<()> {
+    pub unsafe fn BindValue<'a, P0>(&self, contextobject: P0, name: ::windows::core::PCWSTR, value: *mut ::core::option::Option<IModelObject>, metadata: *mut ::core::option::Option<IKeyStore>) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         (::windows::core::Interface::vtable(self).BindValue)(::windows::core::Interface::as_raw(self), contextobject.into().abi(), ::core::mem::transmute(name), ::core::mem::transmute(value), ::core::mem::transmute(metadata)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn BindReference<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, contextobject: Param0, name: ::windows::core::PCWSTR, reference: *mut ::core::option::Option<IModelObject>, metadata: *mut ::core::option::Option<IKeyStore>) -> ::windows::core::Result<()> {
+    pub unsafe fn BindReference<'a, P0>(&self, contextobject: P0, name: ::windows::core::PCWSTR, reference: *mut ::core::option::Option<IModelObject>, metadata: *mut ::core::option::Option<IKeyStore>) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         (::windows::core::Interface::vtable(self).BindReference)(::windows::core::Interface::as_raw(self), contextobject.into().abi(), ::core::mem::transmute(name), ::core::mem::transmute(reference), ::core::mem::transmute(metadata)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn EnumerateValues<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, contextobject: Param0) -> ::windows::core::Result<IKeyEnumerator> {
+    pub unsafe fn EnumerateValues<'a, P0>(&self, contextobject: P0) -> ::windows::core::Result<IKeyEnumerator>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).EnumerateValues)(::windows::core::Interface::as_raw(self), contextobject.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IKeyEnumerator>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn EnumerateReferences<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, contextobject: Param0) -> ::windows::core::Result<IKeyEnumerator> {
+    pub unsafe fn EnumerateReferences<'a, P0>(&self, contextobject: P0) -> ::windows::core::Result<IKeyEnumerator>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).EnumerateReferences)(::windows::core::Interface::as_raw(self), contextobject.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IKeyEnumerator>(result__)
     }
@@ -13316,11 +13666,17 @@ impl IDataModelScript {
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn Populate<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Com::IStream>>>(&self, contentstream: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn Populate<'a, P0>(&self, contentstream: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Com::IStream>>,
+    {
         (::windows::core::Interface::vtable(self).Populate)(::windows::core::Interface::as_raw(self), contentstream.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn Execute<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDataModelScriptClient>>>(&self, client: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn Execute<'a, P0>(&self, client: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDataModelScriptClient>>,
+    {
         (::windows::core::Interface::vtable(self).Execute)(::windows::core::Interface::as_raw(self), client.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -13333,7 +13689,10 @@ impl IDataModelScript {
         (::windows::core::Interface::vtable(self).IsInvocable)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<bool>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn InvokeMain<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDataModelScriptClient>>>(&self, client: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn InvokeMain<'a, P0>(&self, client: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDataModelScriptClient>>,
+    {
         (::windows::core::Interface::vtable(self).InvokeMain)(::windows::core::Interface::as_raw(self), client.into().abi()).ok()
     }
 }
@@ -13395,7 +13754,10 @@ pub struct IDataModelScript_Vtbl {
 pub struct IDataModelScriptClient(::windows::core::IUnknown);
 impl IDataModelScriptClient {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn ReportError<'a, Param0: ::std::convert::Into<ErrorClass>>(&self, errclass: Param0, hrfail: ::windows::core::HRESULT, message: ::windows::core::PCWSTR, line: u32, position: u32) -> ::windows::core::Result<()> {
+    pub unsafe fn ReportError<'a, P0>(&self, errclass: P0, hrfail: ::windows::core::HRESULT, message: ::windows::core::PCWSTR, line: u32, position: u32) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<ErrorClass>,
+    {
         (::windows::core::Interface::vtable(self).ReportError)(::windows::core::Interface::as_raw(self), errclass.into(), ::core::mem::transmute(hrfail), ::core::mem::transmute(message), ::core::mem::transmute(line), ::core::mem::transmute(position)).ok()
     }
 }
@@ -13474,20 +13836,32 @@ impl IDataModelScriptDebug {
         (::windows::core::Interface::vtable(self).EnumerateBreakpoints)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDataModelScriptDebugBreakpointEnumerator>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn GetEventFilter<'a, Param0: ::std::convert::Into<ScriptDebugEventFilter>>(&self, eventfilter: Param0) -> ::windows::core::Result<bool> {
+    pub unsafe fn GetEventFilter<'a, P0>(&self, eventfilter: P0) -> ::windows::core::Result<bool>
+    where
+        P0: ::std::convert::Into<ScriptDebugEventFilter>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
         (::windows::core::Interface::vtable(self).GetEventFilter)(::windows::core::Interface::as_raw(self), eventfilter.into(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<bool>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetEventFilter<'a, Param0: ::std::convert::Into<ScriptDebugEventFilter>>(&self, eventfilter: Param0, isbreakenabled: u8) -> ::windows::core::Result<()> {
+    pub unsafe fn SetEventFilter<'a, P0>(&self, eventfilter: P0, isbreakenabled: u8) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<ScriptDebugEventFilter>,
+    {
         (::windows::core::Interface::vtable(self).SetEventFilter)(::windows::core::Interface::as_raw(self), eventfilter.into(), ::core::mem::transmute(isbreakenabled)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn StartDebugging<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDataModelScriptDebugClient>>>(&self, debugclient: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn StartDebugging<'a, P0>(&self, debugclient: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDataModelScriptDebugClient>>,
+    {
         (::windows::core::Interface::vtable(self).StartDebugging)(::windows::core::Interface::as_raw(self), debugclient.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn StopDebugging<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDataModelScriptDebugClient>>>(&self, debugclient: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn StopDebugging<'a, P0>(&self, debugclient: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDataModelScriptDebugClient>>,
+    {
         (::windows::core::Interface::vtable(self).StopDebugging)(::windows::core::Interface::as_raw(self), debugclient.into().abi()).ok()
     }
 }
@@ -13578,20 +13952,32 @@ impl IDataModelScriptDebug2 {
         (::windows::core::Interface::vtable(self).base__.EnumerateBreakpoints)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDataModelScriptDebugBreakpointEnumerator>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn GetEventFilter<'a, Param0: ::std::convert::Into<ScriptDebugEventFilter>>(&self, eventfilter: Param0) -> ::windows::core::Result<bool> {
+    pub unsafe fn GetEventFilter<'a, P0>(&self, eventfilter: P0) -> ::windows::core::Result<bool>
+    where
+        P0: ::std::convert::Into<ScriptDebugEventFilter>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
         (::windows::core::Interface::vtable(self).base__.GetEventFilter)(::windows::core::Interface::as_raw(self), eventfilter.into(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<bool>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetEventFilter<'a, Param0: ::std::convert::Into<ScriptDebugEventFilter>>(&self, eventfilter: Param0, isbreakenabled: u8) -> ::windows::core::Result<()> {
+    pub unsafe fn SetEventFilter<'a, P0>(&self, eventfilter: P0, isbreakenabled: u8) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<ScriptDebugEventFilter>,
+    {
         (::windows::core::Interface::vtable(self).base__.SetEventFilter)(::windows::core::Interface::as_raw(self), eventfilter.into(), ::core::mem::transmute(isbreakenabled)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn StartDebugging<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDataModelScriptDebugClient>>>(&self, debugclient: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn StartDebugging<'a, P0>(&self, debugclient: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDataModelScriptDebugClient>>,
+    {
         (::windows::core::Interface::vtable(self).base__.StartDebugging)(::windows::core::Interface::as_raw(self), debugclient.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn StopDebugging<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDataModelScriptDebugClient>>>(&self, debugclient: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn StopDebugging<'a, P0>(&self, debugclient: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDataModelScriptDebugClient>>,
+    {
         (::windows::core::Interface::vtable(self).base__.StopDebugging)(::windows::core::Interface::as_raw(self), debugclient.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -13796,7 +14182,11 @@ pub struct IDataModelScriptDebugBreakpointEnumerator_Vtbl {
 pub struct IDataModelScriptDebugClient(::windows::core::IUnknown);
 impl IDataModelScriptDebugClient {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn NotifyDebugEvent<'a, Param1: ::std::convert::Into<::windows::core::InParam<'a, IDataModelScript>>, Param2: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, peventinfo: *const ScriptDebugEventInformation, pscript: Param1, peventdataobject: Param2, resumeeventkind: *mut ScriptExecutionKind) -> ::windows::core::Result<()> {
+    pub unsafe fn NotifyDebugEvent<'a, P0, P1>(&self, peventinfo: *const ScriptDebugEventInformation, pscript: P0, peventdataobject: P1, resumeeventkind: *mut ScriptExecutionKind) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDataModelScript>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         (::windows::core::Interface::vtable(self).NotifyDebugEvent)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(peventinfo), pscript.into().abi(), peventdataobject.into().abi(), ::core::mem::transmute(resumeeventkind)).ok()
     }
 }
@@ -14054,7 +14444,11 @@ pub struct IDataModelScriptDebugVariableSetEnumerator_Vtbl {
 pub struct IDataModelScriptHostContext(::windows::core::IUnknown);
 impl IDataModelScriptHostContext {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn NotifyScriptChange<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDataModelScript>>, Param1: ::std::convert::Into<ScriptChangeKind>>(&self, script: Param0, changekind: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn NotifyScriptChange<'a, P0, P1>(&self, script: P0, changekind: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDataModelScript>>,
+        P1: ::std::convert::Into<ScriptChangeKind>,
+    {
         (::windows::core::Interface::vtable(self).NotifyScriptChange)(::windows::core::Interface::as_raw(self), script.into().abi(), changekind.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -14115,11 +14509,17 @@ impl IDataModelScriptManager {
         (::windows::core::Interface::vtable(self).GetDefaultNameBinder)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDataModelNameBinder>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn RegisterScriptProvider<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDataModelScriptProvider>>>(&self, provider: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn RegisterScriptProvider<'a, P0>(&self, provider: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDataModelScriptProvider>>,
+    {
         (::windows::core::Interface::vtable(self).RegisterScriptProvider)(::windows::core::Interface::as_raw(self), provider.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn UnregisterScriptProvider<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDataModelScriptProvider>>>(&self, provider: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn UnregisterScriptProvider<'a, P0>(&self, provider: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDataModelScriptProvider>>,
+    {
         (::windows::core::Interface::vtable(self).UnregisterScriptProvider)(::windows::core::Interface::as_raw(self), provider.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -14789,7 +15189,11 @@ pub struct IDebugAdvanced4_Vtbl {
 pub struct IDebugApplication11032(::windows::core::IUnknown);
 impl IDebugApplication11032 {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetDebuggerOptions<'a, Param0: ::std::convert::Into<SCRIPT_DEBUGGER_OPTIONS>, Param1: ::std::convert::Into<SCRIPT_DEBUGGER_OPTIONS>>(&self, mask: Param0, value: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn SetDebuggerOptions<'a, P0, P1>(&self, mask: P0, value: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<SCRIPT_DEBUGGER_OPTIONS>,
+        P1: ::std::convert::Into<SCRIPT_DEBUGGER_OPTIONS>,
+    {
         (::windows::core::Interface::vtable(self).base__.SetDebuggerOptions)(::windows::core::Interface::as_raw(self), mask.into(), value.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -14803,11 +15207,17 @@ impl IDebugApplication11032 {
         (::windows::core::Interface::vtable(self).base__.GetMainThread)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IRemoteDebugApplicationThread>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SynchronousCallInMainThread<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugThreadCall32>>>(&self, pptc: Param0, dwparam1: usize, dwparam2: usize, dwparam3: usize) -> ::windows::core::Result<()> {
+    pub unsafe fn SynchronousCallInMainThread<'a, P0>(&self, pptc: P0, dwparam1: usize, dwparam2: usize, dwparam3: usize) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugThreadCall32>>,
+    {
         (::windows::core::Interface::vtable(self).SynchronousCallInMainThread)(::windows::core::Interface::as_raw(self), pptc.into().abi(), ::core::mem::transmute(dwparam1), ::core::mem::transmute(dwparam2), ::core::mem::transmute(dwparam3)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn AsynchronousCallInMainThread<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugThreadCall32>>>(&self, pptc: Param0, dwparam1: usize, dwparam2: usize, dwparam3: usize) -> ::windows::core::Result<()> {
+    pub unsafe fn AsynchronousCallInMainThread<'a, P0>(&self, pptc: P0, dwparam1: usize, dwparam2: usize, dwparam3: usize) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugThreadCall32>>,
+    {
         (::windows::core::Interface::vtable(self).AsynchronousCallInMainThread)(::windows::core::Interface::as_raw(self), pptc.into().abi(), ::core::mem::transmute(dwparam1), ::core::mem::transmute(dwparam2), ::core::mem::transmute(dwparam3)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
@@ -14883,7 +15293,11 @@ pub struct IDebugApplication11032_Vtbl {
 pub struct IDebugApplication11064(::windows::core::IUnknown);
 impl IDebugApplication11064 {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetDebuggerOptions<'a, Param0: ::std::convert::Into<SCRIPT_DEBUGGER_OPTIONS>, Param1: ::std::convert::Into<SCRIPT_DEBUGGER_OPTIONS>>(&self, mask: Param0, value: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn SetDebuggerOptions<'a, P0, P1>(&self, mask: P0, value: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<SCRIPT_DEBUGGER_OPTIONS>,
+        P1: ::std::convert::Into<SCRIPT_DEBUGGER_OPTIONS>,
+    {
         (::windows::core::Interface::vtable(self).base__.SetDebuggerOptions)(::windows::core::Interface::as_raw(self), mask.into(), value.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -14897,11 +15311,17 @@ impl IDebugApplication11064 {
         (::windows::core::Interface::vtable(self).base__.GetMainThread)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IRemoteDebugApplicationThread>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SynchronousCallInMainThread<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugThreadCall64>>>(&self, pptc: Param0, dwparam1: usize, dwparam2: usize, dwparam3: usize) -> ::windows::core::Result<()> {
+    pub unsafe fn SynchronousCallInMainThread<'a, P0>(&self, pptc: P0, dwparam1: usize, dwparam2: usize, dwparam3: usize) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugThreadCall64>>,
+    {
         (::windows::core::Interface::vtable(self).SynchronousCallInMainThread)(::windows::core::Interface::as_raw(self), pptc.into().abi(), ::core::mem::transmute(dwparam1), ::core::mem::transmute(dwparam2), ::core::mem::transmute(dwparam3)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn AsynchronousCallInMainThread<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugThreadCall64>>>(&self, pptc: Param0, dwparam1: usize, dwparam2: usize, dwparam3: usize) -> ::windows::core::Result<()> {
+    pub unsafe fn AsynchronousCallInMainThread<'a, P0>(&self, pptc: P0, dwparam1: usize, dwparam2: usize, dwparam3: usize) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugThreadCall64>>,
+    {
         (::windows::core::Interface::vtable(self).AsynchronousCallInMainThread)(::windows::core::Interface::as_raw(self), pptc.into().abi(), ::core::mem::transmute(dwparam1), ::core::mem::transmute(dwparam2), ::core::mem::transmute(dwparam3)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
@@ -14977,7 +15397,12 @@ pub struct IDebugApplication11064_Vtbl {
 pub struct IDebugApplication32(::windows::core::IUnknown);
 impl IDebugApplication32 {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn ResumeFromBreakPoint<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IRemoteDebugApplicationThread>>, Param1: ::std::convert::Into<BREAKRESUME_ACTION>, Param2: ::std::convert::Into<ERRORRESUMEACTION>>(&self, prptfocus: Param0, bra: Param1, era: Param2) -> ::windows::core::Result<()> {
+    pub unsafe fn ResumeFromBreakPoint<'a, P0, P1, P2>(&self, prptfocus: P0, bra: P1, era: P2) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IRemoteDebugApplicationThread>>,
+        P1: ::std::convert::Into<BREAKRESUME_ACTION>,
+        P2: ::std::convert::Into<ERRORRESUMEACTION>,
+    {
         (::windows::core::Interface::vtable(self).base__.ResumeFromBreakPoint)(::windows::core::Interface::as_raw(self), prptfocus.into().abi(), bra.into(), era.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -14985,7 +15410,10 @@ impl IDebugApplication32 {
         (::windows::core::Interface::vtable(self).base__.CauseBreak)(::windows::core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn ConnectDebugger<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IApplicationDebugger>>>(&self, pad: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn ConnectDebugger<'a, P0>(&self, pad: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IApplicationDebugger>>,
+    {
         (::windows::core::Interface::vtable(self).base__.ConnectDebugger)(::windows::core::Interface::as_raw(self), pad.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -14998,7 +15426,10 @@ impl IDebugApplication32 {
         (::windows::core::Interface::vtable(self).base__.GetDebugger)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IApplicationDebugger>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn CreateInstanceAtApplication<'a, Param1: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>>(&self, rclsid: *const ::windows::core::GUID, punkouter: Param1, dwclscontext: u32, riid: *const ::windows::core::GUID) -> ::windows::core::Result<::windows::core::IUnknown> {
+    pub unsafe fn CreateInstanceAtApplication<'a, P0>(&self, rclsid: *const ::windows::core::GUID, punkouter: P0, dwclscontext: u32, riid: *const ::windows::core::GUID) -> ::windows::core::Result<::windows::core::IUnknown>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).base__.CreateInstanceAtApplication)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(rclsid), punkouter.into().abi(), ::core::mem::transmute(dwclscontext), ::core::mem::transmute(riid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows::core::IUnknown>(result__)
     }
@@ -15044,7 +15475,10 @@ impl IDebugApplication32 {
         (::windows::core::Interface::vtable(self).StartDebugSession)(::windows::core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn HandleBreakPoint<'a, Param0: ::std::convert::Into<BREAKREASON>>(&self, br: Param0) -> ::windows::core::Result<BREAKRESUME_ACTION> {
+    pub unsafe fn HandleBreakPoint<'a, P0>(&self, br: P0) -> ::windows::core::Result<BREAKRESUME_ACTION>
+    where
+        P0: ::std::convert::Into<BREAKREASON>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<BREAKRESUME_ACTION>::zeroed();
         (::windows::core::Interface::vtable(self).HandleBreakPoint)(::windows::core::Interface::as_raw(self), br.into(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<BREAKRESUME_ACTION>(result__)
     }
@@ -15062,12 +15496,18 @@ impl IDebugApplication32 {
         (::windows::core::Interface::vtable(self).GetCurrentThread)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugApplicationThread>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn CreateAsyncDebugOperation<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugSyncOperation>>>(&self, psdo: Param0) -> ::windows::core::Result<IDebugAsyncOperation> {
+    pub unsafe fn CreateAsyncDebugOperation<'a, P0>(&self, psdo: P0) -> ::windows::core::Result<IDebugAsyncOperation>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugSyncOperation>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).CreateAsyncDebugOperation)(::windows::core::Interface::as_raw(self), psdo.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugAsyncOperation>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn AddStackFrameSniffer<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugStackFrameSniffer>>>(&self, pdsfs: Param0) -> ::windows::core::Result<u32> {
+    pub unsafe fn AddStackFrameSniffer<'a, P0>(&self, pdsfs: P0) -> ::windows::core::Result<u32>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugStackFrameSniffer>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows::core::Interface::vtable(self).AddStackFrameSniffer)(::windows::core::Interface::as_raw(self), pdsfs.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
@@ -15080,7 +15520,10 @@ impl IDebugApplication32 {
         (::windows::core::Interface::vtable(self).QueryCurrentThreadIsDebuggerThread)(::windows::core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SynchronousCallInDebuggerThread<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugThreadCall32>>>(&self, pptc: Param0, dwparam1: u32, dwparam2: u32, dwparam3: u32) -> ::windows::core::Result<()> {
+    pub unsafe fn SynchronousCallInDebuggerThread<'a, P0>(&self, pptc: P0, dwparam1: u32, dwparam2: u32, dwparam3: u32) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugThreadCall32>>,
+    {
         (::windows::core::Interface::vtable(self).SynchronousCallInDebuggerThread)(::windows::core::Interface::as_raw(self), pptc.into().abi(), ::core::mem::transmute(dwparam1), ::core::mem::transmute(dwparam2), ::core::mem::transmute(dwparam3)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -15089,12 +15532,19 @@ impl IDebugApplication32 {
         (::windows::core::Interface::vtable(self).CreateApplicationNode)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugApplicationNode>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn FireDebuggerEvent<'a, Param1: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>>(&self, riid: *const ::windows::core::GUID, punk: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn FireDebuggerEvent<'a, P0>(&self, riid: *const ::windows::core::GUID, punk: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
+    {
         (::windows::core::Interface::vtable(self).FireDebuggerEvent)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(riid), punk.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn HandleRuntimeError<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IActiveScriptErrorDebug>>, Param1: ::std::convert::Into<::windows::core::InParam<'a, IActiveScriptSite>>>(&self, perrordebug: Param0, pscriptsite: Param1, pbra: *mut BREAKRESUME_ACTION, perra: *mut ERRORRESUMEACTION, pfcallonscripterror: *mut super::super::super::Foundation::BOOL) -> ::windows::core::Result<()> {
+    pub unsafe fn HandleRuntimeError<'a, P0, P1>(&self, perrordebug: P0, pscriptsite: P1, pbra: *mut BREAKRESUME_ACTION, perra: *mut ERRORRESUMEACTION, pfcallonscripterror: *mut super::super::super::Foundation::BOOL) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IActiveScriptErrorDebug>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, IActiveScriptSite>>,
+    {
         (::windows::core::Interface::vtable(self).HandleRuntimeError)(::windows::core::Interface::as_raw(self), perrordebug.into().abi(), pscriptsite.into().abi(), ::core::mem::transmute(pbra), ::core::mem::transmute(perra), ::core::mem::transmute(pfcallonscripterror)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
@@ -15108,7 +15558,10 @@ impl IDebugApplication32 {
         ::core::mem::transmute((::windows::core::Interface::vtable(self).FIsAutoJitDebugEnabled)(::windows::core::Interface::as_raw(self)))
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn AddGlobalExpressionContextProvider<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IProvideExpressionContexts>>>(&self, pdsfs: Param0) -> ::windows::core::Result<u32> {
+    pub unsafe fn AddGlobalExpressionContextProvider<'a, P0>(&self, pdsfs: P0) -> ::windows::core::Result<u32>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IProvideExpressionContexts>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows::core::Interface::vtable(self).AddGlobalExpressionContextProvider)(::windows::core::Interface::as_raw(self), pdsfs.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
@@ -15206,7 +15659,12 @@ pub struct IDebugApplication32_Vtbl {
 pub struct IDebugApplication64(::windows::core::IUnknown);
 impl IDebugApplication64 {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn ResumeFromBreakPoint<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IRemoteDebugApplicationThread>>, Param1: ::std::convert::Into<BREAKRESUME_ACTION>, Param2: ::std::convert::Into<ERRORRESUMEACTION>>(&self, prptfocus: Param0, bra: Param1, era: Param2) -> ::windows::core::Result<()> {
+    pub unsafe fn ResumeFromBreakPoint<'a, P0, P1, P2>(&self, prptfocus: P0, bra: P1, era: P2) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IRemoteDebugApplicationThread>>,
+        P1: ::std::convert::Into<BREAKRESUME_ACTION>,
+        P2: ::std::convert::Into<ERRORRESUMEACTION>,
+    {
         (::windows::core::Interface::vtable(self).base__.ResumeFromBreakPoint)(::windows::core::Interface::as_raw(self), prptfocus.into().abi(), bra.into(), era.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -15214,7 +15672,10 @@ impl IDebugApplication64 {
         (::windows::core::Interface::vtable(self).base__.CauseBreak)(::windows::core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn ConnectDebugger<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IApplicationDebugger>>>(&self, pad: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn ConnectDebugger<'a, P0>(&self, pad: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IApplicationDebugger>>,
+    {
         (::windows::core::Interface::vtable(self).base__.ConnectDebugger)(::windows::core::Interface::as_raw(self), pad.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -15227,7 +15688,10 @@ impl IDebugApplication64 {
         (::windows::core::Interface::vtable(self).base__.GetDebugger)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IApplicationDebugger>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn CreateInstanceAtApplication<'a, Param1: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>>(&self, rclsid: *const ::windows::core::GUID, punkouter: Param1, dwclscontext: u32, riid: *const ::windows::core::GUID) -> ::windows::core::Result<::windows::core::IUnknown> {
+    pub unsafe fn CreateInstanceAtApplication<'a, P0>(&self, rclsid: *const ::windows::core::GUID, punkouter: P0, dwclscontext: u32, riid: *const ::windows::core::GUID) -> ::windows::core::Result<::windows::core::IUnknown>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).base__.CreateInstanceAtApplication)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(rclsid), punkouter.into().abi(), ::core::mem::transmute(dwclscontext), ::core::mem::transmute(riid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows::core::IUnknown>(result__)
     }
@@ -15273,7 +15737,10 @@ impl IDebugApplication64 {
         (::windows::core::Interface::vtable(self).StartDebugSession)(::windows::core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn HandleBreakPoint<'a, Param0: ::std::convert::Into<BREAKREASON>>(&self, br: Param0) -> ::windows::core::Result<BREAKRESUME_ACTION> {
+    pub unsafe fn HandleBreakPoint<'a, P0>(&self, br: P0) -> ::windows::core::Result<BREAKRESUME_ACTION>
+    where
+        P0: ::std::convert::Into<BREAKREASON>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<BREAKRESUME_ACTION>::zeroed();
         (::windows::core::Interface::vtable(self).HandleBreakPoint)(::windows::core::Interface::as_raw(self), br.into(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<BREAKRESUME_ACTION>(result__)
     }
@@ -15291,12 +15758,18 @@ impl IDebugApplication64 {
         (::windows::core::Interface::vtable(self).GetCurrentThread)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugApplicationThread>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn CreateAsyncDebugOperation<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugSyncOperation>>>(&self, psdo: Param0) -> ::windows::core::Result<IDebugAsyncOperation> {
+    pub unsafe fn CreateAsyncDebugOperation<'a, P0>(&self, psdo: P0) -> ::windows::core::Result<IDebugAsyncOperation>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugSyncOperation>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).CreateAsyncDebugOperation)(::windows::core::Interface::as_raw(self), psdo.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugAsyncOperation>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn AddStackFrameSniffer<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugStackFrameSniffer>>>(&self, pdsfs: Param0) -> ::windows::core::Result<u32> {
+    pub unsafe fn AddStackFrameSniffer<'a, P0>(&self, pdsfs: P0) -> ::windows::core::Result<u32>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugStackFrameSniffer>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows::core::Interface::vtable(self).AddStackFrameSniffer)(::windows::core::Interface::as_raw(self), pdsfs.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
@@ -15309,7 +15782,10 @@ impl IDebugApplication64 {
         (::windows::core::Interface::vtable(self).QueryCurrentThreadIsDebuggerThread)(::windows::core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SynchronousCallInDebuggerThread<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugThreadCall64>>>(&self, pptc: Param0, dwparam1: u64, dwparam2: u64, dwparam3: u64) -> ::windows::core::Result<()> {
+    pub unsafe fn SynchronousCallInDebuggerThread<'a, P0>(&self, pptc: P0, dwparam1: u64, dwparam2: u64, dwparam3: u64) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugThreadCall64>>,
+    {
         (::windows::core::Interface::vtable(self).SynchronousCallInDebuggerThread)(::windows::core::Interface::as_raw(self), pptc.into().abi(), ::core::mem::transmute(dwparam1), ::core::mem::transmute(dwparam2), ::core::mem::transmute(dwparam3)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -15318,12 +15794,19 @@ impl IDebugApplication64 {
         (::windows::core::Interface::vtable(self).CreateApplicationNode)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugApplicationNode>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn FireDebuggerEvent<'a, Param1: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>>(&self, riid: *const ::windows::core::GUID, punk: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn FireDebuggerEvent<'a, P0>(&self, riid: *const ::windows::core::GUID, punk: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
+    {
         (::windows::core::Interface::vtable(self).FireDebuggerEvent)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(riid), punk.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn HandleRuntimeError<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IActiveScriptErrorDebug>>, Param1: ::std::convert::Into<::windows::core::InParam<'a, IActiveScriptSite>>>(&self, perrordebug: Param0, pscriptsite: Param1, pbra: *mut BREAKRESUME_ACTION, perra: *mut ERRORRESUMEACTION, pfcallonscripterror: *mut super::super::super::Foundation::BOOL) -> ::windows::core::Result<()> {
+    pub unsafe fn HandleRuntimeError<'a, P0, P1>(&self, perrordebug: P0, pscriptsite: P1, pbra: *mut BREAKRESUME_ACTION, perra: *mut ERRORRESUMEACTION, pfcallonscripterror: *mut super::super::super::Foundation::BOOL) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IActiveScriptErrorDebug>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, IActiveScriptSite>>,
+    {
         (::windows::core::Interface::vtable(self).HandleRuntimeError)(::windows::core::Interface::as_raw(self), perrordebug.into().abi(), pscriptsite.into().abi(), ::core::mem::transmute(pbra), ::core::mem::transmute(perra), ::core::mem::transmute(pfcallonscripterror)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
@@ -15337,7 +15820,10 @@ impl IDebugApplication64 {
         ::core::mem::transmute((::windows::core::Interface::vtable(self).FIsAutoJitDebugEnabled)(::windows::core::Interface::as_raw(self)))
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn AddGlobalExpressionContextProvider<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IProvideExpressionContexts>>>(&self, pdsfs: Param0) -> ::windows::core::Result<u64> {
+    pub unsafe fn AddGlobalExpressionContextProvider<'a, P0>(&self, pdsfs: P0) -> ::windows::core::Result<u64>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IProvideExpressionContexts>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<u64>::zeroed();
         (::windows::core::Interface::vtable(self).AddGlobalExpressionContextProvider)(::windows::core::Interface::as_raw(self), pdsfs.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u64>(result__)
     }
@@ -15436,7 +15922,10 @@ pub struct IDebugApplicationNode(::windows::core::IUnknown);
 impl IDebugApplicationNode {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetName<'a, Param0: ::std::convert::Into<DOCUMENTNAMETYPE>>(&self, dnt: Param0) -> ::windows::core::Result<super::super::super::Foundation::BSTR> {
+    pub unsafe fn GetName<'a, P0>(&self, dnt: P0) -> ::windows::core::Result<super::super::super::Foundation::BSTR>
+    where
+        P0: ::std::convert::Into<DOCUMENTNAMETYPE>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
         (::windows::core::Interface::vtable(self).base__.base__.GetName)(::windows::core::Interface::as_raw(self), dnt.into(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
     }
@@ -15461,7 +15950,10 @@ impl IDebugApplicationNode {
         (::windows::core::Interface::vtable(self).GetParent)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugApplicationNode>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetDocumentProvider<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugDocumentProvider>>>(&self, pddp: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetDocumentProvider<'a, P0>(&self, pddp: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugDocumentProvider>>,
+    {
         (::windows::core::Interface::vtable(self).SetDocumentProvider)(::windows::core::Interface::as_raw(self), pddp.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -15469,7 +15961,10 @@ impl IDebugApplicationNode {
         (::windows::core::Interface::vtable(self).Close)(::windows::core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn Attach<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugApplicationNode>>>(&self, pdanparent: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn Attach<'a, P0>(&self, pdanparent: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugApplicationNode>>,
+    {
         (::windows::core::Interface::vtable(self).Attach)(::windows::core::Interface::as_raw(self), pdanparent.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -15558,16 +16053,25 @@ pub struct IDebugApplicationNode_Vtbl {
 pub struct IDebugApplicationNode100(::windows::core::IUnknown);
 impl IDebugApplicationNode100 {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetFilterForEventSink<'a, Param1: ::std::convert::Into<APPLICATION_NODE_EVENT_FILTER>>(&self, dwcookie: u32, filter: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn SetFilterForEventSink<'a, P0>(&self, dwcookie: u32, filter: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<APPLICATION_NODE_EVENT_FILTER>,
+    {
         (::windows::core::Interface::vtable(self).SetFilterForEventSink)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(dwcookie), filter.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn GetExcludedDocuments<'a, Param0: ::std::convert::Into<APPLICATION_NODE_EVENT_FILTER>>(&self, filter: Param0) -> ::windows::core::Result<TEXT_DOCUMENT_ARRAY> {
+    pub unsafe fn GetExcludedDocuments<'a, P0>(&self, filter: P0) -> ::windows::core::Result<TEXT_DOCUMENT_ARRAY>
+    where
+        P0: ::std::convert::Into<APPLICATION_NODE_EVENT_FILTER>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<TEXT_DOCUMENT_ARRAY>::zeroed();
         (::windows::core::Interface::vtable(self).GetExcludedDocuments)(::windows::core::Interface::as_raw(self), filter.into(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<TEXT_DOCUMENT_ARRAY>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn QueryIsChildNode<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugDocument>>>(&self, psearchkey: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn QueryIsChildNode<'a, P0>(&self, psearchkey: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugDocument>>,
+    {
         (::windows::core::Interface::vtable(self).QueryIsChildNode)(::windows::core::Interface::as_raw(self), psearchkey.into().abi()).ok()
     }
 }
@@ -15619,11 +16123,17 @@ pub struct IDebugApplicationNode100_Vtbl {
 pub struct IDebugApplicationNodeEvents(::windows::core::IUnknown);
 impl IDebugApplicationNodeEvents {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn onAddChild<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugApplicationNode>>>(&self, prddpchild: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn onAddChild<'a, P0>(&self, prddpchild: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugApplicationNode>>,
+    {
         (::windows::core::Interface::vtable(self).onAddChild)(::windows::core::Interface::as_raw(self), prddpchild.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn onRemoveChild<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugApplicationNode>>>(&self, prddpchild: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn onRemoveChild<'a, P0>(&self, prddpchild: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugApplicationNode>>,
+    {
         (::windows::core::Interface::vtable(self).onRemoveChild)(::windows::core::Interface::as_raw(self), prddpchild.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -15631,7 +16141,10 @@ impl IDebugApplicationNodeEvents {
         (::windows::core::Interface::vtable(self).onDetach)(::windows::core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn onAttach<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugApplicationNode>>>(&self, prddpparent: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn onAttach<'a, P0>(&self, prddpparent: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugApplicationNode>>,
+    {
         (::windows::core::Interface::vtable(self).onAttach)(::windows::core::Interface::as_raw(self), prddpparent.into().abi()).ok()
     }
 }
@@ -15704,7 +16217,11 @@ impl IDebugApplicationThread {
         (::windows::core::Interface::vtable(self).base__.GetDescription)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pbstrdescription), ::core::mem::transmute(pbstrstate)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetNextStatement<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugStackFrame>>, Param1: ::std::convert::Into<::windows::core::InParam<'a, IDebugCodeContext>>>(&self, pstackframe: Param0, pcodecontext: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn SetNextStatement<'a, P0, P1>(&self, pstackframe: P0, pcodecontext: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugStackFrame>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, IDebugCodeContext>>,
+    {
         (::windows::core::Interface::vtable(self).base__.SetNextStatement)(::windows::core::Interface::as_raw(self), pstackframe.into().abi(), pcodecontext.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -15728,7 +16245,10 @@ impl IDebugApplicationThread {
         (::windows::core::Interface::vtable(self).base__.GetSuspendCount)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SynchronousCallIntoThread32<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugThreadCall32>>>(&self, pstcb: Param0, dwparam1: u32, dwparam2: u32, dwparam3: u32) -> ::windows::core::Result<()> {
+    pub unsafe fn SynchronousCallIntoThread32<'a, P0>(&self, pstcb: P0, dwparam1: u32, dwparam2: u32, dwparam3: u32) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugThreadCall32>>,
+    {
         (::windows::core::Interface::vtable(self).SynchronousCallIntoThread32)(::windows::core::Interface::as_raw(self), pstcb.into().abi(), ::core::mem::transmute(dwparam1), ::core::mem::transmute(dwparam2), ::core::mem::transmute(dwparam3)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -15830,7 +16350,10 @@ impl IDebugApplicationThread11032 {
         (::windows::core::Interface::vtable(self).IsThreadCallable)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BOOL>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn AsynchronousCallIntoThread<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugThreadCall32>>>(&self, pptc: Param0, dwparam1: usize, dwparam2: usize, dwparam3: usize) -> ::windows::core::Result<()> {
+    pub unsafe fn AsynchronousCallIntoThread<'a, P0>(&self, pptc: P0, dwparam1: usize, dwparam2: usize, dwparam3: usize) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugThreadCall32>>,
+    {
         (::windows::core::Interface::vtable(self).AsynchronousCallIntoThread)(::windows::core::Interface::as_raw(self), pptc.into().abi(), ::core::mem::transmute(dwparam1), ::core::mem::transmute(dwparam2), ::core::mem::transmute(dwparam3)).ok()
     }
 }
@@ -15906,7 +16429,10 @@ impl IDebugApplicationThread11064 {
         (::windows::core::Interface::vtable(self).IsThreadCallable)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BOOL>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn AsynchronousCallIntoThread<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugThreadCall64>>>(&self, pptc: Param0, dwparam1: usize, dwparam2: usize, dwparam3: usize) -> ::windows::core::Result<()> {
+    pub unsafe fn AsynchronousCallIntoThread<'a, P0>(&self, pptc: P0, dwparam1: usize, dwparam2: usize, dwparam3: usize) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugThreadCall64>>,
+    {
         (::windows::core::Interface::vtable(self).AsynchronousCallIntoThread)(::windows::core::Interface::as_raw(self), pptc.into().abi(), ::core::mem::transmute(dwparam1), ::core::mem::transmute(dwparam2), ::core::mem::transmute(dwparam3)).ok()
     }
 }
@@ -15985,7 +16511,11 @@ impl IDebugApplicationThread64 {
         (::windows::core::Interface::vtable(self).base__.base__.GetDescription)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pbstrdescription), ::core::mem::transmute(pbstrstate)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetNextStatement<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugStackFrame>>, Param1: ::std::convert::Into<::windows::core::InParam<'a, IDebugCodeContext>>>(&self, pstackframe: Param0, pcodecontext: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn SetNextStatement<'a, P0, P1>(&self, pstackframe: P0, pcodecontext: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugStackFrame>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, IDebugCodeContext>>,
+    {
         (::windows::core::Interface::vtable(self).base__.base__.SetNextStatement)(::windows::core::Interface::as_raw(self), pstackframe.into().abi(), pcodecontext.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -16009,7 +16539,10 @@ impl IDebugApplicationThread64 {
         (::windows::core::Interface::vtable(self).base__.base__.GetSuspendCount)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SynchronousCallIntoThread32<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugThreadCall32>>>(&self, pstcb: Param0, dwparam1: u32, dwparam2: u32, dwparam3: u32) -> ::windows::core::Result<()> {
+    pub unsafe fn SynchronousCallIntoThread32<'a, P0>(&self, pstcb: P0, dwparam1: u32, dwparam2: u32, dwparam3: u32) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugThreadCall32>>,
+    {
         (::windows::core::Interface::vtable(self).base__.SynchronousCallIntoThread32)(::windows::core::Interface::as_raw(self), pstcb.into().abi(), ::core::mem::transmute(dwparam1), ::core::mem::transmute(dwparam2), ::core::mem::transmute(dwparam3)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -16029,7 +16562,10 @@ impl IDebugApplicationThread64 {
         (::windows::core::Interface::vtable(self).base__.SetStateString)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pstrstate)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SynchronousCallIntoThread64<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugThreadCall64>>>(&self, pstcb: Param0, dwparam1: u64, dwparam2: u64, dwparam3: u64) -> ::windows::core::Result<()> {
+    pub unsafe fn SynchronousCallIntoThread64<'a, P0>(&self, pstcb: P0, dwparam1: u64, dwparam2: u64, dwparam3: u64) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugThreadCall64>>,
+    {
         (::windows::core::Interface::vtable(self).SynchronousCallIntoThread64)(::windows::core::Interface::as_raw(self), pstcb.into().abi(), ::core::mem::transmute(dwparam1), ::core::mem::transmute(dwparam2), ::core::mem::transmute(dwparam3)).ok()
     }
 }
@@ -16179,7 +16715,10 @@ impl IDebugAsyncOperation {
         (::windows::core::Interface::vtable(self).GetSyncDebugOperation)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugSyncOperation>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn Start<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugAsyncOperationCallBack>>>(&self, padocb: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn Start<'a, P0>(&self, padocb: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugAsyncOperationCallBack>>,
+    {
         (::windows::core::Interface::vtable(self).Start)(::windows::core::Interface::as_raw(self), padocb.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -16923,7 +17462,10 @@ impl IDebugClient {
         (::windows::core::Interface::vtable(self).DispatchCallbacks)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(timeout)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn ExitDispatch<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>>(&self, client: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn ExitDispatch<'a, P0>(&self, client: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>,
+    {
         (::windows::core::Interface::vtable(self).ExitDispatch)(::windows::core::Interface::as_raw(self), client.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -16937,7 +17479,10 @@ impl IDebugClient {
         (::windows::core::Interface::vtable(self).GetInputCallbacks)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugInputCallbacks>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetInputCallbacks<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugInputCallbacks>>>(&self, callbacks: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetInputCallbacks<'a, P0>(&self, callbacks: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugInputCallbacks>>,
+    {
         (::windows::core::Interface::vtable(self).SetInputCallbacks)(::windows::core::Interface::as_raw(self), callbacks.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -16946,7 +17491,10 @@ impl IDebugClient {
         (::windows::core::Interface::vtable(self).GetOutputCallbacks)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugOutputCallbacks>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetOutputCallbacks<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugOutputCallbacks>>>(&self, callbacks: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetOutputCallbacks<'a, P0>(&self, callbacks: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugOutputCallbacks>>,
+    {
         (::windows::core::Interface::vtable(self).SetOutputCallbacks)(::windows::core::Interface::as_raw(self), callbacks.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -16959,12 +17507,18 @@ impl IDebugClient {
         (::windows::core::Interface::vtable(self).SetOutputMask)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(mask)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn GetOtherOutputMask<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>>(&self, client: Param0) -> ::windows::core::Result<u32> {
+    pub unsafe fn GetOtherOutputMask<'a, P0>(&self, client: P0) -> ::windows::core::Result<u32>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows::core::Interface::vtable(self).GetOtherOutputMask)(::windows::core::Interface::as_raw(self), client.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetOtherOutputMask<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>>(&self, client: Param0, mask: u32) -> ::windows::core::Result<()> {
+    pub unsafe fn SetOtherOutputMask<'a, P0>(&self, client: P0, mask: u32) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>,
+    {
         (::windows::core::Interface::vtable(self).SetOtherOutputMask)(::windows::core::Interface::as_raw(self), client.into().abi(), ::core::mem::transmute(mask)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -16998,7 +17552,10 @@ impl IDebugClient {
         (::windows::core::Interface::vtable(self).GetEventCallbacks)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugEventCallbacks>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetEventCallbacks<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugEventCallbacks>>>(&self, callbacks: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetEventCallbacks<'a, P0>(&self, callbacks: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugEventCallbacks>>,
+    {
         (::windows::core::Interface::vtable(self).SetEventCallbacks)(::windows::core::Interface::as_raw(self), callbacks.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -17204,7 +17761,10 @@ impl IDebugClient2 {
         (::windows::core::Interface::vtable(self).DispatchCallbacks)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(timeout)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn ExitDispatch<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>>(&self, client: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn ExitDispatch<'a, P0>(&self, client: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>,
+    {
         (::windows::core::Interface::vtable(self).ExitDispatch)(::windows::core::Interface::as_raw(self), client.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -17218,7 +17778,10 @@ impl IDebugClient2 {
         (::windows::core::Interface::vtable(self).GetInputCallbacks)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugInputCallbacks>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetInputCallbacks<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugInputCallbacks>>>(&self, callbacks: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetInputCallbacks<'a, P0>(&self, callbacks: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugInputCallbacks>>,
+    {
         (::windows::core::Interface::vtable(self).SetInputCallbacks)(::windows::core::Interface::as_raw(self), callbacks.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -17227,7 +17790,10 @@ impl IDebugClient2 {
         (::windows::core::Interface::vtable(self).GetOutputCallbacks)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugOutputCallbacks>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetOutputCallbacks<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugOutputCallbacks>>>(&self, callbacks: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetOutputCallbacks<'a, P0>(&self, callbacks: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugOutputCallbacks>>,
+    {
         (::windows::core::Interface::vtable(self).SetOutputCallbacks)(::windows::core::Interface::as_raw(self), callbacks.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -17240,12 +17806,18 @@ impl IDebugClient2 {
         (::windows::core::Interface::vtable(self).SetOutputMask)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(mask)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn GetOtherOutputMask<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>>(&self, client: Param0) -> ::windows::core::Result<u32> {
+    pub unsafe fn GetOtherOutputMask<'a, P0>(&self, client: P0) -> ::windows::core::Result<u32>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows::core::Interface::vtable(self).GetOtherOutputMask)(::windows::core::Interface::as_raw(self), client.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetOtherOutputMask<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>>(&self, client: Param0, mask: u32) -> ::windows::core::Result<()> {
+    pub unsafe fn SetOtherOutputMask<'a, P0>(&self, client: P0, mask: u32) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>,
+    {
         (::windows::core::Interface::vtable(self).SetOtherOutputMask)(::windows::core::Interface::as_raw(self), client.into().abi(), ::core::mem::transmute(mask)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -17279,7 +17851,10 @@ impl IDebugClient2 {
         (::windows::core::Interface::vtable(self).GetEventCallbacks)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugEventCallbacks>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetEventCallbacks<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugEventCallbacks>>>(&self, callbacks: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetEventCallbacks<'a, P0>(&self, callbacks: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugEventCallbacks>>,
+    {
         (::windows::core::Interface::vtable(self).SetEventCallbacks)(::windows::core::Interface::as_raw(self), callbacks.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -17525,7 +18100,10 @@ impl IDebugClient3 {
         (::windows::core::Interface::vtable(self).DispatchCallbacks)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(timeout)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn ExitDispatch<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>>(&self, client: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn ExitDispatch<'a, P0>(&self, client: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>,
+    {
         (::windows::core::Interface::vtable(self).ExitDispatch)(::windows::core::Interface::as_raw(self), client.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -17539,7 +18117,10 @@ impl IDebugClient3 {
         (::windows::core::Interface::vtable(self).GetInputCallbacks)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugInputCallbacks>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetInputCallbacks<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugInputCallbacks>>>(&self, callbacks: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetInputCallbacks<'a, P0>(&self, callbacks: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugInputCallbacks>>,
+    {
         (::windows::core::Interface::vtable(self).SetInputCallbacks)(::windows::core::Interface::as_raw(self), callbacks.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -17548,7 +18129,10 @@ impl IDebugClient3 {
         (::windows::core::Interface::vtable(self).GetOutputCallbacks)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugOutputCallbacks>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetOutputCallbacks<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugOutputCallbacks>>>(&self, callbacks: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetOutputCallbacks<'a, P0>(&self, callbacks: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugOutputCallbacks>>,
+    {
         (::windows::core::Interface::vtable(self).SetOutputCallbacks)(::windows::core::Interface::as_raw(self), callbacks.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -17561,12 +18145,18 @@ impl IDebugClient3 {
         (::windows::core::Interface::vtable(self).SetOutputMask)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(mask)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn GetOtherOutputMask<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>>(&self, client: Param0) -> ::windows::core::Result<u32> {
+    pub unsafe fn GetOtherOutputMask<'a, P0>(&self, client: P0) -> ::windows::core::Result<u32>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows::core::Interface::vtable(self).GetOtherOutputMask)(::windows::core::Interface::as_raw(self), client.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetOtherOutputMask<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>>(&self, client: Param0, mask: u32) -> ::windows::core::Result<()> {
+    pub unsafe fn SetOtherOutputMask<'a, P0>(&self, client: P0, mask: u32) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>,
+    {
         (::windows::core::Interface::vtable(self).SetOtherOutputMask)(::windows::core::Interface::as_raw(self), client.into().abi(), ::core::mem::transmute(mask)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -17600,7 +18190,10 @@ impl IDebugClient3 {
         (::windows::core::Interface::vtable(self).GetEventCallbacks)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugEventCallbacks>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetEventCallbacks<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugEventCallbacks>>>(&self, callbacks: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetEventCallbacks<'a, P0>(&self, callbacks: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugEventCallbacks>>,
+    {
         (::windows::core::Interface::vtable(self).SetEventCallbacks)(::windows::core::Interface::as_raw(self), callbacks.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -17867,7 +18460,10 @@ impl IDebugClient4 {
         (::windows::core::Interface::vtable(self).DispatchCallbacks)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(timeout)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn ExitDispatch<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>>(&self, client: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn ExitDispatch<'a, P0>(&self, client: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>,
+    {
         (::windows::core::Interface::vtable(self).ExitDispatch)(::windows::core::Interface::as_raw(self), client.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -17881,7 +18477,10 @@ impl IDebugClient4 {
         (::windows::core::Interface::vtable(self).GetInputCallbacks)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugInputCallbacks>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetInputCallbacks<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugInputCallbacks>>>(&self, callbacks: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetInputCallbacks<'a, P0>(&self, callbacks: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugInputCallbacks>>,
+    {
         (::windows::core::Interface::vtable(self).SetInputCallbacks)(::windows::core::Interface::as_raw(self), callbacks.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -17890,7 +18489,10 @@ impl IDebugClient4 {
         (::windows::core::Interface::vtable(self).GetOutputCallbacks)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugOutputCallbacks>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetOutputCallbacks<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugOutputCallbacks>>>(&self, callbacks: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetOutputCallbacks<'a, P0>(&self, callbacks: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugOutputCallbacks>>,
+    {
         (::windows::core::Interface::vtable(self).SetOutputCallbacks)(::windows::core::Interface::as_raw(self), callbacks.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -17903,12 +18505,18 @@ impl IDebugClient4 {
         (::windows::core::Interface::vtable(self).SetOutputMask)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(mask)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn GetOtherOutputMask<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>>(&self, client: Param0) -> ::windows::core::Result<u32> {
+    pub unsafe fn GetOtherOutputMask<'a, P0>(&self, client: P0) -> ::windows::core::Result<u32>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows::core::Interface::vtable(self).GetOtherOutputMask)(::windows::core::Interface::as_raw(self), client.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetOtherOutputMask<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>>(&self, client: Param0, mask: u32) -> ::windows::core::Result<()> {
+    pub unsafe fn SetOtherOutputMask<'a, P0>(&self, client: P0, mask: u32) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>,
+    {
         (::windows::core::Interface::vtable(self).SetOtherOutputMask)(::windows::core::Interface::as_raw(self), client.into().abi(), ::core::mem::transmute(mask)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -17942,7 +18550,10 @@ impl IDebugClient4 {
         (::windows::core::Interface::vtable(self).GetEventCallbacks)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugEventCallbacks>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetEventCallbacks<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugEventCallbacks>>>(&self, callbacks: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetEventCallbacks<'a, P0>(&self, callbacks: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugEventCallbacks>>,
+    {
         (::windows::core::Interface::vtable(self).SetEventCallbacks)(::windows::core::Interface::as_raw(self), callbacks.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -18240,7 +18851,10 @@ impl IDebugClient5 {
         (::windows::core::Interface::vtable(self).DispatchCallbacks)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(timeout)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn ExitDispatch<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>>(&self, client: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn ExitDispatch<'a, P0>(&self, client: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>,
+    {
         (::windows::core::Interface::vtable(self).ExitDispatch)(::windows::core::Interface::as_raw(self), client.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -18254,7 +18868,10 @@ impl IDebugClient5 {
         (::windows::core::Interface::vtable(self).GetInputCallbacks)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugInputCallbacks>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetInputCallbacks<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugInputCallbacks>>>(&self, callbacks: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetInputCallbacks<'a, P0>(&self, callbacks: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugInputCallbacks>>,
+    {
         (::windows::core::Interface::vtable(self).SetInputCallbacks)(::windows::core::Interface::as_raw(self), callbacks.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -18263,7 +18880,10 @@ impl IDebugClient5 {
         (::windows::core::Interface::vtable(self).GetOutputCallbacks)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugOutputCallbacks>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetOutputCallbacks<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugOutputCallbacks>>>(&self, callbacks: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetOutputCallbacks<'a, P0>(&self, callbacks: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugOutputCallbacks>>,
+    {
         (::windows::core::Interface::vtable(self).SetOutputCallbacks)(::windows::core::Interface::as_raw(self), callbacks.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -18276,12 +18896,18 @@ impl IDebugClient5 {
         (::windows::core::Interface::vtable(self).SetOutputMask)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(mask)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn GetOtherOutputMask<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>>(&self, client: Param0) -> ::windows::core::Result<u32> {
+    pub unsafe fn GetOtherOutputMask<'a, P0>(&self, client: P0) -> ::windows::core::Result<u32>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows::core::Interface::vtable(self).GetOtherOutputMask)(::windows::core::Interface::as_raw(self), client.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetOtherOutputMask<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>>(&self, client: Param0, mask: u32) -> ::windows::core::Result<()> {
+    pub unsafe fn SetOtherOutputMask<'a, P0>(&self, client: P0, mask: u32) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>,
+    {
         (::windows::core::Interface::vtable(self).SetOtherOutputMask)(::windows::core::Interface::as_raw(self), client.into().abi(), ::core::mem::transmute(mask)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -18315,7 +18941,10 @@ impl IDebugClient5 {
         (::windows::core::Interface::vtable(self).GetEventCallbacks)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugEventCallbacks>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetEventCallbacks<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugEventCallbacks>>>(&self, callbacks: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetEventCallbacks<'a, P0>(&self, callbacks: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugEventCallbacks>>,
+    {
         (::windows::core::Interface::vtable(self).SetEventCallbacks)(::windows::core::Interface::as_raw(self), callbacks.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -18431,7 +19060,10 @@ impl IDebugClient5 {
         (::windows::core::Interface::vtable(self).GetOutputCallbacksWide)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugOutputCallbacksWide>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetOutputCallbacksWide<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugOutputCallbacksWide>>>(&self, callbacks: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetOutputCallbacksWide<'a, P0>(&self, callbacks: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugOutputCallbacksWide>>,
+    {
         (::windows::core::Interface::vtable(self).SetOutputCallbacksWide)(::windows::core::Interface::as_raw(self), callbacks.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -18456,7 +19088,10 @@ impl IDebugClient5 {
         (::windows::core::Interface::vtable(self).GetEventCallbacksWide)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugEventCallbacksWide>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetEventCallbacksWide<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugEventCallbacksWide>>>(&self, callbacks: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetEventCallbacksWide<'a, P0>(&self, callbacks: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugEventCallbacksWide>>,
+    {
         (::windows::core::Interface::vtable(self).SetEventCallbacksWide)(::windows::core::Interface::as_raw(self), callbacks.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -18766,7 +19401,10 @@ impl IDebugClient6 {
         (::windows::core::Interface::vtable(self).DispatchCallbacks)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(timeout)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn ExitDispatch<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>>(&self, client: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn ExitDispatch<'a, P0>(&self, client: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>,
+    {
         (::windows::core::Interface::vtable(self).ExitDispatch)(::windows::core::Interface::as_raw(self), client.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -18780,7 +19418,10 @@ impl IDebugClient6 {
         (::windows::core::Interface::vtable(self).GetInputCallbacks)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugInputCallbacks>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetInputCallbacks<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugInputCallbacks>>>(&self, callbacks: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetInputCallbacks<'a, P0>(&self, callbacks: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugInputCallbacks>>,
+    {
         (::windows::core::Interface::vtable(self).SetInputCallbacks)(::windows::core::Interface::as_raw(self), callbacks.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -18789,7 +19430,10 @@ impl IDebugClient6 {
         (::windows::core::Interface::vtable(self).GetOutputCallbacks)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugOutputCallbacks>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetOutputCallbacks<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugOutputCallbacks>>>(&self, callbacks: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetOutputCallbacks<'a, P0>(&self, callbacks: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugOutputCallbacks>>,
+    {
         (::windows::core::Interface::vtable(self).SetOutputCallbacks)(::windows::core::Interface::as_raw(self), callbacks.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -18802,12 +19446,18 @@ impl IDebugClient6 {
         (::windows::core::Interface::vtable(self).SetOutputMask)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(mask)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn GetOtherOutputMask<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>>(&self, client: Param0) -> ::windows::core::Result<u32> {
+    pub unsafe fn GetOtherOutputMask<'a, P0>(&self, client: P0) -> ::windows::core::Result<u32>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows::core::Interface::vtable(self).GetOtherOutputMask)(::windows::core::Interface::as_raw(self), client.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetOtherOutputMask<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>>(&self, client: Param0, mask: u32) -> ::windows::core::Result<()> {
+    pub unsafe fn SetOtherOutputMask<'a, P0>(&self, client: P0, mask: u32) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>,
+    {
         (::windows::core::Interface::vtable(self).SetOtherOutputMask)(::windows::core::Interface::as_raw(self), client.into().abi(), ::core::mem::transmute(mask)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -18841,7 +19491,10 @@ impl IDebugClient6 {
         (::windows::core::Interface::vtable(self).GetEventCallbacks)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugEventCallbacks>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetEventCallbacks<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugEventCallbacks>>>(&self, callbacks: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetEventCallbacks<'a, P0>(&self, callbacks: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugEventCallbacks>>,
+    {
         (::windows::core::Interface::vtable(self).SetEventCallbacks)(::windows::core::Interface::as_raw(self), callbacks.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -18957,7 +19610,10 @@ impl IDebugClient6 {
         (::windows::core::Interface::vtable(self).GetOutputCallbacksWide)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugOutputCallbacksWide>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetOutputCallbacksWide<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugOutputCallbacksWide>>>(&self, callbacks: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetOutputCallbacksWide<'a, P0>(&self, callbacks: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugOutputCallbacksWide>>,
+    {
         (::windows::core::Interface::vtable(self).SetOutputCallbacksWide)(::windows::core::Interface::as_raw(self), callbacks.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -18982,7 +19638,10 @@ impl IDebugClient6 {
         (::windows::core::Interface::vtable(self).GetEventCallbacksWide)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugEventCallbacksWide>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetEventCallbacksWide<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugEventCallbacksWide>>>(&self, callbacks: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetEventCallbacksWide<'a, P0>(&self, callbacks: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugEventCallbacksWide>>,
+    {
         (::windows::core::Interface::vtable(self).SetEventCallbacksWide)(::windows::core::Interface::as_raw(self), callbacks.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -19047,7 +19706,10 @@ impl IDebugClient6 {
         (::windows::core::Interface::vtable(self).SetQuitLockStringWide)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(string)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetEventContextCallbacks<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugEventContextCallbacks>>>(&self, callbacks: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetEventContextCallbacks<'a, P0>(&self, callbacks: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugEventContextCallbacks>>,
+    {
         (::windows::core::Interface::vtable(self).SetEventContextCallbacks)(::windows::core::Interface::as_raw(self), callbacks.into().abi()).ok()
     }
 }
@@ -19297,7 +19959,10 @@ impl IDebugClient7 {
         (::windows::core::Interface::vtable(self).DispatchCallbacks)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(timeout)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn ExitDispatch<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>>(&self, client: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn ExitDispatch<'a, P0>(&self, client: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>,
+    {
         (::windows::core::Interface::vtable(self).ExitDispatch)(::windows::core::Interface::as_raw(self), client.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -19311,7 +19976,10 @@ impl IDebugClient7 {
         (::windows::core::Interface::vtable(self).GetInputCallbacks)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugInputCallbacks>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetInputCallbacks<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugInputCallbacks>>>(&self, callbacks: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetInputCallbacks<'a, P0>(&self, callbacks: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugInputCallbacks>>,
+    {
         (::windows::core::Interface::vtable(self).SetInputCallbacks)(::windows::core::Interface::as_raw(self), callbacks.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -19320,7 +19988,10 @@ impl IDebugClient7 {
         (::windows::core::Interface::vtable(self).GetOutputCallbacks)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugOutputCallbacks>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetOutputCallbacks<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugOutputCallbacks>>>(&self, callbacks: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetOutputCallbacks<'a, P0>(&self, callbacks: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugOutputCallbacks>>,
+    {
         (::windows::core::Interface::vtable(self).SetOutputCallbacks)(::windows::core::Interface::as_raw(self), callbacks.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -19333,12 +20004,18 @@ impl IDebugClient7 {
         (::windows::core::Interface::vtable(self).SetOutputMask)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(mask)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn GetOtherOutputMask<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>>(&self, client: Param0) -> ::windows::core::Result<u32> {
+    pub unsafe fn GetOtherOutputMask<'a, P0>(&self, client: P0) -> ::windows::core::Result<u32>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows::core::Interface::vtable(self).GetOtherOutputMask)(::windows::core::Interface::as_raw(self), client.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetOtherOutputMask<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>>(&self, client: Param0, mask: u32) -> ::windows::core::Result<()> {
+    pub unsafe fn SetOtherOutputMask<'a, P0>(&self, client: P0, mask: u32) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>,
+    {
         (::windows::core::Interface::vtable(self).SetOtherOutputMask)(::windows::core::Interface::as_raw(self), client.into().abi(), ::core::mem::transmute(mask)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -19372,7 +20049,10 @@ impl IDebugClient7 {
         (::windows::core::Interface::vtable(self).GetEventCallbacks)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugEventCallbacks>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetEventCallbacks<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugEventCallbacks>>>(&self, callbacks: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetEventCallbacks<'a, P0>(&self, callbacks: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugEventCallbacks>>,
+    {
         (::windows::core::Interface::vtable(self).SetEventCallbacks)(::windows::core::Interface::as_raw(self), callbacks.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -19488,7 +20168,10 @@ impl IDebugClient7 {
         (::windows::core::Interface::vtable(self).GetOutputCallbacksWide)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugOutputCallbacksWide>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetOutputCallbacksWide<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugOutputCallbacksWide>>>(&self, callbacks: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetOutputCallbacksWide<'a, P0>(&self, callbacks: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugOutputCallbacksWide>>,
+    {
         (::windows::core::Interface::vtable(self).SetOutputCallbacksWide)(::windows::core::Interface::as_raw(self), callbacks.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -19513,7 +20196,10 @@ impl IDebugClient7 {
         (::windows::core::Interface::vtable(self).GetEventCallbacksWide)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugEventCallbacksWide>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetEventCallbacksWide<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugEventCallbacksWide>>>(&self, callbacks: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetEventCallbacksWide<'a, P0>(&self, callbacks: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugEventCallbacksWide>>,
+    {
         (::windows::core::Interface::vtable(self).SetEventCallbacksWide)(::windows::core::Interface::as_raw(self), callbacks.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -19578,7 +20264,10 @@ impl IDebugClient7 {
         (::windows::core::Interface::vtable(self).SetQuitLockStringWide)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(string)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetEventContextCallbacks<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugEventContextCallbacks>>>(&self, callbacks: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetEventContextCallbacks<'a, P0>(&self, callbacks: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugEventContextCallbacks>>,
+    {
         (::windows::core::Interface::vtable(self).SetEventContextCallbacks)(::windows::core::Interface::as_raw(self), callbacks.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -19833,7 +20522,10 @@ impl IDebugClient8 {
         (::windows::core::Interface::vtable(self).DispatchCallbacks)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(timeout)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn ExitDispatch<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>>(&self, client: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn ExitDispatch<'a, P0>(&self, client: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>,
+    {
         (::windows::core::Interface::vtable(self).ExitDispatch)(::windows::core::Interface::as_raw(self), client.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -19847,7 +20539,10 @@ impl IDebugClient8 {
         (::windows::core::Interface::vtable(self).GetInputCallbacks)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugInputCallbacks>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetInputCallbacks<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugInputCallbacks>>>(&self, callbacks: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetInputCallbacks<'a, P0>(&self, callbacks: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugInputCallbacks>>,
+    {
         (::windows::core::Interface::vtable(self).SetInputCallbacks)(::windows::core::Interface::as_raw(self), callbacks.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -19856,7 +20551,10 @@ impl IDebugClient8 {
         (::windows::core::Interface::vtable(self).GetOutputCallbacks)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugOutputCallbacks>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetOutputCallbacks<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugOutputCallbacks>>>(&self, callbacks: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetOutputCallbacks<'a, P0>(&self, callbacks: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugOutputCallbacks>>,
+    {
         (::windows::core::Interface::vtable(self).SetOutputCallbacks)(::windows::core::Interface::as_raw(self), callbacks.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -19869,12 +20567,18 @@ impl IDebugClient8 {
         (::windows::core::Interface::vtable(self).SetOutputMask)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(mask)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn GetOtherOutputMask<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>>(&self, client: Param0) -> ::windows::core::Result<u32> {
+    pub unsafe fn GetOtherOutputMask<'a, P0>(&self, client: P0) -> ::windows::core::Result<u32>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows::core::Interface::vtable(self).GetOtherOutputMask)(::windows::core::Interface::as_raw(self), client.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetOtherOutputMask<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>>(&self, client: Param0, mask: u32) -> ::windows::core::Result<()> {
+    pub unsafe fn SetOtherOutputMask<'a, P0>(&self, client: P0, mask: u32) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugClient>>,
+    {
         (::windows::core::Interface::vtable(self).SetOtherOutputMask)(::windows::core::Interface::as_raw(self), client.into().abi(), ::core::mem::transmute(mask)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -19908,7 +20612,10 @@ impl IDebugClient8 {
         (::windows::core::Interface::vtable(self).GetEventCallbacks)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugEventCallbacks>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetEventCallbacks<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugEventCallbacks>>>(&self, callbacks: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetEventCallbacks<'a, P0>(&self, callbacks: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugEventCallbacks>>,
+    {
         (::windows::core::Interface::vtable(self).SetEventCallbacks)(::windows::core::Interface::as_raw(self), callbacks.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -20024,7 +20731,10 @@ impl IDebugClient8 {
         (::windows::core::Interface::vtable(self).GetOutputCallbacksWide)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugOutputCallbacksWide>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetOutputCallbacksWide<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugOutputCallbacksWide>>>(&self, callbacks: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetOutputCallbacksWide<'a, P0>(&self, callbacks: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugOutputCallbacksWide>>,
+    {
         (::windows::core::Interface::vtable(self).SetOutputCallbacksWide)(::windows::core::Interface::as_raw(self), callbacks.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -20049,7 +20759,10 @@ impl IDebugClient8 {
         (::windows::core::Interface::vtable(self).GetEventCallbacksWide)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugEventCallbacksWide>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetEventCallbacksWide<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugEventCallbacksWide>>>(&self, callbacks: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetEventCallbacksWide<'a, P0>(&self, callbacks: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugEventCallbacksWide>>,
+    {
         (::windows::core::Interface::vtable(self).SetEventCallbacksWide)(::windows::core::Interface::as_raw(self), callbacks.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -20114,7 +20827,10 @@ impl IDebugClient8 {
         (::windows::core::Interface::vtable(self).SetQuitLockStringWide)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(string)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetEventContextCallbacks<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugEventContextCallbacks>>>(&self, callbacks: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetEventContextCallbacks<'a, P0>(&self, callbacks: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugEventContextCallbacks>>,
+    {
         (::windows::core::Interface::vtable(self).SetEventContextCallbacks)(::windows::core::Interface::as_raw(self), callbacks.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -20271,7 +20987,10 @@ impl IDebugCodeContext {
         (::windows::core::Interface::vtable(self).GetDocumentContext)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugDocumentContext>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetBreakPoint<'a, Param0: ::std::convert::Into<BREAKPOINT_STATE>>(&self, bps: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetBreakPoint<'a, P0>(&self, bps: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<BREAKPOINT_STATE>,
+    {
         (::windows::core::Interface::vtable(self).SetBreakPoint)(::windows::core::Interface::as_raw(self), bps.into()).ok()
     }
 }
@@ -20345,7 +21064,10 @@ impl IDebugControl {
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn OpenLogFile<'a, Param1: ::std::convert::Into<super::super::super::Foundation::BOOL>>(&self, file: ::windows::core::PCSTR, append: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn OpenLogFile<'a, P0>(&self, file: ::windows::core::PCSTR, append: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+    {
         (::windows::core::Interface::vtable(self).OpenLogFile)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(file), append.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -20633,7 +21355,10 @@ impl IDebugControl {
         (::windows::core::Interface::vtable(self).AddBreakpoint)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(r#type), ::core::mem::transmute(desiredid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugBreakpoint>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn RemoveBreakpoint<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugBreakpoint>>>(&self, bp: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn RemoveBreakpoint<'a, P0>(&self, bp: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugBreakpoint>>,
+    {
         (::windows::core::Interface::vtable(self).RemoveBreakpoint)(::windows::core::Interface::as_raw(self), bp.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -20916,7 +21641,10 @@ impl IDebugControl2 {
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn OpenLogFile<'a, Param1: ::std::convert::Into<super::super::super::Foundation::BOOL>>(&self, file: ::windows::core::PCSTR, append: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn OpenLogFile<'a, P0>(&self, file: ::windows::core::PCSTR, append: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+    {
         (::windows::core::Interface::vtable(self).OpenLogFile)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(file), append.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -21204,7 +21932,10 @@ impl IDebugControl2 {
         (::windows::core::Interface::vtable(self).AddBreakpoint)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(r#type), ::core::mem::transmute(desiredid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugBreakpoint>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn RemoveBreakpoint<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugBreakpoint>>>(&self, bp: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn RemoveBreakpoint<'a, P0>(&self, bp: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugBreakpoint>>,
+    {
         (::windows::core::Interface::vtable(self).RemoveBreakpoint)(::windows::core::Interface::as_raw(self), bp.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -21531,7 +22262,10 @@ impl IDebugControl3 {
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn OpenLogFile<'a, Param1: ::std::convert::Into<super::super::super::Foundation::BOOL>>(&self, file: ::windows::core::PCSTR, append: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn OpenLogFile<'a, P0>(&self, file: ::windows::core::PCSTR, append: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+    {
         (::windows::core::Interface::vtable(self).OpenLogFile)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(file), append.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -21819,7 +22553,10 @@ impl IDebugControl3 {
         (::windows::core::Interface::vtable(self).AddBreakpoint)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(r#type), ::core::mem::transmute(desiredid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugBreakpoint>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn RemoveBreakpoint<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugBreakpoint>>>(&self, bp: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn RemoveBreakpoint<'a, P0>(&self, bp: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugBreakpoint>>,
+    {
         (::windows::core::Interface::vtable(self).RemoveBreakpoint)(::windows::core::Interface::as_raw(self), bp.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -22218,7 +22955,10 @@ impl IDebugControl4 {
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn OpenLogFile<'a, Param1: ::std::convert::Into<super::super::super::Foundation::BOOL>>(&self, file: ::windows::core::PCSTR, append: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn OpenLogFile<'a, P0>(&self, file: ::windows::core::PCSTR, append: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+    {
         (::windows::core::Interface::vtable(self).OpenLogFile)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(file), append.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -22506,7 +23246,10 @@ impl IDebugControl4 {
         (::windows::core::Interface::vtable(self).AddBreakpoint)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(r#type), ::core::mem::transmute(desiredid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugBreakpoint>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn RemoveBreakpoint<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugBreakpoint>>>(&self, bp: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn RemoveBreakpoint<'a, P0>(&self, bp: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugBreakpoint>>,
+    {
         (::windows::core::Interface::vtable(self).RemoveBreakpoint)(::windows::core::Interface::as_raw(self), bp.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -22700,7 +23443,10 @@ impl IDebugControl4 {
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn OpenLogFileWide<'a, Param1: ::std::convert::Into<super::super::super::Foundation::BOOL>>(&self, file: ::windows::core::PCWSTR, append: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn OpenLogFileWide<'a, P0>(&self, file: ::windows::core::PCWSTR, append: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+    {
         (::windows::core::Interface::vtable(self).OpenLogFileWide)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(file), append.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -22789,7 +23535,10 @@ impl IDebugControl4 {
         (::windows::core::Interface::vtable(self).AddBreakpoint2)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(r#type), ::core::mem::transmute(desiredid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugBreakpoint2>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn RemoveBreakpoint2<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugBreakpoint2>>>(&self, bp: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn RemoveBreakpoint2<'a, P0>(&self, bp: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugBreakpoint2>>,
+    {
         (::windows::core::Interface::vtable(self).RemoveBreakpoint2)(::windows::core::Interface::as_raw(self), bp.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -23201,7 +23950,10 @@ impl IDebugControl5 {
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn OpenLogFile<'a, Param1: ::std::convert::Into<super::super::super::Foundation::BOOL>>(&self, file: ::windows::core::PCSTR, append: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn OpenLogFile<'a, P0>(&self, file: ::windows::core::PCSTR, append: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+    {
         (::windows::core::Interface::vtable(self).OpenLogFile)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(file), append.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -23489,7 +24241,10 @@ impl IDebugControl5 {
         (::windows::core::Interface::vtable(self).AddBreakpoint)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(r#type), ::core::mem::transmute(desiredid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugBreakpoint>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn RemoveBreakpoint<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugBreakpoint>>>(&self, bp: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn RemoveBreakpoint<'a, P0>(&self, bp: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugBreakpoint>>,
+    {
         (::windows::core::Interface::vtable(self).RemoveBreakpoint)(::windows::core::Interface::as_raw(self), bp.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -23683,7 +24438,10 @@ impl IDebugControl5 {
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn OpenLogFileWide<'a, Param1: ::std::convert::Into<super::super::super::Foundation::BOOL>>(&self, file: ::windows::core::PCWSTR, append: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn OpenLogFileWide<'a, P0>(&self, file: ::windows::core::PCWSTR, append: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+    {
         (::windows::core::Interface::vtable(self).OpenLogFileWide)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(file), append.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -23772,7 +24530,10 @@ impl IDebugControl5 {
         (::windows::core::Interface::vtable(self).AddBreakpoint2)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(r#type), ::core::mem::transmute(desiredid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugBreakpoint2>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn RemoveBreakpoint2<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugBreakpoint2>>>(&self, bp: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn RemoveBreakpoint2<'a, P0>(&self, bp: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugBreakpoint2>>,
+    {
         (::windows::core::Interface::vtable(self).RemoveBreakpoint2)(::windows::core::Interface::as_raw(self), bp.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -24226,7 +24987,10 @@ impl IDebugControl6 {
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn OpenLogFile<'a, Param1: ::std::convert::Into<super::super::super::Foundation::BOOL>>(&self, file: ::windows::core::PCSTR, append: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn OpenLogFile<'a, P0>(&self, file: ::windows::core::PCSTR, append: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+    {
         (::windows::core::Interface::vtable(self).OpenLogFile)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(file), append.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -24514,7 +25278,10 @@ impl IDebugControl6 {
         (::windows::core::Interface::vtable(self).AddBreakpoint)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(r#type), ::core::mem::transmute(desiredid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugBreakpoint>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn RemoveBreakpoint<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugBreakpoint>>>(&self, bp: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn RemoveBreakpoint<'a, P0>(&self, bp: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugBreakpoint>>,
+    {
         (::windows::core::Interface::vtable(self).RemoveBreakpoint)(::windows::core::Interface::as_raw(self), bp.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -24708,7 +25475,10 @@ impl IDebugControl6 {
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn OpenLogFileWide<'a, Param1: ::std::convert::Into<super::super::super::Foundation::BOOL>>(&self, file: ::windows::core::PCWSTR, append: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn OpenLogFileWide<'a, P0>(&self, file: ::windows::core::PCWSTR, append: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+    {
         (::windows::core::Interface::vtable(self).OpenLogFileWide)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(file), append.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -24797,7 +25567,10 @@ impl IDebugControl6 {
         (::windows::core::Interface::vtable(self).AddBreakpoint2)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(r#type), ::core::mem::transmute(desiredid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugBreakpoint2>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn RemoveBreakpoint2<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugBreakpoint2>>>(&self, bp: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn RemoveBreakpoint2<'a, P0>(&self, bp: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugBreakpoint2>>,
+    {
         (::windows::core::Interface::vtable(self).RemoveBreakpoint2)(::windows::core::Interface::as_raw(self), bp.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -25262,7 +26035,10 @@ impl IDebugControl7 {
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn OpenLogFile<'a, Param1: ::std::convert::Into<super::super::super::Foundation::BOOL>>(&self, file: ::windows::core::PCSTR, append: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn OpenLogFile<'a, P0>(&self, file: ::windows::core::PCSTR, append: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+    {
         (::windows::core::Interface::vtable(self).OpenLogFile)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(file), append.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -25550,7 +26326,10 @@ impl IDebugControl7 {
         (::windows::core::Interface::vtable(self).AddBreakpoint)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(r#type), ::core::mem::transmute(desiredid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugBreakpoint>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn RemoveBreakpoint<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugBreakpoint>>>(&self, bp: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn RemoveBreakpoint<'a, P0>(&self, bp: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugBreakpoint>>,
+    {
         (::windows::core::Interface::vtable(self).RemoveBreakpoint)(::windows::core::Interface::as_raw(self), bp.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -25744,7 +26523,10 @@ impl IDebugControl7 {
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn OpenLogFileWide<'a, Param1: ::std::convert::Into<super::super::super::Foundation::BOOL>>(&self, file: ::windows::core::PCWSTR, append: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn OpenLogFileWide<'a, P0>(&self, file: ::windows::core::PCWSTR, append: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+    {
         (::windows::core::Interface::vtable(self).OpenLogFileWide)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(file), append.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -25833,7 +26615,10 @@ impl IDebugControl7 {
         (::windows::core::Interface::vtable(self).AddBreakpoint2)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(r#type), ::core::mem::transmute(desiredid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugBreakpoint2>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn RemoveBreakpoint2<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugBreakpoint2>>>(&self, bp: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn RemoveBreakpoint2<'a, P0>(&self, bp: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugBreakpoint2>>,
+    {
         (::windows::core::Interface::vtable(self).RemoveBreakpoint2)(::windows::core::Interface::as_raw(self), bp.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -27172,7 +27957,10 @@ pub struct IDebugDocument(::windows::core::IUnknown);
 impl IDebugDocument {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetName<'a, Param0: ::std::convert::Into<DOCUMENTNAMETYPE>>(&self, dnt: Param0) -> ::windows::core::Result<super::super::super::Foundation::BSTR> {
+    pub unsafe fn GetName<'a, P0>(&self, dnt: P0) -> ::windows::core::Result<super::super::super::Foundation::BSTR>
+    where
+        P0: ::std::convert::Into<DOCUMENTNAMETYPE>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
         (::windows::core::Interface::vtable(self).base__.GetName)(::windows::core::Interface::as_raw(self), dnt.into(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
     }
@@ -27299,11 +28087,17 @@ pub struct IDebugDocumentContext_Vtbl {
 pub struct IDebugDocumentHelper32(::windows::core::IUnknown);
 impl IDebugDocumentHelper32 {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn Init<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugApplication32>>>(&self, pda: Param0, pszshortname: ::windows::core::PCWSTR, pszlongname: ::windows::core::PCWSTR, docattr: u32) -> ::windows::core::Result<()> {
+    pub unsafe fn Init<'a, P0>(&self, pda: P0, pszshortname: ::windows::core::PCWSTR, pszlongname: ::windows::core::PCWSTR, docattr: u32) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugApplication32>>,
+    {
         (::windows::core::Interface::vtable(self).Init)(::windows::core::Interface::as_raw(self), pda.into().abi(), ::core::mem::transmute(pszshortname), ::core::mem::transmute(pszlongname), ::core::mem::transmute(docattr)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn Attach<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugDocumentHelper32>>>(&self, pddhparent: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn Attach<'a, P0>(&self, pddhparent: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugDocumentHelper32>>,
+    {
         (::windows::core::Interface::vtable(self).Attach)(::windows::core::Interface::as_raw(self), pddhparent.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -27319,7 +28113,10 @@ impl IDebugDocumentHelper32 {
         (::windows::core::Interface::vtable(self).AddDBCSText)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(psztext)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetDebugDocumentHost<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugDocumentHost>>>(&self, pddh: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetDebugDocumentHost<'a, P0>(&self, pddh: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugDocumentHost>>,
+    {
         (::windows::core::Interface::vtable(self).SetDebugDocumentHost)(::windows::core::Interface::as_raw(self), pddh.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -27328,7 +28125,11 @@ impl IDebugDocumentHelper32 {
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DefineScriptBlock<'a, Param2: ::std::convert::Into<::windows::core::InParam<'a, IActiveScript>>, Param3: ::std::convert::Into<super::super::super::Foundation::BOOL>>(&self, ulcharoffset: u32, cchars: u32, pas: Param2, fscriptlet: Param3) -> ::windows::core::Result<u32> {
+    pub unsafe fn DefineScriptBlock<'a, P0, P1>(&self, ulcharoffset: u32, cchars: u32, pas: P0, fscriptlet: P1) -> ::windows::core::Result<u32>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IActiveScript>>,
+        P1: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows::core::Interface::vtable(self).DefineScriptBlock)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(ulcharoffset), ::core::mem::transmute(cchars), pas.into().abi(), fscriptlet.into(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
@@ -27371,7 +28172,10 @@ impl IDebugDocumentHelper32 {
         (::windows::core::Interface::vtable(self).BringDocumentToTop)(::windows::core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn BringDocumentContextToTop<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugDocumentContext>>>(&self, pddc: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn BringDocumentContextToTop<'a, P0>(&self, pddc: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugDocumentContext>>,
+    {
         (::windows::core::Interface::vtable(self).BringDocumentContextToTop)(::windows::core::Interface::as_raw(self), pddc.into().abi()).ok()
     }
 }
@@ -27441,11 +28245,17 @@ pub struct IDebugDocumentHelper32_Vtbl {
 pub struct IDebugDocumentHelper64(::windows::core::IUnknown);
 impl IDebugDocumentHelper64 {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn Init<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugApplication64>>>(&self, pda: Param0, pszshortname: ::windows::core::PCWSTR, pszlongname: ::windows::core::PCWSTR, docattr: u32) -> ::windows::core::Result<()> {
+    pub unsafe fn Init<'a, P0>(&self, pda: P0, pszshortname: ::windows::core::PCWSTR, pszlongname: ::windows::core::PCWSTR, docattr: u32) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugApplication64>>,
+    {
         (::windows::core::Interface::vtable(self).Init)(::windows::core::Interface::as_raw(self), pda.into().abi(), ::core::mem::transmute(pszshortname), ::core::mem::transmute(pszlongname), ::core::mem::transmute(docattr)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn Attach<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugDocumentHelper64>>>(&self, pddhparent: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn Attach<'a, P0>(&self, pddhparent: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugDocumentHelper64>>,
+    {
         (::windows::core::Interface::vtable(self).Attach)(::windows::core::Interface::as_raw(self), pddhparent.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -27461,7 +28271,10 @@ impl IDebugDocumentHelper64 {
         (::windows::core::Interface::vtable(self).AddDBCSText)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(psztext)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetDebugDocumentHost<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugDocumentHost>>>(&self, pddh: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetDebugDocumentHost<'a, P0>(&self, pddh: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugDocumentHost>>,
+    {
         (::windows::core::Interface::vtable(self).SetDebugDocumentHost)(::windows::core::Interface::as_raw(self), pddh.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -27470,7 +28283,11 @@ impl IDebugDocumentHelper64 {
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DefineScriptBlock<'a, Param2: ::std::convert::Into<::windows::core::InParam<'a, IActiveScript>>, Param3: ::std::convert::Into<super::super::super::Foundation::BOOL>>(&self, ulcharoffset: u32, cchars: u32, pas: Param2, fscriptlet: Param3) -> ::windows::core::Result<u64> {
+    pub unsafe fn DefineScriptBlock<'a, P0, P1>(&self, ulcharoffset: u32, cchars: u32, pas: P0, fscriptlet: P1) -> ::windows::core::Result<u64>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IActiveScript>>,
+        P1: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<u64>::zeroed();
         (::windows::core::Interface::vtable(self).DefineScriptBlock)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(ulcharoffset), ::core::mem::transmute(cchars), pas.into().abi(), fscriptlet.into(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u64>(result__)
     }
@@ -27513,7 +28330,10 @@ impl IDebugDocumentHelper64 {
         (::windows::core::Interface::vtable(self).BringDocumentToTop)(::windows::core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn BringDocumentContextToTop<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugDocumentContext>>>(&self, pddc: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn BringDocumentContextToTop<'a, P0>(&self, pddc: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugDocumentContext>>,
+    {
         (::windows::core::Interface::vtable(self).BringDocumentContextToTop)(::windows::core::Interface::as_raw(self), pddc.into().abi()).ok()
     }
 }
@@ -27669,7 +28489,10 @@ pub struct IDebugDocumentInfo(::windows::core::IUnknown);
 impl IDebugDocumentInfo {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetName<'a, Param0: ::std::convert::Into<DOCUMENTNAMETYPE>>(&self, dnt: Param0) -> ::windows::core::Result<super::super::super::Foundation::BSTR> {
+    pub unsafe fn GetName<'a, P0>(&self, dnt: P0) -> ::windows::core::Result<super::super::super::Foundation::BSTR>
+    where
+        P0: ::std::convert::Into<DOCUMENTNAMETYPE>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
         (::windows::core::Interface::vtable(self).GetName)(::windows::core::Interface::as_raw(self), dnt.into(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
     }
@@ -27730,7 +28553,10 @@ pub struct IDebugDocumentProvider(::windows::core::IUnknown);
 impl IDebugDocumentProvider {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetName<'a, Param0: ::std::convert::Into<DOCUMENTNAMETYPE>>(&self, dnt: Param0) -> ::windows::core::Result<super::super::super::Foundation::BSTR> {
+    pub unsafe fn GetName<'a, P0>(&self, dnt: P0) -> ::windows::core::Result<super::super::super::Foundation::BSTR>
+    where
+        P0: ::std::convert::Into<DOCUMENTNAMETYPE>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
         (::windows::core::Interface::vtable(self).base__.GetName)(::windows::core::Interface::as_raw(self), dnt.into(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
     }
@@ -27807,7 +28633,10 @@ pub struct IDebugDocumentText(::windows::core::IUnknown);
 impl IDebugDocumentText {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetName<'a, Param0: ::std::convert::Into<DOCUMENTNAMETYPE>>(&self, dnt: Param0) -> ::windows::core::Result<super::super::super::Foundation::BSTR> {
+    pub unsafe fn GetName<'a, P0>(&self, dnt: P0) -> ::windows::core::Result<super::super::super::Foundation::BSTR>
+    where
+        P0: ::std::convert::Into<DOCUMENTNAMETYPE>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
         (::windows::core::Interface::vtable(self).base__.base__.GetName)(::windows::core::Interface::as_raw(self), dnt.into(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
     }
@@ -27839,7 +28668,10 @@ impl IDebugDocumentText {
         (::windows::core::Interface::vtable(self).GetText)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(ccharacterposition), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(pchartext)), ::core::mem::transmute(pstatextattr), ::core::mem::transmute(pcnumchars), pchartext.len() as _).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn GetPositionOfContext<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugDocumentContext>>>(&self, psc: Param0, pccharacterposition: *mut u32, cnumchars: *mut u32) -> ::windows::core::Result<()> {
+    pub unsafe fn GetPositionOfContext<'a, P0>(&self, psc: P0, pccharacterposition: *mut u32, cnumchars: *mut u32) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugDocumentContext>>,
+    {
         (::windows::core::Interface::vtable(self).GetPositionOfContext)(::windows::core::Interface::as_raw(self), psc.into().abi(), ::core::mem::transmute(pccharacterposition), ::core::mem::transmute(cnumchars)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -27931,7 +28763,10 @@ pub struct IDebugDocumentTextAuthor(::windows::core::IUnknown);
 impl IDebugDocumentTextAuthor {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetName<'a, Param0: ::std::convert::Into<DOCUMENTNAMETYPE>>(&self, dnt: Param0) -> ::windows::core::Result<super::super::super::Foundation::BSTR> {
+    pub unsafe fn GetName<'a, P0>(&self, dnt: P0) -> ::windows::core::Result<super::super::super::Foundation::BSTR>
+    where
+        P0: ::std::convert::Into<DOCUMENTNAMETYPE>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
         (::windows::core::Interface::vtable(self).base__.base__.base__.GetName)(::windows::core::Interface::as_raw(self), dnt.into(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
     }
@@ -27963,7 +28798,10 @@ impl IDebugDocumentTextAuthor {
         (::windows::core::Interface::vtable(self).base__.GetText)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(ccharacterposition), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(pchartext)), ::core::mem::transmute(pstatextattr), ::core::mem::transmute(pcnumchars), pchartext.len() as _).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn GetPositionOfContext<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugDocumentContext>>>(&self, psc: Param0, pccharacterposition: *mut u32, cnumchars: *mut u32) -> ::windows::core::Result<()> {
+    pub unsafe fn GetPositionOfContext<'a, P0>(&self, psc: P0, pccharacterposition: *mut u32, cnumchars: *mut u32) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugDocumentContext>>,
+    {
         (::windows::core::Interface::vtable(self).base__.GetPositionOfContext)(::windows::core::Interface::as_raw(self), psc.into().abi(), ::core::mem::transmute(pccharacterposition), ::core::mem::transmute(cnumchars)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -28226,7 +29064,10 @@ impl IDebugEventCallbacks {
         (::windows::core::Interface::vtable(self).GetInterestMask)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn Breakpoint<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugBreakpoint>>>(&self, bp: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn Breakpoint<'a, P0>(&self, bp: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugBreakpoint>>,
+    {
         (::windows::core::Interface::vtable(self).Breakpoint)(::windows::core::Interface::as_raw(self), bp.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
@@ -28346,7 +29187,10 @@ impl IDebugEventCallbacksWide {
         (::windows::core::Interface::vtable(self).GetInterestMask)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn Breakpoint<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugBreakpoint2>>>(&self, bp: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn Breakpoint<'a, P0>(&self, bp: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugBreakpoint2>>,
+    {
         (::windows::core::Interface::vtable(self).Breakpoint)(::windows::core::Interface::as_raw(self), bp.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
@@ -28466,7 +29310,10 @@ impl IDebugEventContextCallbacks {
         (::windows::core::Interface::vtable(self).GetInterestMask)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn Breakpoint<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugBreakpoint2>>>(&self, bp: Param0, context: *const ::core::ffi::c_void, contextsize: u32) -> ::windows::core::Result<()> {
+    pub unsafe fn Breakpoint<'a, P0>(&self, bp: P0, context: *const ::core::ffi::c_void, contextsize: u32) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugBreakpoint2>>,
+    {
         (::windows::core::Interface::vtable(self).Breakpoint)(::windows::core::Interface::as_raw(self), bp.into().abi(), ::core::mem::transmute(context), ::core::mem::transmute(contextsize)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
@@ -28597,7 +29444,10 @@ pub struct IDebugEventContextCallbacks_Vtbl {
 pub struct IDebugExpression(::windows::core::IUnknown);
 impl IDebugExpression {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn Start<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugExpressionCallBack>>>(&self, pdecb: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn Start<'a, P0>(&self, pdecb: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugExpressionCallBack>>,
+    {
         (::windows::core::Interface::vtable(self).Start)(::windows::core::Interface::as_raw(self), pdecb.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -28958,19 +29808,29 @@ pub struct IDebugHelper(::windows::core::IUnknown);
 impl IDebugHelper {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn CreatePropertyBrowser<'a, Param2: ::std::convert::Into<::windows::core::InParam<'a, IDebugApplicationThread>>>(&self, pvar: *const super::super::Com::VARIANT, bstrname: ::windows::core::PCWSTR, pdat: Param2) -> ::windows::core::Result<IDebugProperty> {
+    pub unsafe fn CreatePropertyBrowser<'a, P0>(&self, pvar: *const super::super::Com::VARIANT, bstrname: ::windows::core::PCWSTR, pdat: P0) -> ::windows::core::Result<IDebugProperty>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugApplicationThread>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).CreatePropertyBrowser)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pvar), ::core::mem::transmute(bstrname), pdat.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugProperty>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`, `\"Win32_System_Com\"`, `\"Win32_System_Ole\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn CreatePropertyBrowserEx<'a, Param2: ::std::convert::Into<::windows::core::InParam<'a, IDebugApplicationThread>>, Param3: ::std::convert::Into<::windows::core::InParam<'a, IDebugFormatter>>>(&self, pvar: *const super::super::Com::VARIANT, bstrname: ::windows::core::PCWSTR, pdat: Param2, pdf: Param3) -> ::windows::core::Result<IDebugProperty> {
+    pub unsafe fn CreatePropertyBrowserEx<'a, P0, P1>(&self, pvar: *const super::super::Com::VARIANT, bstrname: ::windows::core::PCWSTR, pdat: P0, pdf: P1) -> ::windows::core::Result<IDebugProperty>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugApplicationThread>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, IDebugFormatter>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).CreatePropertyBrowserEx)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pvar), ::core::mem::transmute(bstrname), pdat.into().abi(), pdf.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugProperty>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn CreateSimpleConnectionPoint<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Com::IDispatch>>>(&self, pdisp: Param0) -> ::windows::core::Result<ISimpleConnectionPoint> {
+    pub unsafe fn CreateSimpleConnectionPoint<'a, P0>(&self, pdisp: P0) -> ::windows::core::Result<ISimpleConnectionPoint>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Com::IDispatch>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).CreateSimpleConnectionPoint)(::windows::core::Interface::as_raw(self), pdisp.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ISimpleConnectionPoint>(result__)
     }
@@ -29100,7 +29960,10 @@ impl IDebugHostBaseClass {
         (::windows::core::Interface::vtable(self).base__.GetContext)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostContext>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn EnumerateChildren<'a, Param0: ::std::convert::Into<SymbolKind>>(&self, kind: Param0, name: ::windows::core::PCWSTR) -> ::windows::core::Result<IDebugHostSymbolEnumerator> {
+    pub unsafe fn EnumerateChildren<'a, P0>(&self, kind: P0, name: ::windows::core::PCWSTR) -> ::windows::core::Result<IDebugHostSymbolEnumerator>
+    where
+        P0: ::std::convert::Into<SymbolKind>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).base__.EnumerateChildren)(::windows::core::Interface::as_raw(self), kind.into(), ::core::mem::transmute(name), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostSymbolEnumerator>(result__)
     }
@@ -29126,7 +29989,10 @@ impl IDebugHostBaseClass {
         (::windows::core::Interface::vtable(self).base__.GetContainingModule)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostModule>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn CompareAgainst<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostSymbol>>>(&self, pcomparisonsymbol: Param0, comparisonflags: u32) -> ::windows::core::Result<bool> {
+    pub unsafe fn CompareAgainst<'a, P0>(&self, pcomparisonsymbol: P0, comparisonflags: u32) -> ::windows::core::Result<bool>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostSymbol>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
         (::windows::core::Interface::vtable(self).base__.CompareAgainst)(::windows::core::Interface::as_raw(self), pcomparisonsymbol.into().abi(), ::core::mem::transmute(comparisonflags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<bool>(result__)
     }
@@ -29202,7 +30068,10 @@ impl IDebugHostConstant {
         (::windows::core::Interface::vtable(self).base__.GetContext)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostContext>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn EnumerateChildren<'a, Param0: ::std::convert::Into<SymbolKind>>(&self, kind: Param0, name: ::windows::core::PCWSTR) -> ::windows::core::Result<IDebugHostSymbolEnumerator> {
+    pub unsafe fn EnumerateChildren<'a, P0>(&self, kind: P0, name: ::windows::core::PCWSTR) -> ::windows::core::Result<IDebugHostSymbolEnumerator>
+    where
+        P0: ::std::convert::Into<SymbolKind>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).base__.EnumerateChildren)(::windows::core::Interface::as_raw(self), kind.into(), ::core::mem::transmute(name), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostSymbolEnumerator>(result__)
     }
@@ -29228,7 +30097,10 @@ impl IDebugHostConstant {
         (::windows::core::Interface::vtable(self).base__.GetContainingModule)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostModule>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn CompareAgainst<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostSymbol>>>(&self, pcomparisonsymbol: Param0, comparisonflags: u32) -> ::windows::core::Result<bool> {
+    pub unsafe fn CompareAgainst<'a, P0>(&self, pcomparisonsymbol: P0, comparisonflags: u32) -> ::windows::core::Result<bool>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostSymbol>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
         (::windows::core::Interface::vtable(self).base__.CompareAgainst)(::windows::core::Interface::as_raw(self), pcomparisonsymbol.into().abi(), ::core::mem::transmute(comparisonflags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<bool>(result__)
     }
@@ -29303,7 +30175,10 @@ pub struct IDebugHostConstant_Vtbl {
 pub struct IDebugHostContext(::windows::core::IUnknown);
 impl IDebugHostContext {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn IsEqualTo<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>>(&self, pcontext: Param0) -> ::windows::core::Result<bool> {
+    pub unsafe fn IsEqualTo<'a, P0>(&self, pcontext: P0) -> ::windows::core::Result<bool>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
         (::windows::core::Interface::vtable(self).IsEqualTo)(::windows::core::Interface::as_raw(self), pcontext.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<bool>(result__)
     }
@@ -29359,7 +30234,10 @@ impl IDebugHostData {
         (::windows::core::Interface::vtable(self).base__.GetContext)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostContext>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn EnumerateChildren<'a, Param0: ::std::convert::Into<SymbolKind>>(&self, kind: Param0, name: ::windows::core::PCWSTR) -> ::windows::core::Result<IDebugHostSymbolEnumerator> {
+    pub unsafe fn EnumerateChildren<'a, P0>(&self, kind: P0, name: ::windows::core::PCWSTR) -> ::windows::core::Result<IDebugHostSymbolEnumerator>
+    where
+        P0: ::std::convert::Into<SymbolKind>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).base__.EnumerateChildren)(::windows::core::Interface::as_raw(self), kind.into(), ::core::mem::transmute(name), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostSymbolEnumerator>(result__)
     }
@@ -29385,7 +30263,10 @@ impl IDebugHostData {
         (::windows::core::Interface::vtable(self).base__.GetContainingModule)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostModule>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn CompareAgainst<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostSymbol>>>(&self, pcomparisonsymbol: Param0, comparisonflags: u32) -> ::windows::core::Result<bool> {
+    pub unsafe fn CompareAgainst<'a, P0>(&self, pcomparisonsymbol: P0, comparisonflags: u32) -> ::windows::core::Result<bool>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostSymbol>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
         (::windows::core::Interface::vtable(self).base__.CompareAgainst)(::windows::core::Interface::as_raw(self), pcomparisonsymbol.into().abi(), ::core::mem::transmute(comparisonflags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<bool>(result__)
     }
@@ -29472,7 +30353,10 @@ pub struct IDebugHostData_Vtbl {
 pub struct IDebugHostErrorSink(::windows::core::IUnknown);
 impl IDebugHostErrorSink {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn ReportError<'a, Param0: ::std::convert::Into<ErrorClass>>(&self, errclass: Param0, hrerror: ::windows::core::HRESULT, message: ::windows::core::PCWSTR) -> ::windows::core::Result<()> {
+    pub unsafe fn ReportError<'a, P0>(&self, errclass: P0, hrerror: ::windows::core::HRESULT, message: ::windows::core::PCWSTR) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<ErrorClass>,
+    {
         (::windows::core::Interface::vtable(self).ReportError)(::windows::core::Interface::as_raw(self), errclass.into(), ::core::mem::transmute(hrerror), ::core::mem::transmute(message)).ok()
     }
 }
@@ -29522,11 +30406,19 @@ pub struct IDebugHostErrorSink_Vtbl {
 pub struct IDebugHostEvaluator(::windows::core::IUnknown);
 impl IDebugHostEvaluator {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn EvaluateExpression<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>, Param2: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, context: Param0, expression: ::windows::core::PCWSTR, bindingcontext: Param2, result: *mut ::core::option::Option<IModelObject>, metadata: *mut ::core::option::Option<IKeyStore>) -> ::windows::core::Result<()> {
+    pub unsafe fn EvaluateExpression<'a, P0, P1>(&self, context: P0, expression: ::windows::core::PCWSTR, bindingcontext: P1, result: *mut ::core::option::Option<IModelObject>, metadata: *mut ::core::option::Option<IKeyStore>) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         (::windows::core::Interface::vtable(self).EvaluateExpression)(::windows::core::Interface::as_raw(self), context.into().abi(), ::core::mem::transmute(expression), bindingcontext.into().abi(), ::core::mem::transmute(result), ::core::mem::transmute(metadata)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn EvaluateExtendedExpression<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>, Param2: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, context: Param0, expression: ::windows::core::PCWSTR, bindingcontext: Param2, result: *mut ::core::option::Option<IModelObject>, metadata: *mut ::core::option::Option<IKeyStore>) -> ::windows::core::Result<()> {
+    pub unsafe fn EvaluateExtendedExpression<'a, P0, P1>(&self, context: P0, expression: ::windows::core::PCWSTR, bindingcontext: P1, result: *mut ::core::option::Option<IModelObject>, metadata: *mut ::core::option::Option<IKeyStore>) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         (::windows::core::Interface::vtable(self).EvaluateExtendedExpression)(::windows::core::Interface::as_raw(self), context.into().abi(), ::core::mem::transmute(expression), bindingcontext.into().abi(), ::core::mem::transmute(result), ::core::mem::transmute(metadata)).ok()
     }
 }
@@ -29577,15 +30469,27 @@ pub struct IDebugHostEvaluator_Vtbl {
 pub struct IDebugHostEvaluator2(::windows::core::IUnknown);
 impl IDebugHostEvaluator2 {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn EvaluateExpression<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>, Param2: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, context: Param0, expression: ::windows::core::PCWSTR, bindingcontext: Param2, result: *mut ::core::option::Option<IModelObject>, metadata: *mut ::core::option::Option<IKeyStore>) -> ::windows::core::Result<()> {
+    pub unsafe fn EvaluateExpression<'a, P0, P1>(&self, context: P0, expression: ::windows::core::PCWSTR, bindingcontext: P1, result: *mut ::core::option::Option<IModelObject>, metadata: *mut ::core::option::Option<IKeyStore>) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         (::windows::core::Interface::vtable(self).base__.EvaluateExpression)(::windows::core::Interface::as_raw(self), context.into().abi(), ::core::mem::transmute(expression), bindingcontext.into().abi(), ::core::mem::transmute(result), ::core::mem::transmute(metadata)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn EvaluateExtendedExpression<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>, Param2: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, context: Param0, expression: ::windows::core::PCWSTR, bindingcontext: Param2, result: *mut ::core::option::Option<IModelObject>, metadata: *mut ::core::option::Option<IKeyStore>) -> ::windows::core::Result<()> {
+    pub unsafe fn EvaluateExtendedExpression<'a, P0, P1>(&self, context: P0, expression: ::windows::core::PCWSTR, bindingcontext: P1, result: *mut ::core::option::Option<IModelObject>, metadata: *mut ::core::option::Option<IKeyStore>) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         (::windows::core::Interface::vtable(self).base__.EvaluateExtendedExpression)(::windows::core::Interface::as_raw(self), context.into().abi(), ::core::mem::transmute(expression), bindingcontext.into().abi(), ::core::mem::transmute(result), ::core::mem::transmute(metadata)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn AssignTo<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>, Param1: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, assignmentreference: Param0, assignmentvalue: Param1, assignmentresult: *mut ::core::option::Option<IModelObject>, assignmentmetadata: *mut ::core::option::Option<IKeyStore>) -> ::windows::core::Result<()> {
+    pub unsafe fn AssignTo<'a, P0, P1>(&self, assignmentreference: P0, assignmentvalue: P1, assignmentresult: *mut ::core::option::Option<IModelObject>, assignmentmetadata: *mut ::core::option::Option<IKeyStore>) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         (::windows::core::Interface::vtable(self).AssignTo)(::windows::core::Interface::as_raw(self), assignmentreference.into().abi(), assignmentvalue.into().abi(), ::core::mem::transmute(assignmentresult), ::core::mem::transmute(assignmentmetadata)).ok()
     }
 }
@@ -29650,7 +30554,10 @@ pub struct IDebugHostEvaluator2_Vtbl {
 pub struct IDebugHostExtensibility(::windows::core::IUnknown);
 impl IDebugHostExtensibility {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn CreateFunctionAlias<'a, Param1: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, aliasname: ::windows::core::PCWSTR, functionobject: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn CreateFunctionAlias<'a, P0>(&self, aliasname: ::windows::core::PCWSTR, functionobject: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         (::windows::core::Interface::vtable(self).CreateFunctionAlias)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(aliasname), functionobject.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -29710,7 +30617,10 @@ impl IDebugHostField {
         (::windows::core::Interface::vtable(self).base__.GetContext)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostContext>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn EnumerateChildren<'a, Param0: ::std::convert::Into<SymbolKind>>(&self, kind: Param0, name: ::windows::core::PCWSTR) -> ::windows::core::Result<IDebugHostSymbolEnumerator> {
+    pub unsafe fn EnumerateChildren<'a, P0>(&self, kind: P0, name: ::windows::core::PCWSTR) -> ::windows::core::Result<IDebugHostSymbolEnumerator>
+    where
+        P0: ::std::convert::Into<SymbolKind>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).base__.EnumerateChildren)(::windows::core::Interface::as_raw(self), kind.into(), ::core::mem::transmute(name), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostSymbolEnumerator>(result__)
     }
@@ -29736,7 +30646,10 @@ impl IDebugHostField {
         (::windows::core::Interface::vtable(self).base__.GetContainingModule)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostModule>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn CompareAgainst<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostSymbol>>>(&self, pcomparisonsymbol: Param0, comparisonflags: u32) -> ::windows::core::Result<bool> {
+    pub unsafe fn CompareAgainst<'a, P0>(&self, pcomparisonsymbol: P0, comparisonflags: u32) -> ::windows::core::Result<bool>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostSymbol>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
         (::windows::core::Interface::vtable(self).base__.CompareAgainst)(::windows::core::Interface::as_raw(self), pcomparisonsymbol.into().abi(), ::core::mem::transmute(comparisonflags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<bool>(result__)
     }
@@ -29829,25 +30742,40 @@ pub struct IDebugHostField_Vtbl {
 pub struct IDebugHostMemory(::windows::core::IUnknown);
 impl IDebugHostMemory {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn ReadBytes<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>>(&self, context: Param0, location: Location, buffer: *mut ::core::ffi::c_void, buffersize: u64, bytesread: *mut u64) -> ::windows::core::Result<()> {
+    pub unsafe fn ReadBytes<'a, P0>(&self, context: P0, location: Location, buffer: *mut ::core::ffi::c_void, buffersize: u64, bytesread: *mut u64) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>,
+    {
         (::windows::core::Interface::vtable(self).ReadBytes)(::windows::core::Interface::as_raw(self), context.into().abi(), ::core::mem::transmute(location), ::core::mem::transmute(buffer), ::core::mem::transmute(buffersize), ::core::mem::transmute(bytesread)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn WriteBytes<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>>(&self, context: Param0, location: Location, buffer: *const ::core::ffi::c_void, buffersize: u64) -> ::windows::core::Result<u64> {
+    pub unsafe fn WriteBytes<'a, P0>(&self, context: P0, location: Location, buffer: *const ::core::ffi::c_void, buffersize: u64) -> ::windows::core::Result<u64>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<u64>::zeroed();
         (::windows::core::Interface::vtable(self).WriteBytes)(::windows::core::Interface::as_raw(self), context.into().abi(), ::core::mem::transmute(location), ::core::mem::transmute(buffer), ::core::mem::transmute(buffersize), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u64>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn ReadPointers<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>>(&self, context: Param0, location: Location, pointers: &mut [u64]) -> ::windows::core::Result<()> {
+    pub unsafe fn ReadPointers<'a, P0>(&self, context: P0, location: Location, pointers: &mut [u64]) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>,
+    {
         (::windows::core::Interface::vtable(self).ReadPointers)(::windows::core::Interface::as_raw(self), context.into().abi(), ::core::mem::transmute(location), pointers.len() as _, ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(pointers))).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn WritePointers<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>>(&self, context: Param0, location: Location, pointers: &[u64]) -> ::windows::core::Result<()> {
+    pub unsafe fn WritePointers<'a, P0>(&self, context: P0, location: Location, pointers: &[u64]) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>,
+    {
         (::windows::core::Interface::vtable(self).WritePointers)(::windows::core::Interface::as_raw(self), context.into().abi(), ::core::mem::transmute(location), pointers.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(pointers))).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetDisplayStringForLocation<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>>(&self, context: Param0, location: Location, verbose: u8) -> ::windows::core::Result<super::super::super::Foundation::BSTR> {
+    pub unsafe fn GetDisplayStringForLocation<'a, P0>(&self, context: P0, location: Location, verbose: u8) -> ::windows::core::Result<super::super::super::Foundation::BSTR>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
         (::windows::core::Interface::vtable(self).GetDisplayStringForLocation)(::windows::core::Interface::as_raw(self), context.into().abi(), ::core::mem::transmute(location), ::core::mem::transmute(verbose), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
     }
@@ -29905,30 +30833,48 @@ pub struct IDebugHostMemory_Vtbl {
 pub struct IDebugHostMemory2(::windows::core::IUnknown);
 impl IDebugHostMemory2 {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn ReadBytes<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>>(&self, context: Param0, location: Location, buffer: *mut ::core::ffi::c_void, buffersize: u64, bytesread: *mut u64) -> ::windows::core::Result<()> {
+    pub unsafe fn ReadBytes<'a, P0>(&self, context: P0, location: Location, buffer: *mut ::core::ffi::c_void, buffersize: u64, bytesread: *mut u64) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>,
+    {
         (::windows::core::Interface::vtable(self).base__.ReadBytes)(::windows::core::Interface::as_raw(self), context.into().abi(), ::core::mem::transmute(location), ::core::mem::transmute(buffer), ::core::mem::transmute(buffersize), ::core::mem::transmute(bytesread)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn WriteBytes<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>>(&self, context: Param0, location: Location, buffer: *const ::core::ffi::c_void, buffersize: u64) -> ::windows::core::Result<u64> {
+    pub unsafe fn WriteBytes<'a, P0>(&self, context: P0, location: Location, buffer: *const ::core::ffi::c_void, buffersize: u64) -> ::windows::core::Result<u64>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<u64>::zeroed();
         (::windows::core::Interface::vtable(self).base__.WriteBytes)(::windows::core::Interface::as_raw(self), context.into().abi(), ::core::mem::transmute(location), ::core::mem::transmute(buffer), ::core::mem::transmute(buffersize), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u64>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn ReadPointers<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>>(&self, context: Param0, location: Location, pointers: &mut [u64]) -> ::windows::core::Result<()> {
+    pub unsafe fn ReadPointers<'a, P0>(&self, context: P0, location: Location, pointers: &mut [u64]) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>,
+    {
         (::windows::core::Interface::vtable(self).base__.ReadPointers)(::windows::core::Interface::as_raw(self), context.into().abi(), ::core::mem::transmute(location), pointers.len() as _, ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(pointers))).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn WritePointers<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>>(&self, context: Param0, location: Location, pointers: &[u64]) -> ::windows::core::Result<()> {
+    pub unsafe fn WritePointers<'a, P0>(&self, context: P0, location: Location, pointers: &[u64]) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>,
+    {
         (::windows::core::Interface::vtable(self).base__.WritePointers)(::windows::core::Interface::as_raw(self), context.into().abi(), ::core::mem::transmute(location), pointers.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(pointers))).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetDisplayStringForLocation<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>>(&self, context: Param0, location: Location, verbose: u8) -> ::windows::core::Result<super::super::super::Foundation::BSTR> {
+    pub unsafe fn GetDisplayStringForLocation<'a, P0>(&self, context: P0, location: Location, verbose: u8) -> ::windows::core::Result<super::super::super::Foundation::BSTR>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
         (::windows::core::Interface::vtable(self).base__.GetDisplayStringForLocation)(::windows::core::Interface::as_raw(self), context.into().abi(), ::core::mem::transmute(location), ::core::mem::transmute(verbose), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn LinearizeLocation<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>>(&self, context: Param0, location: Location) -> ::windows::core::Result<Location> {
+    pub unsafe fn LinearizeLocation<'a, P0>(&self, context: P0, location: Location) -> ::windows::core::Result<Location>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<Location>::zeroed();
         (::windows::core::Interface::vtable(self).LinearizeLocation)(::windows::core::Interface::as_raw(self), context.into().abi(), ::core::mem::transmute(location), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<Location>(result__)
     }
@@ -29999,7 +30945,10 @@ impl IDebugHostModule {
         (::windows::core::Interface::vtable(self).base__.GetContext)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostContext>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn EnumerateChildren<'a, Param0: ::std::convert::Into<SymbolKind>>(&self, kind: Param0, name: ::windows::core::PCWSTR) -> ::windows::core::Result<IDebugHostSymbolEnumerator> {
+    pub unsafe fn EnumerateChildren<'a, P0>(&self, kind: P0, name: ::windows::core::PCWSTR) -> ::windows::core::Result<IDebugHostSymbolEnumerator>
+    where
+        P0: ::std::convert::Into<SymbolKind>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).base__.EnumerateChildren)(::windows::core::Interface::as_raw(self), kind.into(), ::core::mem::transmute(name), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostSymbolEnumerator>(result__)
     }
@@ -30025,7 +30974,10 @@ impl IDebugHostModule {
         (::windows::core::Interface::vtable(self).base__.GetContainingModule)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostModule>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn CompareAgainst<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostSymbol>>>(&self, pcomparisonsymbol: Param0, comparisonflags: u32) -> ::windows::core::Result<bool> {
+    pub unsafe fn CompareAgainst<'a, P0>(&self, pcomparisonsymbol: P0, comparisonflags: u32) -> ::windows::core::Result<bool>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostSymbol>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
         (::windows::core::Interface::vtable(self).base__.CompareAgainst)(::windows::core::Interface::as_raw(self), pcomparisonsymbol.into().abi(), ::core::mem::transmute(comparisonflags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<bool>(result__)
     }
@@ -30134,7 +31086,10 @@ impl IDebugHostModule2 {
         (::windows::core::Interface::vtable(self).base__.base__.GetContext)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostContext>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn EnumerateChildren<'a, Param0: ::std::convert::Into<SymbolKind>>(&self, kind: Param0, name: ::windows::core::PCWSTR) -> ::windows::core::Result<IDebugHostSymbolEnumerator> {
+    pub unsafe fn EnumerateChildren<'a, P0>(&self, kind: P0, name: ::windows::core::PCWSTR) -> ::windows::core::Result<IDebugHostSymbolEnumerator>
+    where
+        P0: ::std::convert::Into<SymbolKind>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).base__.base__.EnumerateChildren)(::windows::core::Interface::as_raw(self), kind.into(), ::core::mem::transmute(name), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostSymbolEnumerator>(result__)
     }
@@ -30160,7 +31115,10 @@ impl IDebugHostModule2 {
         (::windows::core::Interface::vtable(self).base__.base__.GetContainingModule)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostModule>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn CompareAgainst<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostSymbol>>>(&self, pcomparisonsymbol: Param0, comparisonflags: u32) -> ::windows::core::Result<bool> {
+    pub unsafe fn CompareAgainst<'a, P0>(&self, pcomparisonsymbol: P0, comparisonflags: u32) -> ::windows::core::Result<bool>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostSymbol>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
         (::windows::core::Interface::vtable(self).base__.base__.CompareAgainst)(::windows::core::Interface::as_raw(self), pcomparisonsymbol.into().abi(), ::core::mem::transmute(comparisonflags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<bool>(result__)
     }
@@ -30275,7 +31233,10 @@ pub struct IDebugHostModule2_Vtbl {
 pub struct IDebugHostModuleSignature(::windows::core::IUnknown);
 impl IDebugHostModuleSignature {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn IsMatch<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostModule>>>(&self, pmodule: Param0) -> ::windows::core::Result<bool> {
+    pub unsafe fn IsMatch<'a, P0>(&self, pmodule: P0) -> ::windows::core::Result<bool>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostModule>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
         (::windows::core::Interface::vtable(self).IsMatch)(::windows::core::Interface::as_raw(self), pmodule.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<bool>(result__)
     }
@@ -30331,7 +31292,10 @@ impl IDebugHostPublic {
         (::windows::core::Interface::vtable(self).base__.GetContext)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostContext>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn EnumerateChildren<'a, Param0: ::std::convert::Into<SymbolKind>>(&self, kind: Param0, name: ::windows::core::PCWSTR) -> ::windows::core::Result<IDebugHostSymbolEnumerator> {
+    pub unsafe fn EnumerateChildren<'a, P0>(&self, kind: P0, name: ::windows::core::PCWSTR) -> ::windows::core::Result<IDebugHostSymbolEnumerator>
+    where
+        P0: ::std::convert::Into<SymbolKind>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).base__.EnumerateChildren)(::windows::core::Interface::as_raw(self), kind.into(), ::core::mem::transmute(name), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostSymbolEnumerator>(result__)
     }
@@ -30357,7 +31321,10 @@ impl IDebugHostPublic {
         (::windows::core::Interface::vtable(self).base__.GetContainingModule)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostModule>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn CompareAgainst<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostSymbol>>>(&self, pcomparisonsymbol: Param0, comparisonflags: u32) -> ::windows::core::Result<bool> {
+    pub unsafe fn CompareAgainst<'a, P0>(&self, pcomparisonsymbol: P0, comparisonflags: u32) -> ::windows::core::Result<bool>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostSymbol>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
         (::windows::core::Interface::vtable(self).base__.CompareAgainst)(::windows::core::Interface::as_raw(self), pcomparisonsymbol.into().abi(), ::core::mem::transmute(comparisonflags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<bool>(result__)
     }
@@ -30434,7 +31401,10 @@ pub struct IDebugHostPublic_Vtbl {
 pub struct IDebugHostScriptHost(::windows::core::IUnknown);
 impl IDebugHostScriptHost {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn CreateContext<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDataModelScript>>>(&self, script: Param0) -> ::windows::core::Result<IDataModelScriptHostContext> {
+    pub unsafe fn CreateContext<'a, P0>(&self, script: P0) -> ::windows::core::Result<IDataModelScriptHostContext>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDataModelScript>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).CreateContext)(::windows::core::Interface::as_raw(self), script.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDataModelScriptHostContext>(result__)
     }
@@ -30541,7 +31511,10 @@ impl IDebugHostSymbol {
         (::windows::core::Interface::vtable(self).GetContext)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostContext>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn EnumerateChildren<'a, Param0: ::std::convert::Into<SymbolKind>>(&self, kind: Param0, name: ::windows::core::PCWSTR) -> ::windows::core::Result<IDebugHostSymbolEnumerator> {
+    pub unsafe fn EnumerateChildren<'a, P0>(&self, kind: P0, name: ::windows::core::PCWSTR) -> ::windows::core::Result<IDebugHostSymbolEnumerator>
+    where
+        P0: ::std::convert::Into<SymbolKind>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).EnumerateChildren)(::windows::core::Interface::as_raw(self), kind.into(), ::core::mem::transmute(name), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostSymbolEnumerator>(result__)
     }
@@ -30567,7 +31540,10 @@ impl IDebugHostSymbol {
         (::windows::core::Interface::vtable(self).GetContainingModule)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostModule>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn CompareAgainst<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostSymbol>>>(&self, pcomparisonsymbol: Param0, comparisonflags: u32) -> ::windows::core::Result<bool> {
+    pub unsafe fn CompareAgainst<'a, P0>(&self, pcomparisonsymbol: P0, comparisonflags: u32) -> ::windows::core::Result<bool>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostSymbol>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
         (::windows::core::Interface::vtable(self).CompareAgainst)(::windows::core::Interface::as_raw(self), pcomparisonsymbol.into().abi(), ::core::mem::transmute(comparisonflags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<bool>(result__)
     }
@@ -30632,7 +31608,10 @@ impl IDebugHostSymbol2 {
         (::windows::core::Interface::vtable(self).base__.GetContext)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostContext>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn EnumerateChildren<'a, Param0: ::std::convert::Into<SymbolKind>>(&self, kind: Param0, name: ::windows::core::PCWSTR) -> ::windows::core::Result<IDebugHostSymbolEnumerator> {
+    pub unsafe fn EnumerateChildren<'a, P0>(&self, kind: P0, name: ::windows::core::PCWSTR) -> ::windows::core::Result<IDebugHostSymbolEnumerator>
+    where
+        P0: ::std::convert::Into<SymbolKind>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).base__.EnumerateChildren)(::windows::core::Interface::as_raw(self), kind.into(), ::core::mem::transmute(name), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostSymbolEnumerator>(result__)
     }
@@ -30658,7 +31637,10 @@ impl IDebugHostSymbol2 {
         (::windows::core::Interface::vtable(self).base__.GetContainingModule)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostModule>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn CompareAgainst<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostSymbol>>>(&self, pcomparisonsymbol: Param0, comparisonflags: u32) -> ::windows::core::Result<bool> {
+    pub unsafe fn CompareAgainst<'a, P0>(&self, pcomparisonsymbol: P0, comparisonflags: u32) -> ::windows::core::Result<bool>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostSymbol>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
         (::windows::core::Interface::vtable(self).base__.CompareAgainst)(::windows::core::Interface::as_raw(self), pcomparisonsymbol.into().abi(), ::core::mem::transmute(comparisonflags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<bool>(result__)
     }
@@ -30790,7 +31772,10 @@ impl IDebugHostSymbols {
         (::windows::core::Interface::vtable(self).CreateModuleSignature)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pwszmodulename), ::core::mem::transmute(pwszminversion), ::core::mem::transmute(pwszmaxversion), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostModuleSignature>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn CreateTypeSignature<'a, Param1: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostModule>>>(&self, signaturespecification: ::windows::core::PCWSTR, module: Param1) -> ::windows::core::Result<IDebugHostTypeSignature> {
+    pub unsafe fn CreateTypeSignature<'a, P0>(&self, signaturespecification: ::windows::core::PCWSTR, module: P0) -> ::windows::core::Result<IDebugHostTypeSignature>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostModule>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).CreateTypeSignature)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(signaturespecification), module.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostTypeSignature>(result__)
     }
@@ -30800,22 +31785,35 @@ impl IDebugHostSymbols {
         (::windows::core::Interface::vtable(self).CreateTypeSignatureForModuleRange)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(signaturespecification), ::core::mem::transmute(modulename), ::core::mem::transmute(minversion), ::core::mem::transmute(maxversion), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostTypeSignature>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn EnumerateModules<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>>(&self, context: Param0) -> ::windows::core::Result<IDebugHostSymbolEnumerator> {
+    pub unsafe fn EnumerateModules<'a, P0>(&self, context: P0) -> ::windows::core::Result<IDebugHostSymbolEnumerator>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).EnumerateModules)(::windows::core::Interface::as_raw(self), context.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostSymbolEnumerator>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn FindModuleByName<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>>(&self, context: Param0, modulename: ::windows::core::PCWSTR) -> ::windows::core::Result<IDebugHostModule> {
+    pub unsafe fn FindModuleByName<'a, P0>(&self, context: P0, modulename: ::windows::core::PCWSTR) -> ::windows::core::Result<IDebugHostModule>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).FindModuleByName)(::windows::core::Interface::as_raw(self), context.into().abi(), ::core::mem::transmute(modulename), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostModule>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn FindModuleByLocation<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>>(&self, context: Param0, modulelocation: Location) -> ::windows::core::Result<IDebugHostModule> {
+    pub unsafe fn FindModuleByLocation<'a, P0>(&self, context: P0, modulelocation: Location) -> ::windows::core::Result<IDebugHostModule>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).FindModuleByLocation)(::windows::core::Interface::as_raw(self), context.into().abi(), ::core::mem::transmute(modulelocation), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostModule>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn GetMostDerivedObject<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>, Param2: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostType>>>(&self, pcontext: Param0, location: Location, objecttype: Param2, derivedlocation: *mut Location, derivedtype: *mut ::core::option::Option<IDebugHostType>) -> ::windows::core::Result<()> {
+    pub unsafe fn GetMostDerivedObject<'a, P0, P1>(&self, pcontext: P0, location: Location, objecttype: P1, derivedlocation: *mut Location, derivedtype: *mut ::core::option::Option<IDebugHostType>) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostContext>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostType>>,
+    {
         (::windows::core::Interface::vtable(self).GetMostDerivedObject)(::windows::core::Interface::as_raw(self), pcontext.into().abi(), ::core::mem::transmute(location), objecttype.into().abi(), ::core::mem::transmute(derivedlocation), ::core::mem::transmute(derivedtype)).ok()
     }
 }
@@ -30876,7 +31874,10 @@ impl IDebugHostType {
         (::windows::core::Interface::vtable(self).base__.GetContext)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostContext>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn EnumerateChildren<'a, Param0: ::std::convert::Into<SymbolKind>>(&self, kind: Param0, name: ::windows::core::PCWSTR) -> ::windows::core::Result<IDebugHostSymbolEnumerator> {
+    pub unsafe fn EnumerateChildren<'a, P0>(&self, kind: P0, name: ::windows::core::PCWSTR) -> ::windows::core::Result<IDebugHostSymbolEnumerator>
+    where
+        P0: ::std::convert::Into<SymbolKind>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).base__.EnumerateChildren)(::windows::core::Interface::as_raw(self), kind.into(), ::core::mem::transmute(name), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostSymbolEnumerator>(result__)
     }
@@ -30902,7 +31903,10 @@ impl IDebugHostType {
         (::windows::core::Interface::vtable(self).base__.GetContainingModule)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostModule>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn CompareAgainst<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostSymbol>>>(&self, pcomparisonsymbol: Param0, comparisonflags: u32) -> ::windows::core::Result<bool> {
+    pub unsafe fn CompareAgainst<'a, P0>(&self, pcomparisonsymbol: P0, comparisonflags: u32) -> ::windows::core::Result<bool>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostSymbol>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
         (::windows::core::Interface::vtable(self).base__.CompareAgainst)(::windows::core::Interface::as_raw(self), pcomparisonsymbol.into().abi(), ::core::mem::transmute(comparisonflags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<bool>(result__)
     }
@@ -30945,7 +31949,10 @@ impl IDebugHostType {
         (::windows::core::Interface::vtable(self).GetMemberType)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostType>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn CreatePointerTo<'a, Param0: ::std::convert::Into<PointerKind>>(&self, kind: Param0) -> ::windows::core::Result<IDebugHostType> {
+    pub unsafe fn CreatePointerTo<'a, P0>(&self, kind: P0) -> ::windows::core::Result<IDebugHostType>
+    where
+        P0: ::std::convert::Into<PointerKind>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).CreatePointerTo)(::windows::core::Interface::as_raw(self), kind.into(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostType>(result__)
     }
@@ -31083,7 +32090,10 @@ impl IDebugHostType2 {
         (::windows::core::Interface::vtable(self).base__.base__.GetContext)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostContext>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn EnumerateChildren<'a, Param0: ::std::convert::Into<SymbolKind>>(&self, kind: Param0, name: ::windows::core::PCWSTR) -> ::windows::core::Result<IDebugHostSymbolEnumerator> {
+    pub unsafe fn EnumerateChildren<'a, P0>(&self, kind: P0, name: ::windows::core::PCWSTR) -> ::windows::core::Result<IDebugHostSymbolEnumerator>
+    where
+        P0: ::std::convert::Into<SymbolKind>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).base__.base__.EnumerateChildren)(::windows::core::Interface::as_raw(self), kind.into(), ::core::mem::transmute(name), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostSymbolEnumerator>(result__)
     }
@@ -31109,7 +32119,10 @@ impl IDebugHostType2 {
         (::windows::core::Interface::vtable(self).base__.base__.GetContainingModule)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostModule>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn CompareAgainst<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostSymbol>>>(&self, pcomparisonsymbol: Param0, comparisonflags: u32) -> ::windows::core::Result<bool> {
+    pub unsafe fn CompareAgainst<'a, P0>(&self, pcomparisonsymbol: P0, comparisonflags: u32) -> ::windows::core::Result<bool>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostSymbol>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
         (::windows::core::Interface::vtable(self).base__.base__.CompareAgainst)(::windows::core::Interface::as_raw(self), pcomparisonsymbol.into().abi(), ::core::mem::transmute(comparisonflags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<bool>(result__)
     }
@@ -31152,7 +32165,10 @@ impl IDebugHostType2 {
         (::windows::core::Interface::vtable(self).base__.GetMemberType)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostType>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn CreatePointerTo<'a, Param0: ::std::convert::Into<PointerKind>>(&self, kind: Param0) -> ::windows::core::Result<IDebugHostType> {
+    pub unsafe fn CreatePointerTo<'a, P0>(&self, kind: P0) -> ::windows::core::Result<IDebugHostType>
+    where
+        P0: ::std::convert::Into<PointerKind>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).base__.CreatePointerTo)(::windows::core::Interface::as_raw(self), kind.into(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugHostType>(result__)
     }
@@ -31316,11 +32332,17 @@ impl IDebugHostTypeSignature {
         (::windows::core::Interface::vtable(self).GetHashCode)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn IsMatch<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostType>>>(&self, r#type: Param0, ismatch: *mut bool, wildcardmatches: *mut ::core::option::Option<IDebugHostSymbolEnumerator>) -> ::windows::core::Result<()> {
+    pub unsafe fn IsMatch<'a, P0>(&self, r#type: P0, ismatch: *mut bool, wildcardmatches: *mut ::core::option::Option<IDebugHostSymbolEnumerator>) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostType>>,
+    {
         (::windows::core::Interface::vtable(self).IsMatch)(::windows::core::Interface::as_raw(self), r#type.into().abi(), ::core::mem::transmute(ismatch), ::core::mem::transmute(wildcardmatches)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn CompareAgainst<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostTypeSignature>>>(&self, typesignature: Param0) -> ::windows::core::Result<SignatureComparison> {
+    pub unsafe fn CompareAgainst<'a, P0>(&self, typesignature: P0) -> ::windows::core::Result<SignatureComparison>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugHostTypeSignature>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<SignatureComparison>::zeroed();
         (::windows::core::Interface::vtable(self).CompareAgainst)(::windows::core::Interface::as_raw(self), typesignature.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<SignatureComparison>(result__)
     }
@@ -31752,11 +32774,17 @@ impl IDebugPlmClient3 {
         (::windows::core::Interface::vtable(self).LaunchPlmBgTaskForDebugWide)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(server), ::core::mem::transmute(timeout), ::core::mem::transmute(packagefullname), ::core::mem::transmute(backgroundtaskid), ::core::mem::transmute(processid), ::core::mem::transmute(threadid)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn QueryPlmPackageWide<'a, Param2: ::std::convert::Into<::windows::core::InParam<'a, IDebugOutputStream>>>(&self, server: u64, packagefullname: ::windows::core::PCWSTR, stream: Param2) -> ::windows::core::Result<()> {
+    pub unsafe fn QueryPlmPackageWide<'a, P0>(&self, server: u64, packagefullname: ::windows::core::PCWSTR, stream: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugOutputStream>>,
+    {
         (::windows::core::Interface::vtable(self).QueryPlmPackageWide)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(server), ::core::mem::transmute(packagefullname), stream.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn QueryPlmPackageList<'a, Param1: ::std::convert::Into<::windows::core::InParam<'a, IDebugOutputStream>>>(&self, server: u64, stream: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn QueryPlmPackageList<'a, P0>(&self, server: u64, stream: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugOutputStream>>,
+    {
         (::windows::core::Interface::vtable(self).QueryPlmPackageList)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(server), stream.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -32586,7 +33614,10 @@ pub struct IDebugRegisters2_Vtbl {
 pub struct IDebugSessionProvider(::windows::core::IUnknown);
 impl IDebugSessionProvider {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn StartDebugSession<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IRemoteDebugApplication>>>(&self, pda: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn StartDebugSession<'a, P0>(&self, pda: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IRemoteDebugApplication>>,
+    {
         (::windows::core::Interface::vtable(self).StartDebugSession)(::windows::core::Interface::as_raw(self), pda.into().abi()).ok()
     }
 }
@@ -32642,13 +33673,19 @@ impl IDebugStackFrame {
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetDescriptionString<'a, Param0: ::std::convert::Into<super::super::super::Foundation::BOOL>>(&self, flong: Param0) -> ::windows::core::Result<super::super::super::Foundation::BSTR> {
+    pub unsafe fn GetDescriptionString<'a, P0>(&self, flong: P0) -> ::windows::core::Result<super::super::super::Foundation::BSTR>
+    where
+        P0: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
         (::windows::core::Interface::vtable(self).GetDescriptionString)(::windows::core::Interface::as_raw(self), flong.into(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetLanguageString<'a, Param0: ::std::convert::Into<super::super::super::Foundation::BOOL>>(&self, flong: Param0) -> ::windows::core::Result<super::super::super::Foundation::BSTR> {
+    pub unsafe fn GetLanguageString<'a, P0>(&self, flong: P0) -> ::windows::core::Result<super::super::super::Foundation::BSTR>
+    where
+        P0: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
         (::windows::core::Interface::vtable(self).GetLanguageString)(::windows::core::Interface::as_raw(self), flong.into(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
     }
@@ -32725,13 +33762,19 @@ impl IDebugStackFrame110 {
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetDescriptionString<'a, Param0: ::std::convert::Into<super::super::super::Foundation::BOOL>>(&self, flong: Param0) -> ::windows::core::Result<super::super::super::Foundation::BSTR> {
+    pub unsafe fn GetDescriptionString<'a, P0>(&self, flong: P0) -> ::windows::core::Result<super::super::super::Foundation::BSTR>
+    where
+        P0: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
         (::windows::core::Interface::vtable(self).base__.GetDescriptionString)(::windows::core::Interface::as_raw(self), flong.into(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetLanguageString<'a, Param0: ::std::convert::Into<super::super::super::Foundation::BOOL>>(&self, flong: Param0) -> ::windows::core::Result<super::super::super::Foundation::BSTR> {
+    pub unsafe fn GetLanguageString<'a, P0>(&self, flong: P0) -> ::windows::core::Result<super::super::super::Foundation::BSTR>
+    where
+        P0: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
         (::windows::core::Interface::vtable(self).base__.GetLanguageString)(::windows::core::Interface::as_raw(self), flong.into(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
     }
@@ -33037,7 +34080,10 @@ impl IDebugSymbolGroup {
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ExpandSymbol<'a, Param1: ::std::convert::Into<super::super::super::Foundation::BOOL>>(&self, index: u32, expand: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn ExpandSymbol<'a, P0>(&self, index: u32, expand: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+    {
         (::windows::core::Interface::vtable(self).ExpandSymbol)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(index), expand.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -33137,7 +34183,10 @@ impl IDebugSymbolGroup2 {
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ExpandSymbol<'a, Param1: ::std::convert::Into<super::super::super::Foundation::BOOL>>(&self, index: u32, expand: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn ExpandSymbol<'a, P0>(&self, index: u32, expand: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+    {
         (::windows::core::Interface::vtable(self).ExpandSymbol)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(index), expand.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -33430,7 +34479,10 @@ impl IDebugSymbols {
         (::windows::core::Interface::vtable(self).ResetScope)(::windows::core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn GetScopeSymbolGroup<'a, Param1: ::std::convert::Into<::windows::core::InParam<'a, IDebugSymbolGroup>>>(&self, flags: u32, update: Param1) -> ::windows::core::Result<IDebugSymbolGroup> {
+    pub unsafe fn GetScopeSymbolGroup<'a, P0>(&self, flags: u32, update: P0) -> ::windows::core::Result<IDebugSymbolGroup>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugSymbolGroup>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).GetScopeSymbolGroup)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(flags), update.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugSymbolGroup>(result__)
     }
@@ -33755,7 +34807,10 @@ impl IDebugSymbols2 {
         (::windows::core::Interface::vtable(self).ResetScope)(::windows::core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn GetScopeSymbolGroup<'a, Param1: ::std::convert::Into<::windows::core::InParam<'a, IDebugSymbolGroup>>>(&self, flags: u32, update: Param1) -> ::windows::core::Result<IDebugSymbolGroup> {
+    pub unsafe fn GetScopeSymbolGroup<'a, P0>(&self, flags: u32, update: P0) -> ::windows::core::Result<IDebugSymbolGroup>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugSymbolGroup>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).GetScopeSymbolGroup)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(flags), update.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugSymbolGroup>(result__)
     }
@@ -34121,7 +35176,10 @@ impl IDebugSymbols3 {
         (::windows::core::Interface::vtable(self).ResetScope)(::windows::core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn GetScopeSymbolGroup<'a, Param1: ::std::convert::Into<::windows::core::InParam<'a, IDebugSymbolGroup>>>(&self, flags: u32, update: Param1) -> ::windows::core::Result<IDebugSymbolGroup> {
+    pub unsafe fn GetScopeSymbolGroup<'a, P0>(&self, flags: u32, update: P0) -> ::windows::core::Result<IDebugSymbolGroup>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugSymbolGroup>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).GetScopeSymbolGroup)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(flags), update.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugSymbolGroup>(result__)
     }
@@ -34278,7 +35336,10 @@ impl IDebugSymbols3 {
         (::windows::core::Interface::vtable(self).GetSymbolTypeIdWide)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(symbol), ::core::mem::transmute(typeid), ::core::mem::transmute(module)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn GetScopeSymbolGroup2<'a, Param1: ::std::convert::Into<::windows::core::InParam<'a, IDebugSymbolGroup2>>>(&self, flags: u32, update: Param1) -> ::windows::core::Result<IDebugSymbolGroup2> {
+    pub unsafe fn GetScopeSymbolGroup2<'a, P0>(&self, flags: u32, update: P0) -> ::windows::core::Result<IDebugSymbolGroup2>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugSymbolGroup2>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).GetScopeSymbolGroup2)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(flags), update.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugSymbolGroup2>(result__)
     }
@@ -34832,7 +35893,10 @@ impl IDebugSymbols4 {
         (::windows::core::Interface::vtable(self).ResetScope)(::windows::core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn GetScopeSymbolGroup<'a, Param1: ::std::convert::Into<::windows::core::InParam<'a, IDebugSymbolGroup>>>(&self, flags: u32, update: Param1) -> ::windows::core::Result<IDebugSymbolGroup> {
+    pub unsafe fn GetScopeSymbolGroup<'a, P0>(&self, flags: u32, update: P0) -> ::windows::core::Result<IDebugSymbolGroup>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugSymbolGroup>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).GetScopeSymbolGroup)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(flags), update.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugSymbolGroup>(result__)
     }
@@ -34989,7 +36053,10 @@ impl IDebugSymbols4 {
         (::windows::core::Interface::vtable(self).GetSymbolTypeIdWide)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(symbol), ::core::mem::transmute(typeid), ::core::mem::transmute(module)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn GetScopeSymbolGroup2<'a, Param1: ::std::convert::Into<::windows::core::InParam<'a, IDebugSymbolGroup2>>>(&self, flags: u32, update: Param1) -> ::windows::core::Result<IDebugSymbolGroup2> {
+    pub unsafe fn GetScopeSymbolGroup2<'a, P0>(&self, flags: u32, update: P0) -> ::windows::core::Result<IDebugSymbolGroup2>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugSymbolGroup2>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).GetScopeSymbolGroup2)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(flags), update.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugSymbolGroup2>(result__)
     }
@@ -35586,7 +36653,10 @@ impl IDebugSymbols5 {
         (::windows::core::Interface::vtable(self).ResetScope)(::windows::core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn GetScopeSymbolGroup<'a, Param1: ::std::convert::Into<::windows::core::InParam<'a, IDebugSymbolGroup>>>(&self, flags: u32, update: Param1) -> ::windows::core::Result<IDebugSymbolGroup> {
+    pub unsafe fn GetScopeSymbolGroup<'a, P0>(&self, flags: u32, update: P0) -> ::windows::core::Result<IDebugSymbolGroup>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugSymbolGroup>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).GetScopeSymbolGroup)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(flags), update.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugSymbolGroup>(result__)
     }
@@ -35743,7 +36813,10 @@ impl IDebugSymbols5 {
         (::windows::core::Interface::vtable(self).GetSymbolTypeIdWide)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(symbol), ::core::mem::transmute(typeid), ::core::mem::transmute(module)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn GetScopeSymbolGroup2<'a, Param1: ::std::convert::Into<::windows::core::InParam<'a, IDebugSymbolGroup2>>>(&self, flags: u32, update: Param1) -> ::windows::core::Result<IDebugSymbolGroup2> {
+    pub unsafe fn GetScopeSymbolGroup2<'a, P0>(&self, flags: u32, update: P0) -> ::windows::core::Result<IDebugSymbolGroup2>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugSymbolGroup2>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).GetScopeSymbolGroup2)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(flags), update.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugSymbolGroup2>(result__)
     }
@@ -37409,19 +38482,33 @@ pub struct IDebugThreadCall64_Vtbl {
 pub struct IDynamicConceptProviderConcept(::windows::core::IUnknown);
 impl IDynamicConceptProviderConcept {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn GetConcept<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, contextobject: Param0, conceptid: *const ::windows::core::GUID, conceptinterface: *mut ::core::option::Option<::windows::core::IUnknown>, conceptmetadata: *mut ::core::option::Option<IKeyStore>, hasconcept: *mut bool) -> ::windows::core::Result<()> {
+    pub unsafe fn GetConcept<'a, P0>(&self, contextobject: P0, conceptid: *const ::windows::core::GUID, conceptinterface: *mut ::core::option::Option<::windows::core::IUnknown>, conceptmetadata: *mut ::core::option::Option<IKeyStore>, hasconcept: *mut bool) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         (::windows::core::Interface::vtable(self).GetConcept)(::windows::core::Interface::as_raw(self), contextobject.into().abi(), ::core::mem::transmute(conceptid), ::core::mem::transmute(conceptinterface), ::core::mem::transmute(conceptmetadata), ::core::mem::transmute(hasconcept)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetConcept<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>, Param2: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>, Param3: ::std::convert::Into<::windows::core::InParam<'a, IKeyStore>>>(&self, contextobject: Param0, conceptid: *const ::windows::core::GUID, conceptinterface: Param2, conceptmetadata: Param3) -> ::windows::core::Result<()> {
+    pub unsafe fn SetConcept<'a, P0, P1, P2>(&self, contextobject: P0, conceptid: *const ::windows::core::GUID, conceptinterface: P1, conceptmetadata: P2) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
+        P2: ::std::convert::Into<::windows::core::InParam<'a, IKeyStore>>,
+    {
         (::windows::core::Interface::vtable(self).SetConcept)(::windows::core::Interface::as_raw(self), contextobject.into().abi(), ::core::mem::transmute(conceptid), conceptinterface.into().abi(), conceptmetadata.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn NotifyParent<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, parentmodel: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn NotifyParent<'a, P0>(&self, parentmodel: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         (::windows::core::Interface::vtable(self).NotifyParent)(::windows::core::Interface::as_raw(self), parentmodel.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn NotifyParentChange<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, parentmodel: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn NotifyParentChange<'a, P0>(&self, parentmodel: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         (::windows::core::Interface::vtable(self).NotifyParentChange)(::windows::core::Interface::as_raw(self), parentmodel.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -37479,15 +38566,26 @@ pub struct IDynamicConceptProviderConcept_Vtbl {
 pub struct IDynamicKeyProviderConcept(::windows::core::IUnknown);
 impl IDynamicKeyProviderConcept {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn GetKey<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, contextobject: Param0, key: ::windows::core::PCWSTR, keyvalue: *mut ::core::option::Option<IModelObject>, metadata: *mut ::core::option::Option<IKeyStore>, haskey: *mut bool) -> ::windows::core::Result<()> {
+    pub unsafe fn GetKey<'a, P0>(&self, contextobject: P0, key: ::windows::core::PCWSTR, keyvalue: *mut ::core::option::Option<IModelObject>, metadata: *mut ::core::option::Option<IKeyStore>, haskey: *mut bool) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         (::windows::core::Interface::vtable(self).GetKey)(::windows::core::Interface::as_raw(self), contextobject.into().abi(), ::core::mem::transmute(key), ::core::mem::transmute(keyvalue), ::core::mem::transmute(metadata), ::core::mem::transmute(haskey)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetKey<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>, Param2: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>, Param3: ::std::convert::Into<::windows::core::InParam<'a, IKeyStore>>>(&self, contextobject: Param0, key: ::windows::core::PCWSTR, keyvalue: Param2, metadata: Param3) -> ::windows::core::Result<()> {
+    pub unsafe fn SetKey<'a, P0, P1, P2>(&self, contextobject: P0, key: ::windows::core::PCWSTR, keyvalue: P1, metadata: P2) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+        P2: ::std::convert::Into<::windows::core::InParam<'a, IKeyStore>>,
+    {
         (::windows::core::Interface::vtable(self).SetKey)(::windows::core::Interface::as_raw(self), contextobject.into().abi(), ::core::mem::transmute(key), keyvalue.into().abi(), metadata.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn EnumerateKeys<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, contextobject: Param0) -> ::windows::core::Result<IKeyEnumerator> {
+    pub unsafe fn EnumerateKeys<'a, P0>(&self, contextobject: P0) -> ::windows::core::Result<IKeyEnumerator>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).EnumerateKeys)(::windows::core::Interface::as_raw(self), contextobject.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IKeyEnumerator>(result__)
     }
@@ -38234,7 +39332,11 @@ pub struct IEnumRemoteDebugApplications_Vtbl {
 pub struct IEquatableConcept(::windows::core::IUnknown);
 impl IEquatableConcept {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn AreObjectsEqual<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>, Param1: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, contextobject: Param0, otherobject: Param1) -> ::windows::core::Result<bool> {
+    pub unsafe fn AreObjectsEqual<'a, P0, P1>(&self, contextobject: P0, otherobject: P1) -> ::windows::core::Result<bool>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
         (::windows::core::Interface::vtable(self).AreObjectsEqual)(::windows::core::Interface::as_raw(self), contextobject.into().abi(), otherobject.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<bool>(result__)
     }
@@ -38435,16 +39537,26 @@ pub struct IHostDataModelAccess_Vtbl {
 pub struct IIndexableConcept(::windows::core::IUnknown);
 impl IIndexableConcept {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn GetDimensionality<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, contextobject: Param0) -> ::windows::core::Result<u64> {
+    pub unsafe fn GetDimensionality<'a, P0>(&self, contextobject: P0) -> ::windows::core::Result<u64>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<u64>::zeroed();
         (::windows::core::Interface::vtable(self).GetDimensionality)(::windows::core::Interface::as_raw(self), contextobject.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u64>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn GetAt<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, contextobject: Param0, indexers: &[::core::option::Option<IModelObject>], object: *mut ::core::option::Option<IModelObject>, metadata: *mut ::core::option::Option<IKeyStore>) -> ::windows::core::Result<()> {
+    pub unsafe fn GetAt<'a, P0>(&self, contextobject: P0, indexers: &[::core::option::Option<IModelObject>], object: *mut ::core::option::Option<IModelObject>, metadata: *mut ::core::option::Option<IKeyStore>) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         (::windows::core::Interface::vtable(self).GetAt)(::windows::core::Interface::as_raw(self), contextobject.into().abi(), indexers.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(indexers)), ::core::mem::transmute(object), ::core::mem::transmute(metadata)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetAt<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>, Param3: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, contextobject: Param0, indexers: &[::core::option::Option<IModelObject>], value: Param3) -> ::windows::core::Result<()> {
+    pub unsafe fn SetAt<'a, P0, P1>(&self, contextobject: P0, indexers: &[::core::option::Option<IModelObject>], value: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         (::windows::core::Interface::vtable(self).SetAt)(::windows::core::Interface::as_raw(self), contextobject.into().abi(), indexers.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(indexers)), value.into().abi()).ok()
     }
 }
@@ -38496,12 +39608,18 @@ pub struct IIndexableConcept_Vtbl {
 pub struct IIterableConcept(::windows::core::IUnknown);
 impl IIterableConcept {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn GetDefaultIndexDimensionality<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, contextobject: Param0) -> ::windows::core::Result<u64> {
+    pub unsafe fn GetDefaultIndexDimensionality<'a, P0>(&self, contextobject: P0) -> ::windows::core::Result<u64>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<u64>::zeroed();
         (::windows::core::Interface::vtable(self).GetDefaultIndexDimensionality)(::windows::core::Interface::as_raw(self), contextobject.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u64>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn GetIterator<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, contextobject: Param0) -> ::windows::core::Result<IModelIterator> {
+    pub unsafe fn GetIterator<'a, P0>(&self, contextobject: P0) -> ::windows::core::Result<IModelIterator>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).GetIterator)(::windows::core::Interface::as_raw(self), contextobject.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IModelIterator>(result__)
     }
@@ -38553,7 +39671,10 @@ pub struct IIterableConcept_Vtbl {
 pub struct IJsDebug(::windows::core::IUnknown);
 impl IJsDebug {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn OpenVirtualProcess<'a, Param2: ::std::convert::Into<::windows::core::InParam<'a, IJsDebugDataTarget>>>(&self, processid: u32, runtimejsbaseaddress: u64, pdatatarget: Param2) -> ::windows::core::Result<IJsDebugProcess> {
+    pub unsafe fn OpenVirtualProcess<'a, P0>(&self, processid: u32, runtimejsbaseaddress: u64, pdatatarget: P0) -> ::windows::core::Result<IJsDebugProcess>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IJsDebugDataTarget>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).OpenVirtualProcess)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(processid), ::core::mem::transmute(runtimejsbaseaddress), pdatatarget.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IJsDebugProcess>(result__)
     }
@@ -38679,7 +39800,10 @@ pub struct IJsDebugBreakPoint_Vtbl {
 pub struct IJsDebugDataTarget(::windows::core::IUnknown);
 impl IJsDebugDataTarget {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn ReadMemory<'a, Param1: ::std::convert::Into<JsDebugReadMemoryFlags>>(&self, address: u64, flags: Param1, pbuffer: &mut [u8], pbytesread: *mut u32) -> ::windows::core::Result<()> {
+    pub unsafe fn ReadMemory<'a, P0>(&self, address: u64, flags: P0, pbuffer: &mut [u8], pbytesread: *mut u32) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<JsDebugReadMemoryFlags>,
+    {
         (::windows::core::Interface::vtable(self).ReadMemory)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(address), flags.into(), ::core::mem::transmute(::windows::core::as_mut_ptr_or_null(pbuffer)), pbuffer.len() as _, ::core::mem::transmute(pbytesread)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -38883,7 +40007,10 @@ impl IJsDebugProcess {
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CreateBreakPoint<'a, Param3: ::std::convert::Into<super::super::super::Foundation::BOOL>>(&self, documentid: u64, characteroffset: u32, charactercount: u32, isenabled: Param3) -> ::windows::core::Result<IJsDebugBreakPoint> {
+    pub unsafe fn CreateBreakPoint<'a, P0>(&self, documentid: u64, characteroffset: u32, charactercount: u32, isenabled: P0) -> ::windows::core::Result<IJsDebugBreakPoint>
+    where
+        P0: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).CreateBreakPoint)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(documentid), ::core::mem::transmute(characteroffset), ::core::mem::transmute(charactercount), isenabled.into(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IJsDebugBreakPoint>(result__)
     }
@@ -38955,7 +40082,10 @@ impl IJsDebugProperty {
         (::windows::core::Interface::vtable(self).GetPropertyInfo)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(nradix), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<JsDebugPropertyInfo>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn GetMembers<'a, Param0: ::std::convert::Into<JS_PROPERTY_MEMBERS>>(&self, members: Param0) -> ::windows::core::Result<IJsEnumDebugProperty> {
+    pub unsafe fn GetMembers<'a, P0>(&self, members: P0) -> ::windows::core::Result<IJsEnumDebugProperty>
+    where
+        P0: ::std::convert::Into<JS_PROPERTY_MEMBERS>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).GetMembers)(::windows::core::Interface::as_raw(self), members.into(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IJsEnumDebugProperty>(result__)
     }
@@ -39180,7 +40310,11 @@ impl IKeyStore {
         (::windows::core::Interface::vtable(self).GetKey)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(key), ::core::mem::transmute(object), ::core::mem::transmute(metadata)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetKey<'a, Param1: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>, Param2: ::std::convert::Into<::windows::core::InParam<'a, IKeyStore>>>(&self, key: ::windows::core::PCWSTR, object: Param1, metadata: Param2) -> ::windows::core::Result<()> {
+    pub unsafe fn SetKey<'a, P0, P1>(&self, key: ::windows::core::PCWSTR, object: P0, metadata: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, IKeyStore>>,
+    {
         (::windows::core::Interface::vtable(self).SetKey)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(key), object.into().abi(), metadata.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -39188,7 +40322,10 @@ impl IKeyStore {
         (::windows::core::Interface::vtable(self).GetKeyValue)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(key), ::core::mem::transmute(object), ::core::mem::transmute(metadata)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetKeyValue<'a, Param1: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, key: ::windows::core::PCWSTR, object: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn SetKeyValue<'a, P0>(&self, key: ::windows::core::PCWSTR, object: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         (::windows::core::Interface::vtable(self).SetKeyValue)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(key), object.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -42631,7 +43768,10 @@ impl ::core::fmt::Debug for IMAGE_SUBSYSTEM {
 pub struct IMachineDebugManager(::windows::core::IUnknown);
 impl IMachineDebugManager {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn AddApplication<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IRemoteDebugApplication>>>(&self, pda: Param0) -> ::windows::core::Result<u32> {
+    pub unsafe fn AddApplication<'a, P0>(&self, pda: P0) -> ::windows::core::Result<u32>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IRemoteDebugApplication>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows::core::Interface::vtable(self).AddApplication)(::windows::core::Interface::as_raw(self), pda.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
@@ -42693,7 +43833,10 @@ pub struct IMachineDebugManager_Vtbl {
 pub struct IMachineDebugManagerCookie(::windows::core::IUnknown);
 impl IMachineDebugManagerCookie {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn AddApplication<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IRemoteDebugApplication>>>(&self, pda: Param0, dwdebugappcookie: u32) -> ::windows::core::Result<u32> {
+    pub unsafe fn AddApplication<'a, P0>(&self, pda: P0, dwdebugappcookie: u32) -> ::windows::core::Result<u32>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IRemoteDebugApplication>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows::core::Interface::vtable(self).AddApplication)(::windows::core::Interface::as_raw(self), pda.into().abi(), ::core::mem::transmute(dwdebugappcookie), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
@@ -42755,11 +43898,17 @@ pub struct IMachineDebugManagerCookie_Vtbl {
 pub struct IMachineDebugManagerEvents(::windows::core::IUnknown);
 impl IMachineDebugManagerEvents {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn onAddApplication<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IRemoteDebugApplication>>>(&self, pda: Param0, dwappcookie: u32) -> ::windows::core::Result<()> {
+    pub unsafe fn onAddApplication<'a, P0>(&self, pda: P0, dwappcookie: u32) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IRemoteDebugApplication>>,
+    {
         (::windows::core::Interface::vtable(self).onAddApplication)(::windows::core::Interface::as_raw(self), pda.into().abi(), ::core::mem::transmute(dwappcookie)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn onRemoveApplication<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IRemoteDebugApplication>>>(&self, pda: Param0, dwappcookie: u32) -> ::windows::core::Result<()> {
+    pub unsafe fn onRemoveApplication<'a, P0>(&self, pda: P0, dwappcookie: u32) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IRemoteDebugApplication>>,
+    {
         (::windows::core::Interface::vtable(self).onRemoveApplication)(::windows::core::Interface::as_raw(self), pda.into().abi(), ::core::mem::transmute(dwappcookie)).ok()
     }
 }
@@ -42889,11 +44038,18 @@ impl IModelKeyReference {
         (::windows::core::Interface::vtable(self).GetKeyValue)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(object), ::core::mem::transmute(metadata)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetKey<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>, Param1: ::std::convert::Into<::windows::core::InParam<'a, IKeyStore>>>(&self, object: Param0, metadata: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn SetKey<'a, P0, P1>(&self, object: P0, metadata: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, IKeyStore>>,
+    {
         (::windows::core::Interface::vtable(self).SetKey)(::windows::core::Interface::as_raw(self), object.into().abi(), metadata.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetKeyValue<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, object: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetKeyValue<'a, P0>(&self, object: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         (::windows::core::Interface::vtable(self).SetKeyValue)(::windows::core::Interface::as_raw(self), object.into().abi()).ok()
     }
 }
@@ -42976,15 +44132,25 @@ impl IModelKeyReference2 {
         (::windows::core::Interface::vtable(self).base__.GetKeyValue)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(object), ::core::mem::transmute(metadata)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetKey<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>, Param1: ::std::convert::Into<::windows::core::InParam<'a, IKeyStore>>>(&self, object: Param0, metadata: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn SetKey<'a, P0, P1>(&self, object: P0, metadata: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, IKeyStore>>,
+    {
         (::windows::core::Interface::vtable(self).base__.SetKey)(::windows::core::Interface::as_raw(self), object.into().abi(), metadata.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetKeyValue<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, object: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn SetKeyValue<'a, P0>(&self, object: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         (::windows::core::Interface::vtable(self).base__.SetKeyValue)(::windows::core::Interface::as_raw(self), object.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn OverrideContextObject<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, newcontextobject: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn OverrideContextObject<'a, P0>(&self, newcontextobject: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         (::windows::core::Interface::vtable(self).OverrideContextObject)(::windows::core::Interface::as_raw(self), newcontextobject.into().abi()).ok()
     }
 }
@@ -43049,7 +44215,10 @@ pub struct IModelKeyReference2_Vtbl {
 pub struct IModelMethod(::windows::core::IUnknown);
 impl IModelMethod {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn Call<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, pcontextobject: Param0, pparguments: &[::core::option::Option<IModelObject>], ppresult: *mut ::core::option::Option<IModelObject>, ppmetadata: *mut ::core::option::Option<IKeyStore>) -> ::windows::core::Result<()> {
+    pub unsafe fn Call<'a, P0>(&self, pcontextobject: P0, pparguments: &[::core::option::Option<IModelObject>], ppresult: *mut ::core::option::Option<IModelObject>, ppmetadata: *mut ::core::option::Option<IKeyStore>) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         (::windows::core::Interface::vtable(self).Call)(::windows::core::Interface::as_raw(self), pcontextobject.into().abi(), pparguments.len() as _, ::core::mem::transmute(::windows::core::as_ptr_or_null(pparguments)), ::core::mem::transmute(ppresult), ::core::mem::transmute(ppmetadata)).ok()
     }
 }
@@ -43125,7 +44294,10 @@ impl IModelObject {
         (::windows::core::Interface::vtable(self).GetKeyValue)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(key), ::core::mem::transmute(object), ::core::mem::transmute(metadata)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetKeyValue<'a, Param1: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, key: ::windows::core::PCWSTR, object: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn SetKeyValue<'a, P0>(&self, key: ::windows::core::PCWSTR, object: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         (::windows::core::Interface::vtable(self).SetKeyValue)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(key), object.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -43134,12 +44306,18 @@ impl IModelObject {
         (::windows::core::Interface::vtable(self).EnumerateKeyValues)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IKeyEnumerator>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn GetRawValue<'a, Param0: ::std::convert::Into<SymbolKind>>(&self, kind: Param0, name: ::windows::core::PCWSTR, searchflags: u32) -> ::windows::core::Result<IModelObject> {
+    pub unsafe fn GetRawValue<'a, P0>(&self, kind: P0, name: ::windows::core::PCWSTR, searchflags: u32) -> ::windows::core::Result<IModelObject>
+    where
+        P0: ::std::convert::Into<SymbolKind>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).GetRawValue)(::windows::core::Interface::as_raw(self), kind.into(), ::core::mem::transmute(name), ::core::mem::transmute(searchflags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IModelObject>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn EnumerateRawValues<'a, Param0: ::std::convert::Into<SymbolKind>>(&self, kind: Param0, searchflags: u32) -> ::windows::core::Result<IRawEnumerator> {
+    pub unsafe fn EnumerateRawValues<'a, P0>(&self, kind: P0, searchflags: u32) -> ::windows::core::Result<IRawEnumerator>
+    where
+        P0: ::std::convert::Into<SymbolKind>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).EnumerateRawValues)(::windows::core::Interface::as_raw(self), kind.into(), ::core::mem::transmute(searchflags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IRawEnumerator>(result__)
     }
@@ -43181,11 +44359,18 @@ impl IModelObject {
         (::windows::core::Interface::vtable(self).GetParentModel)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(i), ::core::mem::transmute(model), ::core::mem::transmute(contextobject)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn AddParentModel<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>, Param1: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, model: Param0, contextobject: Param1, r#override: u8) -> ::windows::core::Result<()> {
+    pub unsafe fn AddParentModel<'a, P0, P1>(&self, model: P0, contextobject: P1, r#override: u8) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         (::windows::core::Interface::vtable(self).AddParentModel)(::windows::core::Interface::as_raw(self), model.into().abi(), contextobject.into().abi(), ::core::mem::transmute(r#override)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn RemoveParentModel<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, model: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn RemoveParentModel<'a, P0>(&self, model: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         (::windows::core::Interface::vtable(self).RemoveParentModel)(::windows::core::Interface::as_raw(self), model.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -43197,7 +44382,11 @@ impl IModelObject {
         (::windows::core::Interface::vtable(self).GetKeyReference)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(key), ::core::mem::transmute(objectreference), ::core::mem::transmute(metadata)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetKey<'a, Param1: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>, Param2: ::std::convert::Into<::windows::core::InParam<'a, IKeyStore>>>(&self, key: ::windows::core::PCWSTR, object: Param1, metadata: Param2) -> ::windows::core::Result<()> {
+    pub unsafe fn SetKey<'a, P0, P1>(&self, key: ::windows::core::PCWSTR, object: P0, metadata: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, IKeyStore>>,
+    {
         (::windows::core::Interface::vtable(self).SetKey)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(key), object.into().abi(), metadata.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -43215,7 +44404,11 @@ impl IModelObject {
         (::windows::core::Interface::vtable(self).EnumerateKeyReferences)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IKeyEnumerator>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetConcept<'a, Param1: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>, Param2: ::std::convert::Into<::windows::core::InParam<'a, IKeyStore>>>(&self, conceptid: *const ::windows::core::GUID, conceptinterface: Param1, conceptmetadata: Param2) -> ::windows::core::Result<()> {
+    pub unsafe fn SetConcept<'a, P0, P1>(&self, conceptid: *const ::windows::core::GUID, conceptinterface: P0, conceptmetadata: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, IKeyStore>>,
+    {
         (::windows::core::Interface::vtable(self).SetConcept)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(conceptid), conceptinterface.into().abi(), conceptmetadata.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -43223,31 +44416,50 @@ impl IModelObject {
         (::windows::core::Interface::vtable(self).ClearConcepts)(::windows::core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn GetRawReference<'a, Param0: ::std::convert::Into<SymbolKind>>(&self, kind: Param0, name: ::windows::core::PCWSTR, searchflags: u32) -> ::windows::core::Result<IModelObject> {
+    pub unsafe fn GetRawReference<'a, P0>(&self, kind: P0, name: ::windows::core::PCWSTR, searchflags: u32) -> ::windows::core::Result<IModelObject>
+    where
+        P0: ::std::convert::Into<SymbolKind>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).GetRawReference)(::windows::core::Interface::as_raw(self), kind.into(), ::core::mem::transmute(name), ::core::mem::transmute(searchflags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IModelObject>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn EnumerateRawReferences<'a, Param0: ::std::convert::Into<SymbolKind>>(&self, kind: Param0, searchflags: u32) -> ::windows::core::Result<IRawEnumerator> {
+    pub unsafe fn EnumerateRawReferences<'a, P0>(&self, kind: P0, searchflags: u32) -> ::windows::core::Result<IRawEnumerator>
+    where
+        P0: ::std::convert::Into<SymbolKind>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).EnumerateRawReferences)(::windows::core::Interface::as_raw(self), kind.into(), ::core::mem::transmute(searchflags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IRawEnumerator>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetContextForDataModel<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>, Param1: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>>(&self, datamodelobject: Param0, context: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn SetContextForDataModel<'a, P0, P1>(&self, datamodelobject: P0, context: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
+    {
         (::windows::core::Interface::vtable(self).SetContextForDataModel)(::windows::core::Interface::as_raw(self), datamodelobject.into().abi(), context.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn GetContextForDataModel<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, datamodelobject: Param0) -> ::windows::core::Result<::windows::core::IUnknown> {
+    pub unsafe fn GetContextForDataModel<'a, P0>(&self, datamodelobject: P0) -> ::windows::core::Result<::windows::core::IUnknown>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).GetContextForDataModel)(::windows::core::Interface::as_raw(self), datamodelobject.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows::core::IUnknown>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn Compare<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, other: Param0) -> ::windows::core::Result<IModelObject> {
+    pub unsafe fn Compare<'a, P0>(&self, other: P0) -> ::windows::core::Result<IModelObject>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).Compare)(::windows::core::Interface::as_raw(self), other.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IModelObject>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn IsEqualTo<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, other: Param0) -> ::windows::core::Result<bool> {
+    pub unsafe fn IsEqualTo<'a, P0>(&self, other: P0) -> ::windows::core::Result<bool>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
         (::windows::core::Interface::vtable(self).IsEqualTo)(::windows::core::Interface::as_raw(self), other.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<bool>(result__)
     }
@@ -43336,12 +44548,19 @@ pub struct IModelObject_Vtbl {
 pub struct IModelPropertyAccessor(::windows::core::IUnknown);
 impl IModelPropertyAccessor {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn GetValue<'a, Param1: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, key: ::windows::core::PCWSTR, contextobject: Param1) -> ::windows::core::Result<IModelObject> {
+    pub unsafe fn GetValue<'a, P0>(&self, key: ::windows::core::PCWSTR, contextobject: P0) -> ::windows::core::Result<IModelObject>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).GetValue)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(key), contextobject.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IModelObject>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetValue<'a, Param1: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>, Param2: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, key: ::windows::core::PCWSTR, contextobject: Param1, value: Param2) -> ::windows::core::Result<()> {
+    pub unsafe fn SetValue<'a, P0, P1>(&self, key: ::windows::core::PCWSTR, contextobject: P0, value: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         (::windows::core::Interface::vtable(self).SetValue)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(key), contextobject.into().abi(), value.into().abi()).ok()
     }
 }
@@ -43882,7 +45101,10 @@ pub struct IPerPropertyBrowsing2_Vtbl {
 pub struct IPreferredRuntimeTypeConcept(::windows::core::IUnknown);
 impl IPreferredRuntimeTypeConcept {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn CastToPreferredRuntimeType<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>>(&self, contextobject: Param0) -> ::windows::core::Result<IModelObject> {
+    pub unsafe fn CastToPreferredRuntimeType<'a, P0>(&self, contextobject: P0) -> ::windows::core::Result<IModelObject>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).CastToPreferredRuntimeType)(::windows::core::Interface::as_raw(self), contextobject.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IModelObject>(result__)
     }
@@ -43943,7 +45165,10 @@ impl IProcessDebugManager32 {
         (::windows::core::Interface::vtable(self).GetDefaultApplication)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugApplication32>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn AddApplication<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugApplication32>>>(&self, pda: Param0) -> ::windows::core::Result<u32> {
+    pub unsafe fn AddApplication<'a, P0>(&self, pda: P0) -> ::windows::core::Result<u32>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugApplication32>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows::core::Interface::vtable(self).AddApplication)(::windows::core::Interface::as_raw(self), pda.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
@@ -43952,7 +45177,10 @@ impl IProcessDebugManager32 {
         (::windows::core::Interface::vtable(self).RemoveApplication)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(dwappcookie)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn CreateDebugDocumentHelper<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>>(&self, punkouter: Param0) -> ::windows::core::Result<IDebugDocumentHelper32> {
+    pub unsafe fn CreateDebugDocumentHelper<'a, P0>(&self, punkouter: P0) -> ::windows::core::Result<IDebugDocumentHelper32>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).CreateDebugDocumentHelper)(::windows::core::Interface::as_raw(self), punkouter.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugDocumentHelper32>(result__)
     }
@@ -44017,7 +45245,10 @@ impl IProcessDebugManager64 {
         (::windows::core::Interface::vtable(self).GetDefaultApplication)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugApplication64>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn AddApplication<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugApplication64>>>(&self, pda: Param0) -> ::windows::core::Result<u32> {
+    pub unsafe fn AddApplication<'a, P0>(&self, pda: P0) -> ::windows::core::Result<u32>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugApplication64>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows::core::Interface::vtable(self).AddApplication)(::windows::core::Interface::as_raw(self), pda.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
@@ -44026,7 +45257,10 @@ impl IProcessDebugManager64 {
         (::windows::core::Interface::vtable(self).RemoveApplication)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(dwappcookie)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn CreateDebugDocumentHelper<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>>(&self, punkouter: Param0) -> ::windows::core::Result<IDebugDocumentHelper64> {
+    pub unsafe fn CreateDebugDocumentHelper<'a, P0>(&self, punkouter: P0) -> ::windows::core::Result<IDebugDocumentHelper64>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).CreateDebugDocumentHelper)(::windows::core::Interface::as_raw(self), punkouter.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDebugDocumentHelper64>(result__)
     }
@@ -44191,7 +45425,12 @@ pub struct IRawEnumerator_Vtbl {
 pub struct IRemoteDebugApplication(::windows::core::IUnknown);
 impl IRemoteDebugApplication {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn ResumeFromBreakPoint<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IRemoteDebugApplicationThread>>, Param1: ::std::convert::Into<BREAKRESUME_ACTION>, Param2: ::std::convert::Into<ERRORRESUMEACTION>>(&self, prptfocus: Param0, bra: Param1, era: Param2) -> ::windows::core::Result<()> {
+    pub unsafe fn ResumeFromBreakPoint<'a, P0, P1, P2>(&self, prptfocus: P0, bra: P1, era: P2) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IRemoteDebugApplicationThread>>,
+        P1: ::std::convert::Into<BREAKRESUME_ACTION>,
+        P2: ::std::convert::Into<ERRORRESUMEACTION>,
+    {
         (::windows::core::Interface::vtable(self).ResumeFromBreakPoint)(::windows::core::Interface::as_raw(self), prptfocus.into().abi(), bra.into(), era.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -44199,7 +45438,10 @@ impl IRemoteDebugApplication {
         (::windows::core::Interface::vtable(self).CauseBreak)(::windows::core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn ConnectDebugger<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IApplicationDebugger>>>(&self, pad: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn ConnectDebugger<'a, P0>(&self, pad: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IApplicationDebugger>>,
+    {
         (::windows::core::Interface::vtable(self).ConnectDebugger)(::windows::core::Interface::as_raw(self), pad.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -44212,7 +45454,10 @@ impl IRemoteDebugApplication {
         (::windows::core::Interface::vtable(self).GetDebugger)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IApplicationDebugger>(result__)
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn CreateInstanceAtApplication<'a, Param1: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>>(&self, rclsid: *const ::windows::core::GUID, punkouter: Param1, dwclscontext: u32, riid: *const ::windows::core::GUID) -> ::windows::core::Result<::windows::core::IUnknown> {
+    pub unsafe fn CreateInstanceAtApplication<'a, P0>(&self, rclsid: *const ::windows::core::GUID, punkouter: P0, dwclscontext: u32, riid: *const ::windows::core::GUID) -> ::windows::core::Result<::windows::core::IUnknown>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).CreateInstanceAtApplication)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(rclsid), punkouter.into().abi(), ::core::mem::transmute(dwclscontext), ::core::mem::transmute(riid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows::core::IUnknown>(result__)
     }
@@ -44301,7 +45546,11 @@ pub struct IRemoteDebugApplication_Vtbl {
 pub struct IRemoteDebugApplication110(::windows::core::IUnknown);
 impl IRemoteDebugApplication110 {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetDebuggerOptions<'a, Param0: ::std::convert::Into<SCRIPT_DEBUGGER_OPTIONS>, Param1: ::std::convert::Into<SCRIPT_DEBUGGER_OPTIONS>>(&self, mask: Param0, value: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn SetDebuggerOptions<'a, P0, P1>(&self, mask: P0, value: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<SCRIPT_DEBUGGER_OPTIONS>,
+        P1: ::std::convert::Into<SCRIPT_DEBUGGER_OPTIONS>,
+    {
         (::windows::core::Interface::vtable(self).SetDebuggerOptions)(::windows::core::Interface::as_raw(self), mask.into(), value.into()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -44363,7 +45612,10 @@ pub struct IRemoteDebugApplication110_Vtbl {
 pub struct IRemoteDebugApplicationEvents(::windows::core::IUnknown);
 impl IRemoteDebugApplicationEvents {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn OnConnectDebugger<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IApplicationDebugger>>>(&self, pad: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn OnConnectDebugger<'a, P0>(&self, pad: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IApplicationDebugger>>,
+    {
         (::windows::core::Interface::vtable(self).OnConnectDebugger)(::windows::core::Interface::as_raw(self), pad.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -44383,23 +45635,38 @@ impl IRemoteDebugApplicationEvents {
         (::windows::core::Interface::vtable(self).OnClose)(::windows::core::Interface::as_raw(self)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn OnEnterBreakPoint<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IRemoteDebugApplicationThread>>>(&self, prdat: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn OnEnterBreakPoint<'a, P0>(&self, prdat: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IRemoteDebugApplicationThread>>,
+    {
         (::windows::core::Interface::vtable(self).OnEnterBreakPoint)(::windows::core::Interface::as_raw(self), prdat.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn OnLeaveBreakPoint<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IRemoteDebugApplicationThread>>>(&self, prdat: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn OnLeaveBreakPoint<'a, P0>(&self, prdat: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IRemoteDebugApplicationThread>>,
+    {
         (::windows::core::Interface::vtable(self).OnLeaveBreakPoint)(::windows::core::Interface::as_raw(self), prdat.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn OnCreateThread<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IRemoteDebugApplicationThread>>>(&self, prdat: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn OnCreateThread<'a, P0>(&self, prdat: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IRemoteDebugApplicationThread>>,
+    {
         (::windows::core::Interface::vtable(self).OnCreateThread)(::windows::core::Interface::as_raw(self), prdat.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn OnDestroyThread<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IRemoteDebugApplicationThread>>>(&self, prdat: Param0) -> ::windows::core::Result<()> {
+    pub unsafe fn OnDestroyThread<'a, P0>(&self, prdat: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IRemoteDebugApplicationThread>>,
+    {
         (::windows::core::Interface::vtable(self).OnDestroyThread)(::windows::core::Interface::as_raw(self), prdat.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn OnBreakFlagChange<'a, Param1: ::std::convert::Into<::windows::core::InParam<'a, IRemoteDebugApplicationThread>>>(&self, abf: u32, prdatsteppingthread: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn OnBreakFlagChange<'a, P0>(&self, abf: u32, prdatsteppingthread: P0) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IRemoteDebugApplicationThread>>,
+    {
         (::windows::core::Interface::vtable(self).OnBreakFlagChange)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(abf), prdatsteppingthread.into().abi()).ok()
     }
 }
@@ -44478,7 +45745,11 @@ impl IRemoteDebugApplicationThread {
         (::windows::core::Interface::vtable(self).GetDescription)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pbstrdescription), ::core::mem::transmute(pbstrstate)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
-    pub unsafe fn SetNextStatement<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IDebugStackFrame>>, Param1: ::std::convert::Into<::windows::core::InParam<'a, IDebugCodeContext>>>(&self, pstackframe: Param0, pcodecontext: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn SetNextStatement<'a, P0, P1>(&self, pstackframe: P0, pcodecontext: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IDebugStackFrame>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, IDebugCodeContext>>,
+    {
         (::windows::core::Interface::vtable(self).SetNextStatement)(::windows::core::Interface::as_raw(self), pstackframe.into().abi(), pcodecontext.into().abi()).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -44712,7 +45983,10 @@ impl IScriptEntry {
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn CreateChildHandler<'a, Param5: ::std::convert::Into<::windows::core::InParam<'a, super::super::Com::ITypeInfo>>>(&self, pszdefaultname: ::windows::core::PCWSTR, prgpsznames: &[::windows::core::PWSTR], pszevent: ::windows::core::PCWSTR, pszdelimiter: ::windows::core::PCWSTR, ptisignature: Param5, imethodsignature: u32, isn: u32, dwcookie: u32) -> ::windows::core::Result<IScriptEntry> {
+    pub unsafe fn CreateChildHandler<'a, P0>(&self, pszdefaultname: ::windows::core::PCWSTR, prgpsznames: &[::windows::core::PWSTR], pszevent: ::windows::core::PCWSTR, pszdelimiter: ::windows::core::PCWSTR, ptisignature: P0, imethodsignature: u32, isn: u32, dwcookie: u32) -> ::windows::core::Result<IScriptEntry>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Com::ITypeInfo>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).base__.CreateChildHandler)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pszdefaultname), ::core::mem::transmute(::windows::core::as_ptr_or_null(prgpsznames)), prgpsznames.len() as _, ::core::mem::transmute(pszevent), ::core::mem::transmute(pszdelimiter), ptisignature.into().abi(), ::core::mem::transmute(imethodsignature), ::core::mem::transmute(isn), ::core::mem::transmute(dwcookie), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IScriptEntry>(result__)
     }
@@ -44763,7 +46037,10 @@ impl IScriptEntry {
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn SetSignature<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Com::ITypeInfo>>>(&self, pti: Param0, imethod: u32) -> ::windows::core::Result<()> {
+    pub unsafe fn SetSignature<'a, P0>(&self, pti: P0, imethod: u32) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Com::ITypeInfo>>,
+    {
         (::windows::core::Interface::vtable(self).SetSignature)(::windows::core::Interface::as_raw(self), pti.into().abi(), ::core::mem::transmute(imethod)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -44972,7 +46249,10 @@ impl IScriptNode {
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn CreateChildHandler<'a, Param5: ::std::convert::Into<::windows::core::InParam<'a, super::super::Com::ITypeInfo>>>(&self, pszdefaultname: ::windows::core::PCWSTR, prgpsznames: &[::windows::core::PWSTR], pszevent: ::windows::core::PCWSTR, pszdelimiter: ::windows::core::PCWSTR, ptisignature: Param5, imethodsignature: u32, isn: u32, dwcookie: u32) -> ::windows::core::Result<IScriptEntry> {
+    pub unsafe fn CreateChildHandler<'a, P0>(&self, pszdefaultname: ::windows::core::PCWSTR, prgpsznames: &[::windows::core::PWSTR], pszevent: ::windows::core::PCWSTR, pszdelimiter: ::windows::core::PCWSTR, ptisignature: P0, imethodsignature: u32, isn: u32, dwcookie: u32) -> ::windows::core::Result<IScriptEntry>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Com::ITypeInfo>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).CreateChildHandler)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pszdefaultname), ::core::mem::transmute(::windows::core::as_ptr_or_null(prgpsznames)), prgpsznames.len() as _, ::core::mem::transmute(pszevent), ::core::mem::transmute(pszdelimiter), ptisignature.into().abi(), ::core::mem::transmute(imethodsignature), ::core::mem::transmute(isn), ::core::mem::transmute(dwcookie), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IScriptEntry>(result__)
     }
@@ -45083,7 +46363,10 @@ impl IScriptScriptlet {
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn CreateChildHandler<'a, Param5: ::std::convert::Into<::windows::core::InParam<'a, super::super::Com::ITypeInfo>>>(&self, pszdefaultname: ::windows::core::PCWSTR, prgpsznames: &[::windows::core::PWSTR], pszevent: ::windows::core::PCWSTR, pszdelimiter: ::windows::core::PCWSTR, ptisignature: Param5, imethodsignature: u32, isn: u32, dwcookie: u32) -> ::windows::core::Result<IScriptEntry> {
+    pub unsafe fn CreateChildHandler<'a, P0>(&self, pszdefaultname: ::windows::core::PCWSTR, prgpsznames: &[::windows::core::PWSTR], pszevent: ::windows::core::PCWSTR, pszdelimiter: ::windows::core::PCWSTR, ptisignature: P0, imethodsignature: u32, isn: u32, dwcookie: u32) -> ::windows::core::Result<IScriptEntry>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Com::ITypeInfo>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows::core::Interface::vtable(self).base__.base__.CreateChildHandler)(::windows::core::Interface::as_raw(self), ::core::mem::transmute(pszdefaultname), ::core::mem::transmute(::windows::core::as_ptr_or_null(prgpsznames)), prgpsznames.len() as _, ::core::mem::transmute(pszevent), ::core::mem::transmute(pszdelimiter), ptisignature.into().abi(), ::core::mem::transmute(imethodsignature), ::core::mem::transmute(isn), ::core::mem::transmute(dwcookie), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IScriptEntry>(result__)
     }
@@ -45134,7 +46417,10 @@ impl IScriptScriptlet {
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn SetSignature<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Com::ITypeInfo>>>(&self, pti: Param0, imethod: u32) -> ::windows::core::Result<()> {
+    pub unsafe fn SetSignature<'a, P0>(&self, pti: P0, imethod: u32) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Com::ITypeInfo>>,
+    {
         (::windows::core::Interface::vtable(self).base__.SetSignature)(::windows::core::Interface::as_raw(self), pti.into().abi(), ::core::mem::transmute(imethod)).ok()
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
@@ -45273,7 +46559,10 @@ impl ISimpleConnectionPoint {
     }
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn Advise<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Com::IDispatch>>>(&self, pdisp: Param0) -> ::windows::core::Result<u32> {
+    pub unsafe fn Advise<'a, P0>(&self, pdisp: P0) -> ::windows::core::Result<u32>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::Com::IDispatch>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows::core::Interface::vtable(self).Advise)(::windows::core::Interface::as_raw(self), pdisp.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
@@ -45338,7 +46627,11 @@ pub struct IStringDisplayableConcept(::windows::core::IUnknown);
 impl IStringDisplayableConcept {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ToDisplayString<'a, Param0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>, Param1: ::std::convert::Into<::windows::core::InParam<'a, IKeyStore>>>(&self, contextobject: Param0, metadata: Param1) -> ::windows::core::Result<super::super::super::Foundation::BSTR> {
+    pub unsafe fn ToDisplayString<'a, P0, P1>(&self, contextobject: P0, metadata: P1) -> ::windows::core::Result<super::super::super::Foundation::BSTR>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, IModelObject>>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, IKeyStore>>,
+    {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
         (::windows::core::Interface::vtable(self).ToDisplayString)(::windows::core::Interface::as_raw(self), contextobject.into().abi(), metadata.into().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
     }
@@ -45447,7 +46740,11 @@ pub struct IWebAppDiagnosticsObjectInitialization(::windows::core::IUnknown);
 impl IWebAppDiagnosticsObjectInitialization {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Initialize<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE_PTR>, Param1: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>>(&self, hpassedhandle: Param0, pdebugapplication: Param1) -> ::windows::core::Result<()> {
+    pub unsafe fn Initialize<'a, P0, P1>(&self, hpassedhandle: P0, pdebugapplication: P1) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<super::super::super::Foundation::HANDLE_PTR>,
+        P1: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
+    {
         (::windows::core::Interface::vtable(self).Initialize)(::windows::core::Interface::as_raw(self), hpassedhandle.into(), pdebugapplication.into().abi()).ok()
     }
 }
@@ -45554,7 +46851,10 @@ pub struct IWebAppDiagnosticsSetup_Vtbl {
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`, `\"Win32_Security_WinTrust\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_WinTrust"))]
 #[inline]
-pub unsafe fn ImageAddCertificate<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(filehandle: Param0, certificate: *const super::super::super::Security::WinTrust::WIN_CERTIFICATE, index: *mut u32) -> super::super::super::Foundation::BOOL {
+pub unsafe fn ImageAddCertificate<'a, P0>(filehandle: P0, certificate: *const super::super::super::Security::WinTrust::WIN_CERTIFICATE, index: *mut u32) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageAddCertificate(filehandle: super::super::super::Foundation::HANDLE, certificate: *const super::super::super::Security::WinTrust::WIN_CERTIFICATE, index: *mut u32) -> super::super::super::Foundation::BOOL;
@@ -45564,7 +46864,11 @@ pub unsafe fn ImageAddCertificate<'a, Param0: ::std::convert::Into<super::super:
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ImageDirectoryEntryToData<'a, Param1: ::std::convert::Into<super::super::super::Foundation::BOOLEAN>, Param2: ::std::convert::Into<IMAGE_DIRECTORY_ENTRY>>(base: *const ::core::ffi::c_void, mappedasimage: Param1, directoryentry: Param2, size: *mut u32) -> *mut ::core::ffi::c_void {
+pub unsafe fn ImageDirectoryEntryToData<'a, P0, P1>(base: *const ::core::ffi::c_void, mappedasimage: P0, directoryentry: P1, size: *mut u32) -> *mut ::core::ffi::c_void
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::BOOLEAN>,
+    P1: ::std::convert::Into<IMAGE_DIRECTORY_ENTRY>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageDirectoryEntryToData(base: *const ::core::ffi::c_void, mappedasimage: super::super::super::Foundation::BOOLEAN, directoryentry: IMAGE_DIRECTORY_ENTRY, size: *mut u32) -> *mut ::core::ffi::c_void;
@@ -45574,7 +46878,11 @@ pub unsafe fn ImageDirectoryEntryToData<'a, Param1: ::std::convert::Into<super::
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ImageDirectoryEntryToDataEx<'a, Param1: ::std::convert::Into<super::super::super::Foundation::BOOLEAN>, Param2: ::std::convert::Into<IMAGE_DIRECTORY_ENTRY>>(base: *const ::core::ffi::c_void, mappedasimage: Param1, directoryentry: Param2, size: *mut u32, foundheader: *mut *mut IMAGE_SECTION_HEADER) -> *mut ::core::ffi::c_void {
+pub unsafe fn ImageDirectoryEntryToDataEx<'a, P0, P1>(base: *const ::core::ffi::c_void, mappedasimage: P0, directoryentry: P1, size: *mut u32, foundheader: *mut *mut IMAGE_SECTION_HEADER) -> *mut ::core::ffi::c_void
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::BOOLEAN>,
+    P1: ::std::convert::Into<IMAGE_DIRECTORY_ENTRY>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageDirectoryEntryToDataEx(base: *const ::core::ffi::c_void, mappedasimage: super::super::super::Foundation::BOOLEAN, directoryentry: IMAGE_DIRECTORY_ENTRY, size: *mut u32, foundheader: *mut *mut IMAGE_SECTION_HEADER) -> *mut ::core::ffi::c_void;
@@ -45584,7 +46892,10 @@ pub unsafe fn ImageDirectoryEntryToDataEx<'a, Param1: ::std::convert::Into<super
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ImageEnumerateCertificates<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(filehandle: Param0, typefilter: u16, certificatecount: *mut u32, indices: &mut [u32]) -> super::super::super::Foundation::BOOL {
+pub unsafe fn ImageEnumerateCertificates<'a, P0>(filehandle: P0, typefilter: u16, certificatecount: *mut u32, indices: &mut [u32]) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageEnumerateCertificates(filehandle: super::super::super::Foundation::HANDLE, typefilter: u16, certificatecount: *mut u32, indices: *mut u32, indexcount: u32) -> super::super::super::Foundation::BOOL;
@@ -45594,7 +46905,10 @@ pub unsafe fn ImageEnumerateCertificates<'a, Param0: ::std::convert::Into<super:
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`, `\"Win32_Security_WinTrust\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_WinTrust"))]
 #[inline]
-pub unsafe fn ImageGetCertificateData<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(filehandle: Param0, certificateindex: u32, certificate: *mut super::super::super::Security::WinTrust::WIN_CERTIFICATE, requiredlength: *mut u32) -> super::super::super::Foundation::BOOL {
+pub unsafe fn ImageGetCertificateData<'a, P0>(filehandle: P0, certificateindex: u32, certificate: *mut super::super::super::Security::WinTrust::WIN_CERTIFICATE, requiredlength: *mut u32) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageGetCertificateData(filehandle: super::super::super::Foundation::HANDLE, certificateindex: u32, certificate: *mut super::super::super::Security::WinTrust::WIN_CERTIFICATE, requiredlength: *mut u32) -> super::super::super::Foundation::BOOL;
@@ -45604,7 +46918,10 @@ pub unsafe fn ImageGetCertificateData<'a, Param0: ::std::convert::Into<super::su
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`, `\"Win32_Security_WinTrust\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_WinTrust"))]
 #[inline]
-pub unsafe fn ImageGetCertificateHeader<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(filehandle: Param0, certificateindex: u32, certificateheader: *mut super::super::super::Security::WinTrust::WIN_CERTIFICATE) -> super::super::super::Foundation::BOOL {
+pub unsafe fn ImageGetCertificateHeader<'a, P0>(filehandle: P0, certificateindex: u32, certificateheader: *mut super::super::super::Security::WinTrust::WIN_CERTIFICATE) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageGetCertificateHeader(filehandle: super::super::super::Foundation::HANDLE, certificateindex: u32, certificateheader: *mut super::super::super::Security::WinTrust::WIN_CERTIFICATE) -> super::super::super::Foundation::BOOL;
@@ -45614,7 +46931,10 @@ pub unsafe fn ImageGetCertificateHeader<'a, Param0: ::std::convert::Into<super::
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ImageGetDigestStream<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(filehandle: Param0, digestlevel: u32, digestfunction: DIGEST_FUNCTION, digesthandle: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL {
+pub unsafe fn ImageGetDigestStream<'a, P0>(filehandle: P0, digestlevel: u32, digestfunction: DIGEST_FUNCTION, digesthandle: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageGetDigestStream(filehandle: super::super::super::Foundation::HANDLE, digestlevel: u32, digestfunction: *mut ::core::ffi::c_void, digesthandle: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
@@ -45656,7 +46976,10 @@ pub unsafe fn ImageNtHeader(base: *const ::core::ffi::c_void) -> *mut IMAGE_NT_H
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ImageRemoveCertificate<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(filehandle: Param0, index: u32) -> super::super::super::Foundation::BOOL {
+pub unsafe fn ImageRemoveCertificate<'a, P0>(filehandle: P0, index: u32) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageRemoveCertificate(filehandle: super::super::super::Foundation::HANDLE, index: u32) -> super::super::super::Foundation::BOOL;
@@ -50930,7 +52253,11 @@ pub unsafe fn MakeSureDirectoryPathExists(dirpath: ::windows::core::PCSTR) -> su
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`, `\"Win32_System_Kernel\"`, `\"Win32_System_SystemInformation\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel", feature = "Win32_System_SystemInformation"))]
 #[inline]
-pub unsafe fn MapAndLoad<'a, Param3: ::std::convert::Into<super::super::super::Foundation::BOOL>, Param4: ::std::convert::Into<super::super::super::Foundation::BOOL>>(imagename: ::windows::core::PCSTR, dllpath: ::windows::core::PCSTR, loadedimage: *mut LOADED_IMAGE, dotdll: Param3, readonly: Param4) -> super::super::super::Foundation::BOOL {
+pub unsafe fn MapAndLoad<'a, P0, P1>(imagename: ::windows::core::PCSTR, dllpath: ::windows::core::PCSTR, loadedimage: *mut LOADED_IMAGE, dotdll: P0, readonly: P1) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+    P1: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MapAndLoad(imagename: ::windows::core::PCSTR, dllpath: ::windows::core::PCSTR, loadedimage: *mut LOADED_IMAGE, dotdll: super::super::super::Foundation::BOOL, readonly: super::super::super::Foundation::BOOL) -> super::super::super::Foundation::BOOL;
@@ -50978,7 +52305,12 @@ pub unsafe fn MiniDumpReadDumpStream(baseofdump: *const ::core::ffi::c_void, str
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`, `\"Win32_Storage_FileSystem\"`, `\"Win32_System_Kernel\"`, `\"Win32_System_Memory\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem", feature = "Win32_System_Kernel", feature = "Win32_System_Memory"))]
 #[inline]
-pub unsafe fn MiniDumpWriteDump<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>, Param2: ::std::convert::Into<super::super::super::Foundation::HANDLE>, Param3: ::std::convert::Into<MINIDUMP_TYPE>>(hprocess: Param0, processid: u32, hfile: Param2, dumptype: Param3, exceptionparam: *const MINIDUMP_EXCEPTION_INFORMATION, userstreamparam: *const MINIDUMP_USER_STREAM_INFORMATION, callbackparam: *const MINIDUMP_CALLBACK_INFORMATION) -> super::super::super::Foundation::BOOL {
+pub unsafe fn MiniDumpWriteDump<'a, P0, P1, P2>(hprocess: P0, processid: u32, hfile: P1, dumptype: P2, exceptionparam: *const MINIDUMP_EXCEPTION_INFORMATION, userstreamparam: *const MINIDUMP_USER_STREAM_INFORMATION, callbackparam: *const MINIDUMP_CALLBACK_INFORMATION) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+    P1: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+    P2: ::std::convert::Into<MINIDUMP_TYPE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MiniDumpWriteDump(hprocess: super::super::super::Foundation::HANDLE, processid: u32, hfile: super::super::super::Foundation::HANDLE, dumptype: MINIDUMP_TYPE, exceptionparam: *const MINIDUMP_EXCEPTION_INFORMATION, userstreamparam: *const MINIDUMP_USER_STREAM_INFORMATION, callbackparam: *const MINIDUMP_CALLBACK_INFORMATION) -> super::super::super::Foundation::BOOL;
@@ -51249,7 +52581,10 @@ impl ::core::default::Default for OUTPUT_DEBUG_STRING_INFO {
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn OpenThreadWaitChainSession<'a, Param0: ::std::convert::Into<OPEN_THREAD_WAIT_CHAIN_SESSION_FLAGS>>(flags: Param0, callback: PWAITCHAINCALLBACK) -> *mut ::core::ffi::c_void {
+pub unsafe fn OpenThreadWaitChainSession<'a, P0>(flags: P0, callback: PWAITCHAINCALLBACK) -> *mut ::core::ffi::c_void
+where
+    P0: ::std::convert::Into<OPEN_THREAD_WAIT_CHAIN_SESSION_FLAGS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn OpenThreadWaitChainSession(flags: OPEN_THREAD_WAIT_CHAIN_SESSION_FLAGS, callback: *mut ::core::ffi::c_void) -> *mut ::core::ffi::c_void;
@@ -53197,7 +54532,12 @@ impl ::core::fmt::Debug for RawSearchFlags {
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ReBaseImage<'a, Param2: ::std::convert::Into<super::super::super::Foundation::BOOL>, Param3: ::std::convert::Into<super::super::super::Foundation::BOOL>, Param4: ::std::convert::Into<super::super::super::Foundation::BOOL>>(currentimagename: ::windows::core::PCSTR, symbolpath: ::windows::core::PCSTR, frebase: Param2, frebasesysfileok: Param3, fgoingdown: Param4, checkimagesize: u32, oldimagesize: *mut u32, oldimagebase: *mut usize, newimagesize: *mut u32, newimagebase: *mut usize, timestamp: u32) -> super::super::super::Foundation::BOOL {
+pub unsafe fn ReBaseImage<'a, P0, P1, P2>(currentimagename: ::windows::core::PCSTR, symbolpath: ::windows::core::PCSTR, frebase: P0, frebasesysfileok: P1, fgoingdown: P2, checkimagesize: u32, oldimagesize: *mut u32, oldimagebase: *mut usize, newimagesize: *mut u32, newimagebase: *mut usize, timestamp: u32) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+    P1: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+    P2: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReBaseImage(currentimagename: ::windows::core::PCSTR, symbolpath: ::windows::core::PCSTR, frebase: super::super::super::Foundation::BOOL, frebasesysfileok: super::super::super::Foundation::BOOL, fgoingdown: super::super::super::Foundation::BOOL, checkimagesize: u32, oldimagesize: *mut u32, oldimagebase: *mut usize, newimagesize: *mut u32, newimagebase: *mut usize, timestamp: u32) -> super::super::super::Foundation::BOOL;
@@ -53207,7 +54547,12 @@ pub unsafe fn ReBaseImage<'a, Param2: ::std::convert::Into<super::super::super::
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ReBaseImage64<'a, Param2: ::std::convert::Into<super::super::super::Foundation::BOOL>, Param3: ::std::convert::Into<super::super::super::Foundation::BOOL>, Param4: ::std::convert::Into<super::super::super::Foundation::BOOL>>(currentimagename: ::windows::core::PCSTR, symbolpath: ::windows::core::PCSTR, frebase: Param2, frebasesysfileok: Param3, fgoingdown: Param4, checkimagesize: u32, oldimagesize: *mut u32, oldimagebase: *mut u64, newimagesize: *mut u32, newimagebase: *mut u64, timestamp: u32) -> super::super::super::Foundation::BOOL {
+pub unsafe fn ReBaseImage64<'a, P0, P1, P2>(currentimagename: ::windows::core::PCSTR, symbolpath: ::windows::core::PCSTR, frebase: P0, frebasesysfileok: P1, fgoingdown: P2, checkimagesize: u32, oldimagesize: *mut u32, oldimagebase: *mut u64, newimagesize: *mut u32, newimagebase: *mut u64, timestamp: u32) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+    P1: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+    P2: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReBaseImage64(currentimagename: ::windows::core::PCSTR, symbolpath: ::windows::core::PCSTR, frebase: super::super::super::Foundation::BOOL, frebasesysfileok: super::super::super::Foundation::BOOL, fgoingdown: super::super::super::Foundation::BOOL, checkimagesize: u32, oldimagesize: *mut u32, oldimagebase: *mut u64, newimagesize: *mut u32, newimagebase: *mut u64, timestamp: u32) -> super::super::super::Foundation::BOOL;
@@ -53217,7 +54562,10 @@ pub unsafe fn ReBaseImage64<'a, Param2: ::std::convert::Into<super::super::super
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ReadProcessMemory<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, lpbaseaddress: *const ::core::ffi::c_void, lpbuffer: *mut ::core::ffi::c_void, nsize: usize, lpnumberofbytesread: *mut usize) -> super::super::super::Foundation::BOOL {
+pub unsafe fn ReadProcessMemory<'a, P0>(hprocess: P0, lpbaseaddress: *const ::core::ffi::c_void, lpbuffer: *mut ::core::ffi::c_void, nsize: usize, lpnumberofbytesread: *mut usize) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReadProcessMemory(hprocess: super::super::super::Foundation::HANDLE, lpbaseaddress: *const ::core::ffi::c_void, lpbuffer: *mut ::core::ffi::c_void, nsize: usize, lpnumberofbytesread: *mut usize) -> super::super::super::Foundation::BOOL;
@@ -53236,7 +54584,10 @@ pub unsafe fn RegisterWaitChainCOMCallback(callstatecallback: PCOGETCALLSTATE, a
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RemoveInvalidModuleList<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0) {
+pub unsafe fn RemoveInvalidModuleList<'a, P0>(hprocess: P0)
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RemoveInvalidModuleList(hprocess: super::super::super::Foundation::HANDLE);
@@ -53264,7 +54615,10 @@ pub unsafe fn RemoveVectoredExceptionHandler(handle: *const ::core::ffi::c_void)
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ReportSymbolLoadSummary<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, ploadmodule: ::windows::core::PCWSTR, psymboldata: *const DBGHELP_DATA_REPORT_STRUCT) -> super::super::super::Foundation::BOOL {
+pub unsafe fn ReportSymbolLoadSummary<'a, P0>(hprocess: P0, ploadmodule: ::windows::core::PCWSTR, psymboldata: *const DBGHELP_DATA_REPORT_STRUCT) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReportSymbolLoadSummary(hprocess: super::super::super::Foundation::HANDLE, ploadmodule: ::windows::core::PCWSTR, psymboldata: *const DBGHELP_DATA_REPORT_STRUCT) -> super::super::super::Foundation::BOOL;
@@ -53470,7 +54824,10 @@ pub unsafe fn RtlUnwindEx(targetframe: *const ::core::ffi::c_void, targetip: *co
 #[cfg(target_arch = "aarch64")]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
 #[inline]
-pub unsafe fn RtlVirtualUnwind<'a, Param0: ::std::convert::Into<RTL_VIRTUAL_UNWIND_HANDLER_TYPE>>(handlertype: Param0, imagebase: usize, controlpc: usize, functionentry: *const IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY, contextrecord: *mut CONTEXT, handlerdata: *mut *mut ::core::ffi::c_void, establisherframe: *mut usize, contextpointers: *mut KNONVOLATILE_CONTEXT_POINTERS_ARM64) -> super::super::Kernel::EXCEPTION_ROUTINE {
+pub unsafe fn RtlVirtualUnwind<'a, P0>(handlertype: P0, imagebase: usize, controlpc: usize, functionentry: *const IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY, contextrecord: *mut CONTEXT, handlerdata: *mut *mut ::core::ffi::c_void, establisherframe: *mut usize, contextpointers: *mut KNONVOLATILE_CONTEXT_POINTERS_ARM64) -> super::super::Kernel::EXCEPTION_ROUTINE
+where
+    P0: ::std::convert::Into<RTL_VIRTUAL_UNWIND_HANDLER_TYPE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtlVirtualUnwind(handlertype: RTL_VIRTUAL_UNWIND_HANDLER_TYPE, imagebase: usize, controlpc: usize, functionentry: *const IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY, contextrecord: *mut CONTEXT, handlerdata: *mut *mut ::core::ffi::c_void, establisherframe: *mut usize, contextpointers: *mut KNONVOLATILE_CONTEXT_POINTERS_ARM64) -> super::super::Kernel::EXCEPTION_ROUTINE;
@@ -53481,7 +54838,10 @@ pub unsafe fn RtlVirtualUnwind<'a, Param0: ::std::convert::Into<RTL_VIRTUAL_UNWI
 #[cfg(target_arch = "x86_64")]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
 #[inline]
-pub unsafe fn RtlVirtualUnwind<'a, Param0: ::std::convert::Into<RTL_VIRTUAL_UNWIND_HANDLER_TYPE>>(handlertype: Param0, imagebase: u64, controlpc: u64, functionentry: *const IMAGE_RUNTIME_FUNCTION_ENTRY, contextrecord: *mut CONTEXT, handlerdata: *mut *mut ::core::ffi::c_void, establisherframe: *mut u64, contextpointers: *mut KNONVOLATILE_CONTEXT_POINTERS) -> super::super::Kernel::EXCEPTION_ROUTINE {
+pub unsafe fn RtlVirtualUnwind<'a, P0>(handlertype: P0, imagebase: u64, controlpc: u64, functionentry: *const IMAGE_RUNTIME_FUNCTION_ENTRY, contextrecord: *mut CONTEXT, handlerdata: *mut *mut ::core::ffi::c_void, establisherframe: *mut u64, contextpointers: *mut KNONVOLATILE_CONTEXT_POINTERS) -> super::super::Kernel::EXCEPTION_ROUTINE
+where
+    P0: ::std::convert::Into<RTL_VIRTUAL_UNWIND_HANDLER_TYPE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtlVirtualUnwind(handlertype: RTL_VIRTUAL_UNWIND_HANDLER_TYPE, imagebase: u64, controlpc: u64, functionentry: *const IMAGE_RUNTIME_FUNCTION_ENTRY, contextrecord: *mut CONTEXT, handlerdata: *mut *mut ::core::ffi::c_void, establisherframe: *mut u64, contextpointers: *mut KNONVOLATILE_CONTEXT_POINTERS) -> super::super::Kernel::EXCEPTION_ROUTINE;
@@ -55639,7 +56999,10 @@ pub unsafe fn SetCheckUserInterruptShared(lpstartaddress: LPCALL_BACK_USER_INTER
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
 #[inline]
-pub unsafe fn SetErrorMode<'a, Param0: ::std::convert::Into<THREAD_ERROR_MODE>>(umode: Param0) -> u32 {
+pub unsafe fn SetErrorMode<'a, P0>(umode: P0) -> u32
+where
+    P0: ::std::convert::Into<THREAD_ERROR_MODE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetErrorMode(umode: THREAD_ERROR_MODE) -> u32;
@@ -55680,7 +57043,10 @@ pub unsafe fn SetSymLoadError(error: u32) {
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`, `\"Win32_System_Kernel\"`*"]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
 #[inline]
-pub unsafe fn SetThreadContext<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hthread: Param0, lpcontext: *const CONTEXT) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SetThreadContext<'a, P0>(hthread: P0, lpcontext: *const CONTEXT) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetThreadContext(hthread: super::super::super::Foundation::HANDLE, lpcontext: *const CONTEXT) -> super::super::super::Foundation::BOOL;
@@ -55690,7 +57056,10 @@ pub unsafe fn SetThreadContext<'a, Param0: ::std::convert::Into<super::super::su
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetThreadErrorMode<'a, Param0: ::std::convert::Into<THREAD_ERROR_MODE>>(dwnewmode: Param0, lpoldmode: *const THREAD_ERROR_MODE) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SetThreadErrorMode<'a, P0>(dwnewmode: P0, lpoldmode: *const THREAD_ERROR_MODE) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<THREAD_ERROR_MODE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetThreadErrorMode(dwnewmode: THREAD_ERROR_MODE, lpoldmode: *const THREAD_ERROR_MODE) -> super::super::super::Foundation::BOOL;
@@ -55755,7 +57124,11 @@ impl ::core::fmt::Debug for SignatureComparison {
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn StackWalk<'a, Param1: ::std::convert::Into<super::super::super::Foundation::HANDLE>, Param2: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(machinetype: u32, hprocess: Param1, hthread: Param2, stackframe: *mut STACKFRAME, contextrecord: *mut ::core::ffi::c_void, readmemoryroutine: PREAD_PROCESS_MEMORY_ROUTINE, functiontableaccessroutine: PFUNCTION_TABLE_ACCESS_ROUTINE, getmodulebaseroutine: PGET_MODULE_BASE_ROUTINE, translateaddress: PTRANSLATE_ADDRESS_ROUTINE) -> super::super::super::Foundation::BOOL {
+pub unsafe fn StackWalk<'a, P0, P1>(machinetype: u32, hprocess: P0, hthread: P1, stackframe: *mut STACKFRAME, contextrecord: *mut ::core::ffi::c_void, readmemoryroutine: PREAD_PROCESS_MEMORY_ROUTINE, functiontableaccessroutine: PFUNCTION_TABLE_ACCESS_ROUTINE, getmodulebaseroutine: PGET_MODULE_BASE_ROUTINE, translateaddress: PTRANSLATE_ADDRESS_ROUTINE) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+    P1: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StackWalk(machinetype: u32, hprocess: super::super::super::Foundation::HANDLE, hthread: super::super::super::Foundation::HANDLE, stackframe: *mut STACKFRAME, contextrecord: *mut ::core::ffi::c_void, readmemoryroutine: *mut ::core::ffi::c_void, functiontableaccessroutine: *mut ::core::ffi::c_void, getmodulebaseroutine: *mut ::core::ffi::c_void, translateaddress: *mut ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
@@ -55765,7 +57138,11 @@ pub unsafe fn StackWalk<'a, Param1: ::std::convert::Into<super::super::super::Fo
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn StackWalk64<'a, Param1: ::std::convert::Into<super::super::super::Foundation::HANDLE>, Param2: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(machinetype: u32, hprocess: Param1, hthread: Param2, stackframe: *mut STACKFRAME64, contextrecord: *mut ::core::ffi::c_void, readmemoryroutine: PREAD_PROCESS_MEMORY_ROUTINE64, functiontableaccessroutine: PFUNCTION_TABLE_ACCESS_ROUTINE64, getmodulebaseroutine: PGET_MODULE_BASE_ROUTINE64, translateaddress: PTRANSLATE_ADDRESS_ROUTINE64) -> super::super::super::Foundation::BOOL {
+pub unsafe fn StackWalk64<'a, P0, P1>(machinetype: u32, hprocess: P0, hthread: P1, stackframe: *mut STACKFRAME64, contextrecord: *mut ::core::ffi::c_void, readmemoryroutine: PREAD_PROCESS_MEMORY_ROUTINE64, functiontableaccessroutine: PFUNCTION_TABLE_ACCESS_ROUTINE64, getmodulebaseroutine: PGET_MODULE_BASE_ROUTINE64, translateaddress: PTRANSLATE_ADDRESS_ROUTINE64) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+    P1: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StackWalk64(machinetype: u32, hprocess: super::super::super::Foundation::HANDLE, hthread: super::super::super::Foundation::HANDLE, stackframe: *mut STACKFRAME64, contextrecord: *mut ::core::ffi::c_void, readmemoryroutine: *mut ::core::ffi::c_void, functiontableaccessroutine: *mut ::core::ffi::c_void, getmodulebaseroutine: *mut ::core::ffi::c_void, translateaddress: *mut ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
@@ -55775,7 +57152,11 @@ pub unsafe fn StackWalk64<'a, Param1: ::std::convert::Into<super::super::super::
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn StackWalkEx<'a, Param1: ::std::convert::Into<super::super::super::Foundation::HANDLE>, Param2: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(machinetype: u32, hprocess: Param1, hthread: Param2, stackframe: *mut STACKFRAME_EX, contextrecord: *mut ::core::ffi::c_void, readmemoryroutine: PREAD_PROCESS_MEMORY_ROUTINE64, functiontableaccessroutine: PFUNCTION_TABLE_ACCESS_ROUTINE64, getmodulebaseroutine: PGET_MODULE_BASE_ROUTINE64, translateaddress: PTRANSLATE_ADDRESS_ROUTINE64, flags: u32) -> super::super::super::Foundation::BOOL {
+pub unsafe fn StackWalkEx<'a, P0, P1>(machinetype: u32, hprocess: P0, hthread: P1, stackframe: *mut STACKFRAME_EX, contextrecord: *mut ::core::ffi::c_void, readmemoryroutine: PREAD_PROCESS_MEMORY_ROUTINE64, functiontableaccessroutine: PFUNCTION_TABLE_ACCESS_ROUTINE64, getmodulebaseroutine: PGET_MODULE_BASE_ROUTINE64, translateaddress: PTRANSLATE_ADDRESS_ROUTINE64, flags: u32) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+    P1: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StackWalkEx(machinetype: u32, hprocess: super::super::super::Foundation::HANDLE, hthread: super::super::super::Foundation::HANDLE, stackframe: *mut STACKFRAME_EX, contextrecord: *mut ::core::ffi::c_void, readmemoryroutine: *mut ::core::ffi::c_void, functiontableaccessroutine: *mut ::core::ffi::c_void, getmodulebaseroutine: *mut ::core::ffi::c_void, translateaddress: *mut ::core::ffi::c_void, flags: u32) -> super::super::super::Foundation::BOOL;
@@ -55785,7 +57166,10 @@ pub unsafe fn StackWalkEx<'a, Param1: ::std::convert::Into<super::super::super::
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymAddSourceStream<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, base: u64, streamfile: ::windows::core::PCSTR, buffer: *const u8, size: usize) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymAddSourceStream<'a, P0>(hprocess: P0, base: u64, streamfile: ::windows::core::PCSTR, buffer: *const u8, size: usize) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymAddSourceStream(hprocess: super::super::super::Foundation::HANDLE, base: u64, streamfile: ::windows::core::PCSTR, buffer: *const u8, size: usize) -> super::super::super::Foundation::BOOL;
@@ -55795,7 +57179,10 @@ pub unsafe fn SymAddSourceStream<'a, Param0: ::std::convert::Into<super::super::
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymAddSourceStreamA<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, base: u64, streamfile: ::windows::core::PCSTR, buffer: *const u8, size: usize) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymAddSourceStreamA<'a, P0>(hprocess: P0, base: u64, streamfile: ::windows::core::PCSTR, buffer: *const u8, size: usize) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymAddSourceStreamA(hprocess: super::super::super::Foundation::HANDLE, base: u64, streamfile: ::windows::core::PCSTR, buffer: *const u8, size: usize) -> super::super::super::Foundation::BOOL;
@@ -55805,7 +57192,10 @@ pub unsafe fn SymAddSourceStreamA<'a, Param0: ::std::convert::Into<super::super:
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymAddSourceStreamW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, base: u64, filespec: ::windows::core::PCWSTR, buffer: *const u8, size: usize) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymAddSourceStreamW<'a, P0>(hprocess: P0, base: u64, filespec: ::windows::core::PCWSTR, buffer: *const u8, size: usize) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymAddSourceStreamW(hprocess: super::super::super::Foundation::HANDLE, base: u64, filespec: ::windows::core::PCWSTR, buffer: *const u8, size: usize) -> super::super::super::Foundation::BOOL;
@@ -55815,7 +57205,10 @@ pub unsafe fn SymAddSourceStreamW<'a, Param0: ::std::convert::Into<super::super:
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymAddSymbol<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, baseofdll: u64, name: ::windows::core::PCSTR, address: u64, size: u32, flags: u32) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymAddSymbol<'a, P0>(hprocess: P0, baseofdll: u64, name: ::windows::core::PCSTR, address: u64, size: u32, flags: u32) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymAddSymbol(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, name: ::windows::core::PCSTR, address: u64, size: u32, flags: u32) -> super::super::super::Foundation::BOOL;
@@ -55825,7 +57218,10 @@ pub unsafe fn SymAddSymbol<'a, Param0: ::std::convert::Into<super::super::super:
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymAddSymbolW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, baseofdll: u64, name: ::windows::core::PCWSTR, address: u64, size: u32, flags: u32) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymAddSymbolW<'a, P0>(hprocess: P0, baseofdll: u64, name: ::windows::core::PCWSTR, address: u64, size: u32, flags: u32) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymAddSymbolW(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, name: ::windows::core::PCWSTR, address: u64, size: u32, flags: u32) -> super::super::super::Foundation::BOOL;
@@ -55835,7 +57231,10 @@ pub unsafe fn SymAddSymbolW<'a, Param0: ::std::convert::Into<super::super::super
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymAddrIncludeInlineTrace<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, address: u64) -> u32 {
+pub unsafe fn SymAddrIncludeInlineTrace<'a, P0>(hprocess: P0, address: u64) -> u32
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymAddrIncludeInlineTrace(hprocess: super::super::super::Foundation::HANDLE, address: u64) -> u32;
@@ -55845,7 +57244,10 @@ pub unsafe fn SymAddrIncludeInlineTrace<'a, Param0: ::std::convert::Into<super::
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymCleanup<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymCleanup<'a, P0>(hprocess: P0) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymCleanup(hprocess: super::super::super::Foundation::HANDLE) -> super::super::super::Foundation::BOOL;
@@ -55855,7 +57257,10 @@ pub unsafe fn SymCleanup<'a, Param0: ::std::convert::Into<super::super::super::F
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymCompareInlineTrace<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, address1: u64, inlinecontext1: u32, retaddress1: u64, address2: u64, retaddress2: u64) -> u32 {
+pub unsafe fn SymCompareInlineTrace<'a, P0>(hprocess: P0, address1: u64, inlinecontext1: u32, retaddress1: u64, address2: u64, retaddress2: u64) -> u32
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymCompareInlineTrace(hprocess: super::super::super::Foundation::HANDLE, address1: u64, inlinecontext1: u32, retaddress1: u64, address2: u64, retaddress2: u64) -> u32;
@@ -55865,7 +57270,10 @@ pub unsafe fn SymCompareInlineTrace<'a, Param0: ::std::convert::Into<super::supe
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymDeleteSymbol<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, baseofdll: u64, name: ::windows::core::PCSTR, address: u64, flags: u32) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymDeleteSymbol<'a, P0>(hprocess: P0, baseofdll: u64, name: ::windows::core::PCSTR, address: u64, flags: u32) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymDeleteSymbol(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, name: ::windows::core::PCSTR, address: u64, flags: u32) -> super::super::super::Foundation::BOOL;
@@ -55875,7 +57283,10 @@ pub unsafe fn SymDeleteSymbol<'a, Param0: ::std::convert::Into<super::super::sup
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymDeleteSymbolW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, baseofdll: u64, name: ::windows::core::PCWSTR, address: u64, flags: u32) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymDeleteSymbolW<'a, P0>(hprocess: P0, baseofdll: u64, name: ::windows::core::PCWSTR, address: u64, flags: u32) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymDeleteSymbolW(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, name: ::windows::core::PCWSTR, address: u64, flags: u32) -> super::super::super::Foundation::BOOL;
@@ -55885,7 +57296,10 @@ pub unsafe fn SymDeleteSymbolW<'a, Param0: ::std::convert::Into<super::super::su
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymEnumLines<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, base: u64, obj: ::windows::core::PCSTR, file: ::windows::core::PCSTR, enumlinescallback: PSYM_ENUMLINES_CALLBACK, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymEnumLines<'a, P0>(hprocess: P0, base: u64, obj: ::windows::core::PCSTR, file: ::windows::core::PCSTR, enumlinescallback: PSYM_ENUMLINES_CALLBACK, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymEnumLines(hprocess: super::super::super::Foundation::HANDLE, base: u64, obj: ::windows::core::PCSTR, file: ::windows::core::PCSTR, enumlinescallback: *mut ::core::ffi::c_void, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
@@ -55895,7 +57309,10 @@ pub unsafe fn SymEnumLines<'a, Param0: ::std::convert::Into<super::super::super:
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymEnumLinesW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, base: u64, obj: ::windows::core::PCWSTR, file: ::windows::core::PCWSTR, enumlinescallback: PSYM_ENUMLINES_CALLBACKW, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymEnumLinesW<'a, P0>(hprocess: P0, base: u64, obj: ::windows::core::PCWSTR, file: ::windows::core::PCWSTR, enumlinescallback: PSYM_ENUMLINES_CALLBACKW, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymEnumLinesW(hprocess: super::super::super::Foundation::HANDLE, base: u64, obj: ::windows::core::PCWSTR, file: ::windows::core::PCWSTR, enumlinescallback: *mut ::core::ffi::c_void, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
@@ -55915,7 +57332,10 @@ pub unsafe fn SymEnumProcesses(enumprocessescallback: PSYM_ENUMPROCESSES_CALLBAC
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymEnumSourceFileTokens<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, base: u64, callback: PENUMSOURCEFILETOKENSCALLBACK) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymEnumSourceFileTokens<'a, P0>(hprocess: P0, base: u64, callback: PENUMSOURCEFILETOKENSCALLBACK) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymEnumSourceFileTokens(hprocess: super::super::super::Foundation::HANDLE, base: u64, callback: *mut ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
@@ -55925,7 +57345,10 @@ pub unsafe fn SymEnumSourceFileTokens<'a, Param0: ::std::convert::Into<super::su
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymEnumSourceFiles<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, modbase: u64, mask: ::windows::core::PCSTR, cbsrcfiles: PSYM_ENUMSOURCEFILES_CALLBACK, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymEnumSourceFiles<'a, P0>(hprocess: P0, modbase: u64, mask: ::windows::core::PCSTR, cbsrcfiles: PSYM_ENUMSOURCEFILES_CALLBACK, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymEnumSourceFiles(hprocess: super::super::super::Foundation::HANDLE, modbase: u64, mask: ::windows::core::PCSTR, cbsrcfiles: *mut ::core::ffi::c_void, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
@@ -55935,7 +57358,10 @@ pub unsafe fn SymEnumSourceFiles<'a, Param0: ::std::convert::Into<super::super::
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymEnumSourceFilesW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, modbase: u64, mask: ::windows::core::PCWSTR, cbsrcfiles: PSYM_ENUMSOURCEFILES_CALLBACKW, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymEnumSourceFilesW<'a, P0>(hprocess: P0, modbase: u64, mask: ::windows::core::PCWSTR, cbsrcfiles: PSYM_ENUMSOURCEFILES_CALLBACKW, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymEnumSourceFilesW(hprocess: super::super::super::Foundation::HANDLE, modbase: u64, mask: ::windows::core::PCWSTR, cbsrcfiles: *mut ::core::ffi::c_void, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
@@ -55945,7 +57371,10 @@ pub unsafe fn SymEnumSourceFilesW<'a, Param0: ::std::convert::Into<super::super:
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymEnumSourceLines<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, base: u64, obj: ::windows::core::PCSTR, file: ::windows::core::PCSTR, line: u32, flags: u32, enumlinescallback: PSYM_ENUMLINES_CALLBACK, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymEnumSourceLines<'a, P0>(hprocess: P0, base: u64, obj: ::windows::core::PCSTR, file: ::windows::core::PCSTR, line: u32, flags: u32, enumlinescallback: PSYM_ENUMLINES_CALLBACK, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymEnumSourceLines(hprocess: super::super::super::Foundation::HANDLE, base: u64, obj: ::windows::core::PCSTR, file: ::windows::core::PCSTR, line: u32, flags: u32, enumlinescallback: *mut ::core::ffi::c_void, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
@@ -55955,7 +57384,10 @@ pub unsafe fn SymEnumSourceLines<'a, Param0: ::std::convert::Into<super::super::
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymEnumSourceLinesW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, base: u64, obj: ::windows::core::PCWSTR, file: ::windows::core::PCWSTR, line: u32, flags: u32, enumlinescallback: PSYM_ENUMLINES_CALLBACKW, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymEnumSourceLinesW<'a, P0>(hprocess: P0, base: u64, obj: ::windows::core::PCWSTR, file: ::windows::core::PCWSTR, line: u32, flags: u32, enumlinescallback: PSYM_ENUMLINES_CALLBACKW, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymEnumSourceLinesW(hprocess: super::super::super::Foundation::HANDLE, base: u64, obj: ::windows::core::PCWSTR, file: ::windows::core::PCWSTR, line: u32, flags: u32, enumlinescallback: *mut ::core::ffi::c_void, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
@@ -55965,7 +57397,10 @@ pub unsafe fn SymEnumSourceLinesW<'a, Param0: ::std::convert::Into<super::super:
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymEnumSym<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, baseofdll: u64, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACK, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymEnumSym<'a, P0>(hprocess: P0, baseofdll: u64, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACK, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymEnumSym(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, enumsymbolscallback: *mut ::core::ffi::c_void, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
@@ -55975,7 +57410,10 @@ pub unsafe fn SymEnumSym<'a, Param0: ::std::convert::Into<super::super::super::F
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymEnumSymbols<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, baseofdll: u64, mask: ::windows::core::PCSTR, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACK, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymEnumSymbols<'a, P0>(hprocess: P0, baseofdll: u64, mask: ::windows::core::PCSTR, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACK, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymEnumSymbols(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, mask: ::windows::core::PCSTR, enumsymbolscallback: *mut ::core::ffi::c_void, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
@@ -55985,7 +57423,10 @@ pub unsafe fn SymEnumSymbols<'a, Param0: ::std::convert::Into<super::super::supe
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymEnumSymbolsEx<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, baseofdll: u64, mask: ::windows::core::PCSTR, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACK, usercontext: *const ::core::ffi::c_void, options: u32) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymEnumSymbolsEx<'a, P0>(hprocess: P0, baseofdll: u64, mask: ::windows::core::PCSTR, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACK, usercontext: *const ::core::ffi::c_void, options: u32) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymEnumSymbolsEx(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, mask: ::windows::core::PCSTR, enumsymbolscallback: *mut ::core::ffi::c_void, usercontext: *const ::core::ffi::c_void, options: u32) -> super::super::super::Foundation::BOOL;
@@ -55995,7 +57436,10 @@ pub unsafe fn SymEnumSymbolsEx<'a, Param0: ::std::convert::Into<super::super::su
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymEnumSymbolsExW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, baseofdll: u64, mask: ::windows::core::PCWSTR, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACKW, usercontext: *const ::core::ffi::c_void, options: u32) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymEnumSymbolsExW<'a, P0>(hprocess: P0, baseofdll: u64, mask: ::windows::core::PCWSTR, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACKW, usercontext: *const ::core::ffi::c_void, options: u32) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymEnumSymbolsExW(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, mask: ::windows::core::PCWSTR, enumsymbolscallback: *mut ::core::ffi::c_void, usercontext: *const ::core::ffi::c_void, options: u32) -> super::super::super::Foundation::BOOL;
@@ -56005,7 +57449,10 @@ pub unsafe fn SymEnumSymbolsExW<'a, Param0: ::std::convert::Into<super::super::s
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymEnumSymbolsForAddr<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, address: u64, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACK, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymEnumSymbolsForAddr<'a, P0>(hprocess: P0, address: u64, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACK, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymEnumSymbolsForAddr(hprocess: super::super::super::Foundation::HANDLE, address: u64, enumsymbolscallback: *mut ::core::ffi::c_void, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
@@ -56015,7 +57462,10 @@ pub unsafe fn SymEnumSymbolsForAddr<'a, Param0: ::std::convert::Into<super::supe
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymEnumSymbolsForAddrW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, address: u64, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACKW, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymEnumSymbolsForAddrW<'a, P0>(hprocess: P0, address: u64, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACKW, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymEnumSymbolsForAddrW(hprocess: super::super::super::Foundation::HANDLE, address: u64, enumsymbolscallback: *mut ::core::ffi::c_void, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
@@ -56025,7 +57475,10 @@ pub unsafe fn SymEnumSymbolsForAddrW<'a, Param0: ::std::convert::Into<super::sup
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymEnumSymbolsW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, baseofdll: u64, mask: ::windows::core::PCWSTR, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACKW, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymEnumSymbolsW<'a, P0>(hprocess: P0, baseofdll: u64, mask: ::windows::core::PCWSTR, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACKW, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymEnumSymbolsW(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, mask: ::windows::core::PCWSTR, enumsymbolscallback: *mut ::core::ffi::c_void, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
@@ -56035,7 +57488,10 @@ pub unsafe fn SymEnumSymbolsW<'a, Param0: ::std::convert::Into<super::super::sup
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymEnumTypes<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, baseofdll: u64, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACK, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymEnumTypes<'a, P0>(hprocess: P0, baseofdll: u64, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACK, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymEnumTypes(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, enumsymbolscallback: *mut ::core::ffi::c_void, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
@@ -56045,7 +57501,10 @@ pub unsafe fn SymEnumTypes<'a, Param0: ::std::convert::Into<super::super::super:
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymEnumTypesByName<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, baseofdll: u64, mask: ::windows::core::PCSTR, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACK, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymEnumTypesByName<'a, P0>(hprocess: P0, baseofdll: u64, mask: ::windows::core::PCSTR, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACK, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymEnumTypesByName(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, mask: ::windows::core::PCSTR, enumsymbolscallback: *mut ::core::ffi::c_void, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
@@ -56055,7 +57514,10 @@ pub unsafe fn SymEnumTypesByName<'a, Param0: ::std::convert::Into<super::super::
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymEnumTypesByNameW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, baseofdll: u64, mask: ::windows::core::PCWSTR, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACKW, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymEnumTypesByNameW<'a, P0>(hprocess: P0, baseofdll: u64, mask: ::windows::core::PCWSTR, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACKW, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymEnumTypesByNameW(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, mask: ::windows::core::PCWSTR, enumsymbolscallback: *mut ::core::ffi::c_void, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
@@ -56065,7 +57527,10 @@ pub unsafe fn SymEnumTypesByNameW<'a, Param0: ::std::convert::Into<super::super:
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymEnumTypesW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, baseofdll: u64, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACKW, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymEnumTypesW<'a, P0>(hprocess: P0, baseofdll: u64, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACKW, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymEnumTypesW(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, enumsymbolscallback: *mut ::core::ffi::c_void, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
@@ -56076,7 +57541,10 @@ pub unsafe fn SymEnumTypesW<'a, Param0: ::std::convert::Into<super::super::super
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymEnumerateModules<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, enummodulescallback: PSYM_ENUMMODULES_CALLBACK, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymEnumerateModules<'a, P0>(hprocess: P0, enummodulescallback: PSYM_ENUMMODULES_CALLBACK, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymEnumerateModules(hprocess: super::super::super::Foundation::HANDLE, enummodulescallback: *mut ::core::ffi::c_void, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
@@ -56086,7 +57554,10 @@ pub unsafe fn SymEnumerateModules<'a, Param0: ::std::convert::Into<super::super:
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymEnumerateModules64<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, enummodulescallback: PSYM_ENUMMODULES_CALLBACK64, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymEnumerateModules64<'a, P0>(hprocess: P0, enummodulescallback: PSYM_ENUMMODULES_CALLBACK64, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymEnumerateModules64(hprocess: super::super::super::Foundation::HANDLE, enummodulescallback: *mut ::core::ffi::c_void, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
@@ -56096,7 +57567,10 @@ pub unsafe fn SymEnumerateModules64<'a, Param0: ::std::convert::Into<super::supe
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymEnumerateModulesW64<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, enummodulescallback: PSYM_ENUMMODULES_CALLBACKW64, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymEnumerateModulesW64<'a, P0>(hprocess: P0, enummodulescallback: PSYM_ENUMMODULES_CALLBACKW64, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymEnumerateModulesW64(hprocess: super::super::super::Foundation::HANDLE, enummodulescallback: *mut ::core::ffi::c_void, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
@@ -56107,7 +57581,10 @@ pub unsafe fn SymEnumerateModulesW64<'a, Param0: ::std::convert::Into<super::sup
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymEnumerateSymbols<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, baseofdll: u32, enumsymbolscallback: PSYM_ENUMSYMBOLS_CALLBACK, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymEnumerateSymbols<'a, P0>(hprocess: P0, baseofdll: u32, enumsymbolscallback: PSYM_ENUMSYMBOLS_CALLBACK, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymEnumerateSymbols(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u32, enumsymbolscallback: *mut ::core::ffi::c_void, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
@@ -56117,7 +57594,10 @@ pub unsafe fn SymEnumerateSymbols<'a, Param0: ::std::convert::Into<super::super:
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymEnumerateSymbols64<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, baseofdll: u64, enumsymbolscallback: PSYM_ENUMSYMBOLS_CALLBACK64, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymEnumerateSymbols64<'a, P0>(hprocess: P0, baseofdll: u64, enumsymbolscallback: PSYM_ENUMSYMBOLS_CALLBACK64, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymEnumerateSymbols64(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, enumsymbolscallback: *mut ::core::ffi::c_void, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
@@ -56128,7 +57608,10 @@ pub unsafe fn SymEnumerateSymbols64<'a, Param0: ::std::convert::Into<super::supe
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymEnumerateSymbolsW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, baseofdll: u32, enumsymbolscallback: PSYM_ENUMSYMBOLS_CALLBACKW, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymEnumerateSymbolsW<'a, P0>(hprocess: P0, baseofdll: u32, enumsymbolscallback: PSYM_ENUMSYMBOLS_CALLBACKW, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymEnumerateSymbolsW(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u32, enumsymbolscallback: *mut ::core::ffi::c_void, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
@@ -56138,7 +57621,10 @@ pub unsafe fn SymEnumerateSymbolsW<'a, Param0: ::std::convert::Into<super::super
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymEnumerateSymbolsW64<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, baseofdll: u64, enumsymbolscallback: PSYM_ENUMSYMBOLS_CALLBACK64W, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymEnumerateSymbolsW64<'a, P0>(hprocess: P0, baseofdll: u64, enumsymbolscallback: PSYM_ENUMSYMBOLS_CALLBACK64W, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymEnumerateSymbolsW64(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, enumsymbolscallback: *mut ::core::ffi::c_void, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
@@ -56148,7 +57634,10 @@ pub unsafe fn SymEnumerateSymbolsW64<'a, Param0: ::std::convert::Into<super::sup
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymFindDebugInfoFile<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, filename: ::windows::core::PCSTR, debugfilepath: ::windows::core::PSTR, callback: PFIND_DEBUG_FILE_CALLBACK, callerdata: *const ::core::ffi::c_void) -> ::windows::core::Result<super::super::super::Foundation::HANDLE> {
+pub unsafe fn SymFindDebugInfoFile<'a, P0>(hprocess: P0, filename: ::windows::core::PCSTR, debugfilepath: ::windows::core::PSTR, callback: PFIND_DEBUG_FILE_CALLBACK, callerdata: *const ::core::ffi::c_void) -> ::windows::core::Result<super::super::super::Foundation::HANDLE>
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymFindDebugInfoFile(hprocess: super::super::super::Foundation::HANDLE, filename: ::windows::core::PCSTR, debugfilepath: ::windows::core::PSTR, callback: *mut ::core::ffi::c_void, callerdata: *const ::core::ffi::c_void) -> super::super::super::Foundation::HANDLE;
@@ -56159,7 +57648,10 @@ pub unsafe fn SymFindDebugInfoFile<'a, Param0: ::std::convert::Into<super::super
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymFindDebugInfoFileW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, filename: ::windows::core::PCWSTR, debugfilepath: ::windows::core::PWSTR, callback: PFIND_DEBUG_FILE_CALLBACKW, callerdata: *const ::core::ffi::c_void) -> ::windows::core::Result<super::super::super::Foundation::HANDLE> {
+pub unsafe fn SymFindDebugInfoFileW<'a, P0>(hprocess: P0, filename: ::windows::core::PCWSTR, debugfilepath: ::windows::core::PWSTR, callback: PFIND_DEBUG_FILE_CALLBACKW, callerdata: *const ::core::ffi::c_void) -> ::windows::core::Result<super::super::super::Foundation::HANDLE>
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymFindDebugInfoFileW(hprocess: super::super::super::Foundation::HANDLE, filename: ::windows::core::PCWSTR, debugfilepath: ::windows::core::PWSTR, callback: *mut ::core::ffi::c_void, callerdata: *const ::core::ffi::c_void) -> super::super::super::Foundation::HANDLE;
@@ -56170,7 +57662,10 @@ pub unsafe fn SymFindDebugInfoFileW<'a, Param0: ::std::convert::Into<super::supe
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymFindExecutableImage<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, filename: ::windows::core::PCSTR, imagefilepath: ::windows::core::PSTR, callback: PFIND_EXE_FILE_CALLBACK, callerdata: *const ::core::ffi::c_void) -> ::windows::core::Result<super::super::super::Foundation::HANDLE> {
+pub unsafe fn SymFindExecutableImage<'a, P0>(hprocess: P0, filename: ::windows::core::PCSTR, imagefilepath: ::windows::core::PSTR, callback: PFIND_EXE_FILE_CALLBACK, callerdata: *const ::core::ffi::c_void) -> ::windows::core::Result<super::super::super::Foundation::HANDLE>
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymFindExecutableImage(hprocess: super::super::super::Foundation::HANDLE, filename: ::windows::core::PCSTR, imagefilepath: ::windows::core::PSTR, callback: *mut ::core::ffi::c_void, callerdata: *const ::core::ffi::c_void) -> super::super::super::Foundation::HANDLE;
@@ -56181,7 +57676,10 @@ pub unsafe fn SymFindExecutableImage<'a, Param0: ::std::convert::Into<super::sup
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymFindExecutableImageW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, filename: ::windows::core::PCWSTR, imagefilepath: ::windows::core::PWSTR, callback: PFIND_EXE_FILE_CALLBACKW, callerdata: *const ::core::ffi::c_void) -> ::windows::core::Result<super::super::super::Foundation::HANDLE> {
+pub unsafe fn SymFindExecutableImageW<'a, P0>(hprocess: P0, filename: ::windows::core::PCWSTR, imagefilepath: ::windows::core::PWSTR, callback: PFIND_EXE_FILE_CALLBACKW, callerdata: *const ::core::ffi::c_void) -> ::windows::core::Result<super::super::super::Foundation::HANDLE>
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymFindExecutableImageW(hprocess: super::super::super::Foundation::HANDLE, filename: ::windows::core::PCWSTR, imagefilepath: ::windows::core::PWSTR, callback: *mut ::core::ffi::c_void, callerdata: *const ::core::ffi::c_void) -> super::super::super::Foundation::HANDLE;
@@ -56192,7 +57690,11 @@ pub unsafe fn SymFindExecutableImageW<'a, Param0: ::std::convert::Into<super::su
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymFindFileInPath<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>, Param6: ::std::convert::Into<SYM_FIND_ID_OPTION>>(hprocess: Param0, searchpatha: ::windows::core::PCSTR, filename: ::windows::core::PCSTR, id: *const ::core::ffi::c_void, two: u32, three: u32, flags: Param6, foundfile: ::windows::core::PSTR, callback: PFINDFILEINPATHCALLBACK, context: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymFindFileInPath<'a, P0, P1>(hprocess: P0, searchpatha: ::windows::core::PCSTR, filename: ::windows::core::PCSTR, id: *const ::core::ffi::c_void, two: u32, three: u32, flags: P1, foundfile: ::windows::core::PSTR, callback: PFINDFILEINPATHCALLBACK, context: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+    P1: ::std::convert::Into<SYM_FIND_ID_OPTION>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymFindFileInPath(hprocess: super::super::super::Foundation::HANDLE, searchpatha: ::windows::core::PCSTR, filename: ::windows::core::PCSTR, id: *const ::core::ffi::c_void, two: u32, three: u32, flags: SYM_FIND_ID_OPTION, foundfile: ::windows::core::PSTR, callback: *mut ::core::ffi::c_void, context: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
@@ -56202,7 +57704,11 @@ pub unsafe fn SymFindFileInPath<'a, Param0: ::std::convert::Into<super::super::s
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymFindFileInPathW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>, Param6: ::std::convert::Into<SYM_FIND_ID_OPTION>>(hprocess: Param0, searchpatha: ::windows::core::PCWSTR, filename: ::windows::core::PCWSTR, id: *const ::core::ffi::c_void, two: u32, three: u32, flags: Param6, foundfile: ::windows::core::PWSTR, callback: PFINDFILEINPATHCALLBACKW, context: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymFindFileInPathW<'a, P0, P1>(hprocess: P0, searchpatha: ::windows::core::PCWSTR, filename: ::windows::core::PCWSTR, id: *const ::core::ffi::c_void, two: u32, three: u32, flags: P1, foundfile: ::windows::core::PWSTR, callback: PFINDFILEINPATHCALLBACKW, context: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+    P1: ::std::convert::Into<SYM_FIND_ID_OPTION>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymFindFileInPathW(hprocess: super::super::super::Foundation::HANDLE, searchpatha: ::windows::core::PCWSTR, filename: ::windows::core::PCWSTR, id: *const ::core::ffi::c_void, two: u32, three: u32, flags: SYM_FIND_ID_OPTION, foundfile: ::windows::core::PWSTR, callback: *mut ::core::ffi::c_void, context: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
@@ -56212,7 +57718,10 @@ pub unsafe fn SymFindFileInPathW<'a, Param0: ::std::convert::Into<super::super::
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymFromAddr<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, address: u64, displacement: *mut u64, symbol: *mut SYMBOL_INFO) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymFromAddr<'a, P0>(hprocess: P0, address: u64, displacement: *mut u64, symbol: *mut SYMBOL_INFO) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymFromAddr(hprocess: super::super::super::Foundation::HANDLE, address: u64, displacement: *mut u64, symbol: *mut SYMBOL_INFO) -> super::super::super::Foundation::BOOL;
@@ -56222,7 +57731,10 @@ pub unsafe fn SymFromAddr<'a, Param0: ::std::convert::Into<super::super::super::
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymFromAddrW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, address: u64, displacement: *mut u64, symbol: *mut SYMBOL_INFOW) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymFromAddrW<'a, P0>(hprocess: P0, address: u64, displacement: *mut u64, symbol: *mut SYMBOL_INFOW) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymFromAddrW(hprocess: super::super::super::Foundation::HANDLE, address: u64, displacement: *mut u64, symbol: *mut SYMBOL_INFOW) -> super::super::super::Foundation::BOOL;
@@ -56232,7 +57744,10 @@ pub unsafe fn SymFromAddrW<'a, Param0: ::std::convert::Into<super::super::super:
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymFromIndex<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, baseofdll: u64, index: u32, symbol: *mut SYMBOL_INFO) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymFromIndex<'a, P0>(hprocess: P0, baseofdll: u64, index: u32, symbol: *mut SYMBOL_INFO) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymFromIndex(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, index: u32, symbol: *mut SYMBOL_INFO) -> super::super::super::Foundation::BOOL;
@@ -56242,7 +57757,10 @@ pub unsafe fn SymFromIndex<'a, Param0: ::std::convert::Into<super::super::super:
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymFromIndexW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, baseofdll: u64, index: u32, symbol: *mut SYMBOL_INFOW) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymFromIndexW<'a, P0>(hprocess: P0, baseofdll: u64, index: u32, symbol: *mut SYMBOL_INFOW) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymFromIndexW(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, index: u32, symbol: *mut SYMBOL_INFOW) -> super::super::super::Foundation::BOOL;
@@ -56252,7 +57770,10 @@ pub unsafe fn SymFromIndexW<'a, Param0: ::std::convert::Into<super::super::super
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymFromInlineContext<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, address: u64, inlinecontext: u32, displacement: *mut u64, symbol: *mut SYMBOL_INFO) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymFromInlineContext<'a, P0>(hprocess: P0, address: u64, inlinecontext: u32, displacement: *mut u64, symbol: *mut SYMBOL_INFO) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymFromInlineContext(hprocess: super::super::super::Foundation::HANDLE, address: u64, inlinecontext: u32, displacement: *mut u64, symbol: *mut SYMBOL_INFO) -> super::super::super::Foundation::BOOL;
@@ -56262,7 +57783,10 @@ pub unsafe fn SymFromInlineContext<'a, Param0: ::std::convert::Into<super::super
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymFromInlineContextW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, address: u64, inlinecontext: u32, displacement: *mut u64, symbol: *mut SYMBOL_INFOW) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymFromInlineContextW<'a, P0>(hprocess: P0, address: u64, inlinecontext: u32, displacement: *mut u64, symbol: *mut SYMBOL_INFOW) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymFromInlineContextW(hprocess: super::super::super::Foundation::HANDLE, address: u64, inlinecontext: u32, displacement: *mut u64, symbol: *mut SYMBOL_INFOW) -> super::super::super::Foundation::BOOL;
@@ -56272,7 +57796,10 @@ pub unsafe fn SymFromInlineContextW<'a, Param0: ::std::convert::Into<super::supe
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymFromName<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, name: ::windows::core::PCSTR, symbol: *mut SYMBOL_INFO) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymFromName<'a, P0>(hprocess: P0, name: ::windows::core::PCSTR, symbol: *mut SYMBOL_INFO) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymFromName(hprocess: super::super::super::Foundation::HANDLE, name: ::windows::core::PCSTR, symbol: *mut SYMBOL_INFO) -> super::super::super::Foundation::BOOL;
@@ -56282,7 +57809,10 @@ pub unsafe fn SymFromName<'a, Param0: ::std::convert::Into<super::super::super::
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymFromNameW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, name: ::windows::core::PCWSTR, symbol: *mut SYMBOL_INFOW) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymFromNameW<'a, P0>(hprocess: P0, name: ::windows::core::PCWSTR, symbol: *mut SYMBOL_INFOW) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymFromNameW(hprocess: super::super::super::Foundation::HANDLE, name: ::windows::core::PCWSTR, symbol: *mut SYMBOL_INFOW) -> super::super::super::Foundation::BOOL;
@@ -56292,7 +57822,10 @@ pub unsafe fn SymFromNameW<'a, Param0: ::std::convert::Into<super::super::super:
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymFromToken<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, base: u64, token: u32, symbol: *mut SYMBOL_INFO) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymFromToken<'a, P0>(hprocess: P0, base: u64, token: u32, symbol: *mut SYMBOL_INFO) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymFromToken(hprocess: super::super::super::Foundation::HANDLE, base: u64, token: u32, symbol: *mut SYMBOL_INFO) -> super::super::super::Foundation::BOOL;
@@ -56302,7 +57835,10 @@ pub unsafe fn SymFromToken<'a, Param0: ::std::convert::Into<super::super::super:
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymFromTokenW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, base: u64, token: u32, symbol: *mut SYMBOL_INFOW) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymFromTokenW<'a, P0>(hprocess: P0, base: u64, token: u32, symbol: *mut SYMBOL_INFOW) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymFromTokenW(hprocess: super::super::super::Foundation::HANDLE, base: u64, token: u32, symbol: *mut SYMBOL_INFOW) -> super::super::super::Foundation::BOOL;
@@ -56313,7 +57849,10 @@ pub unsafe fn SymFromTokenW<'a, Param0: ::std::convert::Into<super::super::super
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymFunctionTableAccess<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, addrbase: u32) -> *mut ::core::ffi::c_void {
+pub unsafe fn SymFunctionTableAccess<'a, P0>(hprocess: P0, addrbase: u32) -> *mut ::core::ffi::c_void
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymFunctionTableAccess(hprocess: super::super::super::Foundation::HANDLE, addrbase: u32) -> *mut ::core::ffi::c_void;
@@ -56323,7 +57862,10 @@ pub unsafe fn SymFunctionTableAccess<'a, Param0: ::std::convert::Into<super::sup
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymFunctionTableAccess64<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, addrbase: u64) -> *mut ::core::ffi::c_void {
+pub unsafe fn SymFunctionTableAccess64<'a, P0>(hprocess: P0, addrbase: u64) -> *mut ::core::ffi::c_void
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymFunctionTableAccess64(hprocess: super::super::super::Foundation::HANDLE, addrbase: u64) -> *mut ::core::ffi::c_void;
@@ -56333,7 +57875,10 @@ pub unsafe fn SymFunctionTableAccess64<'a, Param0: ::std::convert::Into<super::s
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymFunctionTableAccess64AccessRoutines<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, addrbase: u64, readmemoryroutine: PREAD_PROCESS_MEMORY_ROUTINE64, getmodulebaseroutine: PGET_MODULE_BASE_ROUTINE64) -> *mut ::core::ffi::c_void {
+pub unsafe fn SymFunctionTableAccess64AccessRoutines<'a, P0>(hprocess: P0, addrbase: u64, readmemoryroutine: PREAD_PROCESS_MEMORY_ROUTINE64, getmodulebaseroutine: PGET_MODULE_BASE_ROUTINE64) -> *mut ::core::ffi::c_void
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymFunctionTableAccess64AccessRoutines(hprocess: super::super::super::Foundation::HANDLE, addrbase: u64, readmemoryroutine: *mut ::core::ffi::c_void, getmodulebaseroutine: *mut ::core::ffi::c_void) -> *mut ::core::ffi::c_void;
@@ -56343,7 +57888,10 @@ pub unsafe fn SymFunctionTableAccess64AccessRoutines<'a, Param0: ::std::convert:
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetExtendedOption<'a, Param0: ::std::convert::Into<IMAGEHLP_EXTENDED_OPTIONS>>(option: Param0) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetExtendedOption<'a, P0>(option: P0) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<IMAGEHLP_EXTENDED_OPTIONS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetExtendedOption(option: IMAGEHLP_EXTENDED_OPTIONS) -> super::super::super::Foundation::BOOL;
@@ -56353,7 +57901,10 @@ pub unsafe fn SymGetExtendedOption<'a, Param0: ::std::convert::Into<IMAGEHLP_EXT
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetFileLineOffsets64<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, modulename: ::windows::core::PCSTR, filename: ::windows::core::PCSTR, buffer: &mut [u64]) -> u32 {
+pub unsafe fn SymGetFileLineOffsets64<'a, P0>(hprocess: P0, modulename: ::windows::core::PCSTR, filename: ::windows::core::PCSTR, buffer: &mut [u64]) -> u32
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetFileLineOffsets64(hprocess: super::super::super::Foundation::HANDLE, modulename: ::windows::core::PCSTR, filename: ::windows::core::PCSTR, buffer: *mut u64, bufferlines: u32) -> u32;
@@ -56362,7 +57913,10 @@ pub unsafe fn SymGetFileLineOffsets64<'a, Param0: ::std::convert::Into<super::su
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
 #[inline]
-pub unsafe fn SymGetHomeDirectory<'a, Param0: ::std::convert::Into<IMAGEHLP_HD_TYPE>>(r#type: Param0, dir: &mut [u8]) -> ::windows::core::PSTR {
+pub unsafe fn SymGetHomeDirectory<'a, P0>(r#type: P0, dir: &mut [u8]) -> ::windows::core::PSTR
+where
+    P0: ::std::convert::Into<IMAGEHLP_HD_TYPE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetHomeDirectory(r#type: IMAGEHLP_HD_TYPE, dir: ::windows::core::PSTR, size: usize) -> ::windows::core::PSTR;
@@ -56371,7 +57925,10 @@ pub unsafe fn SymGetHomeDirectory<'a, Param0: ::std::convert::Into<IMAGEHLP_HD_T
 }
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`*"]
 #[inline]
-pub unsafe fn SymGetHomeDirectoryW<'a, Param0: ::std::convert::Into<IMAGEHLP_HD_TYPE>>(r#type: Param0, dir: &mut [u16]) -> ::windows::core::PWSTR {
+pub unsafe fn SymGetHomeDirectoryW<'a, P0>(r#type: P0, dir: &mut [u16]) -> ::windows::core::PWSTR
+where
+    P0: ::std::convert::Into<IMAGEHLP_HD_TYPE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetHomeDirectoryW(r#type: IMAGEHLP_HD_TYPE, dir: ::windows::core::PWSTR, size: usize) -> ::windows::core::PWSTR;
@@ -56382,7 +57939,10 @@ pub unsafe fn SymGetHomeDirectoryW<'a, Param0: ::std::convert::Into<IMAGEHLP_HD_
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetLineFromAddr<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, dwaddr: u32, pdwdisplacement: *mut u32, line: *mut IMAGEHLP_LINE) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetLineFromAddr<'a, P0>(hprocess: P0, dwaddr: u32, pdwdisplacement: *mut u32, line: *mut IMAGEHLP_LINE) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetLineFromAddr(hprocess: super::super::super::Foundation::HANDLE, dwaddr: u32, pdwdisplacement: *mut u32, line: *mut IMAGEHLP_LINE) -> super::super::super::Foundation::BOOL;
@@ -56392,7 +57952,10 @@ pub unsafe fn SymGetLineFromAddr<'a, Param0: ::std::convert::Into<super::super::
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetLineFromAddr64<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, qwaddr: u64, pdwdisplacement: *mut u32, line64: *mut IMAGEHLP_LINE64) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetLineFromAddr64<'a, P0>(hprocess: P0, qwaddr: u64, pdwdisplacement: *mut u32, line64: *mut IMAGEHLP_LINE64) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetLineFromAddr64(hprocess: super::super::super::Foundation::HANDLE, qwaddr: u64, pdwdisplacement: *mut u32, line64: *mut IMAGEHLP_LINE64) -> super::super::super::Foundation::BOOL;
@@ -56402,7 +57965,10 @@ pub unsafe fn SymGetLineFromAddr64<'a, Param0: ::std::convert::Into<super::super
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetLineFromAddrW64<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, dwaddr: u64, pdwdisplacement: *mut u32, line: *mut IMAGEHLP_LINEW64) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetLineFromAddrW64<'a, P0>(hprocess: P0, dwaddr: u64, pdwdisplacement: *mut u32, line: *mut IMAGEHLP_LINEW64) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetLineFromAddrW64(hprocess: super::super::super::Foundation::HANDLE, dwaddr: u64, pdwdisplacement: *mut u32, line: *mut IMAGEHLP_LINEW64) -> super::super::super::Foundation::BOOL;
@@ -56412,7 +57978,10 @@ pub unsafe fn SymGetLineFromAddrW64<'a, Param0: ::std::convert::Into<super::supe
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetLineFromInlineContext<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, qwaddr: u64, inlinecontext: u32, qwmodulebaseaddress: u64, pdwdisplacement: *mut u32, line64: *mut IMAGEHLP_LINE64) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetLineFromInlineContext<'a, P0>(hprocess: P0, qwaddr: u64, inlinecontext: u32, qwmodulebaseaddress: u64, pdwdisplacement: *mut u32, line64: *mut IMAGEHLP_LINE64) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetLineFromInlineContext(hprocess: super::super::super::Foundation::HANDLE, qwaddr: u64, inlinecontext: u32, qwmodulebaseaddress: u64, pdwdisplacement: *mut u32, line64: *mut IMAGEHLP_LINE64) -> super::super::super::Foundation::BOOL;
@@ -56422,7 +57991,10 @@ pub unsafe fn SymGetLineFromInlineContext<'a, Param0: ::std::convert::Into<super
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetLineFromInlineContextW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, dwaddr: u64, inlinecontext: u32, qwmodulebaseaddress: u64, pdwdisplacement: *mut u32, line: *mut IMAGEHLP_LINEW64) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetLineFromInlineContextW<'a, P0>(hprocess: P0, dwaddr: u64, inlinecontext: u32, qwmodulebaseaddress: u64, pdwdisplacement: *mut u32, line: *mut IMAGEHLP_LINEW64) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetLineFromInlineContextW(hprocess: super::super::super::Foundation::HANDLE, dwaddr: u64, inlinecontext: u32, qwmodulebaseaddress: u64, pdwdisplacement: *mut u32, line: *mut IMAGEHLP_LINEW64) -> super::super::super::Foundation::BOOL;
@@ -56433,7 +58005,10 @@ pub unsafe fn SymGetLineFromInlineContextW<'a, Param0: ::std::convert::Into<supe
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetLineFromName<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, modulename: ::windows::core::PCSTR, filename: ::windows::core::PCSTR, dwlinenumber: u32, pldisplacement: *mut i32, line: *mut IMAGEHLP_LINE) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetLineFromName<'a, P0>(hprocess: P0, modulename: ::windows::core::PCSTR, filename: ::windows::core::PCSTR, dwlinenumber: u32, pldisplacement: *mut i32, line: *mut IMAGEHLP_LINE) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetLineFromName(hprocess: super::super::super::Foundation::HANDLE, modulename: ::windows::core::PCSTR, filename: ::windows::core::PCSTR, dwlinenumber: u32, pldisplacement: *mut i32, line: *mut IMAGEHLP_LINE) -> super::super::super::Foundation::BOOL;
@@ -56443,7 +58018,10 @@ pub unsafe fn SymGetLineFromName<'a, Param0: ::std::convert::Into<super::super::
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetLineFromName64<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, modulename: ::windows::core::PCSTR, filename: ::windows::core::PCSTR, dwlinenumber: u32, pldisplacement: *mut i32, line: *mut IMAGEHLP_LINE64) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetLineFromName64<'a, P0>(hprocess: P0, modulename: ::windows::core::PCSTR, filename: ::windows::core::PCSTR, dwlinenumber: u32, pldisplacement: *mut i32, line: *mut IMAGEHLP_LINE64) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetLineFromName64(hprocess: super::super::super::Foundation::HANDLE, modulename: ::windows::core::PCSTR, filename: ::windows::core::PCSTR, dwlinenumber: u32, pldisplacement: *mut i32, line: *mut IMAGEHLP_LINE64) -> super::super::super::Foundation::BOOL;
@@ -56453,7 +58031,10 @@ pub unsafe fn SymGetLineFromName64<'a, Param0: ::std::convert::Into<super::super
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetLineFromNameW64<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, modulename: ::windows::core::PCWSTR, filename: ::windows::core::PCWSTR, dwlinenumber: u32, pldisplacement: *mut i32, line: *mut IMAGEHLP_LINEW64) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetLineFromNameW64<'a, P0>(hprocess: P0, modulename: ::windows::core::PCWSTR, filename: ::windows::core::PCWSTR, dwlinenumber: u32, pldisplacement: *mut i32, line: *mut IMAGEHLP_LINEW64) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetLineFromNameW64(hprocess: super::super::super::Foundation::HANDLE, modulename: ::windows::core::PCWSTR, filename: ::windows::core::PCWSTR, dwlinenumber: u32, pldisplacement: *mut i32, line: *mut IMAGEHLP_LINEW64) -> super::super::super::Foundation::BOOL;
@@ -56464,7 +58045,10 @@ pub unsafe fn SymGetLineFromNameW64<'a, Param0: ::std::convert::Into<super::supe
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetLineNext<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, line: *mut IMAGEHLP_LINE) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetLineNext<'a, P0>(hprocess: P0, line: *mut IMAGEHLP_LINE) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetLineNext(hprocess: super::super::super::Foundation::HANDLE, line: *mut IMAGEHLP_LINE) -> super::super::super::Foundation::BOOL;
@@ -56474,7 +58058,10 @@ pub unsafe fn SymGetLineNext<'a, Param0: ::std::convert::Into<super::super::supe
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetLineNext64<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, line: *mut IMAGEHLP_LINE64) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetLineNext64<'a, P0>(hprocess: P0, line: *mut IMAGEHLP_LINE64) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetLineNext64(hprocess: super::super::super::Foundation::HANDLE, line: *mut IMAGEHLP_LINE64) -> super::super::super::Foundation::BOOL;
@@ -56484,7 +58071,10 @@ pub unsafe fn SymGetLineNext64<'a, Param0: ::std::convert::Into<super::super::su
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetLineNextW64<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, line: *mut IMAGEHLP_LINEW64) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetLineNextW64<'a, P0>(hprocess: P0, line: *mut IMAGEHLP_LINEW64) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetLineNextW64(hprocess: super::super::super::Foundation::HANDLE, line: *mut IMAGEHLP_LINEW64) -> super::super::super::Foundation::BOOL;
@@ -56495,7 +58085,10 @@ pub unsafe fn SymGetLineNextW64<'a, Param0: ::std::convert::Into<super::super::s
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetLinePrev<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, line: *mut IMAGEHLP_LINE) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetLinePrev<'a, P0>(hprocess: P0, line: *mut IMAGEHLP_LINE) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetLinePrev(hprocess: super::super::super::Foundation::HANDLE, line: *mut IMAGEHLP_LINE) -> super::super::super::Foundation::BOOL;
@@ -56505,7 +58098,10 @@ pub unsafe fn SymGetLinePrev<'a, Param0: ::std::convert::Into<super::super::supe
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetLinePrev64<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, line: *mut IMAGEHLP_LINE64) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetLinePrev64<'a, P0>(hprocess: P0, line: *mut IMAGEHLP_LINE64) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetLinePrev64(hprocess: super::super::super::Foundation::HANDLE, line: *mut IMAGEHLP_LINE64) -> super::super::super::Foundation::BOOL;
@@ -56515,7 +58111,10 @@ pub unsafe fn SymGetLinePrev64<'a, Param0: ::std::convert::Into<super::super::su
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetLinePrevW64<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, line: *mut IMAGEHLP_LINEW64) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetLinePrevW64<'a, P0>(hprocess: P0, line: *mut IMAGEHLP_LINEW64) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetLinePrevW64(hprocess: super::super::super::Foundation::HANDLE, line: *mut IMAGEHLP_LINEW64) -> super::super::super::Foundation::BOOL;
@@ -56526,7 +58125,10 @@ pub unsafe fn SymGetLinePrevW64<'a, Param0: ::std::convert::Into<super::super::s
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetModuleBase<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, dwaddr: u32) -> u32 {
+pub unsafe fn SymGetModuleBase<'a, P0>(hprocess: P0, dwaddr: u32) -> u32
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetModuleBase(hprocess: super::super::super::Foundation::HANDLE, dwaddr: u32) -> u32;
@@ -56536,7 +58138,10 @@ pub unsafe fn SymGetModuleBase<'a, Param0: ::std::convert::Into<super::super::su
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetModuleBase64<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, qwaddr: u64) -> u64 {
+pub unsafe fn SymGetModuleBase64<'a, P0>(hprocess: P0, qwaddr: u64) -> u64
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetModuleBase64(hprocess: super::super::super::Foundation::HANDLE, qwaddr: u64) -> u64;
@@ -56547,7 +58152,10 @@ pub unsafe fn SymGetModuleBase64<'a, Param0: ::std::convert::Into<super::super::
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetModuleInfo<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, dwaddr: u32, moduleinfo: *mut IMAGEHLP_MODULE) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetModuleInfo<'a, P0>(hprocess: P0, dwaddr: u32, moduleinfo: *mut IMAGEHLP_MODULE) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetModuleInfo(hprocess: super::super::super::Foundation::HANDLE, dwaddr: u32, moduleinfo: *mut IMAGEHLP_MODULE) -> super::super::super::Foundation::BOOL;
@@ -56557,7 +58165,10 @@ pub unsafe fn SymGetModuleInfo<'a, Param0: ::std::convert::Into<super::super::su
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetModuleInfo64<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, qwaddr: u64, moduleinfo: *mut IMAGEHLP_MODULE64) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetModuleInfo64<'a, P0>(hprocess: P0, qwaddr: u64, moduleinfo: *mut IMAGEHLP_MODULE64) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetModuleInfo64(hprocess: super::super::super::Foundation::HANDLE, qwaddr: u64, moduleinfo: *mut IMAGEHLP_MODULE64) -> super::super::super::Foundation::BOOL;
@@ -56568,7 +58179,10 @@ pub unsafe fn SymGetModuleInfo64<'a, Param0: ::std::convert::Into<super::super::
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetModuleInfoW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, dwaddr: u32, moduleinfo: *mut IMAGEHLP_MODULEW) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetModuleInfoW<'a, P0>(hprocess: P0, dwaddr: u32, moduleinfo: *mut IMAGEHLP_MODULEW) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetModuleInfoW(hprocess: super::super::super::Foundation::HANDLE, dwaddr: u32, moduleinfo: *mut IMAGEHLP_MODULEW) -> super::super::super::Foundation::BOOL;
@@ -56578,7 +58192,10 @@ pub unsafe fn SymGetModuleInfoW<'a, Param0: ::std::convert::Into<super::super::s
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetModuleInfoW64<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, qwaddr: u64, moduleinfo: *mut IMAGEHLP_MODULEW64) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetModuleInfoW64<'a, P0>(hprocess: P0, qwaddr: u64, moduleinfo: *mut IMAGEHLP_MODULEW64) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetModuleInfoW64(hprocess: super::super::super::Foundation::HANDLE, qwaddr: u64, moduleinfo: *mut IMAGEHLP_MODULEW64) -> super::super::super::Foundation::BOOL;
@@ -56588,7 +58205,10 @@ pub unsafe fn SymGetModuleInfoW64<'a, Param0: ::std::convert::Into<super::super:
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetOmaps<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, baseofdll: u64, omapto: *mut *mut OMAP, comapto: *mut u64, omapfrom: *mut *mut OMAP, comapfrom: *mut u64) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetOmaps<'a, P0>(hprocess: P0, baseofdll: u64, omapto: *mut *mut OMAP, comapto: *mut u64, omapfrom: *mut *mut OMAP, comapfrom: *mut u64) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetOmaps(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, omapto: *mut *mut OMAP, comapto: *mut u64, omapfrom: *mut *mut OMAP, comapfrom: *mut u64) -> super::super::super::Foundation::BOOL;
@@ -56607,7 +58227,10 @@ pub unsafe fn SymGetOptions() -> u32 {
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetScope<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, baseofdll: u64, index: u32, symbol: *mut SYMBOL_INFO) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetScope<'a, P0>(hprocess: P0, baseofdll: u64, index: u32, symbol: *mut SYMBOL_INFO) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetScope(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, index: u32, symbol: *mut SYMBOL_INFO) -> super::super::super::Foundation::BOOL;
@@ -56617,7 +58240,10 @@ pub unsafe fn SymGetScope<'a, Param0: ::std::convert::Into<super::super::super::
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetScopeW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, baseofdll: u64, index: u32, symbol: *mut SYMBOL_INFOW) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetScopeW<'a, P0>(hprocess: P0, baseofdll: u64, index: u32, symbol: *mut SYMBOL_INFOW) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetScopeW(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, index: u32, symbol: *mut SYMBOL_INFOW) -> super::super::super::Foundation::BOOL;
@@ -56627,7 +58253,10 @@ pub unsafe fn SymGetScopeW<'a, Param0: ::std::convert::Into<super::super::super:
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetSearchPath<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, searchpatha: &mut [u8]) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetSearchPath<'a, P0>(hprocess: P0, searchpatha: &mut [u8]) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetSearchPath(hprocess: super::super::super::Foundation::HANDLE, searchpatha: ::windows::core::PSTR, searchpathlength: u32) -> super::super::super::Foundation::BOOL;
@@ -56637,7 +58266,10 @@ pub unsafe fn SymGetSearchPath<'a, Param0: ::std::convert::Into<super::super::su
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetSearchPathW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, searchpatha: &mut [u16]) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetSearchPathW<'a, P0>(hprocess: P0, searchpatha: &mut [u16]) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetSearchPathW(hprocess: super::super::super::Foundation::HANDLE, searchpatha: ::windows::core::PWSTR, searchpathlength: u32) -> super::super::super::Foundation::BOOL;
@@ -56647,7 +58279,10 @@ pub unsafe fn SymGetSearchPathW<'a, Param0: ::std::convert::Into<super::super::s
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetSourceFile<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, base: u64, params: ::windows::core::PCSTR, filespec: ::windows::core::PCSTR, filepath: &mut [u8]) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetSourceFile<'a, P0>(hprocess: P0, base: u64, params: ::windows::core::PCSTR, filespec: ::windows::core::PCSTR, filepath: &mut [u8]) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetSourceFile(hprocess: super::super::super::Foundation::HANDLE, base: u64, params: ::windows::core::PCSTR, filespec: ::windows::core::PCSTR, filepath: ::windows::core::PSTR, size: u32) -> super::super::super::Foundation::BOOL;
@@ -56657,7 +58292,10 @@ pub unsafe fn SymGetSourceFile<'a, Param0: ::std::convert::Into<super::super::su
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetSourceFileChecksum<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, base: u64, filespec: ::windows::core::PCSTR, pchecksumtype: *mut u32, pchecksum: &mut [u8], pactualbyteswritten: *mut u32) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetSourceFileChecksum<'a, P0>(hprocess: P0, base: u64, filespec: ::windows::core::PCSTR, pchecksumtype: *mut u32, pchecksum: &mut [u8], pactualbyteswritten: *mut u32) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetSourceFileChecksum(hprocess: super::super::super::Foundation::HANDLE, base: u64, filespec: ::windows::core::PCSTR, pchecksumtype: *mut u32, pchecksum: *mut u8, checksumsize: u32, pactualbyteswritten: *mut u32) -> super::super::super::Foundation::BOOL;
@@ -56667,7 +58305,10 @@ pub unsafe fn SymGetSourceFileChecksum<'a, Param0: ::std::convert::Into<super::s
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetSourceFileChecksumW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, base: u64, filespec: ::windows::core::PCWSTR, pchecksumtype: *mut u32, pchecksum: &mut [u8], pactualbyteswritten: *mut u32) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetSourceFileChecksumW<'a, P0>(hprocess: P0, base: u64, filespec: ::windows::core::PCWSTR, pchecksumtype: *mut u32, pchecksum: &mut [u8], pactualbyteswritten: *mut u32) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetSourceFileChecksumW(hprocess: super::super::super::Foundation::HANDLE, base: u64, filespec: ::windows::core::PCWSTR, pchecksumtype: *mut u32, pchecksum: *mut u8, checksumsize: u32, pactualbyteswritten: *mut u32) -> super::super::super::Foundation::BOOL;
@@ -56677,7 +58318,10 @@ pub unsafe fn SymGetSourceFileChecksumW<'a, Param0: ::std::convert::Into<super::
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetSourceFileFromToken<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, token: *const ::core::ffi::c_void, params: ::windows::core::PCSTR, filepath: &mut [u8]) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetSourceFileFromToken<'a, P0>(hprocess: P0, token: *const ::core::ffi::c_void, params: ::windows::core::PCSTR, filepath: &mut [u8]) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetSourceFileFromToken(hprocess: super::super::super::Foundation::HANDLE, token: *const ::core::ffi::c_void, params: ::windows::core::PCSTR, filepath: ::windows::core::PSTR, size: u32) -> super::super::super::Foundation::BOOL;
@@ -56687,7 +58331,10 @@ pub unsafe fn SymGetSourceFileFromToken<'a, Param0: ::std::convert::Into<super::
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetSourceFileFromTokenByTokenName<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, token: *const ::core::ffi::c_void, tokenname: ::windows::core::PCSTR, params: ::windows::core::PCSTR, filepath: &mut [u8]) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetSourceFileFromTokenByTokenName<'a, P0>(hprocess: P0, token: *const ::core::ffi::c_void, tokenname: ::windows::core::PCSTR, params: ::windows::core::PCSTR, filepath: &mut [u8]) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetSourceFileFromTokenByTokenName(hprocess: super::super::super::Foundation::HANDLE, token: *const ::core::ffi::c_void, tokenname: ::windows::core::PCSTR, params: ::windows::core::PCSTR, filepath: ::windows::core::PSTR, size: u32) -> super::super::super::Foundation::BOOL;
@@ -56697,7 +58344,10 @@ pub unsafe fn SymGetSourceFileFromTokenByTokenName<'a, Param0: ::std::convert::I
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetSourceFileFromTokenByTokenNameW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, token: *const ::core::ffi::c_void, tokenname: ::windows::core::PCWSTR, params: ::windows::core::PCWSTR, filepath: &mut [u16]) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetSourceFileFromTokenByTokenNameW<'a, P0>(hprocess: P0, token: *const ::core::ffi::c_void, tokenname: ::windows::core::PCWSTR, params: ::windows::core::PCWSTR, filepath: &mut [u16]) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetSourceFileFromTokenByTokenNameW(hprocess: super::super::super::Foundation::HANDLE, token: *const ::core::ffi::c_void, tokenname: ::windows::core::PCWSTR, params: ::windows::core::PCWSTR, filepath: ::windows::core::PWSTR, size: u32) -> super::super::super::Foundation::BOOL;
@@ -56707,7 +58357,10 @@ pub unsafe fn SymGetSourceFileFromTokenByTokenNameW<'a, Param0: ::std::convert::
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetSourceFileFromTokenW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, token: *const ::core::ffi::c_void, params: ::windows::core::PCWSTR, filepath: &mut [u16]) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetSourceFileFromTokenW<'a, P0>(hprocess: P0, token: *const ::core::ffi::c_void, params: ::windows::core::PCWSTR, filepath: &mut [u16]) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetSourceFileFromTokenW(hprocess: super::super::super::Foundation::HANDLE, token: *const ::core::ffi::c_void, params: ::windows::core::PCWSTR, filepath: ::windows::core::PWSTR, size: u32) -> super::super::super::Foundation::BOOL;
@@ -56717,7 +58370,10 @@ pub unsafe fn SymGetSourceFileFromTokenW<'a, Param0: ::std::convert::Into<super:
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetSourceFileToken<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, base: u64, filespec: ::windows::core::PCSTR, token: *mut *mut ::core::ffi::c_void, size: *mut u32) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetSourceFileToken<'a, P0>(hprocess: P0, base: u64, filespec: ::windows::core::PCSTR, token: *mut *mut ::core::ffi::c_void, size: *mut u32) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetSourceFileToken(hprocess: super::super::super::Foundation::HANDLE, base: u64, filespec: ::windows::core::PCSTR, token: *mut *mut ::core::ffi::c_void, size: *mut u32) -> super::super::super::Foundation::BOOL;
@@ -56727,7 +58383,10 @@ pub unsafe fn SymGetSourceFileToken<'a, Param0: ::std::convert::Into<super::supe
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetSourceFileTokenByTokenName<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, base: u64, filespec: ::windows::core::PCSTR, tokenname: ::windows::core::PCSTR, tokenparameters: ::windows::core::PCSTR, token: *mut *mut ::core::ffi::c_void, size: *mut u32) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetSourceFileTokenByTokenName<'a, P0>(hprocess: P0, base: u64, filespec: ::windows::core::PCSTR, tokenname: ::windows::core::PCSTR, tokenparameters: ::windows::core::PCSTR, token: *mut *mut ::core::ffi::c_void, size: *mut u32) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetSourceFileTokenByTokenName(hprocess: super::super::super::Foundation::HANDLE, base: u64, filespec: ::windows::core::PCSTR, tokenname: ::windows::core::PCSTR, tokenparameters: ::windows::core::PCSTR, token: *mut *mut ::core::ffi::c_void, size: *mut u32) -> super::super::super::Foundation::BOOL;
@@ -56737,7 +58396,10 @@ pub unsafe fn SymGetSourceFileTokenByTokenName<'a, Param0: ::std::convert::Into<
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetSourceFileTokenByTokenNameW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, base: u64, filespec: ::windows::core::PCWSTR, tokenname: ::windows::core::PCWSTR, tokenparameters: ::windows::core::PCWSTR, token: *mut *mut ::core::ffi::c_void, size: *mut u32) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetSourceFileTokenByTokenNameW<'a, P0>(hprocess: P0, base: u64, filespec: ::windows::core::PCWSTR, tokenname: ::windows::core::PCWSTR, tokenparameters: ::windows::core::PCWSTR, token: *mut *mut ::core::ffi::c_void, size: *mut u32) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetSourceFileTokenByTokenNameW(hprocess: super::super::super::Foundation::HANDLE, base: u64, filespec: ::windows::core::PCWSTR, tokenname: ::windows::core::PCWSTR, tokenparameters: ::windows::core::PCWSTR, token: *mut *mut ::core::ffi::c_void, size: *mut u32) -> super::super::super::Foundation::BOOL;
@@ -56747,7 +58409,10 @@ pub unsafe fn SymGetSourceFileTokenByTokenNameW<'a, Param0: ::std::convert::Into
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetSourceFileTokenW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, base: u64, filespec: ::windows::core::PCWSTR, token: *mut *mut ::core::ffi::c_void, size: *mut u32) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetSourceFileTokenW<'a, P0>(hprocess: P0, base: u64, filespec: ::windows::core::PCWSTR, token: *mut *mut ::core::ffi::c_void, size: *mut u32) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetSourceFileTokenW(hprocess: super::super::super::Foundation::HANDLE, base: u64, filespec: ::windows::core::PCWSTR, token: *mut *mut ::core::ffi::c_void, size: *mut u32) -> super::super::super::Foundation::BOOL;
@@ -56757,7 +58422,10 @@ pub unsafe fn SymGetSourceFileTokenW<'a, Param0: ::std::convert::Into<super::sup
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetSourceFileW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, base: u64, params: ::windows::core::PCWSTR, filespec: ::windows::core::PCWSTR, filepath: &mut [u16]) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetSourceFileW<'a, P0>(hprocess: P0, base: u64, params: ::windows::core::PCWSTR, filespec: ::windows::core::PCWSTR, filepath: &mut [u16]) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetSourceFileW(hprocess: super::super::super::Foundation::HANDLE, base: u64, params: ::windows::core::PCWSTR, filespec: ::windows::core::PCWSTR, filepath: ::windows::core::PWSTR, size: u32) -> super::super::super::Foundation::BOOL;
@@ -56767,7 +58435,10 @@ pub unsafe fn SymGetSourceFileW<'a, Param0: ::std::convert::Into<super::super::s
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetSourceVarFromToken<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, token: *const ::core::ffi::c_void, params: ::windows::core::PCSTR, varname: ::windows::core::PCSTR, value: &mut [u8]) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetSourceVarFromToken<'a, P0>(hprocess: P0, token: *const ::core::ffi::c_void, params: ::windows::core::PCSTR, varname: ::windows::core::PCSTR, value: &mut [u8]) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetSourceVarFromToken(hprocess: super::super::super::Foundation::HANDLE, token: *const ::core::ffi::c_void, params: ::windows::core::PCSTR, varname: ::windows::core::PCSTR, value: ::windows::core::PSTR, size: u32) -> super::super::super::Foundation::BOOL;
@@ -56777,7 +58448,10 @@ pub unsafe fn SymGetSourceVarFromToken<'a, Param0: ::std::convert::Into<super::s
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetSourceVarFromTokenW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, token: *const ::core::ffi::c_void, params: ::windows::core::PCWSTR, varname: ::windows::core::PCWSTR, value: &mut [u16]) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetSourceVarFromTokenW<'a, P0>(hprocess: P0, token: *const ::core::ffi::c_void, params: ::windows::core::PCWSTR, varname: ::windows::core::PCWSTR, value: &mut [u16]) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetSourceVarFromTokenW(hprocess: super::super::super::Foundation::HANDLE, token: *const ::core::ffi::c_void, params: ::windows::core::PCWSTR, varname: ::windows::core::PCWSTR, value: ::windows::core::PWSTR, size: u32) -> super::super::super::Foundation::BOOL;
@@ -56788,7 +58462,10 @@ pub unsafe fn SymGetSourceVarFromTokenW<'a, Param0: ::std::convert::Into<super::
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetSymFromAddr<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, dwaddr: u32, pdwdisplacement: *mut u32, symbol: *mut IMAGEHLP_SYMBOL) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetSymFromAddr<'a, P0>(hprocess: P0, dwaddr: u32, pdwdisplacement: *mut u32, symbol: *mut IMAGEHLP_SYMBOL) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetSymFromAddr(hprocess: super::super::super::Foundation::HANDLE, dwaddr: u32, pdwdisplacement: *mut u32, symbol: *mut IMAGEHLP_SYMBOL) -> super::super::super::Foundation::BOOL;
@@ -56798,7 +58475,10 @@ pub unsafe fn SymGetSymFromAddr<'a, Param0: ::std::convert::Into<super::super::s
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetSymFromAddr64<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, qwaddr: u64, pdwdisplacement: *mut u64, symbol: *mut IMAGEHLP_SYMBOL64) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetSymFromAddr64<'a, P0>(hprocess: P0, qwaddr: u64, pdwdisplacement: *mut u64, symbol: *mut IMAGEHLP_SYMBOL64) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetSymFromAddr64(hprocess: super::super::super::Foundation::HANDLE, qwaddr: u64, pdwdisplacement: *mut u64, symbol: *mut IMAGEHLP_SYMBOL64) -> super::super::super::Foundation::BOOL;
@@ -56809,7 +58489,10 @@ pub unsafe fn SymGetSymFromAddr64<'a, Param0: ::std::convert::Into<super::super:
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetSymFromName<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, name: ::windows::core::PCSTR, symbol: *mut IMAGEHLP_SYMBOL) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetSymFromName<'a, P0>(hprocess: P0, name: ::windows::core::PCSTR, symbol: *mut IMAGEHLP_SYMBOL) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetSymFromName(hprocess: super::super::super::Foundation::HANDLE, name: ::windows::core::PCSTR, symbol: *mut IMAGEHLP_SYMBOL) -> super::super::super::Foundation::BOOL;
@@ -56819,7 +58502,10 @@ pub unsafe fn SymGetSymFromName<'a, Param0: ::std::convert::Into<super::super::s
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetSymFromName64<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, name: ::windows::core::PCSTR, symbol: *mut IMAGEHLP_SYMBOL64) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetSymFromName64<'a, P0>(hprocess: P0, name: ::windows::core::PCSTR, symbol: *mut IMAGEHLP_SYMBOL64) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetSymFromName64(hprocess: super::super::super::Foundation::HANDLE, name: ::windows::core::PCSTR, symbol: *mut IMAGEHLP_SYMBOL64) -> super::super::super::Foundation::BOOL;
@@ -56830,7 +58516,10 @@ pub unsafe fn SymGetSymFromName64<'a, Param0: ::std::convert::Into<super::super:
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetSymNext<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, symbol: *mut IMAGEHLP_SYMBOL) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetSymNext<'a, P0>(hprocess: P0, symbol: *mut IMAGEHLP_SYMBOL) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetSymNext(hprocess: super::super::super::Foundation::HANDLE, symbol: *mut IMAGEHLP_SYMBOL) -> super::super::super::Foundation::BOOL;
@@ -56840,7 +58529,10 @@ pub unsafe fn SymGetSymNext<'a, Param0: ::std::convert::Into<super::super::super
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetSymNext64<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, symbol: *mut IMAGEHLP_SYMBOL64) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetSymNext64<'a, P0>(hprocess: P0, symbol: *mut IMAGEHLP_SYMBOL64) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetSymNext64(hprocess: super::super::super::Foundation::HANDLE, symbol: *mut IMAGEHLP_SYMBOL64) -> super::super::super::Foundation::BOOL;
@@ -56851,7 +58543,10 @@ pub unsafe fn SymGetSymNext64<'a, Param0: ::std::convert::Into<super::super::sup
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetSymPrev<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, symbol: *mut IMAGEHLP_SYMBOL) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetSymPrev<'a, P0>(hprocess: P0, symbol: *mut IMAGEHLP_SYMBOL) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetSymPrev(hprocess: super::super::super::Foundation::HANDLE, symbol: *mut IMAGEHLP_SYMBOL) -> super::super::super::Foundation::BOOL;
@@ -56861,7 +58556,10 @@ pub unsafe fn SymGetSymPrev<'a, Param0: ::std::convert::Into<super::super::super
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetSymPrev64<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, symbol: *mut IMAGEHLP_SYMBOL64) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetSymPrev64<'a, P0>(hprocess: P0, symbol: *mut IMAGEHLP_SYMBOL64) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetSymPrev64(hprocess: super::super::super::Foundation::HANDLE, symbol: *mut IMAGEHLP_SYMBOL64) -> super::super::super::Foundation::BOOL;
@@ -56871,7 +58569,11 @@ pub unsafe fn SymGetSymPrev64<'a, Param0: ::std::convert::Into<super::super::sup
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetSymbolFile<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>, Param3: ::std::convert::Into<IMAGEHLP_SF_TYPE>>(hprocess: Param0, sympath: ::windows::core::PCSTR, imagefile: ::windows::core::PCSTR, r#type: Param3, symbolfile: &mut [u8], dbgfile: &mut [u8]) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetSymbolFile<'a, P0, P1>(hprocess: P0, sympath: ::windows::core::PCSTR, imagefile: ::windows::core::PCSTR, r#type: P1, symbolfile: &mut [u8], dbgfile: &mut [u8]) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+    P1: ::std::convert::Into<IMAGEHLP_SF_TYPE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetSymbolFile(hprocess: super::super::super::Foundation::HANDLE, sympath: ::windows::core::PCSTR, imagefile: ::windows::core::PCSTR, r#type: IMAGEHLP_SF_TYPE, symbolfile: ::windows::core::PSTR, csymbolfile: usize, dbgfile: ::windows::core::PSTR, cdbgfile: usize) -> super::super::super::Foundation::BOOL;
@@ -56881,7 +58583,11 @@ pub unsafe fn SymGetSymbolFile<'a, Param0: ::std::convert::Into<super::super::su
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetSymbolFileW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>, Param3: ::std::convert::Into<IMAGEHLP_SF_TYPE>>(hprocess: Param0, sympath: ::windows::core::PCWSTR, imagefile: ::windows::core::PCWSTR, r#type: Param3, symbolfile: &mut [u16], dbgfile: &mut [u16]) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetSymbolFileW<'a, P0, P1>(hprocess: P0, sympath: ::windows::core::PCWSTR, imagefile: ::windows::core::PCWSTR, r#type: P1, symbolfile: &mut [u16], dbgfile: &mut [u16]) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+    P1: ::std::convert::Into<IMAGEHLP_SF_TYPE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetSymbolFileW(hprocess: super::super::super::Foundation::HANDLE, sympath: ::windows::core::PCWSTR, imagefile: ::windows::core::PCWSTR, r#type: IMAGEHLP_SF_TYPE, symbolfile: ::windows::core::PWSTR, csymbolfile: usize, dbgfile: ::windows::core::PWSTR, cdbgfile: usize) -> super::super::super::Foundation::BOOL;
@@ -56891,7 +58597,10 @@ pub unsafe fn SymGetSymbolFileW<'a, Param0: ::std::convert::Into<super::super::s
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetTypeFromName<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, baseofdll: u64, name: ::windows::core::PCSTR, symbol: *mut SYMBOL_INFO) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetTypeFromName<'a, P0>(hprocess: P0, baseofdll: u64, name: ::windows::core::PCSTR, symbol: *mut SYMBOL_INFO) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetTypeFromName(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, name: ::windows::core::PCSTR, symbol: *mut SYMBOL_INFO) -> super::super::super::Foundation::BOOL;
@@ -56901,7 +58610,10 @@ pub unsafe fn SymGetTypeFromName<'a, Param0: ::std::convert::Into<super::super::
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetTypeFromNameW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, baseofdll: u64, name: ::windows::core::PCWSTR, symbol: *mut SYMBOL_INFOW) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetTypeFromNameW<'a, P0>(hprocess: P0, baseofdll: u64, name: ::windows::core::PCWSTR, symbol: *mut SYMBOL_INFOW) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetTypeFromNameW(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, name: ::windows::core::PCWSTR, symbol: *mut SYMBOL_INFOW) -> super::super::super::Foundation::BOOL;
@@ -56911,7 +58623,11 @@ pub unsafe fn SymGetTypeFromNameW<'a, Param0: ::std::convert::Into<super::super:
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetTypeInfo<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>, Param3: ::std::convert::Into<IMAGEHLP_SYMBOL_TYPE_INFO>>(hprocess: Param0, modbase: u64, typeid: u32, gettype: Param3, pinfo: *mut ::core::ffi::c_void) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetTypeInfo<'a, P0, P1>(hprocess: P0, modbase: u64, typeid: u32, gettype: P1, pinfo: *mut ::core::ffi::c_void) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+    P1: ::std::convert::Into<IMAGEHLP_SYMBOL_TYPE_INFO>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetTypeInfo(hprocess: super::super::super::Foundation::HANDLE, modbase: u64, typeid: u32, gettype: IMAGEHLP_SYMBOL_TYPE_INFO, pinfo: *mut ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
@@ -56921,7 +58637,10 @@ pub unsafe fn SymGetTypeInfo<'a, Param0: ::std::convert::Into<super::super::supe
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetTypeInfoEx<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, modbase: u64, params: *mut IMAGEHLP_GET_TYPE_INFO_PARAMS) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetTypeInfoEx<'a, P0>(hprocess: P0, modbase: u64, params: *mut IMAGEHLP_GET_TYPE_INFO_PARAMS) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetTypeInfoEx(hprocess: super::super::super::Foundation::HANDLE, modbase: u64, params: *mut IMAGEHLP_GET_TYPE_INFO_PARAMS) -> super::super::super::Foundation::BOOL;
@@ -56931,7 +58650,10 @@ pub unsafe fn SymGetTypeInfoEx<'a, Param0: ::std::convert::Into<super::super::su
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymGetUnwindInfo<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, address: u64, buffer: *mut ::core::ffi::c_void, size: *mut u32) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymGetUnwindInfo<'a, P0>(hprocess: P0, address: u64, buffer: *mut ::core::ffi::c_void, size: *mut u32) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymGetUnwindInfo(hprocess: super::super::super::Foundation::HANDLE, address: u64, buffer: *mut ::core::ffi::c_void, size: *mut u32) -> super::super::super::Foundation::BOOL;
@@ -56941,7 +58663,11 @@ pub unsafe fn SymGetUnwindInfo<'a, Param0: ::std::convert::Into<super::super::su
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymInitialize<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>, Param2: ::std::convert::Into<super::super::super::Foundation::BOOL>>(hprocess: Param0, usersearchpath: ::windows::core::PCSTR, finvadeprocess: Param2) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymInitialize<'a, P0, P1>(hprocess: P0, usersearchpath: ::windows::core::PCSTR, finvadeprocess: P1) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+    P1: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymInitialize(hprocess: super::super::super::Foundation::HANDLE, usersearchpath: ::windows::core::PCSTR, finvadeprocess: super::super::super::Foundation::BOOL) -> super::super::super::Foundation::BOOL;
@@ -56951,7 +58677,11 @@ pub unsafe fn SymInitialize<'a, Param0: ::std::convert::Into<super::super::super
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymInitializeW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>, Param2: ::std::convert::Into<super::super::super::Foundation::BOOL>>(hprocess: Param0, usersearchpath: ::windows::core::PCWSTR, finvadeprocess: Param2) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymInitializeW<'a, P0, P1>(hprocess: P0, usersearchpath: ::windows::core::PCWSTR, finvadeprocess: P1) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+    P1: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymInitializeW(hprocess: super::super::super::Foundation::HANDLE, usersearchpath: ::windows::core::PCWSTR, finvadeprocess: super::super::super::Foundation::BOOL) -> super::super::super::Foundation::BOOL;
@@ -56962,7 +58692,11 @@ pub unsafe fn SymInitializeW<'a, Param0: ::std::convert::Into<super::super::supe
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymLoadModule<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>, Param1: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, hfile: Param1, imagename: ::windows::core::PCSTR, modulename: ::windows::core::PCSTR, baseofdll: u32, sizeofdll: u32) -> u32 {
+pub unsafe fn SymLoadModule<'a, P0, P1>(hprocess: P0, hfile: P1, imagename: ::windows::core::PCSTR, modulename: ::windows::core::PCSTR, baseofdll: u32, sizeofdll: u32) -> u32
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+    P1: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymLoadModule(hprocess: super::super::super::Foundation::HANDLE, hfile: super::super::super::Foundation::HANDLE, imagename: ::windows::core::PCSTR, modulename: ::windows::core::PCSTR, baseofdll: u32, sizeofdll: u32) -> u32;
@@ -56972,7 +58706,11 @@ pub unsafe fn SymLoadModule<'a, Param0: ::std::convert::Into<super::super::super
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymLoadModule64<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>, Param1: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, hfile: Param1, imagename: ::windows::core::PCSTR, modulename: ::windows::core::PCSTR, baseofdll: u64, sizeofdll: u32) -> u64 {
+pub unsafe fn SymLoadModule64<'a, P0, P1>(hprocess: P0, hfile: P1, imagename: ::windows::core::PCSTR, modulename: ::windows::core::PCSTR, baseofdll: u64, sizeofdll: u32) -> u64
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+    P1: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymLoadModule64(hprocess: super::super::super::Foundation::HANDLE, hfile: super::super::super::Foundation::HANDLE, imagename: ::windows::core::PCSTR, modulename: ::windows::core::PCSTR, baseofdll: u64, sizeofdll: u32) -> u64;
@@ -56982,7 +58720,12 @@ pub unsafe fn SymLoadModule64<'a, Param0: ::std::convert::Into<super::super::sup
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymLoadModuleEx<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>, Param1: ::std::convert::Into<super::super::super::Foundation::HANDLE>, Param7: ::std::convert::Into<SYM_LOAD_FLAGS>>(hprocess: Param0, hfile: Param1, imagename: ::windows::core::PCSTR, modulename: ::windows::core::PCSTR, baseofdll: u64, dllsize: u32, data: *const MODLOAD_DATA, flags: Param7) -> u64 {
+pub unsafe fn SymLoadModuleEx<'a, P0, P1, P2>(hprocess: P0, hfile: P1, imagename: ::windows::core::PCSTR, modulename: ::windows::core::PCSTR, baseofdll: u64, dllsize: u32, data: *const MODLOAD_DATA, flags: P2) -> u64
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+    P1: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+    P2: ::std::convert::Into<SYM_LOAD_FLAGS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymLoadModuleEx(hprocess: super::super::super::Foundation::HANDLE, hfile: super::super::super::Foundation::HANDLE, imagename: ::windows::core::PCSTR, modulename: ::windows::core::PCSTR, baseofdll: u64, dllsize: u32, data: *const MODLOAD_DATA, flags: SYM_LOAD_FLAGS) -> u64;
@@ -56992,7 +58735,12 @@ pub unsafe fn SymLoadModuleEx<'a, Param0: ::std::convert::Into<super::super::sup
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymLoadModuleExW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>, Param1: ::std::convert::Into<super::super::super::Foundation::HANDLE>, Param7: ::std::convert::Into<SYM_LOAD_FLAGS>>(hprocess: Param0, hfile: Param1, imagename: ::windows::core::PCWSTR, modulename: ::windows::core::PCWSTR, baseofdll: u64, dllsize: u32, data: *const MODLOAD_DATA, flags: Param7) -> u64 {
+pub unsafe fn SymLoadModuleExW<'a, P0, P1, P2>(hprocess: P0, hfile: P1, imagename: ::windows::core::PCWSTR, modulename: ::windows::core::PCWSTR, baseofdll: u64, dllsize: u32, data: *const MODLOAD_DATA, flags: P2) -> u64
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+    P1: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+    P2: ::std::convert::Into<SYM_LOAD_FLAGS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymLoadModuleExW(hprocess: super::super::super::Foundation::HANDLE, hfile: super::super::super::Foundation::HANDLE, imagename: ::windows::core::PCWSTR, modulename: ::windows::core::PCWSTR, baseofdll: u64, dllsize: u32, data: *const MODLOAD_DATA, flags: SYM_LOAD_FLAGS) -> u64;
@@ -57022,7 +58770,10 @@ pub unsafe fn SymMatchFileNameW(filename: ::windows::core::PCWSTR, r#match: ::wi
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymMatchString<'a, Param2: ::std::convert::Into<super::super::super::Foundation::BOOL>>(string: ::windows::core::PCSTR, expression: ::windows::core::PCSTR, fcase: Param2) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymMatchString<'a, P0>(string: ::windows::core::PCSTR, expression: ::windows::core::PCSTR, fcase: P0) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymMatchString(string: ::windows::core::PCSTR, expression: ::windows::core::PCSTR, fcase: super::super::super::Foundation::BOOL) -> super::super::super::Foundation::BOOL;
@@ -57032,7 +58783,10 @@ pub unsafe fn SymMatchString<'a, Param2: ::std::convert::Into<super::super::supe
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymMatchStringA<'a, Param2: ::std::convert::Into<super::super::super::Foundation::BOOL>>(string: ::windows::core::PCSTR, expression: ::windows::core::PCSTR, fcase: Param2) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymMatchStringA<'a, P0>(string: ::windows::core::PCSTR, expression: ::windows::core::PCSTR, fcase: P0) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymMatchStringA(string: ::windows::core::PCSTR, expression: ::windows::core::PCSTR, fcase: super::super::super::Foundation::BOOL) -> super::super::super::Foundation::BOOL;
@@ -57042,7 +58796,10 @@ pub unsafe fn SymMatchStringA<'a, Param2: ::std::convert::Into<super::super::sup
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymMatchStringW<'a, Param2: ::std::convert::Into<super::super::super::Foundation::BOOL>>(string: ::windows::core::PCWSTR, expression: ::windows::core::PCWSTR, fcase: Param2) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymMatchStringW<'a, P0>(string: ::windows::core::PCWSTR, expression: ::windows::core::PCWSTR, fcase: P0) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymMatchStringW(string: ::windows::core::PCWSTR, expression: ::windows::core::PCWSTR, fcase: super::super::super::Foundation::BOOL) -> super::super::super::Foundation::BOOL;
@@ -57052,7 +58809,10 @@ pub unsafe fn SymMatchStringW<'a, Param2: ::std::convert::Into<super::super::sup
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymNext<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, si: *mut SYMBOL_INFO) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymNext<'a, P0>(hprocess: P0, si: *mut SYMBOL_INFO) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymNext(hprocess: super::super::super::Foundation::HANDLE, si: *mut SYMBOL_INFO) -> super::super::super::Foundation::BOOL;
@@ -57062,7 +58822,10 @@ pub unsafe fn SymNext<'a, Param0: ::std::convert::Into<super::super::super::Foun
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymNextW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, siw: *mut SYMBOL_INFOW) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymNextW<'a, P0>(hprocess: P0, siw: *mut SYMBOL_INFOW) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymNextW(hprocess: super::super::super::Foundation::HANDLE, siw: *mut SYMBOL_INFOW) -> super::super::super::Foundation::BOOL;
@@ -57072,7 +58835,10 @@ pub unsafe fn SymNextW<'a, Param0: ::std::convert::Into<super::super::super::Fou
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymPrev<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, si: *mut SYMBOL_INFO) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymPrev<'a, P0>(hprocess: P0, si: *mut SYMBOL_INFO) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymPrev(hprocess: super::super::super::Foundation::HANDLE, si: *mut SYMBOL_INFO) -> super::super::super::Foundation::BOOL;
@@ -57082,7 +58848,10 @@ pub unsafe fn SymPrev<'a, Param0: ::std::convert::Into<super::super::super::Foun
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymPrevW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, siw: *mut SYMBOL_INFOW) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymPrevW<'a, P0>(hprocess: P0, siw: *mut SYMBOL_INFOW) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymPrevW(hprocess: super::super::super::Foundation::HANDLE, siw: *mut SYMBOL_INFOW) -> super::super::super::Foundation::BOOL;
@@ -57092,7 +58861,10 @@ pub unsafe fn SymPrevW<'a, Param0: ::std::convert::Into<super::super::super::Fou
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymQueryInlineTrace<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, startaddress: u64, startcontext: u32, startretaddress: u64, curaddress: u64, curcontext: *mut u32, curframeindex: *mut u32) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymQueryInlineTrace<'a, P0>(hprocess: P0, startaddress: u64, startcontext: u32, startretaddress: u64, curaddress: u64, curcontext: *mut u32, curframeindex: *mut u32) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymQueryInlineTrace(hprocess: super::super::super::Foundation::HANDLE, startaddress: u64, startcontext: u32, startretaddress: u64, curaddress: u64, curcontext: *mut u32, curframeindex: *mut u32) -> super::super::super::Foundation::BOOL;
@@ -57102,7 +58874,10 @@ pub unsafe fn SymQueryInlineTrace<'a, Param0: ::std::convert::Into<super::super:
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymRefreshModuleList<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymRefreshModuleList<'a, P0>(hprocess: P0) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymRefreshModuleList(hprocess: super::super::super::Foundation::HANDLE) -> super::super::super::Foundation::BOOL;
@@ -57113,7 +58888,10 @@ pub unsafe fn SymRefreshModuleList<'a, Param0: ::std::convert::Into<super::super
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymRegisterCallback<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, callbackfunction: PSYMBOL_REGISTERED_CALLBACK, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymRegisterCallback<'a, P0>(hprocess: P0, callbackfunction: PSYMBOL_REGISTERED_CALLBACK, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymRegisterCallback(hprocess: super::super::super::Foundation::HANDLE, callbackfunction: *mut ::core::ffi::c_void, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
@@ -57123,7 +58901,10 @@ pub unsafe fn SymRegisterCallback<'a, Param0: ::std::convert::Into<super::super:
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymRegisterCallback64<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, callbackfunction: PSYMBOL_REGISTERED_CALLBACK64, usercontext: u64) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymRegisterCallback64<'a, P0>(hprocess: P0, callbackfunction: PSYMBOL_REGISTERED_CALLBACK64, usercontext: u64) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymRegisterCallback64(hprocess: super::super::super::Foundation::HANDLE, callbackfunction: *mut ::core::ffi::c_void, usercontext: u64) -> super::super::super::Foundation::BOOL;
@@ -57133,7 +58914,10 @@ pub unsafe fn SymRegisterCallback64<'a, Param0: ::std::convert::Into<super::supe
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymRegisterCallbackW64<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, callbackfunction: PSYMBOL_REGISTERED_CALLBACK64, usercontext: u64) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymRegisterCallbackW64<'a, P0>(hprocess: P0, callbackfunction: PSYMBOL_REGISTERED_CALLBACK64, usercontext: u64) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymRegisterCallbackW64(hprocess: super::super::super::Foundation::HANDLE, callbackfunction: *mut ::core::ffi::c_void, usercontext: u64) -> super::super::super::Foundation::BOOL;
@@ -57144,7 +58928,10 @@ pub unsafe fn SymRegisterCallbackW64<'a, Param0: ::std::convert::Into<super::sup
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymRegisterFunctionEntryCallback<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, callbackfunction: PSYMBOL_FUNCENTRY_CALLBACK, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymRegisterFunctionEntryCallback<'a, P0>(hprocess: P0, callbackfunction: PSYMBOL_FUNCENTRY_CALLBACK, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymRegisterFunctionEntryCallback(hprocess: super::super::super::Foundation::HANDLE, callbackfunction: *mut ::core::ffi::c_void, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
@@ -57154,7 +58941,10 @@ pub unsafe fn SymRegisterFunctionEntryCallback<'a, Param0: ::std::convert::Into<
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymRegisterFunctionEntryCallback64<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, callbackfunction: PSYMBOL_FUNCENTRY_CALLBACK64, usercontext: u64) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymRegisterFunctionEntryCallback64<'a, P0>(hprocess: P0, callbackfunction: PSYMBOL_FUNCENTRY_CALLBACK64, usercontext: u64) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymRegisterFunctionEntryCallback64(hprocess: super::super::super::Foundation::HANDLE, callbackfunction: *mut ::core::ffi::c_void, usercontext: u64) -> super::super::super::Foundation::BOOL;
@@ -57164,7 +58954,10 @@ pub unsafe fn SymRegisterFunctionEntryCallback64<'a, Param0: ::std::convert::Int
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymSearch<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, baseofdll: u64, index: u32, symtag: u32, mask: ::windows::core::PCSTR, address: u64, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACK, usercontext: *const ::core::ffi::c_void, options: u32) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymSearch<'a, P0>(hprocess: P0, baseofdll: u64, index: u32, symtag: u32, mask: ::windows::core::PCSTR, address: u64, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACK, usercontext: *const ::core::ffi::c_void, options: u32) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymSearch(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, index: u32, symtag: u32, mask: ::windows::core::PCSTR, address: u64, enumsymbolscallback: *mut ::core::ffi::c_void, usercontext: *const ::core::ffi::c_void, options: u32) -> super::super::super::Foundation::BOOL;
@@ -57174,7 +58967,10 @@ pub unsafe fn SymSearch<'a, Param0: ::std::convert::Into<super::super::super::Fo
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymSearchW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, baseofdll: u64, index: u32, symtag: u32, mask: ::windows::core::PCWSTR, address: u64, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACKW, usercontext: *const ::core::ffi::c_void, options: u32) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymSearchW<'a, P0>(hprocess: P0, baseofdll: u64, index: u32, symtag: u32, mask: ::windows::core::PCWSTR, address: u64, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACKW, usercontext: *const ::core::ffi::c_void, options: u32) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymSearchW(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, index: u32, symtag: u32, mask: ::windows::core::PCWSTR, address: u64, enumsymbolscallback: *mut ::core::ffi::c_void, usercontext: *const ::core::ffi::c_void, options: u32) -> super::super::super::Foundation::BOOL;
@@ -57184,7 +58980,10 @@ pub unsafe fn SymSearchW<'a, Param0: ::std::convert::Into<super::super::super::F
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymSetContext<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, stackframe: *const IMAGEHLP_STACK_FRAME, context: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymSetContext<'a, P0>(hprocess: P0, stackframe: *const IMAGEHLP_STACK_FRAME, context: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymSetContext(hprocess: super::super::super::Foundation::HANDLE, stackframe: *const IMAGEHLP_STACK_FRAME, context: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
@@ -57194,7 +58993,11 @@ pub unsafe fn SymSetContext<'a, Param0: ::std::convert::Into<super::super::super
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymSetExtendedOption<'a, Param0: ::std::convert::Into<IMAGEHLP_EXTENDED_OPTIONS>, Param1: ::std::convert::Into<super::super::super::Foundation::BOOL>>(option: Param0, value: Param1) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymSetExtendedOption<'a, P0, P1>(option: P0, value: P1) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<IMAGEHLP_EXTENDED_OPTIONS>,
+    P1: ::std::convert::Into<super::super::super::Foundation::BOOL>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymSetExtendedOption(option: IMAGEHLP_EXTENDED_OPTIONS, value: super::super::super::Foundation::BOOL) -> super::super::super::Foundation::BOOL;
@@ -57204,7 +59007,10 @@ pub unsafe fn SymSetExtendedOption<'a, Param0: ::std::convert::Into<IMAGEHLP_EXT
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymSetHomeDirectory<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, dir: ::windows::core::PCSTR) -> ::windows::core::PSTR {
+pub unsafe fn SymSetHomeDirectory<'a, P0>(hprocess: P0, dir: ::windows::core::PCSTR) -> ::windows::core::PSTR
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymSetHomeDirectory(hprocess: super::super::super::Foundation::HANDLE, dir: ::windows::core::PCSTR) -> ::windows::core::PSTR;
@@ -57214,7 +59020,10 @@ pub unsafe fn SymSetHomeDirectory<'a, Param0: ::std::convert::Into<super::super:
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymSetHomeDirectoryW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, dir: ::windows::core::PCWSTR) -> ::windows::core::PWSTR {
+pub unsafe fn SymSetHomeDirectoryW<'a, P0>(hprocess: P0, dir: ::windows::core::PCWSTR) -> ::windows::core::PWSTR
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymSetHomeDirectoryW(hprocess: super::super::super::Foundation::HANDLE, dir: ::windows::core::PCWSTR) -> ::windows::core::PWSTR;
@@ -57233,7 +59042,10 @@ pub unsafe fn SymSetOptions(symoptions: u32) -> u32 {
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymSetParentWindow<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymSetParentWindow<'a, P0>(hwnd: P0) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HWND>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymSetParentWindow(hwnd: super::super::super::Foundation::HWND) -> super::super::super::Foundation::BOOL;
@@ -57243,7 +59055,10 @@ pub unsafe fn SymSetParentWindow<'a, Param0: ::std::convert::Into<super::super::
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymSetScopeFromAddr<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, address: u64) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymSetScopeFromAddr<'a, P0>(hprocess: P0, address: u64) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymSetScopeFromAddr(hprocess: super::super::super::Foundation::HANDLE, address: u64) -> super::super::super::Foundation::BOOL;
@@ -57253,7 +59068,10 @@ pub unsafe fn SymSetScopeFromAddr<'a, Param0: ::std::convert::Into<super::super:
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymSetScopeFromIndex<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, baseofdll: u64, index: u32) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymSetScopeFromIndex<'a, P0>(hprocess: P0, baseofdll: u64, index: u32) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymSetScopeFromIndex(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, index: u32) -> super::super::super::Foundation::BOOL;
@@ -57263,7 +59081,10 @@ pub unsafe fn SymSetScopeFromIndex<'a, Param0: ::std::convert::Into<super::super
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymSetScopeFromInlineContext<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, address: u64, inlinecontext: u32) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymSetScopeFromInlineContext<'a, P0>(hprocess: P0, address: u64, inlinecontext: u32) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymSetScopeFromInlineContext(hprocess: super::super::super::Foundation::HANDLE, address: u64, inlinecontext: u32) -> super::super::super::Foundation::BOOL;
@@ -57273,7 +59094,10 @@ pub unsafe fn SymSetScopeFromInlineContext<'a, Param0: ::std::convert::Into<supe
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymSetSearchPath<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, searchpatha: ::windows::core::PCSTR) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymSetSearchPath<'a, P0>(hprocess: P0, searchpatha: ::windows::core::PCSTR) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymSetSearchPath(hprocess: super::super::super::Foundation::HANDLE, searchpatha: ::windows::core::PCSTR) -> super::super::super::Foundation::BOOL;
@@ -57283,7 +59107,10 @@ pub unsafe fn SymSetSearchPath<'a, Param0: ::std::convert::Into<super::super::su
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymSetSearchPathW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, searchpatha: ::windows::core::PCWSTR) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymSetSearchPathW<'a, P0>(hprocess: P0, searchpatha: ::windows::core::PCWSTR) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymSetSearchPathW(hprocess: super::super::super::Foundation::HANDLE, searchpatha: ::windows::core::PCWSTR) -> super::super::super::Foundation::BOOL;
@@ -57293,7 +59120,10 @@ pub unsafe fn SymSetSearchPathW<'a, Param0: ::std::convert::Into<super::super::s
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymSrvDeltaName<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, sympath: ::windows::core::PCSTR, r#type: ::windows::core::PCSTR, file1: ::windows::core::PCSTR, file2: ::windows::core::PCSTR) -> ::windows::core::PSTR {
+pub unsafe fn SymSrvDeltaName<'a, P0>(hprocess: P0, sympath: ::windows::core::PCSTR, r#type: ::windows::core::PCSTR, file1: ::windows::core::PCSTR, file2: ::windows::core::PCSTR) -> ::windows::core::PSTR
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymSrvDeltaName(hprocess: super::super::super::Foundation::HANDLE, sympath: ::windows::core::PCSTR, r#type: ::windows::core::PCSTR, file1: ::windows::core::PCSTR, file2: ::windows::core::PCSTR) -> ::windows::core::PSTR;
@@ -57303,7 +59133,10 @@ pub unsafe fn SymSrvDeltaName<'a, Param0: ::std::convert::Into<super::super::sup
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymSrvDeltaNameW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, sympath: ::windows::core::PCWSTR, r#type: ::windows::core::PCWSTR, file1: ::windows::core::PCWSTR, file2: ::windows::core::PCWSTR) -> ::windows::core::PWSTR {
+pub unsafe fn SymSrvDeltaNameW<'a, P0>(hprocess: P0, sympath: ::windows::core::PCWSTR, r#type: ::windows::core::PCWSTR, file1: ::windows::core::PCWSTR, file2: ::windows::core::PCWSTR) -> ::windows::core::PWSTR
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymSrvDeltaNameW(hprocess: super::super::super::Foundation::HANDLE, sympath: ::windows::core::PCWSTR, r#type: ::windows::core::PCWSTR, file1: ::windows::core::PCWSTR, file2: ::windows::core::PCWSTR) -> ::windows::core::PWSTR;
@@ -57333,7 +59166,10 @@ pub unsafe fn SymSrvGetFileIndexInfoW(file: ::windows::core::PCWSTR, info: *mut 
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymSrvGetFileIndexString<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, srvpath: ::windows::core::PCSTR, file: ::windows::core::PCSTR, index: &mut [u8], flags: u32) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymSrvGetFileIndexString<'a, P0>(hprocess: P0, srvpath: ::windows::core::PCSTR, file: ::windows::core::PCSTR, index: &mut [u8], flags: u32) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymSrvGetFileIndexString(hprocess: super::super::super::Foundation::HANDLE, srvpath: ::windows::core::PCSTR, file: ::windows::core::PCSTR, index: ::windows::core::PSTR, size: usize, flags: u32) -> super::super::super::Foundation::BOOL;
@@ -57343,7 +59179,10 @@ pub unsafe fn SymSrvGetFileIndexString<'a, Param0: ::std::convert::Into<super::s
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymSrvGetFileIndexStringW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, srvpath: ::windows::core::PCWSTR, file: ::windows::core::PCWSTR, index: &mut [u16], flags: u32) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymSrvGetFileIndexStringW<'a, P0>(hprocess: P0, srvpath: ::windows::core::PCWSTR, file: ::windows::core::PCWSTR, index: &mut [u16], flags: u32) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymSrvGetFileIndexStringW(hprocess: super::super::super::Foundation::HANDLE, srvpath: ::windows::core::PCWSTR, file: ::windows::core::PCWSTR, index: ::windows::core::PWSTR, size: usize, flags: u32) -> super::super::super::Foundation::BOOL;
@@ -57373,7 +59212,10 @@ pub unsafe fn SymSrvGetFileIndexesW(file: ::windows::core::PCWSTR, id: *mut ::wi
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymSrvGetSupplement<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, sympath: ::windows::core::PCSTR, node: ::windows::core::PCSTR, file: ::windows::core::PCSTR) -> ::windows::core::PSTR {
+pub unsafe fn SymSrvGetSupplement<'a, P0>(hprocess: P0, sympath: ::windows::core::PCSTR, node: ::windows::core::PCSTR, file: ::windows::core::PCSTR) -> ::windows::core::PSTR
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymSrvGetSupplement(hprocess: super::super::super::Foundation::HANDLE, sympath: ::windows::core::PCSTR, node: ::windows::core::PCSTR, file: ::windows::core::PCSTR) -> ::windows::core::PSTR;
@@ -57383,7 +59225,10 @@ pub unsafe fn SymSrvGetSupplement<'a, Param0: ::std::convert::Into<super::super:
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymSrvGetSupplementW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, sympath: ::windows::core::PCWSTR, node: ::windows::core::PCWSTR, file: ::windows::core::PCWSTR) -> ::windows::core::PWSTR {
+pub unsafe fn SymSrvGetSupplementW<'a, P0>(hprocess: P0, sympath: ::windows::core::PCWSTR, node: ::windows::core::PCWSTR, file: ::windows::core::PCWSTR) -> ::windows::core::PWSTR
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymSrvGetSupplementW(hprocess: super::super::super::Foundation::HANDLE, sympath: ::windows::core::PCWSTR, node: ::windows::core::PCWSTR, file: ::windows::core::PCWSTR) -> ::windows::core::PWSTR;
@@ -57393,7 +59238,10 @@ pub unsafe fn SymSrvGetSupplementW<'a, Param0: ::std::convert::Into<super::super
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymSrvIsStore<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, path: ::windows::core::PCSTR) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymSrvIsStore<'a, P0>(hprocess: P0, path: ::windows::core::PCSTR) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymSrvIsStore(hprocess: super::super::super::Foundation::HANDLE, path: ::windows::core::PCSTR) -> super::super::super::Foundation::BOOL;
@@ -57403,7 +59251,10 @@ pub unsafe fn SymSrvIsStore<'a, Param0: ::std::convert::Into<super::super::super
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymSrvIsStoreW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, path: ::windows::core::PCWSTR) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymSrvIsStoreW<'a, P0>(hprocess: P0, path: ::windows::core::PCWSTR) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymSrvIsStoreW(hprocess: super::super::super::Foundation::HANDLE, path: ::windows::core::PCWSTR) -> super::super::super::Foundation::BOOL;
@@ -57413,7 +59264,11 @@ pub unsafe fn SymSrvIsStoreW<'a, Param0: ::std::convert::Into<super::super::supe
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymSrvStoreFile<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>, Param3: ::std::convert::Into<SYM_SRV_STORE_FILE_FLAGS>>(hprocess: Param0, srvpath: ::windows::core::PCSTR, file: ::windows::core::PCSTR, flags: Param3) -> ::windows::core::PSTR {
+pub unsafe fn SymSrvStoreFile<'a, P0, P1>(hprocess: P0, srvpath: ::windows::core::PCSTR, file: ::windows::core::PCSTR, flags: P1) -> ::windows::core::PSTR
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+    P1: ::std::convert::Into<SYM_SRV_STORE_FILE_FLAGS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymSrvStoreFile(hprocess: super::super::super::Foundation::HANDLE, srvpath: ::windows::core::PCSTR, file: ::windows::core::PCSTR, flags: SYM_SRV_STORE_FILE_FLAGS) -> ::windows::core::PSTR;
@@ -57423,7 +59278,11 @@ pub unsafe fn SymSrvStoreFile<'a, Param0: ::std::convert::Into<super::super::sup
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymSrvStoreFileW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>, Param3: ::std::convert::Into<SYM_SRV_STORE_FILE_FLAGS>>(hprocess: Param0, srvpath: ::windows::core::PCWSTR, file: ::windows::core::PCWSTR, flags: Param3) -> ::windows::core::PWSTR {
+pub unsafe fn SymSrvStoreFileW<'a, P0, P1>(hprocess: P0, srvpath: ::windows::core::PCWSTR, file: ::windows::core::PCWSTR, flags: P1) -> ::windows::core::PWSTR
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+    P1: ::std::convert::Into<SYM_SRV_STORE_FILE_FLAGS>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymSrvStoreFileW(hprocess: super::super::super::Foundation::HANDLE, srvpath: ::windows::core::PCWSTR, file: ::windows::core::PCWSTR, flags: SYM_SRV_STORE_FILE_FLAGS) -> ::windows::core::PWSTR;
@@ -57433,7 +59292,10 @@ pub unsafe fn SymSrvStoreFileW<'a, Param0: ::std::convert::Into<super::super::su
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymSrvStoreSupplement<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, srvpath: ::windows::core::PCSTR, node: ::windows::core::PCSTR, file: ::windows::core::PCSTR, flags: u32) -> ::windows::core::PSTR {
+pub unsafe fn SymSrvStoreSupplement<'a, P0>(hprocess: P0, srvpath: ::windows::core::PCSTR, node: ::windows::core::PCSTR, file: ::windows::core::PCSTR, flags: u32) -> ::windows::core::PSTR
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymSrvStoreSupplement(hprocess: super::super::super::Foundation::HANDLE, srvpath: ::windows::core::PCSTR, node: ::windows::core::PCSTR, file: ::windows::core::PCSTR, flags: u32) -> ::windows::core::PSTR;
@@ -57443,7 +59305,10 @@ pub unsafe fn SymSrvStoreSupplement<'a, Param0: ::std::convert::Into<super::supe
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymSrvStoreSupplementW<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, sympath: ::windows::core::PCWSTR, node: ::windows::core::PCWSTR, file: ::windows::core::PCWSTR, flags: u32) -> ::windows::core::PWSTR {
+pub unsafe fn SymSrvStoreSupplementW<'a, P0>(hprocess: P0, sympath: ::windows::core::PCWSTR, node: ::windows::core::PCWSTR, file: ::windows::core::PCWSTR, flags: u32) -> ::windows::core::PWSTR
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymSrvStoreSupplementW(hprocess: super::super::super::Foundation::HANDLE, sympath: ::windows::core::PCWSTR, node: ::windows::core::PCWSTR, file: ::windows::core::PCWSTR, flags: u32) -> ::windows::core::PWSTR;
@@ -57475,7 +59340,10 @@ pub unsafe fn SymUnDName64(sym: *const IMAGEHLP_SYMBOL64, undecname: &mut [u8]) 
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymUnloadModule<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, baseofdll: u32) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymUnloadModule<'a, P0>(hprocess: P0, baseofdll: u32) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymUnloadModule(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u32) -> super::super::super::Foundation::BOOL;
@@ -57485,7 +59353,10 @@ pub unsafe fn SymUnloadModule<'a, Param0: ::std::convert::Into<super::super::sup
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SymUnloadModule64<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, baseofdll: u64) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SymUnloadModule64<'a, P0>(hprocess: P0, baseofdll: u64) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SymUnloadModule64(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64) -> super::super::super::Foundation::BOOL;
@@ -57782,7 +59653,10 @@ pub unsafe fn TerminateProcessOnMemoryExhaustion(failedallocationsize: usize) {
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn TouchFileTimes<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(filehandle: Param0, psystemtime: *const super::super::super::Foundation::SYSTEMTIME) -> super::super::super::Foundation::BOOL {
+pub unsafe fn TouchFileTimes<'a, P0>(filehandle: P0, psystemtime: *const super::super::super::Foundation::SYSTEMTIME) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn TouchFileTimes(filehandle: super::super::super::Foundation::HANDLE, psystemtime: *const super::super::super::Foundation::SYSTEMTIME) -> super::super::super::Foundation::BOOL;
@@ -60540,7 +62414,10 @@ pub unsafe fn WaitForDebugEventEx(lpdebugevent: *mut DEBUG_EVENT, dwmilliseconds
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn Wow64GetThreadContext<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hthread: Param0, lpcontext: *mut WOW64_CONTEXT) -> super::super::super::Foundation::BOOL {
+pub unsafe fn Wow64GetThreadContext<'a, P0>(hthread: P0, lpcontext: *mut WOW64_CONTEXT) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn Wow64GetThreadContext(hthread: super::super::super::Foundation::HANDLE, lpcontext: *mut WOW64_CONTEXT) -> super::super::super::Foundation::BOOL;
@@ -60550,7 +62427,10 @@ pub unsafe fn Wow64GetThreadContext<'a, Param0: ::std::convert::Into<super::supe
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn Wow64GetThreadSelectorEntry<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hthread: Param0, dwselector: u32, lpselectorentry: *mut WOW64_LDT_ENTRY) -> super::super::super::Foundation::BOOL {
+pub unsafe fn Wow64GetThreadSelectorEntry<'a, P0>(hthread: P0, dwselector: u32, lpselectorentry: *mut WOW64_LDT_ENTRY) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn Wow64GetThreadSelectorEntry(hthread: super::super::super::Foundation::HANDLE, dwselector: u32, lpselectorentry: *mut WOW64_LDT_ENTRY) -> super::super::super::Foundation::BOOL;
@@ -60560,7 +62440,10 @@ pub unsafe fn Wow64GetThreadSelectorEntry<'a, Param0: ::std::convert::Into<super
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn Wow64SetThreadContext<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hthread: Param0, lpcontext: *const WOW64_CONTEXT) -> super::super::super::Foundation::BOOL {
+pub unsafe fn Wow64SetThreadContext<'a, P0>(hthread: P0, lpcontext: *const WOW64_CONTEXT) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn Wow64SetThreadContext(hthread: super::super::super::Foundation::HANDLE, lpcontext: *const WOW64_CONTEXT) -> super::super::super::Foundation::BOOL;
@@ -60570,7 +62453,10 @@ pub unsafe fn Wow64SetThreadContext<'a, Param0: ::std::convert::Into<super::supe
 #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WriteProcessMemory<'a, Param0: ::std::convert::Into<super::super::super::Foundation::HANDLE>>(hprocess: Param0, lpbaseaddress: *const ::core::ffi::c_void, lpbuffer: *const ::core::ffi::c_void, nsize: usize, lpnumberofbyteswritten: *mut usize) -> super::super::super::Foundation::BOOL {
+pub unsafe fn WriteProcessMemory<'a, P0>(hprocess: P0, lpbaseaddress: *const ::core::ffi::c_void, lpbuffer: *const ::core::ffi::c_void, nsize: usize, lpnumberofbyteswritten: *mut usize) -> super::super::super::Foundation::BOOL
+where
+    P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
+{
     #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WriteProcessMemory(hprocess: super::super::super::Foundation::HANDLE, lpbaseaddress: *const ::core::ffi::c_void, lpbuffer: *const ::core::ffi::c_void, nsize: usize, lpnumberofbyteswritten: *mut usize) -> super::super::super::Foundation::BOOL;
